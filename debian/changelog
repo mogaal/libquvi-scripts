@@ -1,0 +1,5 @@
+libquvi-scripts (0.4.0-1) unstable; urgency=low
+
+  * New upstream release (Closes: #123456)
+
+ -- Alejandro Garrido Mota <garridomota@gmail.com>  Sun, 23 Oct 2011 22:44:43 -0430
