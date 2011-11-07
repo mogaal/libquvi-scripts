@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.0
+-- libquvi-scripts v0.4.1
 -- Copyright (C) 2011  Thomas Preud'homme <robotux@celest.fr>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.

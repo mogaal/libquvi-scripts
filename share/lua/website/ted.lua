@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.0
+-- libquvi-scripts v0.4.1
 -- Copyright (C) 2011  Toni Gundogdu <legatvs@gmail.com>
 -- Copyright (C) 2011  Bastien Nocera <hadess@hadess.net>
 --
@@ -39,8 +39,12 @@ end
 -- Query available formats.
 function query_formats(self)
     local page    = quvi.fetch(self.page_url)
-    local formats = Ted.iter_formats(page)
 
+    if Ted.is_external(self, page) then
+        return self
+    end
+
+    local formats = Ted.iter_formats(page)
     local t = {}
     for _,v in pairs(formats) do
         table.insert(t, Ted.to_s(v))
@@ -57,21 +61,26 @@ function parse(self)
     self.host_id = "ted"
     local page   = quvi.fetch(self.page_url)
 
+    if Ted.is_external(self, page) then
+        return self
+    end
+
     self.id      = page:match('ti:"(%d+)"')
                     or error("no match: media id")
 
     self.title   = page:match('<title>(.-)%s+|')
                     or error("no match: media title")
 
-    self.thumbnail_url = page:match('&amp;su=(.-)&amp;') or ''
+    self.thumbnail_url = page:match('rel="image_src" href="(.-)"') or ''
 
     local formats = Ted.iter_formats(page)
     local U       = require 'quvi/util'
-    self.url      = {U.choose_format(self, formats,
+    local r       = U.choose_format(self, formats,
                                      Ted.choose_best,
                                      Ted.choose_default,
-                                     Ted.to_s).url
-                        or error("no match: media url")}
+                                     Ted.to_s)
+                        or error("no match: media url")
+    self.url      = {r.url}
 
     return self
 end
@@ -137,6 +146,12 @@ function Ted.to_s(t)
     return (t.quality)
         and string.format("%s_%s", t.container, t.quality)
         or  string.format("%s", t.container)
+end
+
+function Ted.is_external(self, page)
+    -- Some of the videos are hosted elsewhere.
+    self.redirect_url = page:match('name="movie"%s+value="(.-)"') or ''
+    return #self.redirect_url > 0
 end
 
 -- vim: set ts=4 sw=4 tw=72 expandtab:

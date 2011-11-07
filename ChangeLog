@@ -1,3 +1,143 @@
+commit 6b814ca
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-06
+
+    Update NEWS for 0.4.1
+
+NEWS
+
+commit 1bf12cf
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-06
+
+    Bump version to 0.4.1
+
+m4/version.m4
+
+commit 5246b28
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-06
+
+    redirect.t: Add test for ted external URL
+
+tests/data/resolve/redirect_url_ted.json
+tests/t/redirect.t
+
+commit ac009ac
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-06
+
+    ted.lua: Handle external media
+
+share/lua/website/ted.lua
+
+commit c1f1749
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-06
+
+    ted.lua: Fix media URL check
+
+share/lua/website/ted.lua
+
+commit e19ac08
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-06
+
+    Fix ted.lua thumbnail_url pattern
+
+share/lua/website/ted.lua
+
+commit e72021e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-04
+
+    tests/README: Add find-tests.sh note
+
+tests/README
+
+commit da0d0b4
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-04
+
+    Add find-tests.sh
+
+Makefile.am
+find-tests.sh
+
+commit fd05cfa
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-04
+
+    Fix plan tests
+    
+      * "You tried to plan twice at ... Looks like your test exited ..."
+
+tests/t/redirect.t
+tests/t/shortened.t
+
+commit ae190c3
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-04
+
+    yfrog.json: Change expected title
+
+tests/data/format/default/yfrog.json
+
+commit 6f56730
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-04
+
+    yfrog.lua: Fix title pattern
+
+share/lua/website/yfrog.lua
+
+commit 9f4601c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-04
+
+    tube8.json: Change expected content-type
+
+tests/data/format/default/nsfw/tube8.json
+
+commit d9da86e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-04
+
+    tmunderground.json: Change expected content-type
+
+tests/data/format/default/tmunderground.json
+
+commit 7205ea4
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-04
+
+    ted*.json: Change expected length
+
+tests/data/format/default/ted.json
+tests/data/format/other/ted_best.json
+tests/data/format/other/ted_mp4.json
+tests/data/format/other/ted_mp4_480p.json
+tests/data/format/other/ted_mp4_light.json
+
+commit 37c9626
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-04
+
+    funnyordie*.json: Change expected title
+
+tests/data/format/default/funnyordie.json
+tests/data/format/other/funnyordie_best.json
+tests/data/format/other/funnyordie_mp4_ipad.json
+tests/data/format/other/funnyordie_mp4_wifi.json
+
+commit b2e0ed4
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-10-25
+
+    Fix xhamster.lua title parsing
+
+share/lua/website/xhamster.lua
+
 commit 6b5873a
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2011-10-05
