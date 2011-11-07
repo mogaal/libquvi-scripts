@@ -1,0 +1,336 @@
+commit 6b5873a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-10-05
+
+    Update NEWS for 0.4.0
+
+NEWS
+
+commit 0c04e02
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-10-04
+
+    Revert "Mark foundrymusic.lua as fixme"
+    
+    This reverts commit 406430c8d22e788f75e0cd05c34dadf3ce3a13d2.
+
+share/Makefile.am
+tests/data/format/default/fixme/foundrymusic.json
+tests/data/format/default/fixme/foundrymusic_2.json
+tests/data/format/default/nsfw/foundrymusic.json
+tests/data/format/default/nsfw/foundrymusic_2.json
+
+commit a1c146c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-09-30
+
+    Add expire.t
+    
+     * Remove unused format_default_nonhttp.t
+     * Add header to .t files
+
+tests/Makefile.am
+tests/README
+tests/data/format/default/non-http/README
+tests/lib/Test/Quvi.pm
+tests/t/d/url.t
+tests/t/expire.t
+tests/t/format_default.t
+tests/t/format_default_nonhttp.t
+tests/t/format_other.t
+tests/t/mem.t
+tests/t/nosupport.t
+tests/t/pod.t
+tests/t/redirect.t
+tests/t/shortened.t
+
+commit f787714
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-09-27
+
+    Change handles path pattern in pluzz.lua
+
+share/lua/website/pluzz.lua
+
+commit e84bbd5
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-09-25
+
+    Comment out the 'message' check in dailymotion.lua
+    
+     * http://is.gd/FaRu7w
+
+share/lua/website/dailymotion.lua
+
+commit 406430c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-09-25
+
+    Mark foundrymusic.lua as fixme
+    
+      * This Page Is Under Construction
+
+share/Makefile.am
+tests/data/format/default/fixme/foundrymusic.json
+tests/data/format/default/fixme/foundrymusic_2.json
+tests/data/format/default/nsfw/foundrymusic.json
+tests/data/format/default/nsfw/foundrymusic_2.json
+
+commit d6d1fc8
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-09-25
+
+    Cleanup test JSONs
+
+tests/data/format/default/nsfw/xvideos.json
+tests/data/format/default/ted.json
+
+commit 072f960
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-09-25
+
+    Fix tvlux.lua
+
+share/Makefile.am
+share/lua/website/tvlux.lua
+tests/data/format/default/fixme/tvlux.json
+tests/data/format/default/tvlux.json
+
+commit 89493ba
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-09-24
+
+    Add more --support tests
+
+tests/t/nosupport.t
+
+commit abadd07
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-09-24
+
+    Revise YouTube.normalize
+
+share/lua/website/youtube.lua
+
+commit f85078a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-09-24
+
+    Fix attempt to call global parse_path (a nil value)
+
+share/lua/website/quvi/url.lua
+
+commit 1567758
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-09-22
+
+    Use empty string instead of "no"
+
+configure.ac
+
+commit 0d5fe06
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-09-23
+
+    Remove config.aux
+
+autogen.sh
+
+commit 62cc25f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-09-19
+
+    Split from git://repo.or.cz/quvi.git
+
+.gitignore
+AUTHORS
+COPYING
+INSTALL
+Makefile.am
+README
+autogen.sh
+configure.ac
+doc/Makefile.am
+doc/man7/Makefile.am
+doc/man7/libquvi-scripts.7.pod
+gen-ver.sh
+libquvi-scripts.pc.in
+m4/version.m4
+share/Makefile.am
+share/lua/Makefile.am
+share/lua/README
+share/lua/util/charset.lua
+share/lua/util/content_type.lua
+share/lua/util/trim.lua
+share/lua/website/README
+share/lua/website/academicearth.lua
+share/lua/website/arte.lua
+share/lua/website/audioboo.lua
+share/lua/website/bikeradar.lua
+share/lua/website/blip.lua
+share/lua/website/bloomberg.lua
+share/lua/website/break.lua
+share/lua/website/buzzhumor.lua
+share/lua/website/cbsnews.lua
+share/lua/website/charlierose.lua
+share/lua/website/clipfish.lua
+share/lua/website/collegehumor.lua
+share/lua/website/dailymotion.lua
+share/lua/website/foundrymusic.lua
+share/lua/website/foxnews.lua
+share/lua/website/francetelevisions.lua
+share/lua/website/funnyhub.lua
+share/lua/website/funnyordie.lua
+share/lua/website/gaskrank.lua
+share/lua/website/globo.lua
+share/lua/website/golem.lua
+share/lua/website/google.lua
+share/lua/website/guardian.lua
+share/lua/website/keezmovies.lua
+share/lua/website/liveleak.lua
+share/lua/website/megavideo.lua
+share/lua/website/metacafe.lua
+share/lua/website/pluzz.lua
+share/lua/website/publicsenat.lua
+share/lua/website/quvi/bit.lua
+share/lua/website/quvi/const.lua
+share/lua/website/quvi/html.lua
+share/lua/website/quvi/url.lua
+share/lua/website/quvi/util.lua
+share/lua/website/sapo.lua
+share/lua/website/sevenload.lua
+share/lua/website/soundcloud.lua
+share/lua/website/spankwire.lua
+share/lua/website/spiegel.lua
+share/lua/website/tagtele.lua
+share/lua/website/ted.lua
+share/lua/website/theonion.lua
+share/lua/website/tmunderground.lua
+share/lua/website/totallynsfw.lua
+share/lua/website/tube8.lua
+share/lua/website/tvlux.lua
+share/lua/website/videobash.lua
+share/lua/website/vimeo.lua
+share/lua/website/xhamster.lua
+share/lua/website/xvideos.lua
+share/lua/website/yfrog.lua
+share/lua/website/youjizz.lua
+share/lua/website/youtube.lua
+stamp.sh
+tests/Makefile.am
+tests/README
+tests/data/format/default/audioboo.json
+tests/data/format/default/bikeradar.json
+tests/data/format/default/blip.json
+tests/data/format/default/bloomberg.json
+tests/data/format/default/break.json
+tests/data/format/default/buzzhumor.json
+tests/data/format/default/cbsnews.json
+tests/data/format/default/charlierose.json
+tests/data/format/default/collegehumor.json
+tests/data/format/default/fixme/README
+tests/data/format/default/fixme/tvlux.json
+tests/data/format/default/foxnews.json
+tests/data/format/default/funnyhub.json
+tests/data/format/default/funnyordie.json
+tests/data/format/default/gaskrank.json
+tests/data/format/default/globo.json
+tests/data/format/default/golem.json
+tests/data/format/default/google.json
+tests/data/format/default/guardian.json
+tests/data/format/default/guardian_audio.json
+tests/data/format/default/ignore/README
+tests/data/format/default/ignore/length_bytes/dailymotion.json
+tests/data/format/default/liveleak.json
+tests/data/format/default/megavideo.json
+tests/data/format/default/metacafe.json
+tests/data/format/default/nlfy/clipfish.json
+tests/data/format/default/nlfy/sevenload.json
+tests/data/format/default/non-http/README
+tests/data/format/default/nsfw/foundrymusic.json
+tests/data/format/default/nsfw/foundrymusic_2.json
+tests/data/format/default/nsfw/keezmovies.json
+tests/data/format/default/nsfw/spankwire.json
+tests/data/format/default/nsfw/totallynsfw.json
+tests/data/format/default/nsfw/tube8.json
+tests/data/format/default/nsfw/xhamster.json
+tests/data/format/default/nsfw/xvideos.json
+tests/data/format/default/nsfw/youjizz.json
+tests/data/format/default/publicsenat.json
+tests/data/format/default/sapo.json
+tests/data/format/default/soundcloud.json
+tests/data/format/default/spiegel.json
+tests/data/format/default/tagtele.json
+tests/data/format/default/ted.json
+tests/data/format/default/theonion.json
+tests/data/format/default/tmunderground.json
+tests/data/format/default/videobash.json
+tests/data/format/default/vimeo.json
+tests/data/format/default/yfrog.json
+tests/data/format/default/youtube.json
+tests/data/format/default/youtube_starttime.json
+tests/data/format/other/blip_best.json
+tests/data/format/other/blip_m4v_blip_sd_360p.json
+tests/data/format/other/blip_mov_source_360p.json
+tests/data/format/other/blip_mp3_web.json
+tests/data/format/other/cbsnews_best.json
+tests/data/format/other/cbsnews_m4v_1100k_480p.json
+tests/data/format/other/cbsnews_m4v_386k_216p.json
+tests/data/format/other/cbsnews_m4v_598k_360p.json
+tests/data/format/other/cbsnews_mp4_1100k_480p.json
+tests/data/format/other/cbsnews_mp4_500k_240p.json
+tests/data/format/other/collegehumor_best.json
+tests/data/format/other/collegehumor_mp4_hq.json
+tests/data/format/other/collegehumor_mp4_sd.json
+tests/data/format/other/foxnews_best.json
+tests/data/format/other/foxnews_high.json
+tests/data/format/other/foxnews_low.json
+tests/data/format/other/foxnews_med.json
+tests/data/format/other/foxnews_med_low.json
+tests/data/format/other/funnyordie_best.json
+tests/data/format/other/funnyordie_mp4_ipad.json
+tests/data/format/other/funnyordie_mp4_wifi.json
+tests/data/format/other/golem_best.json
+tests/data/format/other/golem_m4v_ipod_360p.json
+tests/data/format/other/golem_mp4_high_540p.json
+tests/data/format/other/golem_mp4_medium_270p.json
+tests/data/format/other/ignore/README
+tests/data/format/other/ignore/length_bytes/dailymotion_best.json
+tests/data/format/other/ignore/length_bytes/dailymotion_mp4_384p.json
+tests/data/format/other/ignore/length_bytes/dailymotion_mp4_480p.json
+tests/data/format/other/ignore/length_bytes/dailymotion_mp4_720p.json
+tests/data/format/other/spiegel_best.json
+tests/data/format/other/spiegel_flv_vp6_388k_135p.json
+tests/data/format/other/spiegel_flv_vp6_576k_315p.json
+tests/data/format/other/spiegel_flv_vp6_64k_135p.json
+tests/data/format/other/spiegel_flv_vp6_928k_544p.json
+tests/data/format/other/spiegel_mp4_h264_1400k_544p.json
+tests/data/format/other/ted_best.json
+tests/data/format/other/ted_mp3.json
+tests/data/format/other/ted_mp4.json
+tests/data/format/other/ted_mp4_480p.json
+tests/data/format/other/ted_mp4_light.json
+tests/data/format/other/vimeo_best.json
+tests/data/format/other/vimeo_hd.json
+tests/data/format/other/vimeo_sd.json
+tests/data/format/other/youtube_best.json
+tests/data/format/other/youtube_fmt05_240p.json
+tests/data/format/other/youtube_fmt18_360p.json
+tests/data/format/other/youtube_fmt22_720p.json
+tests/data/format/other/youtube_fmt34_360p.json
+tests/data/format/other/youtube_fmt35_480p.json
+tests/data/format/other/youtube_fmt37_1080p.json
+tests/data/format/other/youtube_fmt38_1536p.json
+tests/data/resolve/redirect_url_academicearth.json
+tests/data/resolve/redirect_url_dorkly.json
+tests/data/resolve/shortened.json
+tests/lib/Test/Quvi.pm
+tests/t/d/url.t
+tests/t/format_default.t
+tests/t/format_default_nonhttp.t
+tests/t/format_other.t
+tests/t/mem.t
+tests/t/nosupport.t
+tests/t/pod.t
+tests/t/redirect.t
+tests/t/shortened.t
