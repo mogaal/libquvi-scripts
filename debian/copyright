@@ -1,7 +1,7 @@
-Format-Specification:
-   http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=196
-Upstream-Maintainer: Toni Gundogdu <legatvs@gmail.com>
-Upstream-Source: http://quvi.sourceforge.net 
+Format:
+   http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=202
+Upstream-Contact: Toni Gundogdu <legatvs@gmail.com>
+Source: http://quvi.sourceforge.net 
 Upstream-Name: libquvi-scripts
 
 Files: *
