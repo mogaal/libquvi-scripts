@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.0
+-- libquvi-scripts v0.4.1
 -- Copyright (C) 2011  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -48,7 +48,7 @@ function parse(self)
 
     local page = quvi.fetch(self.page_url)
 
-    self.title = page:match('og:title" content="(.-)"')
+    self.title = page:match('<title>(.-)</title>')
                     or error('no match: media title')
 
     self.thumbnail_url = page:match('"og:image" content="(.-)"')

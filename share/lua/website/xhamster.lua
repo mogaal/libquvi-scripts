@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.0
+-- libquvi-scripts v0.4.1
 -- Copyright (C) 2010 Paul Kocialkowski <contact@paulk.fr>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -44,8 +44,8 @@ function parse (self)
     self.host_id = "xhamster"
     local page   = quvi.fetch(self.page_url)
 
-    local _,_,s = page:find('class="mTitle">.+<h1>(.-)<')
-    self.title  = s or error ("no match: media title")
+    self.title = page:match('class="mTitle">.-<h1?.>(.-)</h1>')
+                  or error("no match: media title")
 
     local _,_,s = self.page_url:find("/movies/(.-)/")
     self.id     = s or error ("no match: media id")

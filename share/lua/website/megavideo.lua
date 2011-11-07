@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.0
+-- libquvi-scripts v0.4.1
 -- Copyright (C) 2011 Paul Kocialkowski <contact@paulk.fr>
 -- Based on http://userscripts.org/scripts/show/87011
 -- Which is (C) sebaro, released under the GNU GPL
