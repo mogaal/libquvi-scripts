@@ -11,6 +11,6 @@ Homepage: http://quvi.sourceforge.net
 Package: libquvi-scripts
 Architecture: any
 Depends: ${misc:Depends}
-Description: libquvi-scripts contains the embedded lua scripts that
-  libquvi uses for parsing the media details. Some additional 
-  utility scripts are also included.
+Description: contains the embedded lua scripts that libquvi uses
+ for parsing the media details. Some additional utility scripts
+ are also included.
