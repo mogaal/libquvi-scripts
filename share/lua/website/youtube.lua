@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.1
+-- libquvi-scripts v0.4.2
 -- Copyright (C) 2010-2011  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -74,6 +74,7 @@ function YouTube.normalize(s)
     if not s then return s end
     local U = require 'quvi/url'
     local t = U.parse(s)
+    if not t.host then return s end
     t.host = t.host:gsub('youtu%.be', 'youtube.com')
     t.host = t.host:gsub('-nocookie', '')
     if t.path then
@@ -159,11 +160,12 @@ function YouTube.get_video_info(self)
         YouTube.convert_deprecated_id(self.requested_format)
 
     local formats = YouTube.iter_formats(config, U)
-    local url     = U.choose_format(self, formats,
+    local format  = U.choose_format(self, formats,
                                     YouTube.choose_best,
                                     YouTube.choose_default,
-                                    YouTube.to_s).url
-                        or error("no match: media url")
+                                    YouTube.to_s)
+                        or error("unable to choose format")
+    local url     = format.url or error("no match: media url")
 
     if url and #self.start_time > 0 then
         local min, sec = self.start_time:match("^(%d+)m(%d+)s$")
@@ -176,7 +178,6 @@ function YouTube.get_video_info(self)
     end
 
     self.url = {url}
-
     return self
 end
 

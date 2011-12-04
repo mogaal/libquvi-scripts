@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.1
+-- libquvi-scripts v0.4.2
 -- Copyright (C) 2010-2011  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -77,10 +77,9 @@ function parse(self)
                                     Spiegel.choose_best,
                                     Spiegel.choose_default,
                                     Spiegel.to_s)
-
+                        or error("unable to choose format")
     self.duration = (format.duration or 0) * 1000 -- to msec
     self.url      = {format.url or error("no match: media url")}
-
     return self
 end
 

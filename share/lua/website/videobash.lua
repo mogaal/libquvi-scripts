@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.1
+-- libquvi-scripts v0.4.2
 -- Copyright (C) 2011  Thomas Preud'homme <robotux@celest.fr>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -50,8 +50,10 @@ function parse (self)
     local _,_,s = page:find("addFavorite%((%d+)")
     self.id     = s or error ("no match: media id")
 
-    local _,_,s = page:find("video_url=(.-)%?")
-    self.url    = {s or error ("no match: flv")}
+    local s = page:match('video_url="(.-);')
+                or error("no match: media url")
+    s = s:gsub("['%s+]",'')
+    self.url    = {s}
 
     return self
 end

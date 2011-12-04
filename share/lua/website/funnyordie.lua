@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.1
+-- libquvi-scripts v0.4.2
 -- Copyright (C) 2011  Toni Gundogdu
 -- Copyright (C) 2010 quvi project
 --
@@ -67,11 +67,12 @@ function parse(self)
 
     local formats = FunnyOrDie.iter_formats(page)
     local U       = require 'quvi/util'
-    self.url      = {U.choose_format(self, formats,
+    local format  = U.choose_format(self, formats,
                                      FunnyOrDie.choose_best,
                                      FunnyOrDie.choose_default,
-                                     FunnyOrDie.to_s).url
-                        or error('no match: media url')}
+                                     FunnyOrDie.to_s)
+                        or error("unable to choose format")
+    self.url      = {format.url or error('no match: media url')}
     return self
 end
 

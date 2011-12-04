@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.1
+-- libquvi-scripts v0.4.2
 -- Copyright (C) 2011  Toni Gundogdu <legatvs@gmail.com>
 -- Copyright (C) 2011  Raphaël Droz <raphael.droz+floss@gmail.com>
 --
@@ -64,6 +64,7 @@ function parse(self)
                                     Arte.choose_best,
                                     Arte.choose_default,
                                     Arte.to_s)
+                        or error("unable to choose format")
     self.title         = format.title or error('no match: title')
     self.id            = format.id or error('no match: id')
     self.thumbnail_url = format.thumb or ''

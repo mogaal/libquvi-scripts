@@ -1,3 +1,179 @@
+commit 067a98f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-29
+
+    Update NEWS for 0.4.2
+
+NEWS
+
+commit dfe6e81
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-29
+
+    Bump version to 0.4.2
+
+m4/version.m4
+
+commit 5c70a7c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-29
+
+    Remove foundrymusic.lua
+
+share/Makefile.am
+share/lua/website/foundrymusic.lua
+tests/data/format/default/nsfw/foundrymusic.json
+tests/data/format/default/nsfw/foundrymusic_2.json
+
+commit f6a2c71
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-29
+
+    Use quvi 0.4.1 options with tests, instead
+
+tests/README
+tests/t/expire.t
+tests/t/format_default.t
+tests/t/format_other.t
+tests/t/mem.t
+tests/t/nosupport.t
+tests/t/redirect.t
+tests/t/shortened.t
+
+commit 163d337
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-29
+
+    FIX: dailymotion.lua:130: no match: video plugin params
+    
+      * http://sourceforge.net/apps/trac/quvi/ticket/82
+
+share/lua/website/dailymotion.lua
+
+commit 67bd708
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-28
+
+    FIX: videobash.lua: media URL parsing (#81)
+    
+      * http://sourceforge.net/apps/trac/quvi/ticket/81
+
+share/lua/website/videobash.lua
+
+commit 6e1d2ee
+Author: Tomas Janousek <tomi@nomi.cz>
+Date:   2011-11-28
+
+    Fix tube8.lua url parsing
+
+share/lua/website/tube8.lua
+
+commit 917006a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-27
+
+    mgnetwork.lua: Add "best" to static formats list
+
+share/lua/website/mgnetwork.lua
+
+commit 5c4f2d6
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-27
+
+    mgnetwork.lua: Apply libquvi-scripts
+
+share/lua/website/mgnetwork.lua
+
+commit 04f4bd6
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-27
+
+    Remove media stream URLs from test jsons
+
+tests/data/format/other/mgnetwork_best.json
+tests/data/format/other/mgnetwork_mp4.json
+
+commit 499b6f5
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-27
+
+    Add mgnetwork test jsons
+
+tests/data/format/default/mgnetwork.json
+tests/data/format/other/mgnetwork_best.json
+tests/data/format/other/mgnetwork_mp4.json
+tests/data/format/other/mgnetwork_xflv.json
+
+commit 545d6e9
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-27
+
+    Add mgnetwork.lua to Makefile.am
+
+share/Makefile.am
+
+commit 96ef335
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-27
+
+    mgnetwork.lua: Add support for multiple formats
+    
+     * Re-implement query_formats, parse
+    
+    Media quality properties unavailable in the config xml. Use naive 'best'
+    and 'default' format determination.
+    
+     * <http://sourceforge.net/apps/trac/quvi/ticket/78>
+
+share/lua/website/mgnetwork.lua
+
+commit eb532c7
+Author: mutantmonkey <mutantmonkey@mutantmonkey.in>
+Date:   2011-11-25
+
+    Add support for Media General properties
+
+share/lua/website/mgnetwork.lua
+
+commit 8a40fa0
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-24
+
+    FIX: Potential "attempt to index ... (a nil value)"
+
+share/lua/website/arte.lua
+share/lua/website/blip.lua
+share/lua/website/cbsnews.lua
+share/lua/website/collegehumor.lua
+share/lua/website/dailymotion.lua
+share/lua/website/foxnews.lua
+share/lua/website/funnyordie.lua
+share/lua/website/golem.lua
+share/lua/website/spiegel.lua
+share/lua/website/ted.lua
+share/lua/website/vimeo.lua
+share/lua/website/youtube.lua
+
+commit 6b25fd8
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-08
+
+    xvideos.json: Change URL
+
+tests/data/format/default/nsfw/xvideos.json
+
+commit 48590da
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2011-11-22
+
+    Fix youtube.lua: Check for nil t.host
+    
+    Example: "quvi --support foo"
+      error: /usr/share/libquvi-scripts/lua/website/youtube.lua:77: attempt to
+      index field 'host' (a nil value)
+
+share/lua/website/youtube.lua
+
 commit 6b814ca
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2011-11-06
