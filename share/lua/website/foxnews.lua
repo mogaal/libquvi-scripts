@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.1
+-- libquvi-scripts v0.4.2
 -- Copyright (C) 2011  Lionel Elie Mamane <lionel@mamane.lu>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -86,12 +86,12 @@ function parse(self)
     end
 
     local formats = Foxnews.iter_formats_js(item, U)
-    self.url      = {U.choose_format(self, formats,
+    local format  = U.choose_format(self, formats,
                                      Foxnews.choose_best,
                                      Foxnews.choose_default,
-                                     Foxnews.to_s).url
-                        or error("no match: media url")}
-
+                                     Foxnews.to_s)
+                        or error("unable to choose format")
+    self.url      = {format.url or error("no match: media url")}
     return self
 end
 
