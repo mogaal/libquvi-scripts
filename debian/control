@@ -11,6 +11,10 @@ Homepage: http://quvi.sourceforge.net
 Package: libquvi-scripts
 Architecture: any
 Depends: ${misc:Depends}
-Description: contains the embedded lua scripts that libquvi uses
- for parsing the media details. Some additional utility scripts
- are also included.
+Description: library for parsing video download links (Lua scripts)
+ libquvi is a library to parse Adobe flash video download links. It
+ supports Youtube and other similar video websites. It provides access
+ to functionality and data through an API, and does not enable or
+ require the use of the flash technology.
+ .
+ This package contains the Lua scripts used to parse documents.

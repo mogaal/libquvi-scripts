@@ -1,6 +1,9 @@
 libquvi-scripts (0.4.2-1) unstable; urgency=low
 
-  * New upstream release. 
+  * New upstream release.
+  * d/control: 
+     + Improve package description (thanks Ansgar) (Closes: #650984)
+     + Switch Architecture field to all (Closes: #650983).
 
  -- Alejandro Garrido Mota <garridomota@gmail.com>  Sat, 03 Dec 2011 19:58:55 -0430
 
