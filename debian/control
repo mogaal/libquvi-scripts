@@ -9,7 +9,7 @@ Vcs-Browser: https://github.com/mogaal/libquvi-scripts
 Homepage: http://quvi.sourceforge.net
 
 Package: libquvi-scripts
-Architecture: any
+Architecture: all
 Depends: ${misc:Depends}
 Description: library for parsing video download links (Lua scripts)
  libquvi is a library to parse Adobe flash video download links. It
