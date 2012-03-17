@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.2
+-- libquvi-scripts v0.4.3
 -- Copyright (C) 2010  quvi project
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -51,7 +51,7 @@ function parse (self)
     local _,_,s = page:find("%?id=(%d+)")
     self.id     = s or error ("no match: media id")
 
-    local _,_,s = page:find('addVariable%("file","(.-)"')
+    local _,_,s = page:find('addVariable%("file",encodeURIComponent%("(.-)"')
     self.url    = {s or error ("no match: file")}
 
     return self

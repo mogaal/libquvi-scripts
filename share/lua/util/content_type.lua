@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.2
+-- libquvi-scripts v0.4.3
 -- Copyright (C) 2010  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -30,6 +30,10 @@ function suffix_from_contenttype(ctype)
         error('content-type cannot be "' ..ctype.. '" for a video. '
             ..'The script for this website is either buggy or '
             ..'incomplete.')
+    end
+
+    if ctype:find("audio/mpeg") then
+        return "mp3"
     end
 
     local _,_,s = ctype:find("/(.-)$")

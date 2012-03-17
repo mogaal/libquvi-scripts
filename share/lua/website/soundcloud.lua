@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.2
+-- libquvi-scripts v0.4.3
 -- Copyright (C) 2011  Bastien Nocera <hadess@hadess.net>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -18,7 +18,6 @@
 -- License along with this library; if not, write to the Free Software
 -- Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 -- 02110-1301  USA
---
 
 local Soundcloud = {} -- Utility functions unique to this script
 
@@ -44,35 +43,30 @@ end
 
 -- Parse media URL.
 function parse(self)
-    self.host_id  = "soundcloud"
-
+    self.host_id = "soundcloud"
     Soundcloud.normalize(self)
 
-    local page = quvi.fetch(self.page_url)
+    local p = quvi.fetch(self.page_url)
+    local m = p:match("window%.SC%.bufferTracks%.push(%(.-%);)")
+                or error("no match: metadata")
 
-    local _,_,s = page:find("window%.SC%.bufferTracks%.push(%(.-%);)")
-    local metadata = s or error("no match: metadata")
+    self.id = m:match('"uid":"(%w-)"') or error("no match: media id")
 
-    local _,_,s = metadata:find('"uid":"(%w-)"')
-    self.id = s or error("no match: media id")
+    self.thumbnail_url = ''
+    self.title = nil -- Ugly but works.
+    for c,p in p:gfind('<meta content="(.-)" property="(.-)"') do
+        if p == 'og:title' then
+            self.title = c
+        elseif p == 'og:image' then
+            self.thumbnail_url = c
+        end
+    end
 
-    local _,_,s = metadata:find('"title":"(.-)"')
-    local title  = s or error("no match: media title")
-    -- Unescape the Unicode strings if any
-    -- the HTML will be unescaped by quvi itself
-    self.title = string.gsub(title, "\\u(%d+)",
-        function (h)
-            return string.char(tonumber(h, 16))
-        end)
+    self.title = self.title or error("no match: media title")
+    self.duration = tonumber(m:match('"duration":(%d-),')) or 0
 
-    local _,_,s = page:find('content="([:/%w%?%.-]-)" property="og:image"')
-    self.thumbnail_url = s or ""
-
-    local _,_,s = metadata:find('"duration":(%d-),')
-    self.duration = tonumber(s) or 0
-
-    local _,_,s = metadata:find('"streamUrl":"(.-)"')
-    self.url  = { s }  or error("no match: stream URL")
+    local s  = m:match('"streamUrl":"(.-)"') or error("no match: media URL")
+    self.url = {s}
 
     return self
 end

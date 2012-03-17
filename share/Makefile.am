@@ -18,7 +18,6 @@ DIST_lua=\
  lua/website/blip.lua \
  lua/website/bloomberg.lua \
  lua/website/break.lua \
- lua/website/buzzhumor.lua \
  lua/website/cbsnews.lua \
  lua/website/charlierose.lua \
  lua/website/clipfish.lua \
@@ -29,13 +28,12 @@ DIST_lua=\
  lua/website/funnyhub.lua \
  lua/website/funnyordie.lua \
  lua/website/gaskrank.lua \
- lua/website/globo.lua \
  lua/website/golem.lua \
  lua/website/google.lua \
  lua/website/guardian.lua \
+ lua/website/imdb.lua \
  lua/website/liveleak.lua \
  lua/website/mgnetwork.lua \
- lua/website/megavideo.lua \
  lua/website/metacafe.lua \
  lua/website/pluzz.lua \
  lua/website/publicsenat.lua \
@@ -48,6 +46,7 @@ DIST_lua=\
  lua/website/tvlux.lua \
  lua/website/tmunderground.lua \
  lua/website/theonion.lua \
+ lua/website/videa.lua \
  lua/website/videobash.lua \
  lua/website/vimeo.lua \
  lua/website/yfrog.lua \
@@ -56,8 +55,10 @@ DIST_lua=\
 if WITH_NSFW
 DIST_lua+=\
  lua/website/keezmovies.lua \
+ lua/website/pornhub.lua \
  lua/website/spankwire.lua \
- lua/website/tube8.lua \
+ lua/website/tcmag.lua \
+ lua/website/tnaflix.lua \
  lua/website/totallynsfw.lua \
  lua/website/xhamster.lua \
  lua/website/xvideos.lua \
@@ -65,7 +66,9 @@ DIST_lua+=\
 endif
 
 if WITH_FIXME
-DIST_lua+=
+DIST_lua+=\
+ lua/website/globo.lua \
+ lua/website/tube8.lua
 endif
 
 nobase_dist_pkgdata_DATA=	$(DIST_lua)

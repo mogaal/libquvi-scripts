@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.2
+-- libquvi-scripts v0.4.3
 -- Copyright (C) 2010 Paul Kocialkowski <contact@paulk.fr>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -56,7 +56,7 @@ function parse (self)
     local _,_,s = page:find("'file': '(.-)'")
     local file  = s or error ("no match: file")
 
-    self.url    = {srv.."/flv2/"..file}
+    self.url    = {srv.."/key="..file}
 
     return self
 end

@@ -1,5 +1,5 @@
 --
--- libquvi-scripts v0.4.2
+-- libquvi-scripts v0.4.3
 -- Copyright (C) 2011  quvi project
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -95,7 +95,7 @@ function parse(self)
     self.thumbnail_url = xml:match('<media:thumbnail url="(.-)"') or ''
 
     local d = xml:match('duration="(.-)"') or 0
-    self.duration = math.ceil(d)
+    self.duration = math.ceil(d) * 1000 -- to msec
 
     return self
 end
