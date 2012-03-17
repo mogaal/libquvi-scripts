@@ -9,15 +9,17 @@ Copyright: 2009,2010,2011 Toni Gundogdu <legatvs@gmail.com>
            2010,2011 quvi project
 License: LGPL-2.1+
 
-Files: share/lua/website/megavideo.lua
-       share/lua/website/tagtele.lua
+Files: share/lua/website/tagtele.lua
        share/lua/website/keezmovies.lua
        share/lua/website/xhamster.lua
-Copyright: 2011 Paul Kocialkowski <contact@paulk.fr> 
+       share/lua/website/pornhub.lua
+       share/lua/website/tnaflix.lua
+Copyright: 2011-2012, Paul Kocialkowski <contact@paulk.fr>
 License: LGPL-2.1+
 
 Files: share/lua/website/ted.lua
        share/lua/website/soundcloud.lua
+       share/lua/website/videa.lua
 Copyright: Bastien Nocera <hadess@hadess.net>
 License: LGPL-2.1+
 
