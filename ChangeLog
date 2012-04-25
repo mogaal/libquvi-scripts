@@ -1,3 +1,428 @@
+commit f20e6e4
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-23
+
+    Update NEWS for v0.4.4
+
+NEWS
+
+commit 6f119ee
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-23
+
+    Bump version to 0.4.4
+
+m4/version.m4
+
+commit 325b20e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-20
+
+    FIX: dailymotion.lua: Issue with some videos (#92)
+    
+    "PANIC: unprotected error in call to Lua API (.../content_type.lua:30:
+    content-type cannot be "text/html; charset=utf-8" for a video. The
+    script for this website is either buggy or incomplete.)"
+    
+      * sourceforge.net/apps/trac/quvi/ticket/92
+
+share/lua/website/dailymotion.lua
+
+commit 04f0284
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-18
+
+    FIX: Lua 5.2: Use the # operator instead (#89)
+    
+    Replace table.getn with the new "length" (#) operator.
+    
+      * http://sourceforge.net/apps/trac/quvi/ticket/89
+
+share/lua/website/quvi/url.lua
+
+commit b5ae4e1
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-18
+
+    FIX: Lua-5.2: Use gmatch instead of gfind (#89)
+    
+     * http://sourceforge.net/apps/trac/quvi/ticket/89
+
+share/lua/website/arte.lua
+share/lua/website/blip.lua
+share/lua/website/cbsnews.lua
+share/lua/website/dailymotion.lua
+share/lua/website/foxnews.lua
+share/lua/website/funnyordie.lua
+share/lua/website/golem.lua
+share/lua/website/guardian.lua
+share/lua/website/imdb.lua
+share/lua/website/mgnetwork.lua
+share/lua/website/quvi/util.lua
+share/lua/website/soundcloud.lua
+share/lua/website/spiegel.lua
+share/lua/website/youtube.lua
+
+commit f2c7ce6
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-18
+
+    Move clipfish.json from NLFY
+
+tests/data/format/default/clipfish.json
+tests/data/format/default/nlfy/clipfish.json
+
+commit 6d64461
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-18
+
+    FIXME: bikeradar.lua
+
+share/Makefile.am
+tests/data/format/default/bikeradar.json
+tests/data/format/default/fixme/bikeradar.json
+
+commit 56855b5
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-18
+
+    Update clipfish.json
+
+tests/data/format/default/nlfy/clipfish.json
+
+commit 457431a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    content_type.lua: Rewrite using "foo:match"
+
+share/lua/util/content_type.lua
+
+commit 54c167d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    charset.lua: Use "foo:match" instead
+
+share/lua/util/charset.lua
+
+commit 9c1e994
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    globo.lua: Use "foo:match" instead
+
+share/lua/website/globo.lua
+
+commit 207422f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    dailymotion.lua: Use "foo:match" instead
+
+share/lua/website/dailymotion.lua
+
+commit a2b9c88
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    google.lua: Use "foo:match" instead
+
+share/lua/website/google.lua
+
+commit ba7bf48
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    foxnews.lua: Use "foo:match" instead
+
+share/lua/website/foxnews.lua
+
+commit 6844f7a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    bikeradar.lua: Use "foo:match" instead
+
+share/lua/website/bikeradar.lua
+
+commit 5fb6fbb
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    charlierose.lua: Use "foo:match" instead
+
+share/lua/website/charlierose.lua
+
+commit 9e2ae5d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    youjizz.lua: Use "foo:match" instead
+
+share/lua/website/youjizz.lua
+
+commit 8a8353a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    xhamster.lua: Use "foo:match" instead
+
+share/lua/website/xhamster.lua
+
+commit a6d4e04
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    cbsnews.lua: Use "foo:match" instead
+
+share/lua/website/cbsnews.lua
+
+commit 98e104c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    sapo.lua: Use "foo:match" instead
+    
+    Other changes:
+      * Remove obsolete rtmp check
+      * Remove path from U.handles
+
+share/lua/website/sapo.lua
+
+commit 30940c4
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    liveleak.lua: Use "foo:match" instead
+
+share/lua/website/liveleak.lua
+
+commit e2e584e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    funnyhub.lua: Use "foo:match" instead
+
+share/lua/website/funnyhub.lua
+
+commit 5cbe7fb
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    vimeo.lua: Use "foo:match" instead
+
+share/lua/website/vimeo.lua
+
+commit 24acdcc
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    theonion.lua: Use "foo:match" instead
+
+share/lua/website/theonion.lua
+
+commit b3ca28a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    collegehumor.lua: Use "foo:match" instead
+
+share/lua/website/collegehumor.lua
+
+commit cda2cdd
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    spankwire.lua: Use "foo:match" instead
+
+share/lua/website/spankwire.lua
+
+commit 05edfb5
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    blip.lua: Use "foo:match" instead
+
+share/lua/website/blip.lua
+
+commit b10fb31
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    francetelevisions.lua: Use "foo:match" instead
+
+share/lua/website/francetelevisions.lua
+
+commit 0052c94
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    videobash.lua: Use "foo:match" instead
+
+share/lua/website/videobash.lua
+
+commit 7a366fd
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    tagtele.lua: Use "foo:match" instead
+
+share/lua/website/tagtele.lua
+
+commit 7a011c7
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    youtube.lua: Use "foo:match" instead
+
+share/lua/website/youtube.lua
+
+commit 57703c2
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    break.lua: Use "foo:match" instead
+
+share/lua/website/break.lua
+
+commit 3b0c9c5
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    xvideos.lua: Use "foo:match" instead
+    
+    Other changes:
+      * Tweak path pattern used with U.handles
+      * Grab media ID from page URL instead
+
+share/lua/website/xvideos.lua
+
+commit bb8bf4c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    FIX: clipfish.lua: Use new config URL
+    
+    Other changes:
+      * Use "foo:match" instead
+
+share/lua/website/clipfish.lua
+
+commit 2273a88
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    academicearth.lua: Use "foo:match" instead
+
+share/lua/website/academicearth.lua
+
+commit 5b029b0
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    tube8.lua: Use "foo:match" instead
+
+share/lua/website/tube8.lua
+
+commit a5e3b25
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    arte.lua: Use "foo:match" instead
+
+share/lua/website/arte.lua
+
+commit 7882b89
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    tmunderground.lua: Use "foo:match" instead
+
+share/lua/website/tmunderground.lua
+
+commit ca3208c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    golem.lua: Use "foo:match" instead
+
+share/lua/website/golem.lua
+
+commit 82749fb
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    sevenload.lua: Use "foo:match" instead
+
+share/lua/website/sevenload.lua
+
+commit b584805
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    gaskrank.lua: Use "foo:match" instead
+
+share/lua/website/gaskrank.lua
+
+commit 2c86504
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    keezmovies.lua: Use "foo:match" instead
+
+share/lua/website/keezmovies.lua
+
+commit 510d5ac
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    publicsenat.lua: Use "foo:match" instead
+
+share/lua/website/publicsenat.lua
+
+commit 2bc9f31
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    metacafe.lua: Use "foo:match" instead
+
+share/lua/website/metacafe.lua
+
+commit 01fd8f9
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    totallynsfw.lua: Trim and use "foo:match" instead
+
+share/lua/website/totallynsfw.lua
+
+commit 95c66ea
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    spiegel.lua: Use 'foo:match' instead
+
+share/lua/website/spiegel.lua
+
+commit 0446ad1
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-17
+
+    bloomberg.lua: Trim excess, use foo:match
+
+share/lua/website/bloomberg.lua
+
+commit 386aae2
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-03-15
+
+    FIX: youtube.lua: Allow embed URLs w/ params (#90)
+    
+     * https://sourceforge.net/apps/trac/quvi/ticket/90
+
+share/lua/website/youtube.lua
+
 commit b972047
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2012-03-01

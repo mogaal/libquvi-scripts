@@ -1,5 +1,5 @@
 --
--- libquvi-scripts v0.4.3
+-- libquvi-scripts v0.4.4
 -- Copyright (C) 2011  quvi project
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -108,7 +108,7 @@ end
 function IMDB.iter_formats(page)
     local p = "case '(.-)' :.-url = '(.-)';"
     local t = {}
-    for c,u in page:gfind(p) do
+    for c,u in page:gmatch(p) do
         table.insert(t, {path=u, container=c})
         --print(u,c)
     end

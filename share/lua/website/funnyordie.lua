@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.3
+-- libquvi-scripts v0.4.4
 -- Copyright (C) 2011  Toni Gundogdu
 -- Copyright (C) 2010 quvi project
 --
@@ -82,7 +82,7 @@ end
 
 function FunnyOrDie.iter_formats(page)
     local t = {}
-    for u in page:gfind("'src',%s+'(.-)'") do
+    for u in page:gmatch("'src',%s+'(.-)'") do
         local q,c = u:match('(%w+)%.(%w+)$')
         table.insert(t, {url=u, quality=q, container=c})
 --        print(u,c)

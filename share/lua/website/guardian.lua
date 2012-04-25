@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.3
+-- libquvi-scripts v0.4.4
 -- Copyright (C) 2011  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -104,7 +104,7 @@ end
 function Guardian.iter_formats(config)
     local p = '"format":%s+"(.-)".-"video%-file%-url":%s+"(.-)"'
     local t = {}
-    for c,u in config:gfind(p) do
+    for c,u in config:gmatch(p) do
 --        print(f,u)
         c = c:gsub("video/", "")
         c = c:gsub(":", "_")

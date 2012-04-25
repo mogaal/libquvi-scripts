@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.3
+-- libquvi-scripts v0.4.4
 -- Copyright (C) 2010-2011  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -53,13 +53,12 @@ end
 --
 
 function AcademicEarth.get_redirect_url(self)
-    local page = quvi.fetch(self.page_url)
-
-    local _,_,s = page:find('ytID = "(.-)"')
+    local p = quvi.fetch(self.page_url)
+    local s = p:match('ytID = "(.-)"')
     if s then
         self.redirect_url = 'http://youtube.com/e/' .. s
     else
-        local _,_,s = page:find('embed src="(.-)"') -- blip
+        local s = p:match('embed src="(.-)"') -- blip
         if s then
             self.redirect_url = s
         else

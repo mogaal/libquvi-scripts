@@ -1,5 +1,5 @@
 --
--- libquvi-scripts v0.4.3
+-- libquvi-scripts v0.4.4
 -- Copyright (C) 2011  quvi project
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -123,7 +123,7 @@ end
 function MGNetwork.iter_formats(config)
     local p = 'content url="(.-)" type="%w+/(.-)"'
     local t = {}
-    for u,c in config:gfind(p) do
+    for u,c in config:gmatch(p) do
         table.insert(t, {url=u, container=c})
         --print(u,c)
     end

@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.3
+-- libquvi-scripts v0.4.4
 -- Copyright (C) 2010-2011  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -25,7 +25,7 @@ local M = {}
 -- http://www.lua.org/pil/20.3.html
 function M.decode (s)
     r = {}
-    for n,v in s:gfind ("([^&=]+)=([^&=]+)") do
+    for n,v in s:gmatch ("([^&=]+)=([^&=]+)") do
         n = M.unescape (n)
         r[n] = v
     end
