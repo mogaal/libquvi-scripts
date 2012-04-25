@@ -11,6 +11,7 @@ Homepage: http://quvi.sourceforge.net
 
 Package: libquvi-scripts
 Architecture: all
+Multi-Arch: foreign
 Depends: ${misc:Depends}
 Description: library for parsing video download links (Lua scripts)
  libquvi is a library to parse Adobe flash video download links. It
