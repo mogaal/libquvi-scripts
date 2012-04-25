@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.3
+-- libquvi-scripts v0.4.4
 -- Copyright (C) 2011  Bastien Nocera <hadess@hadess.net>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -54,7 +54,7 @@ function parse(self)
 
     self.thumbnail_url = ''
     self.title = nil -- Ugly but works.
-    for c,p in p:gfind('<meta content="(.-)" property="(.-)"') do
+    for c,p in p:gmatch('<meta content="(.-)" property="(.-)"') do
         if p == 'og:title' then
             self.title = c
         elseif p == 'og:image' then
