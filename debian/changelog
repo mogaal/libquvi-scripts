@@ -1,3 +1,11 @@
+libquvi-scripts (0.4.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/copyright: Update years of copyright.
+  * debian/control: Add Multi-Arch: foreign.
+
+ -- Ansgar Burchardt <ansgar@debian.org>  Wed, 25 Apr 2012 10:08:38 +0200
+
 libquvi-scripts (0.4.3-1) unstable; urgency=low
 
   * New upstream release.
