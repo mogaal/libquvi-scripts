@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.4
+-- libquvi-scripts v0.4.5
 -- Copyright (C) 2010-2012  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -66,7 +66,7 @@ function parse(self)
     self.title = p:match('title="(.-)"')
                   or error("no match: media title")
 
-    self.id = p:match("video/(.-)_")
+    self.id = p:match("video/([^%?_]+)")
                 or error("no match: media ID")
 
     self.thumbnail_url = p:match('"og:image" content="(.-)"') or ''

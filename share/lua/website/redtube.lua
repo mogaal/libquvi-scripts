@@ -1,6 +1,6 @@
 
--- libquvi-scripts v0.4.4
--- Copyright (C) 2010-2012  Toni Gundogdu <legatvs@gmail.com>
+-- libquvi-scripts v0.4.5
+-- Copyright (C) 2012  quvi project
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
 --
@@ -20,16 +20,18 @@
 -- 02110-1301  USA
 --
 
+local Redtube = {} -- Utility functions unique to this script
+
 -- Identify the script.
 function ident(self)
     package.path = self.script_dir .. '/?.lua'
     local C      = require 'quvi/const'
     local r      = {}
-    r.domain     = "funnyhub%.com"
+    r.domain     = "redtube%.com"
     r.formats    = "default"
     r.categories = C.proto_http
     local U      = require 'quvi/util'
-    r.handles    = U.handles(self.page_url, {r.domain}, {"/videos/pages/"})
+    r.handles    = U.handles(self.page_url, {r.domain}, {"/%d+", "/player/"})
     return r
 end
 
@@ -41,20 +43,38 @@ end
 
 -- Parse media URL.
 function parse(self)
-    self.host_id = "funnyhub"
+    self.host_id = "redtube"
+
+    Redtube.normalize(self)
+
+    self.id = self.page_url:match('/(%d+)')
+                or error("no match: media ID")
 
     local p = quvi.fetch(self.page_url)
 
-    self.title = p:match("<title>(.-)%s+-")
+    self.title = p:match('<title>(.-) |')
                   or error("no match: media title")
 
-    self.id = p:match("/videofiles/(.-)_")
-                or error("no match: media ID")
+    self.thumbnail_url =
+        p:match('<img src=%"(.-)%" .- id=%"vidImgPoster%"') or ''
 
-    self.url = {p:match('"flv", "(.-)"')
-                or error ("no match: media URL")}
+    self.url = {p:match('(http://videos.mp4.redtubefiles.com/.-)\'')
+                  or error("no match: media stream URL")}
 
     return self
+end
+
+--
+-- Utility functions
+--
+
+function Redtube.normalize(self) -- "Normalize" an embedded URL
+    local p = 'http://embed%.redtube%.com/player/%?id=(%d+).?'
+
+    local id = self.page_url:match(p)
+    if not id then return end
+
+    self.page_url = 'http://www.redtube.com/' .. id
 end
 
 -- vim: set ts=4 sw=4 tw=72 expandtab:

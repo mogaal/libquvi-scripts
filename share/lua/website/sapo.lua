@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.4
+-- libquvi-scripts v0.4.5
 -- Copyright (C) 2010-2012  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -43,15 +43,17 @@ end
 function parse (self)
     self.host_id = "sapo"
 
-    local p = quvi.fetch(self.page_url)
-
-    self.title = p:match('class="tit">(.-)</div>')
-                  or error("no match: media title")
-
-    self.id = p:match('vid=(.-)&')
+    self.id = self.page_url:match('http://.*sapo.pt/([^?"/]+)')
                 or error("no match: media ID")
 
-    self.url = {p:match('?file=(.-)&')
+    local p = quvi.fetch(self.page_url)
+
+    self.thumbnail_url = p:match('"og:image" content="(.-)"') or ''
+
+    self.title = p:match('"og:title" content="(.-)%s+%-%s+SAPO')
+                  or error("no match: media title")
+
+    self.url = {p:match('videoVerifyMrec%("(.-)"')
                 or error("no match: media URL")}
 
     return self
