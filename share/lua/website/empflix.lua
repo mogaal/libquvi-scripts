@@ -1,6 +1,6 @@
 
--- libquvi-scripts v0.4.4
--- Copyright (C) 2010-2012  Toni Gundogdu <legatvs@gmail.com>
+-- libquvi-scripts v0.4.5
+-- Copyright (C) 2012 Paul Kocialkowski <contact@paulk.fr>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
 --
@@ -25,12 +25,11 @@ function ident(self)
     package.path = self.script_dir .. '/?.lua'
     local C      = require 'quvi/const'
     local r      = {}
-    r.domain     = "video%.google%.%w+"
+    r.domain     = "empflix%.com"
     r.formats    = "default"
     r.categories = C.proto_http
     local U      = require 'quvi/util'
-    r.handles    = U.handles(self.page_url,
-                    {r.domain}, {"videoplay"}, {"docid=[%w-]+"})
+    r.handles    = U.handles(self.page_url, {r.domain}, {"/videos/"})
     return r
 end
 
@@ -42,22 +41,22 @@ end
 
 -- Parse media URL.
 function parse(self)
-    self.host_id = "google"
+    self.host_id = "empflix"
+    local page   = quvi.fetch(self.page_url)
 
-    local p = quvi.fetch(self.page_url)
-
-    self.title = p:match("<title>(.-)</title>")
+    self.title = page:match('name="title"%s+value="(.-)"')
                   or error("no match: media title")
 
-    self.id = p:match("docid:'(.-)'")
-                or error("no match: media ID")
+    local c_url = page:match('name="config"%s+value="(.-)"')
+                    or error("no match: config URL")
 
-    local s = p:match("videoUrl%Wx3d(.-)%Wx26")
-                or error("no match: media URL")
+    local c = quvi.fetch(c_url, {fetch_type = 'config'})
 
-    local U     = require 'quvi/util'
-    self.url    = {U.unescape(s)}
+    self.id = c:match('<VID>(.-)</VID>') or error("no match: media ID")
+    self.thumbnail_url = c:match('<startThumb>(.-)</') or ''
 
+    self.url = {c:match('<videoLink>(.-)</videoLink>')
+                  or error("no match: media stream URL")}
     return self
 end
 
