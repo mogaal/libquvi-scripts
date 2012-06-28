@@ -1,6 +1,6 @@
 
 -- libquvi-scripts v0.4.6
--- Copyright (C) 2010-2012  quvi project
+-- Copyright (C) 2012  Mikhail Gusarov <dottedmag@dottedmag.net>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
 --
@@ -25,11 +25,11 @@ function ident(self)
     package.path = self.script_dir .. '/?.lua'
     local C      = require 'quvi/const'
     local r      = {}
-    r.domain     = "charlierose%.com"
+    r.domain     = "tvrain%.ru"
     r.formats    = "default"
     r.categories = C.proto_http
     local U      = require 'quvi/util'
-    r.handles    = U.handles(self.page_url, {r.domain}, {"/view/"})
+    r.handles    = U.handles(self.page_url, {r.domain}, {"/teleshow/"})
     return r
 end
 
@@ -41,18 +41,36 @@ end
 
 -- Parse media URL.
 function parse(self)
-    self.host_id = "charlierose"
+    self.host_id = "tvrain"
 
     local p = quvi.fetch(self.page_url)
 
-    self.title = p:match("<title>Charlie Rose%s+-%s+(.-)</title>")
-                  or error("no match: media title")
+    -- tvrain uses <iframe> for the video player which constructs URL to load a
+    -- playlist. Luckily, we can obtain URL of the playlist from the URL of
+    -- thumbnail image.
 
-    self.id = p:match('view%/content%/(.-)"')
+    local p1,p2 = p:match('<meta property="og:image" '
+                          .. 'content="http://photo.tvigle.ru/res/'
+                          .. 'prt/(.-)/../../0*(.-)/pub.jpg" />')
+    if not p1 then
+        error("no match: thumbnail URL")
+    end
+
+    local u = string.format('http://pub.tvigle.ru/xml/index.php?'
+                            .. 'prt=%s&id=%s&mode=1', p1, p2)
+
+    local pl = quvi.fetch(u, {fetch_type='playlist'})
+
+    self.id = pl:match('<programm[^>]-id="(.-)"')
                 or error("no match: media ID")
 
-    self.url = {p:match('url":"(.-)"')
-                or error("no match: media URL")}
+    self.title = pl:match('<video[^>]-name="(.-)"')
+                  or error("no match: media title")
+
+    self.url = {pl:match('<video[^>]-videoLink="(.-)"')
+                  or error("no match: media stream URL")}
+
+    self.thumbnail_url = pl:match('<video[^>]-prw="(.-)"') or ''
 
     return self
 end
