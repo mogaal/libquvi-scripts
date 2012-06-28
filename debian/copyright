@@ -37,7 +37,12 @@ License: LGPL-2.1+
 
 Files: share/lua/website/arte.lua
        share/lua/website/publicsenat.lua
-Copyright: 2011 Raphaël Droz <raphael.droz+floss@gmail.com>
+       share/lua/website/senat.lua
+Copyright: 2011-2012, Raphaël Droz <raphael.droz+floss@gmail.com>
+License: LGPL-2.1+
+
+Files: share/lua/website/tvrain.lua
+Copyright: 2012, Mikhail Gusarov <dottedmag@dottedmag.net>
 License: LGPL-2.1+
 
 Files: debian/*
