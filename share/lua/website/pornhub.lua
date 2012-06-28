@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.5
+-- libquvi-scripts v0.4.6
 -- Copyright (C) 2012 Paul Kocialkowski <contact@paulk.fr>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -54,7 +54,7 @@ function parse(self)
 
     self.url = { U.unescape(s) }
 
-    self.id = self.page_url:match('viewkey=(%d+)')
+    self.id = self.page_url:match('viewkey=(%x+)')
                 or error ("no match: media ID")
 
     return self

@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.5
+-- libquvi-scripts v0.4.6
 -- Copyright (C) 2012  Toni Gundogdu <legatvs@gmail.com>
 -- Copyright (C) 2010  Paul Kocialkowski <contact@paulk.fr>
 --
@@ -52,13 +52,18 @@ function parse(self)
     self.id = self.page_url:match("/movies/(.-)/")
                 or error("no match: media ID")
 
-    local s = p:match("'srv': '(.-)'")
-                or error("no match: server")
+    local U = require 'quvi/util'
+    local f = p:match("'file': '(.-)'") or error("no match: file")
 
-    local f = p:match("'file': '(.-)'")
-                or error("no match: file")
+    f = U.unescape(f)
 
-    self.url    = {s .."/key=".. f}
+    local u = ''
+    if not f:match('^http') then
+      u = p:match("'srv': '(.-)'") or error("no match: server")
+      u = u .."/key="
+    end
+
+    self.url = {u..f}
 
     return self
 end

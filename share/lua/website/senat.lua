@@ -1,8 +1,8 @@
 
 -- libquvi-scripts v0.4.6
--- Copyright (C) 2010-2012  quvi project
+-- Copyright (C) 2012 Raphaël Droz.
 --
--- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
+-- This file is part of quvi <http://quvi.googlecode.com/>.
 --
 -- This library is free software; you can redistribute it and/or
 -- modify it under the terms of the GNU Lesser General Public
@@ -18,18 +18,17 @@
 -- License along with this library; if not, write to the Free Software
 -- Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 -- 02110-1301  USA
---
 
 -- Identify the script.
 function ident(self)
     package.path = self.script_dir .. '/?.lua'
     local C      = require 'quvi/const'
     local r      = {}
-    r.domain     = "charlierose%.com"
+    r.domain     = "videos%.senat%.fr"
     r.formats    = "default"
     r.categories = C.proto_http
     local U      = require 'quvi/util'
-    r.handles    = U.handles(self.page_url, {r.domain}, {"/view/"})
+    r.handles    = U.handles(self.page_url, {r.domain}, {"/video%d+%.html"})
     return r
 end
 
@@ -41,18 +40,20 @@ end
 
 -- Parse media URL.
 function parse(self)
-    self.host_id = "charlierose"
+    self.host_id = "senat"
+
+    self.id = self.page_url:match(".-/video(%d+)%.html")
+                or error("no match: media ID")
 
     local p = quvi.fetch(self.page_url)
 
-    self.title = p:match("<title>Charlie Rose%s+-%s+(.-)</title>")
+    self.title = p:match('<title>(.-)</title>')
                   or error("no match: media title")
 
-    self.id = p:match('view%/content%/(.-)"')
-                or error("no match: media ID")
+    self.thumbnail_url = p:match('image=(.-)&') or ''
 
-    self.url = {p:match('url":"(.-)"')
-                or error("no match: media URL")}
+    self.url = {p:match('name="flashvars" value=".-file=(.-flv)')
+                  or error("no match: media stream URL") }
 
     return self
 end

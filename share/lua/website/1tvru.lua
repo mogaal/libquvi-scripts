@@ -1,6 +1,6 @@
 
 -- libquvi-scripts v0.4.6
--- Copyright (C) 2010-2012  quvi project
+-- Copyright (C) 2012  Mikhail Gusarov <dottedmag@dottedmag.net>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
 --
@@ -20,16 +20,19 @@
 -- 02110-1301  USA
 --
 
+local OTvRu = {} -- Utility functions specific to this script
+
 -- Identify the script.
 function ident(self)
     package.path = self.script_dir .. '/?.lua'
     local C      = require 'quvi/const'
     local r      = {}
-    r.domain     = "charlierose%.com"
+    r.domain     = "1tv%.ru"
     r.formats    = "default"
     r.categories = C.proto_http
     local U      = require 'quvi/util'
-    r.handles    = U.handles(self.page_url, {r.domain}, {"/view/"})
+    r.handles    = U.handles(self.page_url, {r.domain},
+                              {"/sprojects_edition/"})
     return r
 end
 
@@ -41,20 +44,28 @@ end
 
 -- Parse media URL.
 function parse(self)
-    self.host_id = "charlierose"
+    self.host_id = "1tvru"
+
+    self.id = self.page_url:match('fi(%d+)')
+                or self.page_url:match('fi=(%d+)')
+                or error("no match: media ID")
 
     local p = quvi.fetch(self.page_url)
 
-    self.title = p:match("<title>Charlie Rose%s+-%s+(.-)</title>")
+    self.title = p:match(OTvRu.pattern('title', '(.-)'))
                   or error("no match: media title")
 
-    self.id = p:match('view%/content%/(.-)"')
-                or error("no match: media ID")
+    self.url = {p:match(OTvRu.pattern('file', '(.-)'))
+                  or error("no match: media stream URL")}
 
-    self.url = {p:match('url":"(.-)"')
-                or error("no match: media URL")}
+    self.thumbnail_url = p:match('"og:image" content="(.-)"') or ''
 
     return self
+end
+
+function OTvRu.pattern(key_name, value_pattern)
+   return string.format("jwplayer%%('flashvideoportal_1'%%).*'%s': '%s'",
+                          key_name, value_pattern)
 end
 
 -- vim: set ts=4 sw=4 tw=72 expandtab:

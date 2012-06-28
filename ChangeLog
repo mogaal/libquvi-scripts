@@ -1,3 +1,174 @@
+commit f0f8ad4
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-06-10
+
+    Update NEWS for v0.4.6
+
+NEWS
+
+commit e095cdb
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-06-10
+
+    Bump version to 0.4.6
+
+m4/version.m4
+
+commit 2fc90bf
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-06-10
+
+    FIX: ted.lua: Media stream URL pattern
+
+share/lua/website/ted.lua
+
+commit ee0866f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-06-10
+
+    1tvru.json: Add missing thumbnail_url
+
+tests/data/format/default/1tvru.json
+
+commit 82b78df
+Author: Mort Gerald <mort.gerald@gmail.com>
+Date:   2012-06-07
+
+    pornhub.lua: Media ID can be hexadecimal
+
+share/lua/website/pornhub.lua
+
+commit 6f3e8bd
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-06-04
+
+    FIX: xhamster.lua: server response code 404
+    
+    Fixes "error: server response code 404 (conncode=0)" with some
+    of the videos.
+
+share/lua/website/xhamster.lua
+
+commit e7265b2
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-06-03
+
+    1tvru.lua: Make "pattern" function specific to this script
+
+share/lua/website/1tvru.lua
+
+commit 329a028
+Author: Mikhail Gusarov <dottedmag@dottedmag.net>
+Date:   2012-06-03
+
+    Add tvrain.json
+
+tests/data/format/default/tvrain.json
+
+commit 730720d
+Author: Mikhail Gusarov <dottedmag@dottedmag.net>
+Date:   2012-06-03
+
+    tvrain.lua: Add support for tvrain.ru
+
+share/Makefile.am
+share/lua/website/tvrain.lua
+
+commit c182dc4
+Author: Mikhail Gusarov <dottedmag@dottedmag.net>
+Date:   2012-06-02
+
+    Add 1tvru.json
+
+tests/data/format/default/1tvru.json
+
+commit 82e3151
+Author: Mikhail Gusarov <dottedmag@dottedmag.net>
+Date:   2012-06-02
+
+    1tvru.lua: Add support for 1tv.ru
+
+share/Makefile.am
+share/lua/website/1tvru.lua
+
+commit a42a34a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-06-02
+
+    website/publicsenat.lua: Change handles path
+
+share/lua/website/publicsenat.lua
+
+commit 3825171
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-06-01
+
+    FIX: website/collegehumor.lua: title pattern
+
+share/lua/website/collegehumor.lua
+
+commit 326bb54
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-06-01
+
+    senat.lua: Use "libquvi-scripts" for project
+
+share/lua/website/senat.lua
+
+commit 0379cda
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-06-01
+
+    publicsenat.json: Add thumbnail_url
+
+tests/data/format/default/publicsenat.json
+
+commit 42c1eac
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-06-01
+
+    Add publicsenat-2.json
+
+tests/data/format/default/publicsenat-2.json
+
+commit f329cde
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-06-01
+
+    publicsenat.lua: Port Raphaël's v0.4.3 changes
+    
+      * Extend support for more recent media URLs
+    
+    Other changes:
+      * Add thumbnail_url
+    
+    Test cases:
+      * http://www.publicsenat.fr/vod/un-monde-de-bulles/speciale-journal-de-spirou/67141
+      * http://www.publicsenat.fr/cms/video-a-la-demande/vod.html?idE=119298
+    
+    ref: http://article.gmane.org/gmane.comp.web.flash.quvi/45
+
+share/lua/website/publicsenat.lua
+
+commit 1e71767
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-06-01
+
+    Add senat.json
+
+tests/data/format/default/senat.json
+
+commit 5cf4540
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-06-01
+
+    senat.lua: Add support for senat.fr
+    
+    ref: http://article.gmane.org/gmane.comp.web.flash.quvi/46
+
+share/Makefile.am
+share/lua/website/senat.lua
+
 commit 437b499
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2012-05-30
