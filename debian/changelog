@@ -1,3 +1,9 @@
+libquvi-scripts (0.4.6-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ansgar Burchardt <ansgar@debian.org>  Thu, 28 Jun 2012 09:44:20 +0200
+
 libquvi-scripts (0.4.5-1) unstable; urgency=low
 
   * New upstream release.
