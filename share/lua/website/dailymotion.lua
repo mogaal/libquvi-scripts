@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.6
+-- libquvi-scripts v0.4.7
 -- Copyright (C) 2010-2012  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -88,7 +88,7 @@ end
 function Dailymotion.fetch_page(self, U)
     self.page_url = Dailymotion.normalize(self.page_url)
 
-    local s = self.page_url:match('/family_filter%?urlback=(.+)')
+    local s = self.page_url:match('[%?%&]urlback=(.+)')
     if s then
         self.page_url = 'http://dailymotion.com' .. U.unescape(s)
     end

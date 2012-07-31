@@ -1,6 +1,6 @@
 
 -- libquvi-scripts v0.4.7
--- Copyright (C) 2010-2012  Toni Gundogdu <legatvs@gmail.com>
+-- Copyright (C) 2012  quvi project <http://quvi.sourceforge.net/>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
 --
@@ -22,14 +22,15 @@
 
 -- Identify the script.
 function ident(self)
-    package.path = self.script_dir .. '/?.lua'
-    local C      = require 'quvi/const'
-    local r      = {}
-    r.domain     = "clipfish%.de"
-    r.formats    = "default"
-    r.categories = C.proto_http
-    local U      = require 'quvi/util'
-    r.handles    = U.handles(self.page_url, {r.domain}, {"/video/%d+/"})
+    package.path  = self.script_dir .. '/?.lua'
+    local C       = require 'quvi/const'
+    local r       = {}
+    local domains = {"twitch%.tv", "justin%.tv"}
+    r.domain      = table.concat(domains, "|")
+    r.formats     = "default"
+    r.categories  = C.proto_http
+    local U       = require 'quvi/util'
+    r.handles     = U.handles(self.page_url, domains, {"/[%w_]+/b/%d+"})
     return r
 end
 
@@ -41,22 +42,29 @@ end
 
 -- Parse media URL.
 function parse(self)
-    self.host_id = "clipfish"
+    self.host_id = "justintv"
 
-    self.id = self.page_url:match("/video/(.-)/")
+    self.id = self.page_url:match("/[%w_]+/b/(%d+)")
                 or error("no match: media ID")
 
-    local c_url = "http://www.clipfish.de/devxml/videoinfo/"
-                    .. self.id
+    local c_url = "http://api.justin.tv/api/clip/show/"
+                    .. self.id .. ".xml"
 
     local c = quvi.fetch(c_url, {fetch_type = 'config'})
 
-    self.title = c:match('<title><!%[CDATA%[(.-)%]')
-                  or error("no match: media title")
+    self.title = c:match('<title>(.-)</title>') or ''
 
-    self.thumbnail_url = c:match('<imageurl>(.-)</') or ''
+    if #self.title ==0 then
+        c = c:gsub("^%s*(.-)%s*$", "%1") -- 'c' may hold an error message.
+        c = c:gsub("%s%s+", " ")         -- Sanitize.
+        error(string.format("no match: media title (%s)",
+                            (#c >0) and c or ''))
+    end
 
-    self.url = {c:match("<filename><!%[CDATA%[(.-)%]")
+    self.thumbnail_url =
+      c:match('<image_url_medium>(.-)</image_url_medium>') or ''
+
+    self.url = {c:match("<video_file_url>(.-)</video_file_url>")
                   or error("no match: media URL")}
 
     return self

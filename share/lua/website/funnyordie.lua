@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.6
+-- libquvi-scripts v0.4.7
 -- Copyright (C) 2011  Toni Gundogdu
 -- Copyright (C) 2010 quvi project
 --

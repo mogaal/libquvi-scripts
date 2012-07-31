@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.6
+-- libquvi-scripts v0.4.7
 -- Copyright (C) 2010-2011  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -88,7 +88,7 @@ end
 --
 
 function Spiegel.get_media_id(self)
-    self.id = self.page_url:match("/video/video%-(.-)%.")
+    self.id = self.page_url:match("/video/.-video%-(.-)%.")
                 or error ("no match: media id")
 end
 
