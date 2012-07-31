@@ -1,3 +1,185 @@
+commit 67ea69d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-18
+
+    Bump version to 0.4.7
+
+m4/version.m4
+
+commit 06606d1
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-18
+
+    Update NEWS for v0.4.7
+
+NEWS
+
+commit 78817b8
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-18
+
+    FIX: gaskrank.lua: stream URL, ID patterns
+    
+    Update the patterns for media stream URL and ID, reflecting the recent
+    changes made to the website.
+
+share/lua/website/gaskrank.lua
+
+commit 4e89cfb
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-17
+
+    tests: format/default: rm tvrain.json
+    
+    Remove tvrain.json altogether. The media URLs expire after a few days,
+    it appears.
+
+tests/data/format/default/tvrain.json
+
+commit d35282e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-17
+
+    tests: format/default: Update youtube*.json files
+    
+    Update YouTube JSONs reflecting the changes made in the commit aec0afa.
+
+tests/data/format/default/youtube.json
+tests/data/format/default/youtube_starttime.json
+
+commit aec0afa
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-17
+
+    youtube.lua: Rewrite YouTube.choose_default
+    
+    Replace the old default behaviour:
+      Choose the lowest quality available.
+    With:
+      Either whatever YouTube returns as the first,
+      or whichever is of 480p and found first.
+
+share/lua/website/youtube.lua
+
+commit 7dfe322
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-17
+
+    tests: format/default. Update videa.json
+    
+    Change expected content-type and file extension.
+
+tests/data/format/default/videa.json
+
+commit e192ca0
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-15
+
+    tests: format/default: Add justintv.json
+
+tests/data/format/default/justintv.json
+
+commit 86baf5d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-15
+
+    Add support for justin.tv and twitch.tv (#99)
+    
+    ref: http://sourceforge.net/apps/trac/quvi/ticket/99
+
+share/Makefile.am
+share/lua/website/justintv.lua
+
+commit 5c5cea7
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-13
+
+    tests: format/default/nsfw: Update redtube.json
+    
+    Replace the old test media URL which only returned a 'notfound.swf' file.
+
+tests/data/format/default/nsfw/redtube.json
+
+commit 8c8c0d3
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-13
+
+    tests: format/default: Update gaskrank.json
+    
+    Update the title reflecting the changes made to gaskrank.lua in
+    52c6f6d.
+
+tests/data/format/default/gaskrank.json
+
+commit 1aaf74a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-12
+
+    tests: format/default: Update tvrain.json
+    
+    Use updated test data reflecting the script changes made to tvrain.lua
+    in 7bf1682.
+
+tests/data/format/default/tvrain.json
+
+commit 7dfbc1e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-12
+
+    tvrain.lua: Change how media ID is parsed
+    
+    The old solution returned '-1' for media IDs. Parse media ID From the
+    media URL, instead.
+
+share/lua/website/tvrain.lua
+
+commit 7bf1682
+Author: Mikhail Gusarov <dottedmag@dottedmag.net>
+Date:   2012-07-11
+
+    tvrain.lua: Adjust for new URL scheme on the site
+
+share/lua/website/tvrain.lua
+
+commit d7182ac
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-10
+
+    FIX: vimeo.lua:115: no match: qualities (#106)
+    
+    ref: http://sourceforge.net/apps/trac/quvi/ticket/106
+
+share/lua/website/vimeo.lua
+
+commit 52c6f6d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-01
+
+    FIX: gaskrank.lua: title pattern
+
+share/lua/website/gaskrank.lua
+
+commit 8eded85
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-06-24
+
+    dailymotion.lua: Make urlback pattern more liberal
+    
+    ref: http://article.gmane.org/gmane.comp.web.flash.quvi/61
+
+share/lua/website/dailymotion.lua
+
+commit 6afe8e9
+Author: Till Maas <opensource@till.name>
+Date:   2012-06-12
+
+    Support spiegel.de with SEO URLs
+    
+    Support SEO URLs on spiegel.de with paths like
+    /video/long-description-video-12345.html
+
+share/lua/website/spiegel.lua
+
 commit f0f8ad4
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2012-06-10

@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.6
+-- libquvi-scripts v0.4.7
 -- Copyright (C) 2012  Mikhail Gusarov <dottedmag@dottedmag.net>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -29,7 +29,7 @@ function ident(self)
     r.formats    = "default"
     r.categories = C.proto_http
     local U      = require 'quvi/util'
-    r.handles    = U.handles(self.page_url, {r.domain}, {"/teleshow/"})
+    r.handles    = U.handles(self.page_url, {r.domain}, {"/articles/"})
     return r
 end
 
@@ -42,6 +42,9 @@ end
 -- Parse media URL.
 function parse(self)
     self.host_id = "tvrain"
+
+    self.id = self.page_url:match('%-(%d+)/$')
+                or error("no match: media ID")
 
     local p = quvi.fetch(self.page_url)
 
@@ -60,9 +63,6 @@ function parse(self)
                             .. 'prt=%s&id=%s&mode=1', p1, p2)
 
     local pl = quvi.fetch(u, {fetch_type='playlist'})
-
-    self.id = pl:match('<programm[^>]-id="(.-)"')
-                or error("no match: media ID")
 
     self.title = pl:match('<video[^>]-name="(.-)"')
                   or error("no match: media title")
