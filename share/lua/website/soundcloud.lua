@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.7
+-- libquvi-scripts v0.4.8
 -- Copyright (C) 2011  Bastien Nocera <hadess@hadess.net>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -58,7 +58,9 @@ function parse(self)
         if p == 'og:title' then
             self.title = c
         elseif p == 'og:image' then
-            self.thumbnail_url = c
+            if not c:find('placeholder%.png') then
+                self.thumbnail_url = c
+            end
         end
     end
 
