@@ -45,6 +45,10 @@ Files: share/lua/website/tvrain.lua
 Copyright: 2012, Mikhail Gusarov <dottedmag@dottedmag.net>
 License: LGPL-2.1+
 
+Files: share/lua/website/lego.lua
+Copyright: 2012, Ross Burton <ross@burtonini.com>
+License: LGPL-2.1+
+
 Files: debian/*
 Copyright: 2011 Alejandro Garrido Mota <garridomota@gmail.com>
 License: GPL-3+
