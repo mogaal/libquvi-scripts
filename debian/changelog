@@ -1,3 +1,9 @@
+libquvi-scripts (0.4.8-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Ansgar Burchardt <ansgar@debian.org>  Sat, 25 Aug 2012 08:38:41 +0200
+
 libquvi-scripts (0.4.7-1) experimental; urgency=low
 
   * New upstream release.
