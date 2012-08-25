@@ -16,7 +16,7 @@ DIST_lua=\
  lua/website/academicearth.lua \
  lua/website/arte.lua \
  lua/website/audioboo.lua \
- lua/website/bloomberg.lua \
+ lua/website/bbc.lua \
  lua/website/break.lua \
  lua/website/canalplus.lua \
  lua/website/cbsnews.lua \
@@ -31,6 +31,7 @@ DIST_lua=\
  lua/website/guardian.lua \
  lua/website/imdb.lua \
  lua/website/justintv.lua \
+ lua/website/lego.lua \
  lua/website/liveleak.lua \
  lua/website/mgnetwork.lua \
  lua/website/metacafe.lua \
@@ -70,6 +71,7 @@ if WITH_FIXME
 DIST_lua+=\
  lua/website/bikeradar.lua \
  lua/website/blip.lua \
+ lua/website/bloomberg.lua \
  lua/website/francetelevisions.lua \
  lua/website/globo.lua \
  lua/website/pluzz.lua

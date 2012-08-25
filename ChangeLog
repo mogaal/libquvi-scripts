@@ -1,3 +1,149 @@
+commit 94ac387
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-08-19
+
+    Bump version to 0.4.8
+
+m4/version.m4
+
+commit d4fc3d8
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-08-19
+
+    Update news for 0.4.8
+
+NEWS
+
+commit 48ca011
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-08-19
+
+    FIXME: website/bloomberg.lua
+    
+    Mark the script as "FIXME".
+
+share/Makefile.am
+tests/data/format/default/bloomberg.json
+tests/data/format/default/fixme/bloomberg.json
+
+commit bb53ee6
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-08-19
+
+    tests: default/vimeo.json: Update expected results
+
+tests/data/format/default/vimeo.json
+
+commit cc21d68
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-08-19
+
+    tests: default/soundcloud-2.json: Change media URL
+    
+    Replace the media URL that appears to be unavailable.
+
+tests/data/format/default/soundcloud-2.json
+
+commit 186b41e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-08-19
+
+    FIX: media/gaskrank.lua: Media ID, stream URL patterns
+    
+    Update the media stream URL pattern. Parse media ID from
+    the media stream URL, instead. Croak if media title was
+    not found.
+
+share/lua/website/gaskrank.lua
+
+commit 2ffd344
+Author: Bastien Nocera <hadess@hadess.net>
+Date:   2012-08-16
+
+    souncloud.lua: Never offer placeholder as thumbnail
+
+share/lua/website/soundcloud.lua
+
+commit ee9b7fd
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-08-04
+
+    tests: format/default: Add lego.json
+
+tests/data/format/default/lego.json
+
+commit c38aa05
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-08-04
+
+    Add website/lego.lua (#107)
+    
+    Adds support for city.lego.com .
+    ref: http://sourceforge.net/apps/trac/quvi/ticket/107
+
+share/Makefile.am
+share/lua/website/lego.lua
+
+commit 41e4bd9
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-08-04
+
+    FIX: dailymotion.lua: sequence pattern (#108)
+    
+    Updates the sequence pattern to reflect the recent website changes.
+    ref: http://sourceforge.net/apps/trac/quvi/ticket/108
+
+share/lua/website/dailymotion.lua
+
+commit e4ae322
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-07-28
+
+    FIX: 101greatgoals.lua: article pattern
+    
+    The pattern for the article was broken for:
+      http://is.gd/MuYcm3
+    
+    Converted the original patch to apply.
+    
+    ref: http://article.gmane.org/gmane.comp.web.flash.quvi/89
+
+share/lua/website/101greatgoals.lua
+
+commit e5a0d97
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-05-28
+
+    totallynsfw.lua: Handle embedded media hosted elsewhere
+    
+    Some of the embedded media is hosted at pornhub. Redirect to different
+    host if detected.
+    
+    * Do not handle the RSS feed URLs
+    
+    Thanks anon.
+
+share/lua/website/totallynsfw.lua
+
+commit 282632e
+Author: Pierre Carrier <pierre@spotify.com>
+Date:   2011-04-14
+
+    Add support for BBC iPlayer (#28)
+    
+    Initial implementation based on get_iplayer, further tested and
+    fixed by Bastien Nocera <hadess@hadess.net>.
+    
+    This version does not support live streams, or radio programmes.
+    
+    Full revision history available at:
+    https://github.com/hadess/libquvi-scripts-iplayer/commits/master
+    
+    https://sourceforge.net/apps/trac/quvi/ticket/28
+
+share/Makefile.am
+share/lua/website/bbc.lua
+
 commit 67ea69d
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2012-07-18

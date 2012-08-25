@@ -1,6 +1,6 @@
 
 -- libquvi-scripts v0.4.8
--- Copyright (C) 2011  Toni Gundogdu <legatvs@gmail.com>
+-- Copyright (C) 2012  Ross Burton <ross@burtonini.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
 --
@@ -21,45 +21,40 @@
 --
 
 -- Identify the script.
-function ident (self)
+function ident(self)
     package.path = self.script_dir .. '/?.lua'
     local C      = require 'quvi/const'
     local r      = {}
-    r.domain     = "audioboo%.fm"
+    r.domain     = "city%.lego%.com"
     r.formats    = "default"
     r.categories = C.proto_http
     local U      = require 'quvi/util'
-    r.handles    = U.handles(self.page_url, {r.domain}, {"/boos/%d+%-"})
+    r.handles    = U.handles(self.page_url, {r.domain}, {"/.+/Movies/.+$"})
     return r
 end
 
 -- Query available formats.
 function query_formats(self)
-    self.formats = 'default'
+    self.formats  = "default"
     return self
 end
 
--- Parse media URL.
-function parse (self)
-    self.host_id = "audioboo"
+-- Parse video URL.
+function parse(self)
+    self.host_id = "lego"
+    local p = quvi.fetch(self.page_url)
 
-    local oe_url =
-        "http://audioboo.fm/publishing/oembed.json?url=" .. self.page_url
+    local s = p:match('<trackingName>(.+)</trackingName>')
+              or error("no match: tracking name")
+    local index = s:find("-")
 
-    local oe = quvi.fetch(oe_url, {fetch_type='config'})
+    self.title = s:sub(0, index-1)
+    self.id = s:sub(index+1)
 
-    self.title = oe:match('"title":"(.-)"')
-                    or error('no match: media title')
+    -- TODO self.thumbnail_url
 
-    self.thumbnail_url = oe:match('"thumbnail_url":"(.-)"') or ''
-
-    self.id = oe:match('id=."boo_embed_(.-)."')
-                or error('no match: media id')
-
-    self.url = {oe:match('a href=."(.-)."')
-                    or error('no match: media url')}
+    self.url = {p:match('<movie>(.+)</movie>')
+               or error("no match: media stream URL")}
 
     return self
 end
-
--- vim: set ts=4 sw=4 tw=72 expandtab:
