@@ -1,3 +1,11 @@
+libquvi-scripts (0.4.8-3) unstable; urgency=low
+
+  * Backport upstream patch for new signature parameter on YouTube.
+    (Closes: #688972)
+    + new patch: 688972-youtube.diff
+
+ -- Ansgar Burchardt <ansgar@debian.org>  Fri, 28 Sep 2012 10:14:26 +0200
+
 libquvi-scripts (0.4.8-2) unstable; urgency=low
 
   * Upload to unstable.
