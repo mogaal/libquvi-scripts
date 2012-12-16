@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.8
+-- libquvi-scripts v0.4.10
 -- Copyright (C) 2010 Paul Kocialkowski <contact@paulk.fr>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -51,11 +51,22 @@ function parse (self)
     self.id = p:match("id%%3D(.-)&amp;")
                 or error("no match: media id")
 
-    local s = p:match("video_url=(.-)&amp;")
+    local flashvars = p:match('flashvars" value="(.-)"/>')
+                or error("no match: flashvars")
+
+    local s = flashvars:match("video_url=(.-)&amp;")
                 or error("no match: flv url")
 
     local U  = require 'quvi/util'
     self.url = {U.unescape(s)}
+
+    local encrypted = flashvars:match('encrypted=true')
+    if encrypted ~= nil then
+        local key = flashvars:match("video_title=(-.)&amp;")
+        -- XXX No support for AES encrypted URLs
+        -- AESCounterModeDecrypt(self.url, key, 256)
+        error("No support for encrypted streams")
+    end
 
     return self
 end

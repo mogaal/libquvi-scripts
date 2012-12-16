@@ -33,7 +33,12 @@ NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
 @WITH_NSFW_TRUE@am__append_1 = \
+@WITH_NSFW_TRUE@ lua/website/beeg.lua \
+@WITH_NSFW_TRUE@ lua/website/deviantclip.lua \
 @WITH_NSFW_TRUE@ lua/website/empflix.lua \
+@WITH_NSFW_TRUE@ lua/website/fastjizz.lua \
+@WITH_NSFW_TRUE@ lua/website/jizzhut.lua \
+@WITH_NSFW_TRUE@ lua/website/keezmovies.lua \
 @WITH_NSFW_TRUE@ lua/website/pornhub.lua \
 @WITH_NSFW_TRUE@ lua/website/redtube.lua \
 @WITH_NSFW_TRUE@ lua/website/spankwire.lua \
@@ -41,20 +46,22 @@ POST_UNINSTALL = :
 @WITH_NSFW_TRUE@ lua/website/tnaflix.lua \
 @WITH_NSFW_TRUE@ lua/website/totallynsfw.lua \
 @WITH_NSFW_TRUE@ lua/website/xhamster.lua \
+@WITH_NSFW_TRUE@ lua/website/xnxx.lua \
 @WITH_NSFW_TRUE@ lua/website/xvideos.lua \
 @WITH_NSFW_TRUE@ lua/website/youjizz.lua
 
 @WITH_FIXME_TRUE@am__append_2 = \
+@WITH_FIXME_TRUE@ lua/website/arte.lua \
 @WITH_FIXME_TRUE@ lua/website/bikeradar.lua \
 @WITH_FIXME_TRUE@ lua/website/blip.lua \
 @WITH_FIXME_TRUE@ lua/website/bloomberg.lua \
+@WITH_FIXME_TRUE@ lua/website/collegehumor.lua \
 @WITH_FIXME_TRUE@ lua/website/francetelevisions.lua \
 @WITH_FIXME_TRUE@ lua/website/globo.lua \
 @WITH_FIXME_TRUE@ lua/website/pluzz.lua
 
 @WITH_FIXME_TRUE@@WITH_NSFW_TRUE@am__append_3 = \
-@WITH_FIXME_TRUE@@WITH_NSFW_TRUE@ lua/website/tube8.lua \
-@WITH_FIXME_TRUE@@WITH_NSFW_TRUE@ lua/website/keezmovies.lua
+@WITH_FIXME_TRUE@@WITH_NSFW_TRUE@ lua/website/tube8.lua
 
 subdir = share
 DIST_COMMON = $(am__nobase_dist_pkgdata_DATA_DIST) \
@@ -85,37 +92,41 @@ RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
 am__nobase_dist_pkgdata_DATA_DIST = lua/README \
 	lua/util/content_type.lua lua/util/charset.lua \
 	lua/util/trim.lua lua/website/README lua/website/quvi/bit.lua \
-	lua/website/quvi/const.lua lua/website/quvi/url.lua \
-	lua/website/quvi/util.lua lua/website/101greatgoals.lua \
-	lua/website/1tvru.lua lua/website/academicearth.lua \
-	lua/website/arte.lua lua/website/audioboo.lua \
+	lua/website/quvi/const.lua lua/website/quvi/html.lua \
+	lua/website/quvi/url.lua lua/website/quvi/util.lua \
+	lua/website/101greatgoals.lua lua/website/1tvru.lua \
+	lua/website/academicearth.lua lua/website/audioboo.lua \
 	lua/website/bbc.lua lua/website/break.lua \
 	lua/website/canalplus.lua lua/website/cbsnews.lua \
 	lua/website/charlierose.lua lua/website/clipfish.lua \
-	lua/website/collegehumor.lua lua/website/dailymotion.lua \
-	lua/website/foxnews.lua lua/website/funnyordie.lua \
-	lua/website/gaskrank.lua lua/website/golem.lua \
-	lua/website/guardian.lua lua/website/imdb.lua \
-	lua/website/justintv.lua lua/website/lego.lua \
-	lua/website/liveleak.lua lua/website/mgnetwork.lua \
-	lua/website/metacafe.lua lua/website/publicsenat.lua \
-	lua/website/sapo.lua lua/website/senat.lua \
-	lua/website/sevenload.lua lua/website/soundcloud.lua \
-	lua/website/spiegel.lua lua/website/tagtele.lua \
+	lua/website/dailymotion.lua lua/website/foxnews.lua \
+	lua/website/funnyordie.lua lua/website/gaskrank.lua \
+	lua/website/golem.lua lua/website/guardian.lua \
+	lua/website/imdb.lua lua/website/justintv.lua \
+	lua/website/lego.lua lua/website/liveleak.lua \
+	lua/website/mgnetwork.lua lua/website/metacafe.lua \
+	lua/website/publicsenat.lua lua/website/sapo.lua \
+	lua/website/senat.lua lua/website/sevenload.lua \
+	lua/website/soundcloud.lua lua/website/spiegel.lua \
+	lua/website/tagtele.lua lua/website/tapuz.lua \
 	lua/website/ted.lua lua/website/tvlux.lua \
 	lua/website/tvrain.lua lua/website/tmunderground.lua \
 	lua/website/theonion.lua lua/website/videa.lua \
 	lua/website/videobash.lua lua/website/vimeo.lua \
 	lua/website/yfrog.lua lua/website/youtube.lua \
-	lua/website/empflix.lua lua/website/pornhub.lua \
-	lua/website/redtube.lua lua/website/spankwire.lua \
-	lua/website/tcmag.lua lua/website/tnaflix.lua \
-	lua/website/totallynsfw.lua lua/website/xhamster.lua \
+	lua/website/beeg.lua lua/website/deviantclip.lua \
+	lua/website/empflix.lua lua/website/fastjizz.lua \
+	lua/website/jizzhut.lua lua/website/keezmovies.lua \
+	lua/website/pornhub.lua lua/website/redtube.lua \
+	lua/website/spankwire.lua lua/website/tcmag.lua \
+	lua/website/tnaflix.lua lua/website/totallynsfw.lua \
+	lua/website/xhamster.lua lua/website/xnxx.lua \
 	lua/website/xvideos.lua lua/website/youjizz.lua \
-	lua/website/bikeradar.lua lua/website/blip.lua \
-	lua/website/bloomberg.lua lua/website/francetelevisions.lua \
+	lua/website/arte.lua lua/website/bikeradar.lua \
+	lua/website/blip.lua lua/website/bloomberg.lua \
+	lua/website/collegehumor.lua lua/website/francetelevisions.lua \
 	lua/website/globo.lua lua/website/pluzz.lua \
-	lua/website/tube8.lua lua/website/keezmovies.lua
+	lua/website/tube8.lua
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
 am__vpath_adj = case $$p in \
     $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
@@ -252,23 +263,23 @@ top_srcdir = @top_srcdir@
 SUBDIRS = lua
 DIST_lua = lua/README lua/util/content_type.lua lua/util/charset.lua \
 	lua/util/trim.lua lua/website/README lua/website/quvi/bit.lua \
-	lua/website/quvi/const.lua lua/website/quvi/url.lua \
-	lua/website/quvi/util.lua lua/website/101greatgoals.lua \
-	lua/website/1tvru.lua lua/website/academicearth.lua \
-	lua/website/arte.lua lua/website/audioboo.lua \
+	lua/website/quvi/const.lua lua/website/quvi/html.lua \
+	lua/website/quvi/url.lua lua/website/quvi/util.lua \
+	lua/website/101greatgoals.lua lua/website/1tvru.lua \
+	lua/website/academicearth.lua lua/website/audioboo.lua \
 	lua/website/bbc.lua lua/website/break.lua \
 	lua/website/canalplus.lua lua/website/cbsnews.lua \
 	lua/website/charlierose.lua lua/website/clipfish.lua \
-	lua/website/collegehumor.lua lua/website/dailymotion.lua \
-	lua/website/foxnews.lua lua/website/funnyordie.lua \
-	lua/website/gaskrank.lua lua/website/golem.lua \
-	lua/website/guardian.lua lua/website/imdb.lua \
-	lua/website/justintv.lua lua/website/lego.lua \
-	lua/website/liveleak.lua lua/website/mgnetwork.lua \
-	lua/website/metacafe.lua lua/website/publicsenat.lua \
-	lua/website/sapo.lua lua/website/senat.lua \
-	lua/website/sevenload.lua lua/website/soundcloud.lua \
-	lua/website/spiegel.lua lua/website/tagtele.lua \
+	lua/website/dailymotion.lua lua/website/foxnews.lua \
+	lua/website/funnyordie.lua lua/website/gaskrank.lua \
+	lua/website/golem.lua lua/website/guardian.lua \
+	lua/website/imdb.lua lua/website/justintv.lua \
+	lua/website/lego.lua lua/website/liveleak.lua \
+	lua/website/mgnetwork.lua lua/website/metacafe.lua \
+	lua/website/publicsenat.lua lua/website/sapo.lua \
+	lua/website/senat.lua lua/website/sevenload.lua \
+	lua/website/soundcloud.lua lua/website/spiegel.lua \
+	lua/website/tagtele.lua lua/website/tapuz.lua \
 	lua/website/ted.lua lua/website/tvlux.lua \
 	lua/website/tvrain.lua lua/website/tmunderground.lua \
 	lua/website/theonion.lua lua/website/videa.lua \

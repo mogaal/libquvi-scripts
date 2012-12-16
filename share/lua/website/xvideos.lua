@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.8
+-- libquvi-scripts v0.4.10
 -- Copyright (C) 2010-2012  quvi project
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -50,7 +50,7 @@ function parse(self)
 
     local p = quvi.fetch(self.page_url)
 
-    self.title = p:match("<title>(.-)%s+-%s+XVID")
+    self.title = p:match('<div id="main">.-<h2>(.-)<')
                   or error("no match: media title")
 
     self.id = self.page_url:match("/video(%d+)/")

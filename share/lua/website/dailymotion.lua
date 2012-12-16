@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.8
+-- libquvi-scripts v0.4.10
 -- Copyright (C) 2010-2012  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -63,7 +63,7 @@ function parse(self)
     local U = require 'quvi/util'
     local p = Dailymotion.fetch_page(self, U)
 
-    self.title = p:match('title="(.-)"')
+    self.title = p:match('"og:title" content="(.-)"')
                   or error("no match: media title")
 
     self.id = p:match("video/([^%?_]+)")
