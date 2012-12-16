@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.8
+-- libquvi-scripts v0.4.10
 -- Copyright (C) 2010-2012  quvi project
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -44,16 +44,21 @@ end
 function parse(self)
     self.host_id = "youjizz"
 
+    self.id = self.page_url:match('%-(%d+)%.html')
+                or error ("no match: media ID")
+
     local p = quvi.fetch(self.page_url)
 
     self.title = p:match("<title>(.-)</")
                   or error ("no match: media title")
 
-    self.id = p:match("%?id=(%d+)")
-                or error ("no match: media ID")
+    self.thumbnail_url = p:match('data%-original="(.-)"') or ''
 
-    self.url = {p:match('addVariable%("file",encodeURIComponent%("(.-)"')
-                  or error ("no match: media URL")}
+    local c = quvi.fetch('http://youjizz.com/videos/embed/' .. self.id,
+                          {fetch_type='config'})
+
+    self.url = {c:match('addVariable%("file",encodeURIComponent%("(.-)"')
+                  or error ("no match: media stream URL")}
 
     return self
 end

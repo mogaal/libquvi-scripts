@@ -1,3 +1,402 @@
+commit 4d12ffd
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-11-22
+
+    Bump version to 0.4.10
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+m4/version.m4
+
+commit b0e9f1d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-11-22
+
+    Update NEWS for v0.4.10
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+NEWS
+
+commit e1d1731
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-11-21
+
+    tests: other/spiegel_*.json: Remove
+    
+    Save some bandwidth. If one stream (the default) checks out OK
+    with this site, that's all we need.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/other/spiegel_best.json
+tests/data/format/other/spiegel_flv_vp6_388k_135p.json
+tests/data/format/other/spiegel_flv_vp6_576k_315p.json
+tests/data/format/other/spiegel_flv_vp6_64k_135p.json
+tests/data/format/other/spiegel_flv_vp6_928k_544p.json
+tests/data/format/other/spiegel_mp4_h264_1400k_544p.json
+
+commit 5fef6dc
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-11-21
+
+    tests: default/spiegel.json: Use a more recent test URL
+    
+    The previously used test URL defaulted to media stream that is listed
+    in the returned XML data but appears to be missing (HTTP/404). The
+    XML does not seem to indicate the stream availability, either.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/spiegel.json
+
+commit b182505
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-11-21
+
+    FIX: audioboo.lua: multiple patterns
+    
+    Fix {title,id,thumbnail,stream} patterns. Parse from the
+    contents of the media URL instead of oembed which no longer
+    appears to provide the media stream URL.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/audioboo.lua
+
+commit bc35f74
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-11-21
+
+    FIX: dailymotion.lua: title pattern
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/dailymotion.lua
+
+commit 6357cd1
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-11-21
+
+    FIX: break.lua: multiple patterns
+    
+    Fix {title,id,filepath,filehash} patterns. Add thumbnail_url.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/break.lua
+
+commit 3630a39
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-10-01
+
+    Bump version to 0.4.9
+
+m4/version.m4
+
+commit b0effb8
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-10-01
+
+    Update NEWS for 0.4.9
+
+NEWS
+
+commit 63024cb
+Merge: 5a9928a 57722d1
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-10-01
+
+    Merge branch 'tg/next/0.4_fixme_arte' into next
+
+commit 57722d1
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-10-01
+
+    expire.t: Skip all tests
+    
+    Both pluzz.lua and arte.lua need to be fixed now.
+
+tests/t/expire.t
+
+commit e815821
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-10-01
+
+    website/arte.lua: Mark as FIXME
+
+share/Makefile.am
+
+commit 5a9928a
+Merge: 3bdcec9 6a7dada
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-10-01
+
+    Merge branch 'tg/next/0.4_fix_youjizz' into next
+
+commit 6a7dada
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-10-01
+
+    tests: nsfw/youjizz.json: Update for thumbnail_url
+
+tests/data/format/default/nsfw/youjizz.json
+
+commit ebc42da
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-10-01
+
+    FIX: website/youjizz.lua
+    
+    Fix media {ID,media stream URL} parsing. Parse thumbnail URL.
+    
+    Signed-off-by: anon
+
+share/lua/website/youjizz.lua
+
+commit 3bdcec9
+Merge: c623218 e6f6aa2
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-10-01
+
+    Merge branch 'tg/next/0.4_fixme_collegehumor' into next
+
+commit e6f6aa2
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-10-01
+
+    tests: {default,other}/collegehumor*.json: Mark as FIXME
+
+tests/data/format/default/collegehumor.json
+tests/data/format/default/fixme/collegehumor.json
+tests/data/format/other/collegehumor_best.json
+tests/data/format/other/collegehumor_mp4_hq.json
+tests/data/format/other/collegehumor_mp4_sd.json
+tests/data/format/other/fixme/collegehumor_best.json
+tests/data/format/other/fixme/collegehumor_mp4_hq.json
+tests/data/format/other/fixme/collegehumor_mp4_sd.json
+
+commit 4f65343
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-10-01
+
+    collegehumor.lua: Mark as FIXME
+
+share/Makefile.am
+
+commit c623218
+Merge: c681d03 dbd90b8
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Merge branch 'tg/next/0.4_anon_contrib_nsfw' into next
+
+commit dbd90b8
+Merge: 9696d55 7fb3790
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Merge branch 'tg/next/0.4_anon_contrib_nsfw__xnxx' into tg/next/0.4_anon_contrib_nsfw
+
+commit 7fb3790
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Add tests:/nsfw/xnxx.json
+
+tests/data/format/default/nsfw/xnxx.json
+
+commit ac72d16
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Add website/xnxx.lua (NSFW)
+    
+    Signed-off-by: anon
+
+share/Makefile.am
+share/lua/website/xnxx.lua
+
+commit 9696d55
+Merge: ca7b0e2 1a800a3
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Merge branch 'tg/next/0.4_anon_contrib_nsfw__jizzhut' into tg/next/0.4_anon_contrib_nsfw
+
+commit 1a800a3
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Add tests:/nsfw/jizzhut.json
+
+tests/data/format/default/nsfw/jizzhut.json
+
+commit d509b1b
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Add website/jizzhut.lua (NSFW)
+    
+    Signed-off-by: anon
+
+share/Makefile.am
+share/lua/website/jizzhut.lua
+
+commit ca7b0e2
+Merge: 6dd21a8 dc37f8a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Merge branch 'tg/next/0.4_anon_contrib_nsfw__fastjizz' into tg/next/0.4_anon_contrib_nsfw
+
+commit dc37f8a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Add tests:/nsfw/fastjizz.json
+
+tests/data/format/default/nsfw/fastjizz.json
+
+commit 9f1ce8b
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Add website/fastjizz.lua (NSFW)
+    
+    Signed-off-by: anon
+
+share/Makefile.am
+share/lua/website/fastjizz.lua
+
+commit 6dd21a8
+Merge: 871b840 0d8a3ce
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Merge branch 'tg/next/0.4_anon_contrib_nsfw__deviantclip' into tg/next/0.4_anon_contrib_nsfw
+
+commit 0d8a3ce
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Add tests:/nsfw/deviantclip.json
+
+tests/data/format/default/nsfw/deviantclip.json
+
+commit 1b12bc4
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Add website/deviantclip.lua (NSFW)
+    
+    Signed-off-by: anon
+
+share/Makefile.am
+share/lua/website/deviantclip.lua
+
+commit 871b840
+Merge: 9498be7 972fd55
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Merge branch 'tg/next/0.4_anon_contrib_nsfw__beeg' into tg/next/0.4_anon_contrib_nsfw
+
+commit 972fd55
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Add tests:/nsfw/beeg.json
+
+tests/data/format/default/nsfw/beeg.json
+
+commit 5d7233f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    Add website/beeg.lua (NSFW)
+    
+    Signed-off-by: anon
+
+share/Makefile.am
+share/lua/website/beeg.lua
+
+commit 9498be7
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    website/keezmovies.lua: Detect encrypted streams
+    
+    Check for encrypted streams.  Move website/keezmovies.lua
+    from WITH_FIXME to WITH_NSFW.
+    
+    Signed-off-by: anon
+
+share/Makefile.am
+share/lua/website/keezmovies.lua
+
+commit c681d03
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-27
+
+    FIX: Add quvi/html.lua to DIST_lua
+    
+    Distribute libquvi-scripts with the quvi/html.lua file.
+
+share/Makefile.am
+
+commit 5b1c002
+Author: Martin Herkt <lachs0r@hong-mailing.de>
+Date:   2012-09-27
+
+    Fix youtube.lua
+    
+    YouTube has added a new "signature" parameter to their playback URLs.
+    Append this parameter to the URL if url_encoded_fmt_stream_map contains
+    "sig".
+
+share/lua/website/youtube.lua
+
+commit ef333de
+Merge: e657f45 424f9f1
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-03
+
+    Merge branch 'tg/next/0.4_add_tapuz' into next
+
+commit 424f9f1
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-03
+
+    tests: format/default: Add tapuz.json
+
+tests/data/format/default/tapuz.json
+
+commit bc24554
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-09-03
+
+    website/tapuz.lua: Add tapuz flix support
+    
+    ref: http://article.gmane.org/gmane.comp.web.flash.quvi/97
+
+share/Makefile.am
+share/lua/website/tapuz.lua
+
+commit e657f45
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2012-08-21
+
+    website/xvideos.lua: Improve title parsing (#109)
+    
+    The page <title> could be a truncated version of a longer description
+    or a title. Grab the media title elsewhere.
+    
+    exu: http://www.xvideos.com/video2389960
+    ref: http://sourceforge.net/apps/trac/quvi/ticket/109
+
+share/lua/website/xvideos.lua
+
 commit 94ac387
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2012-08-19
