@@ -1,4 +1,4 @@
-libquvi-scripts (0.4.10-1) UNRELEASED; urgency=low
+libquvi-scripts (0.4.10-1) experimental; urgency=low
 
   * New upstream release.
   * Fix d/watch to allow xz|gz|bz2.
