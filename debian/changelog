@@ -1,3 +1,10 @@
+libquvi-scripts (0.4.11-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/copyright: Update for new upstream release.
+
+ -- Ansgar Burchardt <ansgar@debian.org>  Sat, 09 Feb 2013 14:31:20 +0100
+
 libquvi-scripts (0.4.10-1) experimental; urgency=low
 
   * New upstream release.
