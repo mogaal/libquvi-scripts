@@ -34,6 +34,7 @@ DIST_lua=\
  lua/website/liveleak.lua \
  lua/website/mgnetwork.lua \
  lua/website/metacafe.lua \
+ lua/website/myspass.lua \
  lua/website/publicsenat.lua \
  lua/website/sapo.lua \
  lua/website/senat.lua \
@@ -50,6 +51,7 @@ DIST_lua=\
  lua/website/videa.lua \
  lua/website/videobash.lua \
  lua/website/vimeo.lua \
+ lua/website/wdrmaus.lua \
  lua/website/yfrog.lua \
  lua/website/youtube.lua
 
@@ -61,7 +63,6 @@ DIST_lua+=\
  lua/website/fastjizz.lua \
  lua/website/jizzhut.lua \
  lua/website/keezmovies.lua \
- lua/website/pornhub.lua \
  lua/website/redtube.lua \
  lua/website/spankwire.lua \
  lua/website/tcmag.lua \
@@ -85,6 +86,7 @@ DIST_lua+=\
  lua/website/pluzz.lua
 if WITH_NSFW
 DIST_lua+=\
+ lua/website/pornhub.lua \
  lua/website/tube8.lua
 endif
 endif # WITH_FIXME

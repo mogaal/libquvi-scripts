@@ -39,7 +39,6 @@ POST_UNINSTALL = :
 @WITH_NSFW_TRUE@ lua/website/fastjizz.lua \
 @WITH_NSFW_TRUE@ lua/website/jizzhut.lua \
 @WITH_NSFW_TRUE@ lua/website/keezmovies.lua \
-@WITH_NSFW_TRUE@ lua/website/pornhub.lua \
 @WITH_NSFW_TRUE@ lua/website/redtube.lua \
 @WITH_NSFW_TRUE@ lua/website/spankwire.lua \
 @WITH_NSFW_TRUE@ lua/website/tcmag.lua \
@@ -61,6 +60,7 @@ POST_UNINSTALL = :
 @WITH_FIXME_TRUE@ lua/website/pluzz.lua
 
 @WITH_FIXME_TRUE@@WITH_NSFW_TRUE@am__append_3 = \
+@WITH_FIXME_TRUE@@WITH_NSFW_TRUE@ lua/website/pornhub.lua \
 @WITH_FIXME_TRUE@@WITH_NSFW_TRUE@ lua/website/tube8.lua
 
 subdir = share
@@ -105,27 +105,28 @@ am__nobase_dist_pkgdata_DATA_DIST = lua/README \
 	lua/website/imdb.lua lua/website/justintv.lua \
 	lua/website/lego.lua lua/website/liveleak.lua \
 	lua/website/mgnetwork.lua lua/website/metacafe.lua \
-	lua/website/publicsenat.lua lua/website/sapo.lua \
-	lua/website/senat.lua lua/website/sevenload.lua \
-	lua/website/soundcloud.lua lua/website/spiegel.lua \
-	lua/website/tagtele.lua lua/website/tapuz.lua \
-	lua/website/ted.lua lua/website/tvlux.lua \
-	lua/website/tvrain.lua lua/website/tmunderground.lua \
-	lua/website/theonion.lua lua/website/videa.lua \
-	lua/website/videobash.lua lua/website/vimeo.lua \
+	lua/website/myspass.lua lua/website/publicsenat.lua \
+	lua/website/sapo.lua lua/website/senat.lua \
+	lua/website/sevenload.lua lua/website/soundcloud.lua \
+	lua/website/spiegel.lua lua/website/tagtele.lua \
+	lua/website/tapuz.lua lua/website/ted.lua \
+	lua/website/tvlux.lua lua/website/tvrain.lua \
+	lua/website/tmunderground.lua lua/website/theonion.lua \
+	lua/website/videa.lua lua/website/videobash.lua \
+	lua/website/vimeo.lua lua/website/wdrmaus.lua \
 	lua/website/yfrog.lua lua/website/youtube.lua \
 	lua/website/beeg.lua lua/website/deviantclip.lua \
 	lua/website/empflix.lua lua/website/fastjizz.lua \
 	lua/website/jizzhut.lua lua/website/keezmovies.lua \
-	lua/website/pornhub.lua lua/website/redtube.lua \
-	lua/website/spankwire.lua lua/website/tcmag.lua \
-	lua/website/tnaflix.lua lua/website/totallynsfw.lua \
-	lua/website/xhamster.lua lua/website/xnxx.lua \
-	lua/website/xvideos.lua lua/website/youjizz.lua \
-	lua/website/arte.lua lua/website/bikeradar.lua \
-	lua/website/blip.lua lua/website/bloomberg.lua \
-	lua/website/collegehumor.lua lua/website/francetelevisions.lua \
-	lua/website/globo.lua lua/website/pluzz.lua \
+	lua/website/redtube.lua lua/website/spankwire.lua \
+	lua/website/tcmag.lua lua/website/tnaflix.lua \
+	lua/website/totallynsfw.lua lua/website/xhamster.lua \
+	lua/website/xnxx.lua lua/website/xvideos.lua \
+	lua/website/youjizz.lua lua/website/arte.lua \
+	lua/website/bikeradar.lua lua/website/blip.lua \
+	lua/website/bloomberg.lua lua/website/collegehumor.lua \
+	lua/website/francetelevisions.lua lua/website/globo.lua \
+	lua/website/pluzz.lua lua/website/pornhub.lua \
 	lua/website/tube8.lua
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
 am__vpath_adj = case $$p in \
@@ -276,14 +277,15 @@ DIST_lua = lua/README lua/util/content_type.lua lua/util/charset.lua \
 	lua/website/imdb.lua lua/website/justintv.lua \
 	lua/website/lego.lua lua/website/liveleak.lua \
 	lua/website/mgnetwork.lua lua/website/metacafe.lua \
-	lua/website/publicsenat.lua lua/website/sapo.lua \
-	lua/website/senat.lua lua/website/sevenload.lua \
-	lua/website/soundcloud.lua lua/website/spiegel.lua \
-	lua/website/tagtele.lua lua/website/tapuz.lua \
-	lua/website/ted.lua lua/website/tvlux.lua \
-	lua/website/tvrain.lua lua/website/tmunderground.lua \
-	lua/website/theonion.lua lua/website/videa.lua \
-	lua/website/videobash.lua lua/website/vimeo.lua \
+	lua/website/myspass.lua lua/website/publicsenat.lua \
+	lua/website/sapo.lua lua/website/senat.lua \
+	lua/website/sevenload.lua lua/website/soundcloud.lua \
+	lua/website/spiegel.lua lua/website/tagtele.lua \
+	lua/website/tapuz.lua lua/website/ted.lua \
+	lua/website/tvlux.lua lua/website/tvrain.lua \
+	lua/website/tmunderground.lua lua/website/theonion.lua \
+	lua/website/videa.lua lua/website/videobash.lua \
+	lua/website/vimeo.lua lua/website/wdrmaus.lua \
 	lua/website/yfrog.lua lua/website/youtube.lua $(am__append_1) \
 	$(am__append_2) $(am__append_3)
 nobase_dist_pkgdata_DATA = $(DIST_lua)
