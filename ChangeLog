@@ -1,3 +1,401 @@
+commit 0791d2d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-01
+
+    Bump version to 0.4.11
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+m4/version.m4
+
+commit 5215745
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-01
+
+    Update NEWS for 0.4.11
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+NEWS
+
+commit c798621
+Merge: 7f171b0 d937de7
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    Merge branch 'tg/next/0.4_testrun_fixes' into next
+
+commit d937de7
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    Move pornhub.lua under FIXME
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+tests/data/format/default/nsfw/fixme/pornhub.json
+tests/data/format/default/nsfw/pornhub.json
+
+commit da6bd0b
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    tests: default: lego.json: Update
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/lego.json
+
+commit bfb8a9c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    tests: default: funnyordie.json: Update
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/funnyordie.json
+
+commit fa63c11
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    tests: Retire the "other" test category
+    
+    Often cumbersome at best -- results varying each time with certain
+    hosts. It's time to retire this test category. Tests for "default"
+    format are sufficient.
+    
+    Similar changes will be introduced in libquvi-scripts point-nine.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/other/cbsnews_best.json
+tests/data/format/other/cbsnews_m4v_1100k_480p.json
+tests/data/format/other/cbsnews_m4v_386k_216p.json
+tests/data/format/other/cbsnews_m4v_598k_360p.json
+tests/data/format/other/cbsnews_mp4_1100k_480p.json
+tests/data/format/other/cbsnews_mp4_500k_240p.json
+tests/data/format/other/fixme/blip_best.json
+tests/data/format/other/fixme/blip_m4v_blip_sd_360p.json
+tests/data/format/other/fixme/blip_mov_source_360p.json
+tests/data/format/other/fixme/blip_mp3_web.json
+tests/data/format/other/fixme/collegehumor_best.json
+tests/data/format/other/fixme/collegehumor_mp4_hq.json
+tests/data/format/other/fixme/collegehumor_mp4_sd.json
+tests/data/format/other/foxnews_best.json
+tests/data/format/other/foxnews_high.json
+tests/data/format/other/foxnews_low.json
+tests/data/format/other/foxnews_med.json
+tests/data/format/other/foxnews_med_low.json
+tests/data/format/other/funnyordie_best.json
+tests/data/format/other/funnyordie_mp4_ipad.json
+tests/data/format/other/funnyordie_mp4_wifi.json
+tests/data/format/other/golem_best.json
+tests/data/format/other/golem_m4v_ipod_360p.json
+tests/data/format/other/golem_mp4_high_540p.json
+tests/data/format/other/golem_mp4_medium_270p.json
+tests/data/format/other/ignore/length_bytes/dailymotion_best.json
+tests/data/format/other/ignore/length_bytes/dailymotion_mp4_384p.json
+tests/data/format/other/ignore/length_bytes/dailymotion_mp4_480p.json
+tests/data/format/other/ignore/length_bytes/dailymotion_mp4_720p.json
+tests/data/format/other/imdb_480p.json
+tests/data/format/other/imdb_720p.json
+tests/data/format/other/imdb_SD.json
+tests/data/format/other/imdb_best.json
+tests/data/format/other/mgnetwork_best.json
+tests/data/format/other/mgnetwork_mp4.json
+tests/data/format/other/mgnetwork_xflv.json
+tests/data/format/other/youtube_best.json
+tests/data/format/other/youtube_fmt05_240p.json
+tests/data/format/other/youtube_fmt18_360p.json
+tests/data/format/other/youtube_fmt22_720p.json
+tests/data/format/other/youtube_fmt34_360p.json
+tests/data/format/other/youtube_fmt35_480p.json
+tests/data/format/other/youtube_fmt37_1080p.json
+tests/data/format/other/youtube_fmt38_1536p.json
+
+commit ab25817
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    tests: default: empflix.lua: Update test URL
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/nsfw/empflix.json
+
+commit f3bcb56
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    tests: default: beeg.json: Update page_title
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/nsfw/beeg.json
+
+commit 282a309
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    tests: default: spiegel.json: Update test URL
+    
+    Replace the old test URL (HTTP/404).
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/spiegel.json
+
+commit b118e3c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    tests: default: audioboo.json: Remove properties
+    
+    Remove the length_bytes, content_type and file_suffix properties so
+    that the test passes.   This fixes nothing.
+    
+    audioboo has gone amaz0nian. The media is accessed using HTTPS,
+    which causes libquvi 0.4 to skip the media stream "verification"
+    step. Even if enabled, sending of HTTP HEAD (through SSL tunnel)
+    results in HTTP/403 (Forbidden).
+    
+    Possibly related:
+      https://forums.aws.amaz0n.com/message.jspa?messageID=378603
+        (replace '0' in 'amaz0n')
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/audioboo.json
+
+commit d4a8a12
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    tests: default: metacafe.json: Update thumbnail_url
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/metacafe.json
+
+commit e1fc4d2
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    tests: default: break.json: Add thumbnail_url value
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/break.json
+
+commit 569ab94
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    tests: default: theonion(_2).json: Update thumbnail_url
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/theonion.json
+tests/data/format/default/theonion_2.json
+
+commit be81501
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    beeg.lua: Update title pattern
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/beeg.lua
+
+commit 787be3d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    FIX: lego.lua: All patterns
+    
+    Modify the script to extract the media properties using new
+    patterns.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/lego.lua
+
+commit 4735455
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    FIX: metacafe.lua: Key parsing
+    
+    Some of the patterns were outdated due to the changes made to the
+    website.  Have the script extract the 'flashvars' value, unescape
+    it and then extract each individual value from this unescaped value.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/metacafe.lua
+
+commit 8d6ee06
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    FIX: theonion.lua: thumbnail URL pattern
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/theonion.lua
+
+commit 763338c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-31
+
+    FIX: 1tvru.lua: title and media URL patterns
+    
+    Only some of the (archived?) videos seem to work (now?).
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/1tvru.lua
+
+commit 7f171b0
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-19
+
+    tests: default: gaskrank.json: Add thumbnail_url property
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/gaskrank.json
+
+commit 1e15082
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-19
+
+    gaskrank.lua: Parse thumbnail URL
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/gaskrank.lua
+
+commit 8c067a5
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-19
+
+    FIX: gaskrank.lua: media stream URL pattern
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/gaskrank.lua
+
+commit 3096ff9
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-04
+
+    wdrmaus.lua: fail if required properties cannot be parsed
+    
+    Fail with an error of the required media properties {title,id,url}
+    could not be parsed. Do not set self.default (unused). Cleanup code
+    for improved readability.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/wdrmaus.lua
+
+commit 9266abb
+Merge: 89d31bc 37704a6
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-03
+
+    Merge branch 'tg/next/0.4_add_wdrmaus' into next
+
+commit 37704a6
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-03
+
+    tests: Add default/wdrmaus_*.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/wdrmaus_es.json
+tests/data/format/default/wdrmaus_kbbs.json
+tests/data/format/default/wdrmaus_sg.json
+
+commit 03f4cce
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-03
+
+    wdrmaus.lua: fail if URL path patterns do not match
+    
+    Have the script raise an error if none of the URL path patterns.
+    Otherwise the users will only get a cryptic error about missing
+    media property values.
+    
+    Other:
+    * Set "fetch_type=config" for quvi.fetch(non-page_url) calls
+    * Replace if-elseif -block with a lookup table
+    * Trim a long line to fit 72 chars
+    * Remove an extra newline
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/wdrmaus.lua
+
+commit 86d1c64
+Author: Guido Leisker <guido@guido-leisker.de>
+Date:   2013-01-03
+
+    Add support for wdrmaus.de
+    
+    Signed-off-by: Guido Leisker <guido@guido-leisker.de>
+    Tested-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/wdrmaus.lua
+
+commit 89d31bc
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-02
+
+    FIX: gen-news.sh: Find the closest tagname
+    
+    Replaces the buggy tagname extraction.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+gen-news.sh
+
+commit bbd6fd3
+Merge: 4d12ffd 0795470
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-02
+
+    Merge branch 'tg/next/0.4_add_myspass' into next
+
+commit 0795470
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-01-02
+
+    tests: Add default/myspass.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/myspass.json
+
+commit 2b79f18
+Author: Guido Leisker <guido@guido-leisker.de>
+Date:   2013-01-01
+
+    Add support for myspass.de
+    
+    Signed-off-by: Guido Leisker <guido@guido-leisker.de>
+    Reviewed-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/myspass.lua
+
 commit 4d12ffd
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2012-11-22
