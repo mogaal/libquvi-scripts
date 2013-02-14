@@ -9,6 +9,10 @@ Copyright:
  2010,2011,2012 quvi project
 License: LGPL-2.1+
 
+Files: share/lua/website/ard.lua
+Copyright: 2013, Thomas Weißschuh
+License: LGPL-2.1+
+
 Files: share/lua/website/tagtele.lua
        share/lua/website/keezmovies.lua
        share/lua/website/xhamster.lua
