@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.11
+-- libquvi-scripts v0.4.12
 -- Copyright (C) 2013  Guido Leisker <guido@guido-leisker.de>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -98,7 +98,7 @@ end
 --
 
 function WdrMaus.parseElefantenseite(self)
-  self.id = self.page_url:match('\/([%w_]-)$')
+  self.id = self.page_url:match('/([%w_]-)$')
                 or error('no match: media ID')
 
   local rooturl = self.page_url:match('(%w+://.+/%w+)/.*')

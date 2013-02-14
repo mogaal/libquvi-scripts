@@ -1,3 +1,231 @@
+commit 404ec2e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-10
+
+    Update NEWS for v0.4.12
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+NEWS
+
+commit 9a2270e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-10
+
+    Bump version to 0.4.12
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+m4/version.m4
+
+commit 1912cd7
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-10
+
+    Move mgnetwork.lua under FIXME
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+tests/data/format/default/fixme/mgnetwork.json
+tests/data/format/default/mgnetwork.json
+
+commit a49bce7
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-10
+
+    tests: default: xvideos.json: Update test URL
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/nsfw/xvideos.json
+
+commit e2d1f7f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-10
+
+    Move fastjizz.lua under FIXME
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+tests/data/format/default/nsfw/fastjizz.json
+tests/data/format/default/nsfw/fixme/fastjizz.json
+
+commit 2b003f2
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-10
+
+    tests: default: videobash.json: Update page_title
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/videobash.json
+
+commit 509db79
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-10
+
+    tests: default: tvlux.json: Update
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/tvlux.json
+
+commit 85f1dea
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-10
+
+    FIX: tvlux.lua: Update patterns, parse thumb URL
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/tvlux.lua
+
+commit 65ea27d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-10
+
+    soundcloud-2.json: Update test URL
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/soundcloud-2.json
+
+commit dab6469
+Author: Thomas Weißschuh <thomas@t-8ch.de>
+Date:   2013-02-08
+
+    ard.lua: cleanup
+    
+    * remove superfluous fsk table from test_availability()
+    * s/films/videos/ in test_availability()
+    * move the call to test_availability() into iter_formats(), so it
+      gets always executed
+    * remove superfluous match in container_from()
+
+share/lua/website/ard.lua
+
+commit 1fb1128
+Merge: c0add2d f34b625
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-08
+
+    Merge branch 'tg/next/0.4__ard.lua_misc_improvements' into next
+
+commit f34b625
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-08
+
+    ard.lua: Ard.to_s: Use service internal stream ID
+    
+    Since the service provides an ID (1,2,3,...), use it in
+    the media stream ID to make them unique. Otherwise we'll
+    end up with identical media stream IDs in some cases.
+    
+    Use 'i' for the lack of a better prefix. This is similar to
+    that of youtube.lua (0.9) and the use of the "itag" value in
+    YouTube the media stream IDs.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/ard.lua
+
+commit 99b3722
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-08
+
+    ard.lua: Cleanup Ard.iter_formats
+    
+    Realign, remove webX extraction which is now done in Ard.quality_from,
+    make the for loop more compact.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/ard.lua
+
+commit 7213e06
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-08
+
+    ard.lua: Add Ard.container_from function
+
+share/lua/website/ard.lua
+
+commit 08dff90
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-08
+
+    ard.lua: Add Ard.height_from function
+
+share/lua/website/ard.lua
+
+commit c41e5cc
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-08
+
+    ard.lua: Add Ard.quality_from function
+    
+    Have the Ard.quality function return a string containing one of the
+    strings 'ld', 'md', 'sd', 'hd'. Other websites.
+    
+    Plenty of guessing going on here, these strings are roughly based on
+    the findings posted here:
+      http://article.gmane.org/gmane.comp.web.flash.quvi/170
+    
+      0 = '256x144' -- ld
+      1 = '512x288' -- md
+      2 = '960x540' -- sd
+      3 ='1280x720' -- hd
+
+share/lua/website/ard.lua
+
+commit f24c168
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-08
+
+    ard.lua: Rewrite Ard.to_s for 0.9 compatibility
+    
+    The 0.9 series of libquvi-scripts will attempt to return the media
+    stream IDs as "$quality_$container_$encoding_$height(p)" whenever
+    possible.  Prepare for the foreseeable future.
+
+share/lua/website/ard.lua
+
+commit c0add2d
+Author: Thomas Weißschuh <thomas@t-8ch.de>
+Date:   2012-10-14
+
+    Add ard.lua
+    
+    This adds support for the 'ARD mediathek', the movie archive of the
+    primary national television broadcaster of Germany. It's mediathek also
+    servers videos from many smaller german broadcasters.
+    
+    Note: films are only available online for two weeks after airing.
+    Certain films are only available at certain daytimes. In this case an
+    error is raised.
+    
+    Signed-off-by: Thomas Weißschuh <thomas@t-8ch.de>
+    Tested-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/ard.lua
+
+commit ef57874
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-07
+
+    FIX: wdrmaus.lua:101: invalid escape sequence
+    
+    Fix the "wdrmaus.lua:101: invalid escape sequence near \/" by
+    removing the backslash.
+    
+    Reported-by: Thomas Weißschuh <thomas@t-8ch.de>
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/wdrmaus.lua
+
 commit 0791d2d
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2013-02-01
