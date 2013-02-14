@@ -15,6 +15,7 @@ DIST_lua=\
  lua/website/101greatgoals.lua \
  lua/website/1tvru.lua \
  lua/website/academicearth.lua \
+ lua/website/ard.lua \
  lua/website/audioboo.lua \
  lua/website/bbc.lua \
  lua/website/break.lua \
@@ -32,7 +33,6 @@ DIST_lua=\
  lua/website/justintv.lua \
  lua/website/lego.lua \
  lua/website/liveleak.lua \
- lua/website/mgnetwork.lua \
  lua/website/metacafe.lua \
  lua/website/myspass.lua \
  lua/website/publicsenat.lua \
@@ -60,7 +60,6 @@ DIST_lua+=\
  lua/website/beeg.lua \
  lua/website/deviantclip.lua \
  lua/website/empflix.lua \
- lua/website/fastjizz.lua \
  lua/website/jizzhut.lua \
  lua/website/keezmovies.lua \
  lua/website/redtube.lua \
@@ -83,9 +82,11 @@ DIST_lua+=\
  lua/website/collegehumor.lua \
  lua/website/francetelevisions.lua \
  lua/website/globo.lua \
+ lua/website/mgnetwork.lua \
  lua/website/pluzz.lua
 if WITH_NSFW
 DIST_lua+=\
+ lua/website/fastjizz.lua \
  lua/website/pornhub.lua \
  lua/website/tube8.lua
 endif
