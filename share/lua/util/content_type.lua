@@ -1,4 +1,4 @@
--- libquvi-scripts v0.4.12
+-- libquvi-scripts v0.4.13
 -- Copyright (C) 2012  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.

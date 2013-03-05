@@ -1,3 +1,59 @@
+commit 17d11a2
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-03-03
+
+    Bump version to 0.4.13
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+m4/version.m4
+
+commit adcbeb1
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-03-03
+
+    Update NEWS for v0.4.13
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+NEWS
+
+commit 85338c0
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-03-03
+
+    tests: default: Change xvideos test URL
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/nsfw/xvideos.json
+
+commit 7a9bdb1
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-16
+
+    Rename ard.lua to ardmediathek.lua
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/ard.lua
+share/lua/website/ardmediathek.lua
+
+commit 64cab0d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-02-16
+
+    FIX: ard.lua: Assign self.script_dir to package.path
+    
+    Assign the value of the self.script_dir to the package.path so that
+    the 'quvi/*' modules can be found.
+    
+    Reported-by: Fabian Homborg <fhomborg@gmail.com>
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/ard.lua
+
 commit 404ec2e
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2013-02-10

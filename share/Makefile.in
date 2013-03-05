@@ -96,7 +96,7 @@ am__nobase_dist_pkgdata_DATA_DIST = lua/README \
 	lua/website/quvi/const.lua lua/website/quvi/html.lua \
 	lua/website/quvi/url.lua lua/website/quvi/util.lua \
 	lua/website/101greatgoals.lua lua/website/1tvru.lua \
-	lua/website/academicearth.lua lua/website/ard.lua \
+	lua/website/academicearth.lua lua/website/ardmediathek.lua \
 	lua/website/audioboo.lua lua/website/bbc.lua \
 	lua/website/break.lua lua/website/canalplus.lua \
 	lua/website/cbsnews.lua lua/website/charlierose.lua \
@@ -268,7 +268,7 @@ DIST_lua = lua/README lua/util/content_type.lua lua/util/charset.lua \
 	lua/website/quvi/const.lua lua/website/quvi/html.lua \
 	lua/website/quvi/url.lua lua/website/quvi/util.lua \
 	lua/website/101greatgoals.lua lua/website/1tvru.lua \
-	lua/website/academicearth.lua lua/website/ard.lua \
+	lua/website/academicearth.lua lua/website/ardmediathek.lua \
 	lua/website/audioboo.lua lua/website/bbc.lua \
 	lua/website/break.lua lua/website/canalplus.lua \
 	lua/website/cbsnews.lua lua/website/charlierose.lua \

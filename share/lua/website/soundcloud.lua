@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.12
+-- libquvi-scripts v0.4.13
 -- Copyright (C) 2011  Bastien Nocera <hadess@hadess.net>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
