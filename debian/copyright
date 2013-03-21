@@ -62,6 +62,10 @@ Files: share/lua/website/tapuz.lua
 Copyright: 2012, Tzafrir Cohen <tzafrir@cohens.org.il>
 License: LGPL-2.1+
 
+Files: share/lua/website/wimp.lua
+Copyright: 2013, Martin Herkt <lachs0r@srsfckn.bit>
+License: LGPL-2.1+
+
 Files: debian/*
 Copyright: 2011 Alejandro Garrido Mota <garridomota@gmail.com>
 License: GPL-3+
