@@ -1,6 +1,6 @@
 
 -- libquvi-scripts v0.4.14
--- Copyright (C) 2011-2012  quvi project
+-- Copyright (C) 2013  Martin Herkt <lachs0r@srsfckn.bit>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
 --
@@ -22,43 +22,43 @@
 
 -- Identify the script.
 function ident(self)
-    package.path = self.script_dir .. '/?.lua'
-    local C      = require 'quvi/const'
-    local r      = {}
-    r.domain     = "bikeradar%.com"
-    r.formats    = "default"
-    r.categories = C.proto_http
-    local U      = require 'quvi/util'
-    r.handles    = U.handles(self.page_url, {r.domain})
-    return r
+  package.path = self.script_dir .. '/?.lua'
+  local C      = require 'quvi/const'
+  local r      = {}
+  r.domain     = "wimp%.com"
+  r.formats    = "default"
+  r.categories = C.proto_http
+  local U      = require 'quvi/util'
+  r.handles    = U.handles(self.page_url, {r.domain}, {"/.+/"})
+  return r
 end
 
 -- Query available formats.
 function query_formats(self)
-    self.formats = 'default'
-    return self
+  self.formats = 'default'
+  return self
 end
 
 -- Parse media URL.
 function parse(self)
-    self.host_id  = "bikeradar"
+  self.host_id = "wimp"
 
-    self.id = self.page_url:match('bikeradar.com/.+-(%d+)$')
-                or error("no match: media ID")
+  self.id = self.page_url:match("/(.-)/")
+          or error("no match: media ID")
 
-    local p = quvi.fetch(self.page_url)
+  local p = quvi.fetch(self.page_url)
 
-    self.title = p:match('"og:title" content="(.-)"/>')
-                  or error("no match: media title")
+  self.title = p:match('"og:title" content="(.-)" />')
+              or error("no match: media title")
 
-    self.thumbnail_url = p:match('"og:image" content="(.-)"') or ''
+  self.thumbnail_url = p:match('"og:image" content="(.-)"') or ''
 
-    local fn = p:match('<param name="flashvars" value="vcode=(%w+)&')
-                or error("no match: file name")
+  local B = require 'quvi/util'
+  local u = B.base64_decode(p:match("googleCode = '(.-)'"))
+            or error("no match: encoded media stream URL")
 
-    self.url = {string.format("http://cdn.video.bikeradar.com/%s.flv",fn)}
+  self.url = {u:match('"file","(.-)"')
+            or error("no match: media stream URL")}
 
-    return self
+  return self
 end
-
--- vim: set ts=4 sw=4 tw=72 expandtab:
