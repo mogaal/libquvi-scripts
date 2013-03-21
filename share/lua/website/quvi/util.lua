@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.13
+-- libquvi-scripts v0.4.14
 -- Copyright (C) 2010-2011  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -44,6 +44,36 @@ end
 function M.slash_unescape (s)
     s = s:gsub ('\\(.)', '%1')
     return s
+end
+
+function M.base64_decode(s)
+    local itbl='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+
+    s = s:gsub('[^' .. itbl .. '=]', '')
+
+    return (s:gsub('.', function(x)
+        local r = ''
+
+        if (x ~= '=') then
+            local f = (itbl:find(x) - 1)
+
+            for i = 6, 1, -1 do
+                r = r .. (f % 2 ^ i - f % 2 ^ (i - 1) > 0 and '1' or '0')
+            end
+        end
+
+        return r;
+    end):gsub('%d%d%d?%d?%d?%d?%d?%d?', function(x)
+        local c = 0
+
+        if (#x == 8) then
+            for i = 1, 8 do
+                c = c + (x:sub(i, i) == '1' and 2 ^ (8 - i) or 0)
+            end
+        end
+
+        return string.char(c)
+    end))
 end
 
 -- handles

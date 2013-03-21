@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.13
+-- libquvi-scripts v0.4.14
 -- Copyright (C) 2013  Toni Gundogdu <legatvs@gmail.com>
 -- Copyright (C) 2012  Ross Burton <ross@burtonini.com>
 --

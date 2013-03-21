@@ -1,3 +1,76 @@
+commit aafc1ab
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-03-19
+
+    Bump version to 0.4.14
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+m4/version.m4
+
+commit 4caf5a1
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-03-19
+
+    Update NEWS for v0.4.14
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+NEWS
+
+commit 10cd3be
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-03-19
+
+    Change soundcloud test URL
+    
+    Some of the content may be 'protected' in which case the server will
+    return HTTP/401 (unauthorized) when the stream URL is being accessed.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/soundcloud.json
+
+commit e7e882e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-03-08
+
+    share/Makefile.am: Add wimp.lua
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+
+commit b394bc5
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-03-08
+
+    tests: default: add wimp.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/wimp.json
+
+commit 3639d67
+Author: Martin Herkt <lachs0r@srsfckn.biz>
+Date:   2013-03-08
+
+    Add website script for wimp.com
+    
+    Signed-off-by: Martin Herkt <lachs0r@srsfckn.biz>
+
+share/lua/website/wimp.lua
+
+commit 0eff56e
+Author: Martin Herkt <lachs0r@srsfckn.biz>
+Date:   2013-03-08
+
+    website utils: add base64 decoder
+    
+    Signed-off-by: Martin Herkt <lachs0r@srsfckn.biz>
+
+share/lua/website/quvi/util.lua
+
 commit 17d11a2
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2013-03-03
