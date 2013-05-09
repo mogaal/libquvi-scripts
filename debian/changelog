@@ -1,3 +1,10 @@
+libquvi-scripts (0.4.15-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bumped Standards-Version to 3.9.4 (no changes).
+
+ -- Ansgar Burchardt <ansgar@debian.org>  Thu, 09 May 2013 13:28:38 +0200
+
 libquvi-scripts (0.4.14-1) unstable; urgency=low
 
   * New upstream release.
