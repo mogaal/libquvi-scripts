@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.14
+-- libquvi-scripts v0.4.15
 -- Copyright (C) 2012  Toni Gundogdu <legatvs@gmail.com>
 -- Copyright (C) 2010  Paul Kocialkowski <contact@paulk.fr>
 --
@@ -46,7 +46,7 @@ function parse(self)
 
     local p = quvi.fetch(self.page_url)
 
-    self.title = p:match('class="mTitle">.-<h1?.>(.-)</h1>')
+    self.title = p:match('<title>(.-)%s+%-%s+xHamster%.com')
                   or error("no match: media title")
 
     self.id = self.page_url:match("/movies/(.-)/")

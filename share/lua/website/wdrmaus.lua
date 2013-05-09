@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.14
+-- libquvi-scripts v0.4.15
 -- Copyright (C) 2013  Guido Leisker <guido@guido-leisker.de>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.

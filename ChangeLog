@@ -1,3 +1,640 @@
+commit 780af01
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    Update NEWS for v0.4.15
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+NEWS
+
+commit 083e929
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    Bump version to 0.4.15
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+m4/version.m4
+
+commit b79c854
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    tests: Remove tnaflix.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/nsfw/tnaflix.json
+
+commit 5bf649c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    tests: Update videobash.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/videobash.json
+
+commit 16065b3
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    tests: Remove theonion_2.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/theonion_2.json
+
+commit cdfacbc
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    tests: Update theonion.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/theonion.json
+
+commit 30549f7
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    tests: Update imdb.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/imdb.json
+
+commit 8d276bd
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    tests: Update funnyordie.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/funnyordie.json
+
+commit c175c51
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    tests: Remove soundcloud-2.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/soundcloud-2.json
+
+commit e6375be
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    tests: Update soundcloud.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/soundcloud.json
+
+commit f21a6ee
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    tests: Update gaskrank.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/gaskrank.json
+
+commit 3a54aca
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    tests: shortened.t: Disable dai.ly test
+    
+    HTTP/404. Need a new test if this service is still even usable.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/t/shortened.t
+
+commit e667492
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    Remove website/yfrog.lua
+    
+    This is primarily an image host [?]. The website provides direct links
+    to media. Not really our cup of tea.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/yfrog.lua
+tests/data/format/default/yfrog.json
+
+commit c0e5bc4
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    tests: Move golem.json to fixme/
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/fixme/golem.json
+tests/data/format/default/golem.json
+
+commit 51c69b2
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    tests: Update clipfish.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/clipfish.json
+
+commit 2ede069
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    tests: Update xvideos.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/nsfw/xvideos.json
+
+commit 8540984
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-09
+
+    tests: Update xnxx.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/nsfw/xnxx.json
+
+commit bb40acd
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-05
+
+    website/clipfish.lua: r.categories: Add proto_rtmp
+    
+    The website now provides both HTTP and RTMP(E) media streams.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/clipfish.lua
+
+commit d98c460
+Merge: 8988585 fccb462
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-05
+
+    Merge branch 'tg/0.4__fix_101greatgoals.lua' into maint-0.4
+
+commit fccb462
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-05
+
+    tests: redirect.t: Add test for website/101greatgoals.lua
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/resolve/redirect_url_101greatgoals.json
+tests/t/redirect.t
+
+commit b9daced
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-05
+
+    FIX: website/101greatgoals.lua: embedded URL patterns
+    
+    Improve the patterns used to parse the embedded media URLs.  Do not
+    attempt to check for the known hosts; leave the determination for
+    libquvi(-scripts) to do.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/101greatgoals.lua
+
+commit 8988585
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    FIX: tests: redirect.t: Update shortened URL
+    
+    The shortened URL points to an old test URL; update the test to use the
+    one in default/vimeo.json.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/t/redirect.t
+
+commit 0ad0cb5
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    tests: redirect_url_tcmag.json: Update expected page_title
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/resolve/redirect_url_tcmag.json
+
+commit aa496bf
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    website/bikeradar.lua: Unmark as "FIXME"
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+
+commit a5fe1a2
+Merge: 4927bb9 d58ba50
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    Merge branch 'tg/0.4__fix_ted.lua' into maint-0.4
+
+commit d58ba50
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    tests: format/default: Add ted.json
+    
+    Used to test the media hosted by ted.com
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/ted.json
+
+commit cc0c742
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    tests: resolve: Update redirect_url_ted.json
+    
+    Used to test the content of ted.com that is being hosted elsewhere, e.g.
+    YouTube.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/resolve/redirect_url_ted.json
+
+commit 00f4301
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    FIX: website/ted.lua: Check for extern media
+    
+    * Rewrite `Ted.is_external' func using a new embed URL pattern
+    * Revise `parse' function for minor style changes
+    * Update thumbnail_url pattern
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/ted.lua
+
+commit 4927bb9
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    FIX: tests: redirect.t: Add a missing comma
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/t/redirect.t
+
+commit 5398c2c
+Merge: 4969157 58e3174
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    Merge branch 'tg/0.4__fix_academicearth.lua' into maint-0.4
+
+commit 58e3174
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    tests: resolve: Update redirect_url_academicearth.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/resolve/redirect_url_academicearth.json
+
+commit cb19406
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    FIX: website/academicearth.lua: Look for YouTube embed URL
+    
+    This website (exclusively?) now hosts the media at YouTube. Update the
+    embed media URL pattern.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/academicearth.lua
+
+commit 4969157
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    tests: redirect.t: Add a test for website/bikeradar.lua
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/t/redirect.t
+
+commit 9f92f12
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    tests: redirect.t: Comment out dorkly (collegehumor) test
+    
+    website/collegehumor.lua is currently marked as "FIXME".
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/t/redirect.t
+
+commit 85253a3
+Merge: 1db81dc e0bc5a7
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    Merge branch 'tg/0.4__fix_bikeradar.lua' into maint-0.4
+
+commit e0bc5a7
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    tests: resolve/redirect_url_bikeradar.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/resolve/redirect_url_bikeradar.json
+
+commit 4d4cebf
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    tests: format/default: Remove bikeradar.json
+    
+    Now that website/bikeradar.lua only sets only the `self.redirect_url',
+    this test has been made obsolete.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/fixme/bikeradar.json
+
+commit 4fe8db9
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-30
+
+    FIX: website/bikeradar.lua: Look for embedURL
+    
+    Check page HTML for embedded URL, since bikeshed apparently uses YouTube
+    to host their media. Set `self.redirect_url' or croak.
+    
+    * ident: Update media URL pattern
+    * parse: Set `self.redirect_url' only, do not parse anything else
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/bikeradar.lua
+
+commit 1db81dc
+Merge: 147ceaa bc33983
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-29
+
+    Merge branch 'tg/0.4__improve_website/spiegel.lua' into maint-0.4
+
+commit bc33983
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-29
+
+    tests: format/default: Update for website/spiegel.lua
+    
+    * Update the old testcase
+    * Add another testcase
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/spiegel-1.json
+tests/data/format/default/spiegel.json
+
+commit c583258
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-29
+
+    FIX: website/spiegel.lua: choose_default
+    
+    Choosing to use the "lowest quality" stream (3gp) as the 'default'
+    stream would cause HTTP/404 when the stream was accessed. Although this
+    stream is listed among those available ones, it appears to be missing
+    for most videos (if not all).
+    
+    Spiegel.choose_default:
+      Return the first available stream as the new 'default' stream.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/spiegel.lua
+
+commit a345ae6
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-29
+
+    website/spiegel.lua: Parse thumbnail URL
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/spiegel.lua
+
+commit 1763969
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-29
+
+    website/spiegel.lua: Parse title from page instead
+    
+    The page HTML gives us the complete media title.
+    * Remove the now obsolete `Spiegel.get_playlist' function
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/spiegel.lua
+
+commit 147ceaa
+Merge: 70a40d3 a612582
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-28
+
+    Merge branch 'tg/0.4__fix_guardian.lua' into maint-0.4
+
+commit a612582
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-28
+
+    tests: format/default: Update tests for guardian.lua
+    
+    Update test cases:
+    * Use a more recent media URL (guardian.json)
+    * Keep the old media URL (guardian_old.json)
+    * Add one for audio (guardian_audio.json)
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/guardian.json
+tests/data/format/default/guardian_audio.json
+tests/data/format/default/guardian_audio2.json
+tests/data/format/default/guardian_old.json
+
+commit 2e73b5b
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-28
+
+    FIX: website/guardian.lua: all patterns
+    
+    * Remove stream interation (only one appears to be available now)
+    * Parse all media properties from the media page
+    * Remove unused Guardian.* functions
+    * Improve thumbnail URL parsing
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/guardian.lua
+
+commit 70a40d3
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-16
+
+    gen-news.sh: Do not print commits with >1 one parent
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+gen-news.sh
+
+commit 23cb49e
+Merge: 1fbb469 973ec5a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-26
+
+    Merge branch 'tg/0.4__fix_website/sevenload.lua' into maint-0.4
+
+commit 973ec5a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-26
+
+    tests: format/default: Update sevenload.json
+    
+    * Move from "nlfy" to "regular"
+    * Update test case
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/nlfy/sevenload.json
+tests/data/format/default/sevenload.json
+
+commit 7ea5976
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-26
+
+    FIX: website/sevenload.lua: all patterns
+    
+    * `ident': Use `handles' function of 'quvi/util'
+    * `parse': Update media {title,id,url} patterns
+    * `parse': Parse thumb url
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/sevenload.lua
+
+commit 1fbb469
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-23
+
+    FIX: website/gaskrank.lua: media stream URL pattern
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/gaskrank.lua
+
+commit 4d0fc7c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-21
+
+    FIX: website/funnyordie.lua: media stream URL pattern
+    
+    * Conform to the standard media property error messages
+    * Fix the pattern for the media stream URLs
+    * Update the pattern for the "quality" and the "container"
+    * Both FunnyOrDie.choose_{best,default} now return the first stream
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/funnyordie.lua
+
+commit 8edbe5c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-21
+
+    website/golem.lua: Mark as "FIXME"
+    
+    The config URL no longer works (HTTP/404).
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+
+commit bd6c931
+Merge: ef9a614 494dcde
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-15
+
+    Merge branch 'tg/maint-0.4__umark_arte_as_fixme' into maint-0.4
+
+commit 494dcde
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-15
+
+    website/arte.lua: Unmark as "FIXME"
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+
+commit bd7e323
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-15
+
+    expire.t: Re-enable and revise arte.lua test
+    
+    Re-enable and revise the test for website/arte.lua:
+    * Parse all video URLs from the front page
+    * Pick one URL from the middle of the stack
+      (the first URL seems not to be available everytime: too recent?)
+    
+    Keep pluzz.lua test commented out.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/t/expire.t
+
+commit ef9a614
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-04-02
+
+    FIX: xhamster.lua: title pattern
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/xhamster.lua
+
 commit aafc1ab
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2013-03-19

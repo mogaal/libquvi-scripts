@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.14
+-- libquvi-scripts v0.4.15
 -- Copyright (C) 2010-2012  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -24,10 +24,11 @@
 function ident(self)
     package.path = self.script_dir .. '/?.lua'
     local C      = require 'quvi/const'
+    local B      = require 'quvi/bit'
     local r      = {}
     r.domain     = "clipfish%.de"
     r.formats    = "default"
-    r.categories = C.proto_http
+    r.categories = B.bit_or(C.proto_http, C.proto_rtmp)
     local U      = require 'quvi/util'
     r.handles    = U.handles(self.page_url, {r.domain}, {"/video/%d+/"})
     return r
