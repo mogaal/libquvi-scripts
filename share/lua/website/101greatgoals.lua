@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.15
+-- libquvi-scripts v0.4.16
 -- Copyright (C) 2013  Toni Gundogdu <legatvs@gmail.com>
 -- Copyright (C) 2012  quvi project
 --
