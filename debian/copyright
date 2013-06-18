@@ -19,7 +19,7 @@ Files: share/lua/website/tagtele.lua
        share/lua/website/pornhub.lua
        share/lua/website/tnaflix.lua
 Copyright:
- 2012, Toni Gundogdu <legatvs@gmail.com>
+ 2012-2013, Toni Gundogdu <legatvs@gmail.com>
  2011-2012, Paul Kocialkowski <contact@paulk.fr>
 License: LGPL-2.1+
 
@@ -55,7 +55,9 @@ License: LGPL-2.1+
 
 Files: share/lua/website/myspass.lua
        share/lua/website/wdrmaus.lua
-Copyright: 2013, Guido Leisker <guido@guido-leisker.de>
+Copyright:
+ 2013, Guido Leisker <guido@guido-leisker.de>
+ 2013, Toni Gundogdu <legatvs@gmail.com>
 License: LGPL-2.1+
 
 Files: share/lua/website/tapuz.lua
