@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.15
+-- libquvi-scripts v0.4.16
 -- Copyright (C) 2011,2013  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -45,7 +45,7 @@ end
 function parse(self)
     self.host_id = "guardian"
 
-    local p = quvi.fetch(self.page_url)
+    local p = Guardian.fetch(self)
 
     self.title = p:match('"og:title" content="(.-)"')
                     or error('no match: media title')
@@ -65,6 +65,17 @@ function parse(self)
                   or error('no match: media stream URL')}
 
     return self
+end
+
+--
+-- Utility functions
+--
+
+function Guardian.fetch(self)
+    local p = quvi.fetch(self.page_url)
+    local e = p:match('<div class="expired">.-<p>(.-)</p>.-</div>') or ''
+    if #e >0 then error(e) end
+    return p
 end
 
 -- vim: set ts=4 sw=4 tw=72 expandtab:

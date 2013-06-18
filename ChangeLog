@@ -1,3 +1,221 @@
+commit e2cbb95
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-06-18
+
+    Bump version to 0.4.16
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+m4/version.m4
+
+commit b109fe8
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-06-18
+
+    Update NEWS for v0.4.16
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+NEWS
+
+commit f431659
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-06-16
+
+    tests: default/tagtele.json: Add thumbnail URL property
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/tagtele.json
+
+commit c7ca1aa
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-06-16
+
+    website/tagtele.lua: Parse thumbnail URL
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/tagtele.lua
+
+commit a56f48e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-06-16
+
+    FIX: website/tagtele.lua: title pattern
+    
+    Other:
+    * Add an additional media title pattern to fall back to
+
+share/lua/website/tagtele.lua
+
+commit 14135c2
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-06-16
+
+    tests: default/spiegel-1.json: Remove, no longer available
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/spiegel-1.json
+
+commit 20e95ca
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-06-16
+
+    FIX: website/spiegel.lua: title pattern
+    
+    Other:
+    * Add an additional title pattern to fall back to
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/spiegel.lua
+
+commit d03ef74
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-06-16
+
+    tests: default/myspass.json: Update
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/myspass.json
+
+commit 3265307
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-06-16
+
+    FIX: website/myspass.lua:63: bad argument #3 to format
+    
+    This commit fixes the:
+      myspass.lua:63: bad argument #3 to format (number expected, got string)
+    
+    This is caused by MySpass.getMetadataValue returning an empty string
+    value ("").  Check for what we assume to be an expired video (all
+    metadata fields are empty).
+    
+    Other:
+    * Apply correct code indentation convention
+      See, <http://quvi.sourceforge.net/contrib.html#indent> for 0.4
+      convention.
+    
+    * Do not set self.metadata in MySpass.getMetadataValue
+      Instead, fetch it to a local variable and pass that to the function.
+      This saves us a (repeated) if-then check without polluting the `self'
+      table.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/myspass.lua
+
+commit 121cc76
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-06-16
+
+    tests: default/guardian.json: Update
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/guardian.json
+
+commit 22ff394
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-06-16
+
+    website/guardian.lua: Check for expired content
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/guardian.lua
+
+commit 1e11438
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-06-16
+
+    tests: default/break.json: Update
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/break.json
+
+commit 0c8f7d9
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-06-04
+
+    BACKPORTpt9: Remove website/academicearth.lua
+    
+    d04e115:
+      academicearth.org now links to YouTube video pages. The "elective"
+      videos are (AFAICT) HTML5 videos and there are only a handful of those
+      at the time of writing this.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/academicearth.lua
+tests/data/resolve/redirect_url_academicearth.json
+tests/t/redirect.t
+
+commit a8fec0f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-06-04
+
+    FIX: BACKPORTpt9: website/break.lua: path pattern
+    
+      63d560a: FIX: media/break.lua: Break.can_parse_url: path pattern
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/break.lua
+
+commit 65371bf
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-21
+
+    tests: redirect.t: Update URL for 101greatgoals
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/resolve/redirect_url_101greatgoals.json
+tests/t/redirect.t
+
+commit 436b8ba
+Merge: 780af01 d211a57
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-21
+
+    Merge branch 'tg/0.4__improve_liveleak.lua' into maint-0.4
+
+commit d211a57
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-21
+
+    tests: resolve.t: Add a test for liveleak
+    
+    * Update resolve.t with a test for liveleak.lua
+    * Add redirect_url_liveleak.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/resolve/redirect_url_liveleak.json
+tests/t/redirect.t
+
+commit efde9c3
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-05-21
+
+    liveleak.lua: Improve support for 3rd party embedded content
+    
+    Some of the videos may be hosted elsewhere, if that appears to be the
+    case, then try to parse the relevant (embedded) media URL from the page
+    HTML.  Leave it for libquvi to determine whether the media URL can be
+    parsed.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/liveleak.lua
+
 commit 780af01
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2013-05-09
