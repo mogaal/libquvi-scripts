@@ -1,3 +1,11 @@
+libquvi-scripts (0.4.16-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/copyright: Update for new upstream release.
+  * debian/watch: Follow 0.4.x branch.
+
+ -- Ansgar Burchardt <ansgar@debian.org>  Tue, 18 Jun 2013 19:28:56 +0200
+
 libquvi-scripts (0.4.15-1~deb7u1) wheezy; urgency=low
 
   * Upload to wheezy.

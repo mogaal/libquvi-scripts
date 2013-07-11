@@ -1,0 +1,28 @@
+--- spiegel.json	2013-06-16 14:07:48.261762106 +0300
++++ spiegel-1.json	2013-06-16 14:07:48.261762106 +0300
+@@ -1,17 +1,17 @@
+ {
+   "host": "spiegel",
+-  "page_title": "Insektenroboter \"Robo-Bee\": Auf der Spur des Bienentanzes",
+-  "page_url": "http://www.spiegel.de/video/bienen-forschung-roboter-biene-soll-bienentanz-entschluesseln-video-1231965.html",
+-  "id": "1231965",
++  "page_title": "Matthias Sammer: Bayerns mahnender Zeigefinger",
++  "page_url": "http://www.spiegel.de/video/matthias-sammer-ermahnt-den-fc-bayern-video-1242333.html",
++  "id": "1242333",
+   "format_requested": "default",
+-  "thumbnail_url": "http://cdn2.spiegel.de/images/image-420265-videothumb-ffop.jpg",
+-  "duration": "203000",
++  "thumbnail_url": "http://cdn1.spiegel.de/images/image-439218-videothumb-iywa.jpg",
++  "duration": "123000",
+   "link": [
+     {
+       "id": "1",
+-      "length_bytes": "10245896",
+-      "content_type": "video/x-flv",
+-      "file_suffix": "flv",
++      "length_bytes": "8476612",
++      "content_type": "video/mp4",
++      "file_suffix": "mp4",
+       "url": ""
+     }
+   ]

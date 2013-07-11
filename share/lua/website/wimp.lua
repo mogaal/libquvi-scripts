@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.15
+-- libquvi-scripts v0.4.16
 -- Copyright (C) 2013  Martin Herkt <lachs0r@srsfckn.bit>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
