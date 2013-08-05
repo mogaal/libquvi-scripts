@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.16
+-- libquvi-scripts v0.4.17
 -- Copyright (C) 2012 Raphaël Droz.
 --
 -- This file is part of quvi <http://quvi.googlecode.com/>.
