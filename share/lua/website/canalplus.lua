@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.16
+-- libquvi-scripts v0.4.17
 -- Copyright (C) 2012 Paul Kocialkowski <contact@paulk.fr>
 --
 -- This file is part of libquvi-scripts <http://quvi.googlecode.com/>.
