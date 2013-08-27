@@ -1,14 +1,14 @@
+libquvi-scripts (0.4.17-1~deb7u1) wheezy; urgency=low
+
+  * Upload to wheezy.
+
+ -- Ansgar Burchardt <ansgar@debian.org>  Tue, 27 Aug 2013 23:40:44 +0200
+
 libquvi-scripts (0.4.17-1) unstable; urgency=low
 
   * New upstream release.
 
  -- Ansgar Burchardt <ansgar@debian.org>  Mon, 05 Aug 2013 23:21:51 +0200
-
-libquvi-scripts (0.4.16-1~deb7u1) wheezy; urgency=low
-
-  * Upload to wheezy.
-
- -- Ansgar Burchardt <ansgar@debian.org>  Thu, 11 Jul 2013 23:24:25 +0200
 
 libquvi-scripts (0.4.16-1) unstable; urgency=low
 
