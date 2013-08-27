@@ -1,4 +1,4 @@
--- libquvi-scripts v0.4.16
+-- libquvi-scripts v0.4.17
 -- Copyright (C) 2013  Thomas Weißschuh
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.

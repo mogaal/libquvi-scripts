@@ -1,3 +1,113 @@
+commit 353ed5b
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-08-04
+
+    Bump version to 0.4.17
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+m4/version.m4
+
+commit f4e7f3d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-08-04
+
+    Update NEWS for v0.4.17
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+NEWS
+
+commit cf877fb
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-08-04
+
+    tests: default/dailymotion.json: Update length_bytes
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/ignore/length_bytes/dailymotion.json
+
+commit ce1b525
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-08-04
+
+    FIX: website/dailymotion.lua: Parse video_url (PORTpt9)
+    
+    If the typical media stream URL patterns matched nothing, try to match
+    "video_url" which should be available for all/most videos.
+    
+    Ported from the 0.9 series of libquvi-scripts.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/dailymotion.lua
+
+commit ea7eb5c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-08-04
+
+    tests: default/tagtele.json: Update
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/tagtele.json
+
+commit e643e95
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-08-04
+
+    tests: format/default: guardian: Update {domain,title}
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/guardian.json
+tests/data/format/default/guardian_audio.json
+tests/data/format/default/guardian_audio2.json
+tests/data/format/default/guardian_old.json
+
+commit 165792e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-08-04
+
+    FIX: website/guardian.lua: Multiple patterns (PORTpt9)
+    
+    Notable changes:
+    * Update to support the new domain name ("theguardian.com")
+    * Try to parse duration using an additional pattern
+    * Update media {ID,stream URL} pattern
+    * Remove "- video" from the title
+    
+    Ported from 0.9 (9e18bf6).
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/guardian.lua
+
+commit 827dff0
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-08-04
+
+    Mark website/charlierose.lua as FIXME
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+tests/data/format/default/charlierose.json
+tests/data/format/default/fixme/charlierose.json
+
+commit dce1940
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-08-04
+
+    Mark website/break.lua as FIXME
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+tests/data/format/default/break.json
+tests/data/format/default/fixme/break.json
+
 commit e2cbb95
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2013-06-18
