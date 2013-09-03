@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.17
+-- libquvi-scripts v0.4.18
 -- Copyright (C) 2010-2012  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -107,8 +107,7 @@ function Dailymotion.normalize(page_url) -- "Normalize" embedded URLs
 end
 
 function Dailymotion.iter_formats(page, U)
-    local seq = page:match('"sequence":"(.-)"')
-                  or error('no match: sequence')
+    local seq = page:match('sequence=(.-)"')
     if not seq then
         local e = "no match: sequence"
         if page:match("_partnerplayer") then

@@ -1,3 +1,49 @@
+commit ee0fd4e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-09-03
+
+    Bump version to 0.4.18
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+m4/version.m4
+
+commit 3091d8a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-09-03
+
+    Update NEWS for v0.4.18
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+NEWS
+
+commit 3d71c75
+Author: Tobias Gruetzmacher <tobias-lists@23.gs>
+Date:   2013-08-30
+
+    FIX: website/dailymotion.lua: sequence pattern (no match: sequence)
+    
+    Signed-off-by: Tobias Gruetzmacher <tobias-git@23.gs>
+    Reviewed-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/dailymotion.lua
+
+commit 84c83f7
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-08-20
+
+    FIX: website/funnyordie.lua: Media stream URL pattern (PORTpt9)
+    
+    Update the media stream URL pattern to reflect the recent changes to the
+    website. Look for the video/mp4 content only.
+    
+    Backported from the 0.9 series [41a7516].
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/funnyordie.lua
+
 commit 353ed5b
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2013-08-04
