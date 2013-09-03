@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.17
+-- libquvi-scripts v0.4.18
 -- Copyright (C) 2012  Toni Gundogdu <legatvs@gmail.com>
 -- Copyright (C) 2010-2011  Lionel Elie Mamane <lionel@mamane.lu>
 --
