@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.17
+-- libquvi-scripts v0.4.18
 -- Copyright (C) 2011,2013  Toni Gundogdu <legatvs@gmail.com>
 -- Copyright (C) 2010 quvi project
 --
@@ -82,10 +82,10 @@ end
 
 function FunnyOrDie.iter_formats(page)
     local t = {}
-    for u in page:gmatch('source src="(.-)"') do
-        table.insert(t,u)
+    for u in page:gmatch('type: "video/mp4", src: "(.-)"') do
+        table.insert(t, u)
     end
-    table.remove(t,1) -- Remove the first: the URL for segmented videos
+    if #t ==0 then error('no match: media stream URL') end
     local r = {}
     for _,u in pairs(t) do
         local q,c = u:match('/(%w+)%.(%w+)$')
