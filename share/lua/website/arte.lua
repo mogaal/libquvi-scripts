@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.18
+-- libquvi-scripts v0.4.19
 -- Copyright (C) 2012  Toni Gundogdu <legatvs@gmail.com>
 -- Copyright (C) 2011  Raphaël Droz <raphael.droz+floss@gmail.com>
 --
