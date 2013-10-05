@@ -1,3 +1,48 @@
+commit 092c59b
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-04
+
+    Bump version to 0.4.19
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+m4/version.m4
+
+commit f093d87
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-04
+
+    Update NEWS for v0.4.19
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+NEWS
+
+commit bba8e1f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-09-30
+
+    FIX: website/liveleak.lua: media stream URL pattern
+    
+    Look up "file:" instead of "config:" which no longer appears to exist in
+    the page HTML. This value is the media stream URL.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/liveleak.lua
+
+commit 3160719
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-09-29
+
+    FIX: website/funnyordie.lua: Media stream pattern (PORTpt9)
+    
+    Backported from the 0.9 series [364ad53].
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/funnyordie.lua
+
 commit ee0fd4e
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2013-09-03
