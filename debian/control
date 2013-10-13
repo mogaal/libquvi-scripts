@@ -9,7 +9,7 @@ Vcs-Git: git://github.com/mogaal/libquvi-scripts.git
 Vcs-Browser: https://github.com/mogaal/libquvi-scripts
 Homepage: http://quvi.sourceforge.net
 
-Package: libquvi-scripts
+Package: libquvi-scripts-0.9
 Architecture: all
 Multi-Arch: foreign
 Depends: ${misc:Depends}
