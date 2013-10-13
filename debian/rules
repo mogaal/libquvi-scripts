@@ -1,5 +1,7 @@
 #!/usr/bin/make -f
 
+PKGDIR=$(CURDIR)/debian/libquvi-scripts-0.9
+
 %:
 	dh $@ --with autoreconf
 
@@ -8,3 +10,10 @@ override_dh_auto_configure:
 
 override_dh_installchangelogs:
 	dh_installchangelogs NEWS
+
+override_dh_install:
+	dh_install
+	set -e; cd $(PKGDIR)/usr/share/man/man7; \
+		mv libquvi-scripts.7 libquvi-scripts-0.9.7; \
+		mv quvi-modules.7 quvi-modules-0.9.7; \
+		mv quvi-modules-3rdparty.7 quvi-modules-3rdparty-0.9.7
