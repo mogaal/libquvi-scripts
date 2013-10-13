@@ -14,6 +14,7 @@
 # PARTICULAR PURPOSE.
 
 @SET_MAKE@
+
 VPATH = @srcdir@
 am__make_dryrun = \
   { \
@@ -48,57 +49,493 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-@WITH_FIXME_TRUE@am__append_1 = t/redirect.t t/mem.t # TODO: Ditto.
-@HAVE_VALGRIND_TRUE@am__append_2 = -v $(VALGRIND)
-@WITH_FIXME_TRUE@am__append_3 = --fixme
-@WITH_NLFY_TRUE@am__append_4 = --nlfy
-@WITH_NSFW_TRUE@am__append_5 = --nsfw
+build_triplet = @build@
+host_triplet = @host@
+noinst_PROGRAMS = $(am__EXEEXT_3)
+DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+	$(top_srcdir)/tests/media/101greatgoals.mk \
+	$(top_srcdir)/tests/media/1tvru.mk \
+	$(top_srcdir)/tests/media/ardmediathek.mk \
+	$(top_srcdir)/tests/media/arte.mk \
+	$(top_srcdir)/tests/media/audioboo.mk \
+	$(top_srcdir)/tests/media/bikeradar.mk \
+	$(top_srcdir)/tests/media/break.mk \
+	$(top_srcdir)/tests/media/cbsnews.mk \
+	$(top_srcdir)/tests/media/charlierose.mk \
+	$(top_srcdir)/tests/media/clipfish.mk \
+	$(top_srcdir)/tests/media/dailymotion.mk \
+	$(top_srcdir)/tests/media/funnyordie.mk \
+	$(top_srcdir)/tests/media/gaskrank.mk \
+	$(top_srcdir)/tests/media/guardian.mk \
+	$(top_srcdir)/tests/media/ina.mk \
+	$(top_srcdir)/tests/media/lego.mk \
+	$(top_srcdir)/tests/media/liveleak.mk \
+	$(top_srcdir)/tests/media/myspass.mk \
+	$(top_srcdir)/tests/media/publicsenat.mk \
+	$(top_srcdir)/tests/media/sapo.mk \
+	$(top_srcdir)/tests/media/senat.mk \
+	$(top_srcdir)/tests/media/sevenload.mk \
+	$(top_srcdir)/tests/media/soundcloud.mk \
+	$(top_srcdir)/tests/media/spiegel.mk \
+	$(top_srcdir)/tests/media/ted.mk \
+	$(top_srcdir)/tests/media/tests.mk \
+	$(top_srcdir)/tests/media/theonion.mk \
+	$(top_srcdir)/tests/media/tvlux.mk \
+	$(top_srcdir)/tests/media/videa.mk \
+	$(top_srcdir)/tests/media/vimeo.mk \
+	$(top_srcdir)/tests/media/youtube.mk \
+	$(top_srcdir)/tests/playlist/soundcloud.mk \
+	$(top_srcdir)/tests/playlist/tests.mk \
+	$(top_srcdir)/tests/playlist/youtube.mk \
+	$(top_srcdir)/tests/scan/tests.mk \
+	$(top_srcdir)/tests/scan/youtube.mk \
+	$(top_srcdir)/tests/subtitle/tests.mk \
+	$(top_srcdir)/tests/subtitle/youtube.mk
+@WITH_FIXME_TRUE@am__append_1 = media_break
+@WITH_FIXME_TRUE@am__append_2 = media_charlierose
 subdir = tests
-DIST_COMMON = README $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/m4/version.m4 \
+am__aclocal_m4_deps = $(top_srcdir)/m4/libtool.m4 \
+	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
 	$(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
+CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-AM_V_GEN = $(am__v_GEN_@AM_V@)
-am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
-am__v_GEN_0 = @echo "  GEN   " $@;
+@WITH_FIXME_TRUE@am__EXEEXT_1 = media_break$(EXEEXT)
+@WITH_FIXME_TRUE@am__EXEEXT_2 = media_charlierose$(EXEEXT)
+am__EXEEXT_3 = playlist_soundcloud$(EXEEXT) playlist_youtube$(EXEEXT) \
+	subtitle_youtube$(EXEEXT) media_101greatgoals$(EXEEXT) \
+	media_1tvru$(EXEEXT) media_ardmediathek$(EXEEXT) \
+	media_arte$(EXEEXT) media_audioboo$(EXEEXT) \
+	media_bikeradar$(EXEEXT) $(am__EXEEXT_1) \
+	media_cbsnews$(EXEEXT) $(am__EXEEXT_2) media_clipfish$(EXEEXT) \
+	media_dailymotion$(EXEEXT) media_funnyordie$(EXEEXT) \
+	media_gaskrank$(EXEEXT) media_guardian$(EXEEXT) \
+	media_ina$(EXEEXT) media_lego$(EXEEXT) media_liveleak$(EXEEXT) \
+	media_myspass$(EXEEXT) media_publicsenat$(EXEEXT) \
+	media_sapo$(EXEEXT) media_senat$(EXEEXT) \
+	media_sevenload$(EXEEXT) media_soundcloud$(EXEEXT) \
+	media_spiegel$(EXEEXT) media_ted$(EXEEXT) \
+	media_theonion$(EXEEXT) media_tvlux$(EXEEXT) \
+	media_videa$(EXEEXT) media_vimeo$(EXEEXT) \
+	media_youtube$(EXEEXT) scan_youtube$(EXEEXT)
+PROGRAMS = $(noinst_PROGRAMS)
+am__dirstamp = $(am__leading_dot)dirstamp
+am_media_101greatgoals_OBJECTS =  \
+	media/media_101greatgoals-media_101greatgoals.$(OBJEXT)
+media_101greatgoals_OBJECTS = $(am_media_101greatgoals_OBJECTS)
+am__DEPENDENCIES_1 =
+am__DEPENDENCIES_2 = $(top_builddir)/tests/lib/libconvenience_test.la \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1)
+media_101greatgoals_DEPENDENCIES = $(am__DEPENDENCIES_2)
+AM_V_lt = $(am__v_lt_@AM_V@)
+am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+am__v_lt_0 = --silent
+media_101greatgoals_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_101greatgoals_CFLAGS) $(CFLAGS) \
+	$(media_101greatgoals_LDFLAGS) $(LDFLAGS) -o $@
+am_media_1tvru_OBJECTS = media/media_1tvru-media_1tvru.$(OBJEXT)
+media_1tvru_OBJECTS = $(am_media_1tvru_OBJECTS)
+media_1tvru_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_1tvru_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_1tvru_CFLAGS) \
+	$(CFLAGS) $(media_1tvru_LDFLAGS) $(LDFLAGS) -o $@
+am_media_ardmediathek_OBJECTS =  \
+	media/media_ardmediathek-media_ardmediathek.$(OBJEXT)
+media_ardmediathek_OBJECTS = $(am_media_ardmediathek_OBJECTS)
+media_ardmediathek_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_ardmediathek_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_ardmediathek_CFLAGS) $(CFLAGS) \
+	$(media_ardmediathek_LDFLAGS) $(LDFLAGS) -o $@
+am_media_arte_OBJECTS = media/media_arte-media_arte.$(OBJEXT)
+media_arte_OBJECTS = $(am_media_arte_OBJECTS)
+media_arte_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_arte_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_arte_CFLAGS) \
+	$(CFLAGS) $(media_arte_LDFLAGS) $(LDFLAGS) -o $@
+am_media_audioboo_OBJECTS =  \
+	media/media_audioboo-media_audioboo.$(OBJEXT)
+media_audioboo_OBJECTS = $(am_media_audioboo_OBJECTS)
+media_audioboo_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_audioboo_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_audioboo_CFLAGS) $(CFLAGS) $(media_audioboo_LDFLAGS) \
+	$(LDFLAGS) -o $@
+am_media_bikeradar_OBJECTS =  \
+	media/media_bikeradar-media_bikeradar.$(OBJEXT)
+media_bikeradar_OBJECTS = $(am_media_bikeradar_OBJECTS)
+media_bikeradar_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_bikeradar_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_bikeradar_CFLAGS) $(CFLAGS) $(media_bikeradar_LDFLAGS) \
+	$(LDFLAGS) -o $@
+am__media_break_SOURCES_DIST = media/media_break.c
+@WITH_FIXME_TRUE@am_media_break_OBJECTS =  \
+@WITH_FIXME_TRUE@	media/media_break-media_break.$(OBJEXT)
+media_break_OBJECTS = $(am_media_break_OBJECTS)
+@WITH_FIXME_TRUE@media_break_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_break_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_break_CFLAGS) \
+	$(CFLAGS) $(media_break_LDFLAGS) $(LDFLAGS) -o $@
+am_media_cbsnews_OBJECTS =  \
+	media/media_cbsnews-media_cbsnews.$(OBJEXT)
+media_cbsnews_OBJECTS = $(am_media_cbsnews_OBJECTS)
+media_cbsnews_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_cbsnews_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_cbsnews_CFLAGS) \
+	$(CFLAGS) $(media_cbsnews_LDFLAGS) $(LDFLAGS) -o $@
+am__media_charlierose_SOURCES_DIST = media/media_charlierose.c
+@WITH_FIXME_TRUE@am_media_charlierose_OBJECTS = media/media_charlierose-media_charlierose.$(OBJEXT)
+media_charlierose_OBJECTS = $(am_media_charlierose_OBJECTS)
+@WITH_FIXME_TRUE@media_charlierose_DEPENDENCIES =  \
+@WITH_FIXME_TRUE@	$(am__DEPENDENCIES_2)
+media_charlierose_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_charlierose_CFLAGS) $(CFLAGS) \
+	$(media_charlierose_LDFLAGS) $(LDFLAGS) -o $@
+am_media_clipfish_OBJECTS =  \
+	media/media_clipfish-media_clipfish.$(OBJEXT)
+media_clipfish_OBJECTS = $(am_media_clipfish_OBJECTS)
+media_clipfish_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_clipfish_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_clipfish_CFLAGS) $(CFLAGS) $(media_clipfish_LDFLAGS) \
+	$(LDFLAGS) -o $@
+am_media_dailymotion_OBJECTS =  \
+	media/media_dailymotion-media_dailymotion.$(OBJEXT)
+media_dailymotion_OBJECTS = $(am_media_dailymotion_OBJECTS)
+media_dailymotion_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_dailymotion_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_dailymotion_CFLAGS) $(CFLAGS) \
+	$(media_dailymotion_LDFLAGS) $(LDFLAGS) -o $@
+am_media_funnyordie_OBJECTS =  \
+	media/media_funnyordie-media_funnyordie.$(OBJEXT)
+media_funnyordie_OBJECTS = $(am_media_funnyordie_OBJECTS)
+media_funnyordie_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_funnyordie_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_funnyordie_CFLAGS) $(CFLAGS) \
+	$(media_funnyordie_LDFLAGS) $(LDFLAGS) -o $@
+am_media_gaskrank_OBJECTS =  \
+	media/media_gaskrank-media_gaskrank.$(OBJEXT)
+media_gaskrank_OBJECTS = $(am_media_gaskrank_OBJECTS)
+media_gaskrank_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_gaskrank_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_gaskrank_CFLAGS) $(CFLAGS) $(media_gaskrank_LDFLAGS) \
+	$(LDFLAGS) -o $@
+am_media_guardian_OBJECTS =  \
+	media/media_guardian-media_guardian.$(OBJEXT)
+media_guardian_OBJECTS = $(am_media_guardian_OBJECTS)
+media_guardian_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_guardian_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_guardian_CFLAGS) $(CFLAGS) $(media_guardian_LDFLAGS) \
+	$(LDFLAGS) -o $@
+am_media_ina_OBJECTS = media/media_ina-media_ina.$(OBJEXT)
+media_ina_OBJECTS = $(am_media_ina_OBJECTS)
+media_ina_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_ina_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_ina_CFLAGS) \
+	$(CFLAGS) $(media_ina_LDFLAGS) $(LDFLAGS) -o $@
+am_media_lego_OBJECTS = media/media_lego-media_lego.$(OBJEXT)
+media_lego_OBJECTS = $(am_media_lego_OBJECTS)
+media_lego_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_lego_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_lego_CFLAGS) \
+	$(CFLAGS) $(media_lego_LDFLAGS) $(LDFLAGS) -o $@
+am_media_liveleak_OBJECTS =  \
+	media/media_liveleak-media_liveleak.$(OBJEXT)
+media_liveleak_OBJECTS = $(am_media_liveleak_OBJECTS)
+media_liveleak_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_liveleak_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_liveleak_CFLAGS) $(CFLAGS) $(media_liveleak_LDFLAGS) \
+	$(LDFLAGS) -o $@
+am_media_myspass_OBJECTS =  \
+	media/media_myspass-media_myspass.$(OBJEXT)
+media_myspass_OBJECTS = $(am_media_myspass_OBJECTS)
+media_myspass_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_myspass_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_myspass_CFLAGS) \
+	$(CFLAGS) $(media_myspass_LDFLAGS) $(LDFLAGS) -o $@
+am_media_publicsenat_OBJECTS =  \
+	media/media_publicsenat-media_publicsenat.$(OBJEXT)
+media_publicsenat_OBJECTS = $(am_media_publicsenat_OBJECTS)
+media_publicsenat_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_publicsenat_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_publicsenat_CFLAGS) $(CFLAGS) \
+	$(media_publicsenat_LDFLAGS) $(LDFLAGS) -o $@
+am_media_sapo_OBJECTS = media/media_sapo-media_sapo.$(OBJEXT)
+media_sapo_OBJECTS = $(am_media_sapo_OBJECTS)
+media_sapo_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_sapo_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_sapo_CFLAGS) \
+	$(CFLAGS) $(media_sapo_LDFLAGS) $(LDFLAGS) -o $@
+am_media_senat_OBJECTS = media/media_senat-media_senat.$(OBJEXT)
+media_senat_OBJECTS = $(am_media_senat_OBJECTS)
+media_senat_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_senat_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_senat_CFLAGS) \
+	$(CFLAGS) $(media_senat_LDFLAGS) $(LDFLAGS) -o $@
+am_media_sevenload_OBJECTS =  \
+	media/media_sevenload-media_sevenload.$(OBJEXT)
+media_sevenload_OBJECTS = $(am_media_sevenload_OBJECTS)
+media_sevenload_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_sevenload_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_sevenload_CFLAGS) $(CFLAGS) $(media_sevenload_LDFLAGS) \
+	$(LDFLAGS) -o $@
+am_media_soundcloud_OBJECTS =  \
+	media/media_soundcloud-media_soundcloud.$(OBJEXT)
+media_soundcloud_OBJECTS = $(am_media_soundcloud_OBJECTS)
+media_soundcloud_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_soundcloud_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_soundcloud_CFLAGS) $(CFLAGS) \
+	$(media_soundcloud_LDFLAGS) $(LDFLAGS) -o $@
+am_media_spiegel_OBJECTS =  \
+	media/media_spiegel-media_spiegel.$(OBJEXT)
+media_spiegel_OBJECTS = $(am_media_spiegel_OBJECTS)
+media_spiegel_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_spiegel_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_spiegel_CFLAGS) \
+	$(CFLAGS) $(media_spiegel_LDFLAGS) $(LDFLAGS) -o $@
+am_media_ted_OBJECTS = media/media_ted-media_ted.$(OBJEXT)
+media_ted_OBJECTS = $(am_media_ted_OBJECTS)
+media_ted_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_ted_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_ted_CFLAGS) \
+	$(CFLAGS) $(media_ted_LDFLAGS) $(LDFLAGS) -o $@
+am_media_theonion_OBJECTS =  \
+	media/media_theonion-media_theonion.$(OBJEXT)
+media_theonion_OBJECTS = $(am_media_theonion_OBJECTS)
+media_theonion_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_theonion_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_theonion_CFLAGS) $(CFLAGS) $(media_theonion_LDFLAGS) \
+	$(LDFLAGS) -o $@
+am_media_tvlux_OBJECTS = media/media_tvlux-media_tvlux.$(OBJEXT)
+media_tvlux_OBJECTS = $(am_media_tvlux_OBJECTS)
+media_tvlux_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_tvlux_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_tvlux_CFLAGS) \
+	$(CFLAGS) $(media_tvlux_LDFLAGS) $(LDFLAGS) -o $@
+am_media_videa_OBJECTS = media/media_videa-media_videa.$(OBJEXT)
+media_videa_OBJECTS = $(am_media_videa_OBJECTS)
+media_videa_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_videa_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_videa_CFLAGS) \
+	$(CFLAGS) $(media_videa_LDFLAGS) $(LDFLAGS) -o $@
+am_media_vimeo_OBJECTS = media/media_vimeo-media_vimeo.$(OBJEXT)
+media_vimeo_OBJECTS = $(am_media_vimeo_OBJECTS)
+media_vimeo_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_vimeo_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_vimeo_CFLAGS) \
+	$(CFLAGS) $(media_vimeo_LDFLAGS) $(LDFLAGS) -o $@
+am_media_youtube_OBJECTS =  \
+	media/media_youtube-media_youtube.$(OBJEXT)
+media_youtube_OBJECTS = $(am_media_youtube_OBJECTS)
+media_youtube_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_youtube_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_youtube_CFLAGS) \
+	$(CFLAGS) $(media_youtube_LDFLAGS) $(LDFLAGS) -o $@
+am_playlist_soundcloud_OBJECTS =  \
+	playlist/playlist_soundcloud-playlist_soundcloud.$(OBJEXT)
+playlist_soundcloud_OBJECTS = $(am_playlist_soundcloud_OBJECTS)
+playlist_soundcloud_DEPENDENCIES = $(am__DEPENDENCIES_2)
+playlist_soundcloud_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(playlist_soundcloud_CFLAGS) $(CFLAGS) \
+	$(playlist_soundcloud_LDFLAGS) $(LDFLAGS) -o $@
+am_playlist_youtube_OBJECTS =  \
+	playlist/playlist_youtube-playlist_youtube.$(OBJEXT)
+playlist_youtube_OBJECTS = $(am_playlist_youtube_OBJECTS)
+playlist_youtube_DEPENDENCIES = $(am__DEPENDENCIES_2)
+playlist_youtube_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(playlist_youtube_CFLAGS) $(CFLAGS) \
+	$(playlist_youtube_LDFLAGS) $(LDFLAGS) -o $@
+am_scan_youtube_OBJECTS = scan/scan_youtube-scan_youtube.$(OBJEXT)
+scan_youtube_OBJECTS = $(am_scan_youtube_OBJECTS)
+scan_youtube_DEPENDENCIES = $(am__DEPENDENCIES_2)
+scan_youtube_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(scan_youtube_CFLAGS) \
+	$(CFLAGS) $(scan_youtube_LDFLAGS) $(LDFLAGS) -o $@
+am_subtitle_youtube_OBJECTS =  \
+	subtitle/subtitle_youtube-subtitle_youtube.$(OBJEXT)
+subtitle_youtube_OBJECTS = $(am_subtitle_youtube_OBJECTS)
+subtitle_youtube_DEPENDENCIES = $(am__DEPENDENCIES_2)
+subtitle_youtube_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(subtitle_youtube_CFLAGS) $(CFLAGS) \
+	$(subtitle_youtube_LDFLAGS) $(LDFLAGS) -o $@
+DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+depcomp = $(SHELL) $(top_srcdir)/config.aux/depcomp
+am__depfiles_maybe = depfiles
+am__mv = mv -f
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) \
+	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+	$(AM_CFLAGS) $(CFLAGS)
+AM_V_CC = $(am__v_CC_@AM_V@)
+am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
+am__v_CC_0 = @echo "  CC    " $@;
 AM_V_at = $(am__v_at_@AM_V@)
 am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
 am__v_at_0 = @
-SOURCES =
-DIST_SOURCES =
+CCLD = $(CC)
+LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+AM_V_CCLD = $(am__v_CCLD_@AM_V@)
+am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+am__v_CCLD_0 = @echo "  CCLD  " $@;
+AM_V_GEN = $(am__v_GEN_@AM_V@)
+am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
+am__v_GEN_0 = @echo "  GEN   " $@;
+SOURCES = $(media_101greatgoals_SOURCES) $(media_1tvru_SOURCES) \
+	$(media_ardmediathek_SOURCES) $(media_arte_SOURCES) \
+	$(media_audioboo_SOURCES) $(media_bikeradar_SOURCES) \
+	$(media_break_SOURCES) $(media_cbsnews_SOURCES) \
+	$(media_charlierose_SOURCES) $(media_clipfish_SOURCES) \
+	$(media_dailymotion_SOURCES) $(media_funnyordie_SOURCES) \
+	$(media_gaskrank_SOURCES) $(media_guardian_SOURCES) \
+	$(media_ina_SOURCES) $(media_lego_SOURCES) \
+	$(media_liveleak_SOURCES) $(media_myspass_SOURCES) \
+	$(media_publicsenat_SOURCES) $(media_sapo_SOURCES) \
+	$(media_senat_SOURCES) $(media_sevenload_SOURCES) \
+	$(media_soundcloud_SOURCES) $(media_spiegel_SOURCES) \
+	$(media_ted_SOURCES) $(media_theonion_SOURCES) \
+	$(media_tvlux_SOURCES) $(media_videa_SOURCES) \
+	$(media_vimeo_SOURCES) $(media_youtube_SOURCES) \
+	$(playlist_soundcloud_SOURCES) $(playlist_youtube_SOURCES) \
+	$(scan_youtube_SOURCES) $(subtitle_youtube_SOURCES)
+DIST_SOURCES = $(media_101greatgoals_SOURCES) $(media_1tvru_SOURCES) \
+	$(media_ardmediathek_SOURCES) $(media_arte_SOURCES) \
+	$(media_audioboo_SOURCES) $(media_bikeradar_SOURCES) \
+	$(am__media_break_SOURCES_DIST) $(media_cbsnews_SOURCES) \
+	$(am__media_charlierose_SOURCES_DIST) \
+	$(media_clipfish_SOURCES) $(media_dailymotion_SOURCES) \
+	$(media_funnyordie_SOURCES) $(media_gaskrank_SOURCES) \
+	$(media_guardian_SOURCES) $(media_ina_SOURCES) \
+	$(media_lego_SOURCES) $(media_liveleak_SOURCES) \
+	$(media_myspass_SOURCES) $(media_publicsenat_SOURCES) \
+	$(media_sapo_SOURCES) $(media_senat_SOURCES) \
+	$(media_sevenload_SOURCES) $(media_soundcloud_SOURCES) \
+	$(media_spiegel_SOURCES) $(media_ted_SOURCES) \
+	$(media_theonion_SOURCES) $(media_tvlux_SOURCES) \
+	$(media_videa_SOURCES) $(media_vimeo_SOURCES) \
+	$(media_youtube_SOURCES) $(playlist_soundcloud_SOURCES) \
+	$(playlist_youtube_SOURCES) $(scan_youtube_SOURCES) \
+	$(subtitle_youtube_SOURCES)
+RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
+	html-recursive info-recursive install-data-recursive \
+	install-dvi-recursive install-exec-recursive \
+	install-html-recursive install-info-recursive \
+	install-pdf-recursive install-ps-recursive install-recursive \
+	installcheck-recursive installdirs-recursive pdf-recursive \
+	ps-recursive uninstall-recursive
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
+RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
+  distclean-recursive maintainer-clean-recursive
+AM_RECURSIVE_TARGETS = $(RECURSIVE_TARGETS:-recursive=) \
+	$(RECURSIVE_CLEAN_TARGETS:-recursive=) tags TAGS ctags CTAGS \
+	distdir
+ETAGS = etags
+CTAGS = ctags
+DIST_SUBDIRS = $(SUBDIRS)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+am__relativize = \
+  dir0=`pwd`; \
+  sed_first='s,^\([^/]*\)/.*$$,\1,'; \
+  sed_rest='s,^[^/]*/*,,'; \
+  sed_last='s,^.*/\([^/]*\)$$,\1,'; \
+  sed_butlast='s,/*[^/]*$$,,'; \
+  while test -n "$$dir1"; do \
+    first=`echo "$$dir1" | sed -e "$$sed_first"`; \
+    if test "$$first" != "."; then \
+      if test "$$first" = ".."; then \
+        dir2=`echo "$$dir0" | sed -e "$$sed_last"`/"$$dir2"; \
+        dir0=`echo "$$dir0" | sed -e "$$sed_butlast"`; \
+      else \
+        first2=`echo "$$dir2" | sed -e "$$sed_first"`; \
+        if test "$$first2" = "$$first"; then \
+          dir2=`echo "$$dir2" | sed -e "$$sed_rest"`; \
+        else \
+          dir2="../$$dir2"; \
+        fi; \
+        dir0="$$dir0"/"$$first"; \
+      fi; \
+    fi; \
+    dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
+  done; \
+  reldir="$$dir2"
+A2X = @A2X@
 ACLOCAL = @ACLOCAL@
 AMTAR = @AMTAR@
 AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
+AR = @AR@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
 AUTOMAKE = @AUTOMAKE@
 AWK = @AWK@
+BUILD_OPTS = @BUILD_OPTS@
+CC = @CC@
+CCDEPMODE = @CCDEPMODE@
+CFLAGS = @CFLAGS@
+CPP = @CPP@
+CPPFLAGS = @CPPFLAGS@
 CYGPATH_W = @CYGPATH_W@
 DEFS = @DEFS@
+DEPDIR = @DEPDIR@
+DLLTOOL = @DLLTOOL@
+DSYMUTIL = @DSYMUTIL@
+DUMPBIN = @DUMPBIN@
 ECHO_C = @ECHO_C@
 ECHO_N = @ECHO_N@
 ECHO_T = @ECHO_T@
+EGREP = @EGREP@
+EXEEXT = @EXEEXT@
+FGREP = @FGREP@
+GREP = @GREP@
 INSTALL = @INSTALL@
 INSTALL_DATA = @INSTALL_DATA@
 INSTALL_PROGRAM = @INSTALL_PROGRAM@
 INSTALL_SCRIPT = @INSTALL_SCRIPT@
 INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+LD = @LD@
+LDFLAGS = @LDFLAGS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
+LIBTOOL = @LIBTOOL@
+LIPO = @LIPO@
+LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
 MAKEINFO = @MAKEINFO@
+MANIFEST_TOOL = @MANIFEST_TOOL@
 MKDIR_P = @MKDIR_P@
+NM = @NM@
+NMEDIT = @NMEDIT@
+OBJDUMP = @OBJDUMP@
+OBJEXT = @OBJEXT@
+OTOOL = @OTOOL@
+OTOOL64 = @OTOOL64@
 PACKAGE = @PACKAGE@
 PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
 PACKAGE_NAME = @PACKAGE_NAME@
@@ -107,35 +544,58 @@ PACKAGE_TARNAME = @PACKAGE_TARNAME@
 PACKAGE_URL = @PACKAGE_URL@
 PACKAGE_VERSION = @PACKAGE_VERSION@
 PATH_SEPARATOR = @PATH_SEPARATOR@
-PROVE = @PROVE@
-QUVI = @QUVI@
+PKG_CONFIG = @PKG_CONFIG@
+PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
+PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+RANLIB = @RANLIB@
+SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
-VALGRIND = @VALGRIND@
 VERSION = @VERSION@
+VERSION_MM = @VERSION_MM@
+VN_C = @VN_C@
 abs_builddir = @abs_builddir@
 abs_srcdir = @abs_srcdir@
 abs_top_builddir = @abs_top_builddir@
 abs_top_srcdir = @abs_top_srcdir@
+ac_ct_AR = @ac_ct_AR@
+ac_ct_CC = @ac_ct_CC@
+ac_ct_DUMPBIN = @ac_ct_DUMPBIN@
+am__include = @am__include@
 am__leading_dot = @am__leading_dot@
+am__quote = @am__quote@
 am__tar = @am__tar@
 am__untar = @am__untar@
 bindir = @bindir@
+build = @build@
 build_alias = @build_alias@
+build_cpu = @build_cpu@
+build_os = @build_os@
+build_vendor = @build_vendor@
 builddir = @builddir@
 datadir = @datadir@
 datarootdir = @datarootdir@
 docdir = @docdir@
 dvidir = @dvidir@
 exec_prefix = @exec_prefix@
+glib_CFLAGS = @glib_CFLAGS@
+glib_LIBS = @glib_LIBS@
+host = @host@
 host_alias = @host_alias@
+host_cpu = @host_cpu@
+host_os = @host_os@
+host_vendor = @host_vendor@
 htmldir = @htmldir@
 includedir = @includedir@
 infodir = @infodir@
 install_sh = @install_sh@
+libcurl_CFLAGS = @libcurl_CFLAGS@
+libcurl_LIBS = @libcurl_LIBS@
 libdir = @libdir@
 libexecdir = @libexecdir@
+libquvi_CFLAGS = @libquvi_CFLAGS@
+libquvi_LIBS = @libquvi_LIBS@
 localedir = @localedir@
 localstatedir = @localstatedir@
 mandir = @mandir@
@@ -153,27 +613,205 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-TESTS_T = t/format_default.t t/format_other.t t/shortened.t \
-	t/nosupport.t t/expire.t $(am__append_1)
-TESTS_D_T = t/d/url.t
-TESTS_LIB = lib/Test/Quvi.pm
-TESTS_JSON = data
-EXTRA_DIST = \
- README \
- $(TESTS_NSFW_T) \
- $(TESTS_JSON) \
- $(TESTS_LIB) \
- $(TESTS_D_T) \
- $(TESTS_T)
+SUBDIRS = lib
+TEST_PROGS = playlist_soundcloud playlist_youtube subtitle_youtube \
+	media_101greatgoals media_1tvru media_ardmediathek media_arte \
+	media_audioboo media_bikeradar $(am__append_1) media_cbsnews \
+	$(am__append_2) media_clipfish media_dailymotion \
+	media_funnyordie media_gaskrank media_guardian media_ina \
+	media_lego media_liveleak media_myspass media_publicsenat \
+	media_sapo media_senat media_sevenload media_soundcloud \
+	media_spiegel media_ted media_theonion media_tvlux media_videa \
+	media_vimeo media_youtube scan_youtube
+TEST_OPTS = -k -m=thorough --verbose #--g-fatal-warnings
+testsuite_cppflags = \
+  -I$(top_srcdir)/tests/lib\
+  $(libquvi_CFLAGS) $(libcurl_CFLAGS) $(glib_CFLAGS)\
+  $(AM_CPPFLAGS)
 
-PROVE_OPTS = -I $(top_srcdir)/tests/lib/ --nocolor
-TESTQUVI_OPTS = -q $(QUVI) -d $(top_srcdir)/tests -b \
-	$(top_srcdir)/share $(am__append_2) $(am__append_3) \
-	$(am__append_4) $(am__append_5)
-all: all-am
+testsuite_ldflags = \
+  $(AM_LDFLAGS)
+
+testsuite_ldadd = \
+  $(top_builddir)/tests/lib/libconvenience_test.la\
+  $(libquvi_LIBS) $(libcurl_LIBS) $(glib_LIBS)
+
+playlist_soundcloud_SOURCES = playlist/playlist_soundcloud.c
+playlist_soundcloud_CPPFLAGS = $(testsuite_cppflags)
+playlist_soundcloud_LDFLAGS = $(testsuite_ldflags)
+playlist_soundcloud_LDADD = $(testsuite_ldadd)
+playlist_soundcloud_CFLAGS = $(AM_CFLAGS)
+playlist_youtube_SOURCES = playlist/playlist_youtube.c
+playlist_youtube_CPPFLAGS = $(testsuite_cppflags)
+playlist_youtube_LDFLAGS = $(testsuite_ldflags)
+playlist_youtube_LDADD = $(testsuite_ldadd)
+playlist_youtube_CFLAGS = $(AM_CFLAGS)
+subtitle_youtube_SOURCES = subtitle/subtitle_youtube.c
+subtitle_youtube_CPPFLAGS = $(testsuite_cppflags)
+subtitle_youtube_LDFLAGS = $(testsuite_ldflags)
+subtitle_youtube_LDADD = $(testsuite_ldadd)
+subtitle_youtube_CFLAGS = $(AM_CFLAGS)
+media_101greatgoals_SOURCES = media/media_101greatgoals.c
+media_101greatgoals_CPPFLAGS = $(testsuite_cppflags)
+media_101greatgoals_LDFLAGS = $(testsuite_ldflags)
+media_101greatgoals_LDADD = $(testsuite_ldadd)
+media_101greatgoals_CFLAGS = $(AM_CFLAGS)
+media_1tvru_SOURCES = media/media_1tvru.c
+media_1tvru_CPPFLAGS = $(testsuite_cppflags)
+media_1tvru_LDFLAGS = $(testsuite_ldflags)
+media_1tvru_LDADD = $(testsuite_ldadd)
+media_1tvru_CFLAGS = $(AM_CFLAGS)
+media_ardmediathek_SOURCES = media/media_ardmediathek.c
+media_ardmediathek_CPPFLAGS = $(testsuite_cppflags)
+media_ardmediathek_LDFLAGS = $(testsuite_ldflags)
+media_ardmediathek_LDADD = $(testsuite_ldadd)
+media_ardmediathek_CFLAGS = $(AM_CFLAGS)
+media_arte_SOURCES = media/media_arte.c
+media_arte_CPPFLAGS = $(testsuite_cppflags)
+media_arte_LDFLAGS = $(testsuite_ldflags)
+media_arte_LDADD = $(testsuite_ldadd)
+media_arte_CFLAGS = $(AM_CFLAGS)
+media_audioboo_SOURCES = media/media_audioboo.c
+media_audioboo_CPPFLAGS = $(testsuite_cppflags)
+media_audioboo_LDFLAGS = $(testsuite_ldflags)
+media_audioboo_LDADD = $(testsuite_ldadd)
+media_audioboo_CFLAGS = $(AM_CFLAGS)
+media_bikeradar_SOURCES = media/media_bikeradar.c
+media_bikeradar_CPPFLAGS = $(testsuite_cppflags)
+media_bikeradar_LDFLAGS = $(testsuite_ldflags)
+media_bikeradar_LDADD = $(testsuite_ldadd)
+media_bikeradar_CFLAGS = $(AM_CFLAGS)
+@WITH_FIXME_TRUE@media_break_SOURCES = media/media_break.c
+@WITH_FIXME_TRUE@media_break_CPPFLAGS = $(testsuite_cppflags)
+@WITH_FIXME_TRUE@media_break_LDFLAGS = $(testsuite_ldflags)
+@WITH_FIXME_TRUE@media_break_LDADD = $(testsuite_ldadd)
+@WITH_FIXME_TRUE@media_break_CFLAGS = $(AM_CFLAGS)
+media_cbsnews_SOURCES = media/media_cbsnews.c
+media_cbsnews_CPPFLAGS = $(testsuite_cppflags)
+media_cbsnews_LDFLAGS = $(testsuite_ldflags)
+media_cbsnews_LDADD = $(testsuite_ldadd)
+media_cbsnews_CFLAGS = $(AM_CFLAGS)
+@WITH_FIXME_TRUE@media_charlierose_SOURCES = media/media_charlierose.c
+@WITH_FIXME_TRUE@media_charlierose_CPPFLAGS = $(testsuite_cppflags)
+@WITH_FIXME_TRUE@media_charlierose_LDFLAGS = $(testsuite_ldflags)
+@WITH_FIXME_TRUE@media_charlierose_LDADD = $(testsuite_ldadd)
+@WITH_FIXME_TRUE@media_charlierose_CFLAGS = $(AM_CFLAGS)
+media_clipfish_SOURCES = media/media_clipfish.c
+media_clipfish_CPPFLAGS = $(testsuite_cppflags)
+media_clipfish_LDFLAGS = $(testsuite_ldflags)
+media_clipfish_LDADD = $(testsuite_ldadd)
+media_clipfish_CFLAGS = $(AM_CFLAGS)
+media_dailymotion_SOURCES = media/media_dailymotion.c
+media_dailymotion_CPPFLAGS = $(testsuite_cppflags)
+media_dailymotion_LDFLAGS = $(testsuite_ldflags)
+media_dailymotion_LDADD = $(testsuite_ldadd)
+media_dailymotion_CFLAGS = $(AM_CFLAGS)
+media_funnyordie_SOURCES = media/media_funnyordie.c
+media_funnyordie_CPPFLAGS = $(testsuite_cppflags)
+media_funnyordie_LDFLAGS = $(testsuite_ldflags)
+media_funnyordie_LDADD = $(testsuite_ldadd)
+media_funnyordie_CFLAGS = $(AM_CFLAGS)
+media_gaskrank_SOURCES = media/media_gaskrank.c
+media_gaskrank_CPPFLAGS = $(testsuite_cppflags)
+media_gaskrank_LDFLAGS = $(testsuite_ldflags)
+media_gaskrank_LDADD = $(testsuite_ldadd)
+media_gaskrank_CFLAGS = $(AM_CFLAGS)
+media_guardian_SOURCES = media/media_guardian.c
+media_guardian_CPPFLAGS = $(testsuite_cppflags)
+media_guardian_LDFLAGS = $(testsuite_ldflags)
+media_guardian_LDADD = $(testsuite_ldadd)
+media_guardian_CFLAGS = $(AM_CFLAGS)
+media_ina_SOURCES = media/media_ina.c
+media_ina_CPPFLAGS = $(testsuite_cppflags)
+media_ina_LDFLAGS = $(testsuite_ldflags)
+media_ina_LDADD = $(testsuite_ldadd)
+media_ina_CFLAGS = $(AM_CFLAGS)
+media_lego_SOURCES = media/media_lego.c
+media_lego_CPPFLAGS = $(testsuite_cppflags)
+media_lego_LDFLAGS = $(testsuite_ldflags)
+media_lego_LDADD = $(testsuite_ldadd)
+media_lego_CFLAGS = $(AM_CFLAGS)
+media_liveleak_SOURCES = media/media_liveleak.c
+media_liveleak_CPPFLAGS = $(testsuite_cppflags)
+media_liveleak_LDFLAGS = $(testsuite_ldflags)
+media_liveleak_LDADD = $(testsuite_ldadd)
+media_liveleak_CFLAGS = $(AM_CFLAGS)
+media_myspass_SOURCES = media/media_myspass.c
+media_myspass_CPPFLAGS = $(testsuite_cppflags)
+media_myspass_LDFLAGS = $(testsuite_ldflags)
+media_myspass_LDADD = $(testsuite_ldadd)
+media_myspass_CFLAGS = $(AM_CFLAGS)
+media_publicsenat_SOURCES = media/media_publicsenat.c
+media_publicsenat_CPPFLAGS = $(testsuite_cppflags)
+media_publicsenat_LDFLAGS = $(testsuite_ldflags)
+media_publicsenat_LDADD = $(testsuite_ldadd)
+media_publicsenat_CFLAGS = $(AM_CFLAGS)
+media_sapo_SOURCES = media/media_sapo.c
+media_sapo_CPPFLAGS = $(testsuite_cppflags)
+media_sapo_LDFLAGS = $(testsuite_ldflags)
+media_sapo_LDADD = $(testsuite_ldadd)
+media_sapo_CFLAGS = $(AM_CFLAGS)
+media_senat_SOURCES = media/media_senat.c
+media_senat_CPPFLAGS = $(testsuite_cppflags)
+media_senat_LDFLAGS = $(testsuite_ldflags)
+media_senat_LDADD = $(testsuite_ldadd)
+media_senat_CFLAGS = $(AM_CFLAGS)
+media_sevenload_SOURCES = media/media_sevenload.c
+media_sevenload_CPPFLAGS = $(testsuite_cppflags)
+media_sevenload_LDFLAGS = $(testsuite_ldflags)
+media_sevenload_LDADD = $(testsuite_ldadd)
+media_sevenload_CFLAGS = $(AM_CFLAGS)
+media_soundcloud_SOURCES = media/media_soundcloud.c
+media_soundcloud_CPPFLAGS = $(testsuite_cppflags)
+media_soundcloud_LDFLAGS = $(testsuite_ldflags)
+media_soundcloud_LDADD = $(testsuite_ldadd)
+media_soundcloud_CFLAGS = $(AM_CFLAGS)
+media_spiegel_SOURCES = media/media_spiegel.c
+media_spiegel_CPPFLAGS = $(testsuite_cppflags)
+media_spiegel_LDFLAGS = $(testsuite_ldflags)
+media_spiegel_LDADD = $(testsuite_ldadd)
+media_spiegel_CFLAGS = $(AM_CFLAGS)
+media_ted_SOURCES = media/media_ted.c
+media_ted_CPPFLAGS = $(testsuite_cppflags)
+media_ted_LDFLAGS = $(testsuite_ldflags)
+media_ted_LDADD = $(testsuite_ldadd)
+media_ted_CFLAGS = $(AM_CFLAGS)
+media_theonion_SOURCES = media/media_theonion.c
+media_theonion_CPPFLAGS = $(testsuite_cppflags)
+media_theonion_LDFLAGS = $(testsuite_ldflags)
+media_theonion_LDADD = $(testsuite_ldadd)
+media_theonion_CFLAGS = $(AM_CFLAGS)
+media_tvlux_SOURCES = media/media_tvlux.c
+media_tvlux_CPPFLAGS = $(testsuite_cppflags)
+media_tvlux_LDFLAGS = $(testsuite_ldflags)
+media_tvlux_LDADD = $(testsuite_ldadd)
+media_tvlux_CFLAGS = $(AM_CFLAGS)
+media_videa_SOURCES = media/media_videa.c
+media_videa_CPPFLAGS = $(testsuite_cppflags)
+media_videa_LDFLAGS = $(testsuite_ldflags)
+media_videa_LDADD = $(testsuite_ldadd)
+media_videa_CFLAGS = $(AM_CFLAGS)
+media_vimeo_SOURCES = media/media_vimeo.c
+media_vimeo_CPPFLAGS = $(testsuite_cppflags)
+media_vimeo_LDFLAGS = $(testsuite_ldflags)
+media_vimeo_LDADD = $(testsuite_ldadd)
+media_vimeo_CFLAGS = $(AM_CFLAGS)
+media_youtube_SOURCES = media/media_youtube.c
+media_youtube_CPPFLAGS = $(testsuite_cppflags)
+media_youtube_LDFLAGS = $(testsuite_ldflags)
+media_youtube_LDADD = $(testsuite_ldadd)
+media_youtube_CFLAGS = $(AM_CFLAGS)
+scan_youtube_SOURCES = scan/scan_youtube.c
+scan_youtube_CPPFLAGS = $(testsuite_cppflags)
+scan_youtube_LDFLAGS = $(testsuite_ldflags)
+scan_youtube_LDADD = $(testsuite_ldadd)
+scan_youtube_CFLAGS = $(AM_CFLAGS)
+EXTRA_DIST = find_tests.sh run_tests.sh
+all: all-recursive
 
 .SUFFIXES:
-$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
+.SUFFIXES: .c .lo .o .obj
+$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(top_srcdir)/tests/playlist/tests.mk $(top_srcdir)/tests/playlist/soundcloud.mk $(top_srcdir)/tests/playlist/youtube.mk $(top_srcdir)/tests/subtitle/tests.mk $(top_srcdir)/tests/subtitle/youtube.mk $(top_srcdir)/tests/media/tests.mk $(top_srcdir)/tests/media/101greatgoals.mk $(top_srcdir)/tests/media/1tvru.mk $(top_srcdir)/tests/media/ardmediathek.mk $(top_srcdir)/tests/media/arte.mk $(top_srcdir)/tests/media/audioboo.mk $(top_srcdir)/tests/media/bikeradar.mk $(top_srcdir)/tests/media/break.mk $(top_srcdir)/tests/media/cbsnews.mk $(top_srcdir)/tests/media/charlierose.mk $(top_srcdir)/tests/media/clipfish.mk $(top_srcdir)/tests/media/dailymotion.mk $(top_srcdir)/tests/media/funnyordie.mk $(top_srcdir)/tests/media/gaskrank.mk $(top_srcdir)/tests/media/guardian.mk $(top_srcdir)/tests/media/ina.mk $(top_srcdir)/tests/media/lego.mk $(top_srcdir)/tests/media/liveleak.mk $(top_srcdir)/tests/media/myspass.mk $(top_srcdir)/tests/media/publicsenat.mk $(top_srcdir)/tests/media/sapo.mk $(top_srcdir)/tests/media/senat.mk $(top_srcdir)/tests/media/sevenload.mk $(top_srcdir)/tests/media/soundcloud.mk $(top_srcdir)/tests/media/spiegel.mk $(top_srcdir)/tests/media/ted.mk $(top_srcdir)/tests/media/theonion.mk $(top_srcdir)/tests/media/tvlux.mk $(top_srcdir)/tests/media/videa.mk $(top_srcdir)/tests/media/vimeo.mk $(top_srcdir)/tests/media/youtube.mk $(top_srcdir)/tests/scan/tests.mk $(top_srcdir)/tests/scan/youtube.mk $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -182,9 +820,9 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign tests/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu tests/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign tests/Makefile
+	  $(AUTOMAKE) --gnu tests/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
@@ -194,6 +832,7 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)'; \
 	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe);; \
 	esac;
+$(top_srcdir)/tests/playlist/tests.mk $(top_srcdir)/tests/playlist/soundcloud.mk $(top_srcdir)/tests/playlist/youtube.mk $(top_srcdir)/tests/subtitle/tests.mk $(top_srcdir)/tests/subtitle/youtube.mk $(top_srcdir)/tests/media/tests.mk $(top_srcdir)/tests/media/101greatgoals.mk $(top_srcdir)/tests/media/1tvru.mk $(top_srcdir)/tests/media/ardmediathek.mk $(top_srcdir)/tests/media/arte.mk $(top_srcdir)/tests/media/audioboo.mk $(top_srcdir)/tests/media/bikeradar.mk $(top_srcdir)/tests/media/break.mk $(top_srcdir)/tests/media/cbsnews.mk $(top_srcdir)/tests/media/charlierose.mk $(top_srcdir)/tests/media/clipfish.mk $(top_srcdir)/tests/media/dailymotion.mk $(top_srcdir)/tests/media/funnyordie.mk $(top_srcdir)/tests/media/gaskrank.mk $(top_srcdir)/tests/media/guardian.mk $(top_srcdir)/tests/media/ina.mk $(top_srcdir)/tests/media/lego.mk $(top_srcdir)/tests/media/liveleak.mk $(top_srcdir)/tests/media/myspass.mk $(top_srcdir)/tests/media/publicsenat.mk $(top_srcdir)/tests/media/sapo.mk $(top_srcdir)/tests/media/senat.mk $(top_srcdir)/tests/media/sevenload.mk $(top_srcdir)/tests/media/soundcloud.mk $(top_srcdir)/tests/media/spiegel.mk $(top_srcdir)/tests/media/ted.mk $(top_srcdir)/tests/media/theonion.mk $(top_srcdir)/tests/media/tvlux.mk $(top_srcdir)/tests/media/videa.mk $(top_srcdir)/tests/media/vimeo.mk $(top_srcdir)/tests/media/youtube.mk $(top_srcdir)/tests/scan/tests.mk $(top_srcdir)/tests/scan/youtube.mk:
 
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
@@ -203,12 +842,925 @@ $(top_srcdir)/configure:  $(am__configure_deps)
 $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
+
+clean-noinstPROGRAMS:
+	@list='$(noinst_PROGRAMS)'; test -n "$$list" || exit 0; \
+	echo " rm -f" $$list; \
+	rm -f $$list || exit $$?; \
+	test -n "$(EXEEXT)" || exit 0; \
+	list=`for p in $$list; do echo "$$p"; done | sed 's/$(EXEEXT)$$//'`; \
+	echo " rm -f" $$list; \
+	rm -f $$list
+media/$(am__dirstamp):
+	@$(MKDIR_P) media
+	@: > media/$(am__dirstamp)
+media/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) media/$(DEPDIR)
+	@: > media/$(DEPDIR)/$(am__dirstamp)
+media/media_101greatgoals-media_101greatgoals.$(OBJEXT):  \
+	media/$(am__dirstamp) media/$(DEPDIR)/$(am__dirstamp)
+media_101greatgoals$(EXEEXT): $(media_101greatgoals_OBJECTS) $(media_101greatgoals_DEPENDENCIES) $(EXTRA_media_101greatgoals_DEPENDENCIES) 
+	@rm -f media_101greatgoals$(EXEEXT)
+	$(AM_V_CCLD)$(media_101greatgoals_LINK) $(media_101greatgoals_OBJECTS) $(media_101greatgoals_LDADD) $(LIBS)
+media/media_1tvru-media_1tvru.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_1tvru$(EXEEXT): $(media_1tvru_OBJECTS) $(media_1tvru_DEPENDENCIES) $(EXTRA_media_1tvru_DEPENDENCIES) 
+	@rm -f media_1tvru$(EXEEXT)
+	$(AM_V_CCLD)$(media_1tvru_LINK) $(media_1tvru_OBJECTS) $(media_1tvru_LDADD) $(LIBS)
+media/media_ardmediathek-media_ardmediathek.$(OBJEXT):  \
+	media/$(am__dirstamp) media/$(DEPDIR)/$(am__dirstamp)
+media_ardmediathek$(EXEEXT): $(media_ardmediathek_OBJECTS) $(media_ardmediathek_DEPENDENCIES) $(EXTRA_media_ardmediathek_DEPENDENCIES) 
+	@rm -f media_ardmediathek$(EXEEXT)
+	$(AM_V_CCLD)$(media_ardmediathek_LINK) $(media_ardmediathek_OBJECTS) $(media_ardmediathek_LDADD) $(LIBS)
+media/media_arte-media_arte.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_arte$(EXEEXT): $(media_arte_OBJECTS) $(media_arte_DEPENDENCIES) $(EXTRA_media_arte_DEPENDENCIES) 
+	@rm -f media_arte$(EXEEXT)
+	$(AM_V_CCLD)$(media_arte_LINK) $(media_arte_OBJECTS) $(media_arte_LDADD) $(LIBS)
+media/media_audioboo-media_audioboo.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_audioboo$(EXEEXT): $(media_audioboo_OBJECTS) $(media_audioboo_DEPENDENCIES) $(EXTRA_media_audioboo_DEPENDENCIES) 
+	@rm -f media_audioboo$(EXEEXT)
+	$(AM_V_CCLD)$(media_audioboo_LINK) $(media_audioboo_OBJECTS) $(media_audioboo_LDADD) $(LIBS)
+media/media_bikeradar-media_bikeradar.$(OBJEXT):  \
+	media/$(am__dirstamp) media/$(DEPDIR)/$(am__dirstamp)
+media_bikeradar$(EXEEXT): $(media_bikeradar_OBJECTS) $(media_bikeradar_DEPENDENCIES) $(EXTRA_media_bikeradar_DEPENDENCIES) 
+	@rm -f media_bikeradar$(EXEEXT)
+	$(AM_V_CCLD)$(media_bikeradar_LINK) $(media_bikeradar_OBJECTS) $(media_bikeradar_LDADD) $(LIBS)
+media/media_break-media_break.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_break$(EXEEXT): $(media_break_OBJECTS) $(media_break_DEPENDENCIES) $(EXTRA_media_break_DEPENDENCIES) 
+	@rm -f media_break$(EXEEXT)
+	$(AM_V_CCLD)$(media_break_LINK) $(media_break_OBJECTS) $(media_break_LDADD) $(LIBS)
+media/media_cbsnews-media_cbsnews.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_cbsnews$(EXEEXT): $(media_cbsnews_OBJECTS) $(media_cbsnews_DEPENDENCIES) $(EXTRA_media_cbsnews_DEPENDENCIES) 
+	@rm -f media_cbsnews$(EXEEXT)
+	$(AM_V_CCLD)$(media_cbsnews_LINK) $(media_cbsnews_OBJECTS) $(media_cbsnews_LDADD) $(LIBS)
+media/media_charlierose-media_charlierose.$(OBJEXT):  \
+	media/$(am__dirstamp) media/$(DEPDIR)/$(am__dirstamp)
+media_charlierose$(EXEEXT): $(media_charlierose_OBJECTS) $(media_charlierose_DEPENDENCIES) $(EXTRA_media_charlierose_DEPENDENCIES) 
+	@rm -f media_charlierose$(EXEEXT)
+	$(AM_V_CCLD)$(media_charlierose_LINK) $(media_charlierose_OBJECTS) $(media_charlierose_LDADD) $(LIBS)
+media/media_clipfish-media_clipfish.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_clipfish$(EXEEXT): $(media_clipfish_OBJECTS) $(media_clipfish_DEPENDENCIES) $(EXTRA_media_clipfish_DEPENDENCIES) 
+	@rm -f media_clipfish$(EXEEXT)
+	$(AM_V_CCLD)$(media_clipfish_LINK) $(media_clipfish_OBJECTS) $(media_clipfish_LDADD) $(LIBS)
+media/media_dailymotion-media_dailymotion.$(OBJEXT):  \
+	media/$(am__dirstamp) media/$(DEPDIR)/$(am__dirstamp)
+media_dailymotion$(EXEEXT): $(media_dailymotion_OBJECTS) $(media_dailymotion_DEPENDENCIES) $(EXTRA_media_dailymotion_DEPENDENCIES) 
+	@rm -f media_dailymotion$(EXEEXT)
+	$(AM_V_CCLD)$(media_dailymotion_LINK) $(media_dailymotion_OBJECTS) $(media_dailymotion_LDADD) $(LIBS)
+media/media_funnyordie-media_funnyordie.$(OBJEXT):  \
+	media/$(am__dirstamp) media/$(DEPDIR)/$(am__dirstamp)
+media_funnyordie$(EXEEXT): $(media_funnyordie_OBJECTS) $(media_funnyordie_DEPENDENCIES) $(EXTRA_media_funnyordie_DEPENDENCIES) 
+	@rm -f media_funnyordie$(EXEEXT)
+	$(AM_V_CCLD)$(media_funnyordie_LINK) $(media_funnyordie_OBJECTS) $(media_funnyordie_LDADD) $(LIBS)
+media/media_gaskrank-media_gaskrank.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_gaskrank$(EXEEXT): $(media_gaskrank_OBJECTS) $(media_gaskrank_DEPENDENCIES) $(EXTRA_media_gaskrank_DEPENDENCIES) 
+	@rm -f media_gaskrank$(EXEEXT)
+	$(AM_V_CCLD)$(media_gaskrank_LINK) $(media_gaskrank_OBJECTS) $(media_gaskrank_LDADD) $(LIBS)
+media/media_guardian-media_guardian.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_guardian$(EXEEXT): $(media_guardian_OBJECTS) $(media_guardian_DEPENDENCIES) $(EXTRA_media_guardian_DEPENDENCIES) 
+	@rm -f media_guardian$(EXEEXT)
+	$(AM_V_CCLD)$(media_guardian_LINK) $(media_guardian_OBJECTS) $(media_guardian_LDADD) $(LIBS)
+media/media_ina-media_ina.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_ina$(EXEEXT): $(media_ina_OBJECTS) $(media_ina_DEPENDENCIES) $(EXTRA_media_ina_DEPENDENCIES) 
+	@rm -f media_ina$(EXEEXT)
+	$(AM_V_CCLD)$(media_ina_LINK) $(media_ina_OBJECTS) $(media_ina_LDADD) $(LIBS)
+media/media_lego-media_lego.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_lego$(EXEEXT): $(media_lego_OBJECTS) $(media_lego_DEPENDENCIES) $(EXTRA_media_lego_DEPENDENCIES) 
+	@rm -f media_lego$(EXEEXT)
+	$(AM_V_CCLD)$(media_lego_LINK) $(media_lego_OBJECTS) $(media_lego_LDADD) $(LIBS)
+media/media_liveleak-media_liveleak.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_liveleak$(EXEEXT): $(media_liveleak_OBJECTS) $(media_liveleak_DEPENDENCIES) $(EXTRA_media_liveleak_DEPENDENCIES) 
+	@rm -f media_liveleak$(EXEEXT)
+	$(AM_V_CCLD)$(media_liveleak_LINK) $(media_liveleak_OBJECTS) $(media_liveleak_LDADD) $(LIBS)
+media/media_myspass-media_myspass.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_myspass$(EXEEXT): $(media_myspass_OBJECTS) $(media_myspass_DEPENDENCIES) $(EXTRA_media_myspass_DEPENDENCIES) 
+	@rm -f media_myspass$(EXEEXT)
+	$(AM_V_CCLD)$(media_myspass_LINK) $(media_myspass_OBJECTS) $(media_myspass_LDADD) $(LIBS)
+media/media_publicsenat-media_publicsenat.$(OBJEXT):  \
+	media/$(am__dirstamp) media/$(DEPDIR)/$(am__dirstamp)
+media_publicsenat$(EXEEXT): $(media_publicsenat_OBJECTS) $(media_publicsenat_DEPENDENCIES) $(EXTRA_media_publicsenat_DEPENDENCIES) 
+	@rm -f media_publicsenat$(EXEEXT)
+	$(AM_V_CCLD)$(media_publicsenat_LINK) $(media_publicsenat_OBJECTS) $(media_publicsenat_LDADD) $(LIBS)
+media/media_sapo-media_sapo.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_sapo$(EXEEXT): $(media_sapo_OBJECTS) $(media_sapo_DEPENDENCIES) $(EXTRA_media_sapo_DEPENDENCIES) 
+	@rm -f media_sapo$(EXEEXT)
+	$(AM_V_CCLD)$(media_sapo_LINK) $(media_sapo_OBJECTS) $(media_sapo_LDADD) $(LIBS)
+media/media_senat-media_senat.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_senat$(EXEEXT): $(media_senat_OBJECTS) $(media_senat_DEPENDENCIES) $(EXTRA_media_senat_DEPENDENCIES) 
+	@rm -f media_senat$(EXEEXT)
+	$(AM_V_CCLD)$(media_senat_LINK) $(media_senat_OBJECTS) $(media_senat_LDADD) $(LIBS)
+media/media_sevenload-media_sevenload.$(OBJEXT):  \
+	media/$(am__dirstamp) media/$(DEPDIR)/$(am__dirstamp)
+media_sevenload$(EXEEXT): $(media_sevenload_OBJECTS) $(media_sevenload_DEPENDENCIES) $(EXTRA_media_sevenload_DEPENDENCIES) 
+	@rm -f media_sevenload$(EXEEXT)
+	$(AM_V_CCLD)$(media_sevenload_LINK) $(media_sevenload_OBJECTS) $(media_sevenload_LDADD) $(LIBS)
+media/media_soundcloud-media_soundcloud.$(OBJEXT):  \
+	media/$(am__dirstamp) media/$(DEPDIR)/$(am__dirstamp)
+media_soundcloud$(EXEEXT): $(media_soundcloud_OBJECTS) $(media_soundcloud_DEPENDENCIES) $(EXTRA_media_soundcloud_DEPENDENCIES) 
+	@rm -f media_soundcloud$(EXEEXT)
+	$(AM_V_CCLD)$(media_soundcloud_LINK) $(media_soundcloud_OBJECTS) $(media_soundcloud_LDADD) $(LIBS)
+media/media_spiegel-media_spiegel.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_spiegel$(EXEEXT): $(media_spiegel_OBJECTS) $(media_spiegel_DEPENDENCIES) $(EXTRA_media_spiegel_DEPENDENCIES) 
+	@rm -f media_spiegel$(EXEEXT)
+	$(AM_V_CCLD)$(media_spiegel_LINK) $(media_spiegel_OBJECTS) $(media_spiegel_LDADD) $(LIBS)
+media/media_ted-media_ted.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_ted$(EXEEXT): $(media_ted_OBJECTS) $(media_ted_DEPENDENCIES) $(EXTRA_media_ted_DEPENDENCIES) 
+	@rm -f media_ted$(EXEEXT)
+	$(AM_V_CCLD)$(media_ted_LINK) $(media_ted_OBJECTS) $(media_ted_LDADD) $(LIBS)
+media/media_theonion-media_theonion.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_theonion$(EXEEXT): $(media_theonion_OBJECTS) $(media_theonion_DEPENDENCIES) $(EXTRA_media_theonion_DEPENDENCIES) 
+	@rm -f media_theonion$(EXEEXT)
+	$(AM_V_CCLD)$(media_theonion_LINK) $(media_theonion_OBJECTS) $(media_theonion_LDADD) $(LIBS)
+media/media_tvlux-media_tvlux.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_tvlux$(EXEEXT): $(media_tvlux_OBJECTS) $(media_tvlux_DEPENDENCIES) $(EXTRA_media_tvlux_DEPENDENCIES) 
+	@rm -f media_tvlux$(EXEEXT)
+	$(AM_V_CCLD)$(media_tvlux_LINK) $(media_tvlux_OBJECTS) $(media_tvlux_LDADD) $(LIBS)
+media/media_videa-media_videa.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_videa$(EXEEXT): $(media_videa_OBJECTS) $(media_videa_DEPENDENCIES) $(EXTRA_media_videa_DEPENDENCIES) 
+	@rm -f media_videa$(EXEEXT)
+	$(AM_V_CCLD)$(media_videa_LINK) $(media_videa_OBJECTS) $(media_videa_LDADD) $(LIBS)
+media/media_vimeo-media_vimeo.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_vimeo$(EXEEXT): $(media_vimeo_OBJECTS) $(media_vimeo_DEPENDENCIES) $(EXTRA_media_vimeo_DEPENDENCIES) 
+	@rm -f media_vimeo$(EXEEXT)
+	$(AM_V_CCLD)$(media_vimeo_LINK) $(media_vimeo_OBJECTS) $(media_vimeo_LDADD) $(LIBS)
+media/media_youtube-media_youtube.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_youtube$(EXEEXT): $(media_youtube_OBJECTS) $(media_youtube_DEPENDENCIES) $(EXTRA_media_youtube_DEPENDENCIES) 
+	@rm -f media_youtube$(EXEEXT)
+	$(AM_V_CCLD)$(media_youtube_LINK) $(media_youtube_OBJECTS) $(media_youtube_LDADD) $(LIBS)
+playlist/$(am__dirstamp):
+	@$(MKDIR_P) playlist
+	@: > playlist/$(am__dirstamp)
+playlist/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) playlist/$(DEPDIR)
+	@: > playlist/$(DEPDIR)/$(am__dirstamp)
+playlist/playlist_soundcloud-playlist_soundcloud.$(OBJEXT):  \
+	playlist/$(am__dirstamp) playlist/$(DEPDIR)/$(am__dirstamp)
+playlist_soundcloud$(EXEEXT): $(playlist_soundcloud_OBJECTS) $(playlist_soundcloud_DEPENDENCIES) $(EXTRA_playlist_soundcloud_DEPENDENCIES) 
+	@rm -f playlist_soundcloud$(EXEEXT)
+	$(AM_V_CCLD)$(playlist_soundcloud_LINK) $(playlist_soundcloud_OBJECTS) $(playlist_soundcloud_LDADD) $(LIBS)
+playlist/playlist_youtube-playlist_youtube.$(OBJEXT):  \
+	playlist/$(am__dirstamp) playlist/$(DEPDIR)/$(am__dirstamp)
+playlist_youtube$(EXEEXT): $(playlist_youtube_OBJECTS) $(playlist_youtube_DEPENDENCIES) $(EXTRA_playlist_youtube_DEPENDENCIES) 
+	@rm -f playlist_youtube$(EXEEXT)
+	$(AM_V_CCLD)$(playlist_youtube_LINK) $(playlist_youtube_OBJECTS) $(playlist_youtube_LDADD) $(LIBS)
+scan/$(am__dirstamp):
+	@$(MKDIR_P) scan
+	@: > scan/$(am__dirstamp)
+scan/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) scan/$(DEPDIR)
+	@: > scan/$(DEPDIR)/$(am__dirstamp)
+scan/scan_youtube-scan_youtube.$(OBJEXT): scan/$(am__dirstamp) \
+	scan/$(DEPDIR)/$(am__dirstamp)
+scan_youtube$(EXEEXT): $(scan_youtube_OBJECTS) $(scan_youtube_DEPENDENCIES) $(EXTRA_scan_youtube_DEPENDENCIES) 
+	@rm -f scan_youtube$(EXEEXT)
+	$(AM_V_CCLD)$(scan_youtube_LINK) $(scan_youtube_OBJECTS) $(scan_youtube_LDADD) $(LIBS)
+subtitle/$(am__dirstamp):
+	@$(MKDIR_P) subtitle
+	@: > subtitle/$(am__dirstamp)
+subtitle/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) subtitle/$(DEPDIR)
+	@: > subtitle/$(DEPDIR)/$(am__dirstamp)
+subtitle/subtitle_youtube-subtitle_youtube.$(OBJEXT):  \
+	subtitle/$(am__dirstamp) subtitle/$(DEPDIR)/$(am__dirstamp)
+subtitle_youtube$(EXEEXT): $(subtitle_youtube_OBJECTS) $(subtitle_youtube_DEPENDENCIES) $(EXTRA_subtitle_youtube_DEPENDENCIES) 
+	@rm -f subtitle_youtube$(EXEEXT)
+	$(AM_V_CCLD)$(subtitle_youtube_LINK) $(subtitle_youtube_OBJECTS) $(subtitle_youtube_LDADD) $(LIBS)
+
+mostlyclean-compile:
+	-rm -f *.$(OBJEXT)
+	-rm -f media/media_101greatgoals-media_101greatgoals.$(OBJEXT)
+	-rm -f media/media_1tvru-media_1tvru.$(OBJEXT)
+	-rm -f media/media_ardmediathek-media_ardmediathek.$(OBJEXT)
+	-rm -f media/media_arte-media_arte.$(OBJEXT)
+	-rm -f media/media_audioboo-media_audioboo.$(OBJEXT)
+	-rm -f media/media_bikeradar-media_bikeradar.$(OBJEXT)
+	-rm -f media/media_break-media_break.$(OBJEXT)
+	-rm -f media/media_cbsnews-media_cbsnews.$(OBJEXT)
+	-rm -f media/media_charlierose-media_charlierose.$(OBJEXT)
+	-rm -f media/media_clipfish-media_clipfish.$(OBJEXT)
+	-rm -f media/media_dailymotion-media_dailymotion.$(OBJEXT)
+	-rm -f media/media_funnyordie-media_funnyordie.$(OBJEXT)
+	-rm -f media/media_gaskrank-media_gaskrank.$(OBJEXT)
+	-rm -f media/media_guardian-media_guardian.$(OBJEXT)
+	-rm -f media/media_ina-media_ina.$(OBJEXT)
+	-rm -f media/media_lego-media_lego.$(OBJEXT)
+	-rm -f media/media_liveleak-media_liveleak.$(OBJEXT)
+	-rm -f media/media_myspass-media_myspass.$(OBJEXT)
+	-rm -f media/media_publicsenat-media_publicsenat.$(OBJEXT)
+	-rm -f media/media_sapo-media_sapo.$(OBJEXT)
+	-rm -f media/media_senat-media_senat.$(OBJEXT)
+	-rm -f media/media_sevenload-media_sevenload.$(OBJEXT)
+	-rm -f media/media_soundcloud-media_soundcloud.$(OBJEXT)
+	-rm -f media/media_spiegel-media_spiegel.$(OBJEXT)
+	-rm -f media/media_ted-media_ted.$(OBJEXT)
+	-rm -f media/media_theonion-media_theonion.$(OBJEXT)
+	-rm -f media/media_tvlux-media_tvlux.$(OBJEXT)
+	-rm -f media/media_videa-media_videa.$(OBJEXT)
+	-rm -f media/media_vimeo-media_vimeo.$(OBJEXT)
+	-rm -f media/media_youtube-media_youtube.$(OBJEXT)
+	-rm -f playlist/playlist_soundcloud-playlist_soundcloud.$(OBJEXT)
+	-rm -f playlist/playlist_youtube-playlist_youtube.$(OBJEXT)
+	-rm -f scan/scan_youtube-scan_youtube.$(OBJEXT)
+	-rm -f subtitle/subtitle_youtube-subtitle_youtube.$(OBJEXT)
+
+distclean-compile:
+	-rm -f *.tab.c
+
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_101greatgoals-media_101greatgoals.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_1tvru-media_1tvru.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_ardmediathek-media_ardmediathek.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_arte-media_arte.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_audioboo-media_audioboo.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_bikeradar-media_bikeradar.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_break-media_break.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_cbsnews-media_cbsnews.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_charlierose-media_charlierose.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_clipfish-media_clipfish.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_dailymotion-media_dailymotion.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_funnyordie-media_funnyordie.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_gaskrank-media_gaskrank.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_guardian-media_guardian.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_ina-media_ina.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_lego-media_lego.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_liveleak-media_liveleak.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_myspass-media_myspass.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_publicsenat-media_publicsenat.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_sapo-media_sapo.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_senat-media_senat.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_sevenload-media_sevenload.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_soundcloud-media_soundcloud.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_spiegel-media_spiegel.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_ted-media_ted.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_theonion-media_theonion.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_tvlux-media_tvlux.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_videa-media_videa.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_vimeo-media_vimeo.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_youtube-media_youtube.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@playlist/$(DEPDIR)/playlist_soundcloud-playlist_soundcloud.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@playlist/$(DEPDIR)/playlist_youtube-playlist_youtube.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@scan/$(DEPDIR)/scan_youtube-scan_youtube.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@subtitle/$(DEPDIR)/subtitle_youtube-subtitle_youtube.Po@am__quote@
+
+.c.o:
+@am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
+@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+@am__fastdepCC_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ $<
+
+.c.obj:
+@am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
+@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ `$(CYGPATH_W) '$<'` &&\
+@am__fastdepCC_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+.c.lo:
+@am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.lo$$||'`;\
+@am__fastdepCC_TRUE@	$(LTCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+@am__fastdepCC_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
+
+media/media_101greatgoals-media_101greatgoals.o: media/media_101greatgoals.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_101greatgoals_CPPFLAGS) $(CPPFLAGS) $(media_101greatgoals_CFLAGS) $(CFLAGS) -MT media/media_101greatgoals-media_101greatgoals.o -MD -MP -MF media/$(DEPDIR)/media_101greatgoals-media_101greatgoals.Tpo -c -o media/media_101greatgoals-media_101greatgoals.o `test -f 'media/media_101greatgoals.c' || echo '$(srcdir)/'`media/media_101greatgoals.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_101greatgoals-media_101greatgoals.Tpo media/$(DEPDIR)/media_101greatgoals-media_101greatgoals.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_101greatgoals.c' object='media/media_101greatgoals-media_101greatgoals.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_101greatgoals_CPPFLAGS) $(CPPFLAGS) $(media_101greatgoals_CFLAGS) $(CFLAGS) -c -o media/media_101greatgoals-media_101greatgoals.o `test -f 'media/media_101greatgoals.c' || echo '$(srcdir)/'`media/media_101greatgoals.c
+
+media/media_101greatgoals-media_101greatgoals.obj: media/media_101greatgoals.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_101greatgoals_CPPFLAGS) $(CPPFLAGS) $(media_101greatgoals_CFLAGS) $(CFLAGS) -MT media/media_101greatgoals-media_101greatgoals.obj -MD -MP -MF media/$(DEPDIR)/media_101greatgoals-media_101greatgoals.Tpo -c -o media/media_101greatgoals-media_101greatgoals.obj `if test -f 'media/media_101greatgoals.c'; then $(CYGPATH_W) 'media/media_101greatgoals.c'; else $(CYGPATH_W) '$(srcdir)/media/media_101greatgoals.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_101greatgoals-media_101greatgoals.Tpo media/$(DEPDIR)/media_101greatgoals-media_101greatgoals.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_101greatgoals.c' object='media/media_101greatgoals-media_101greatgoals.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_101greatgoals_CPPFLAGS) $(CPPFLAGS) $(media_101greatgoals_CFLAGS) $(CFLAGS) -c -o media/media_101greatgoals-media_101greatgoals.obj `if test -f 'media/media_101greatgoals.c'; then $(CYGPATH_W) 'media/media_101greatgoals.c'; else $(CYGPATH_W) '$(srcdir)/media/media_101greatgoals.c'; fi`
+
+media/media_1tvru-media_1tvru.o: media/media_1tvru.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_1tvru_CPPFLAGS) $(CPPFLAGS) $(media_1tvru_CFLAGS) $(CFLAGS) -MT media/media_1tvru-media_1tvru.o -MD -MP -MF media/$(DEPDIR)/media_1tvru-media_1tvru.Tpo -c -o media/media_1tvru-media_1tvru.o `test -f 'media/media_1tvru.c' || echo '$(srcdir)/'`media/media_1tvru.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_1tvru-media_1tvru.Tpo media/$(DEPDIR)/media_1tvru-media_1tvru.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_1tvru.c' object='media/media_1tvru-media_1tvru.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_1tvru_CPPFLAGS) $(CPPFLAGS) $(media_1tvru_CFLAGS) $(CFLAGS) -c -o media/media_1tvru-media_1tvru.o `test -f 'media/media_1tvru.c' || echo '$(srcdir)/'`media/media_1tvru.c
+
+media/media_1tvru-media_1tvru.obj: media/media_1tvru.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_1tvru_CPPFLAGS) $(CPPFLAGS) $(media_1tvru_CFLAGS) $(CFLAGS) -MT media/media_1tvru-media_1tvru.obj -MD -MP -MF media/$(DEPDIR)/media_1tvru-media_1tvru.Tpo -c -o media/media_1tvru-media_1tvru.obj `if test -f 'media/media_1tvru.c'; then $(CYGPATH_W) 'media/media_1tvru.c'; else $(CYGPATH_W) '$(srcdir)/media/media_1tvru.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_1tvru-media_1tvru.Tpo media/$(DEPDIR)/media_1tvru-media_1tvru.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_1tvru.c' object='media/media_1tvru-media_1tvru.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_1tvru_CPPFLAGS) $(CPPFLAGS) $(media_1tvru_CFLAGS) $(CFLAGS) -c -o media/media_1tvru-media_1tvru.obj `if test -f 'media/media_1tvru.c'; then $(CYGPATH_W) 'media/media_1tvru.c'; else $(CYGPATH_W) '$(srcdir)/media/media_1tvru.c'; fi`
+
+media/media_ardmediathek-media_ardmediathek.o: media/media_ardmediathek.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_ardmediathek_CPPFLAGS) $(CPPFLAGS) $(media_ardmediathek_CFLAGS) $(CFLAGS) -MT media/media_ardmediathek-media_ardmediathek.o -MD -MP -MF media/$(DEPDIR)/media_ardmediathek-media_ardmediathek.Tpo -c -o media/media_ardmediathek-media_ardmediathek.o `test -f 'media/media_ardmediathek.c' || echo '$(srcdir)/'`media/media_ardmediathek.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_ardmediathek-media_ardmediathek.Tpo media/$(DEPDIR)/media_ardmediathek-media_ardmediathek.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_ardmediathek.c' object='media/media_ardmediathek-media_ardmediathek.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_ardmediathek_CPPFLAGS) $(CPPFLAGS) $(media_ardmediathek_CFLAGS) $(CFLAGS) -c -o media/media_ardmediathek-media_ardmediathek.o `test -f 'media/media_ardmediathek.c' || echo '$(srcdir)/'`media/media_ardmediathek.c
+
+media/media_ardmediathek-media_ardmediathek.obj: media/media_ardmediathek.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_ardmediathek_CPPFLAGS) $(CPPFLAGS) $(media_ardmediathek_CFLAGS) $(CFLAGS) -MT media/media_ardmediathek-media_ardmediathek.obj -MD -MP -MF media/$(DEPDIR)/media_ardmediathek-media_ardmediathek.Tpo -c -o media/media_ardmediathek-media_ardmediathek.obj `if test -f 'media/media_ardmediathek.c'; then $(CYGPATH_W) 'media/media_ardmediathek.c'; else $(CYGPATH_W) '$(srcdir)/media/media_ardmediathek.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_ardmediathek-media_ardmediathek.Tpo media/$(DEPDIR)/media_ardmediathek-media_ardmediathek.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_ardmediathek.c' object='media/media_ardmediathek-media_ardmediathek.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_ardmediathek_CPPFLAGS) $(CPPFLAGS) $(media_ardmediathek_CFLAGS) $(CFLAGS) -c -o media/media_ardmediathek-media_ardmediathek.obj `if test -f 'media/media_ardmediathek.c'; then $(CYGPATH_W) 'media/media_ardmediathek.c'; else $(CYGPATH_W) '$(srcdir)/media/media_ardmediathek.c'; fi`
+
+media/media_arte-media_arte.o: media/media_arte.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_arte_CPPFLAGS) $(CPPFLAGS) $(media_arte_CFLAGS) $(CFLAGS) -MT media/media_arte-media_arte.o -MD -MP -MF media/$(DEPDIR)/media_arte-media_arte.Tpo -c -o media/media_arte-media_arte.o `test -f 'media/media_arte.c' || echo '$(srcdir)/'`media/media_arte.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_arte-media_arte.Tpo media/$(DEPDIR)/media_arte-media_arte.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_arte.c' object='media/media_arte-media_arte.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_arte_CPPFLAGS) $(CPPFLAGS) $(media_arte_CFLAGS) $(CFLAGS) -c -o media/media_arte-media_arte.o `test -f 'media/media_arte.c' || echo '$(srcdir)/'`media/media_arte.c
+
+media/media_arte-media_arte.obj: media/media_arte.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_arte_CPPFLAGS) $(CPPFLAGS) $(media_arte_CFLAGS) $(CFLAGS) -MT media/media_arte-media_arte.obj -MD -MP -MF media/$(DEPDIR)/media_arte-media_arte.Tpo -c -o media/media_arte-media_arte.obj `if test -f 'media/media_arte.c'; then $(CYGPATH_W) 'media/media_arte.c'; else $(CYGPATH_W) '$(srcdir)/media/media_arte.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_arte-media_arte.Tpo media/$(DEPDIR)/media_arte-media_arte.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_arte.c' object='media/media_arte-media_arte.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_arte_CPPFLAGS) $(CPPFLAGS) $(media_arte_CFLAGS) $(CFLAGS) -c -o media/media_arte-media_arte.obj `if test -f 'media/media_arte.c'; then $(CYGPATH_W) 'media/media_arte.c'; else $(CYGPATH_W) '$(srcdir)/media/media_arte.c'; fi`
+
+media/media_audioboo-media_audioboo.o: media/media_audioboo.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_audioboo_CPPFLAGS) $(CPPFLAGS) $(media_audioboo_CFLAGS) $(CFLAGS) -MT media/media_audioboo-media_audioboo.o -MD -MP -MF media/$(DEPDIR)/media_audioboo-media_audioboo.Tpo -c -o media/media_audioboo-media_audioboo.o `test -f 'media/media_audioboo.c' || echo '$(srcdir)/'`media/media_audioboo.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_audioboo-media_audioboo.Tpo media/$(DEPDIR)/media_audioboo-media_audioboo.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_audioboo.c' object='media/media_audioboo-media_audioboo.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_audioboo_CPPFLAGS) $(CPPFLAGS) $(media_audioboo_CFLAGS) $(CFLAGS) -c -o media/media_audioboo-media_audioboo.o `test -f 'media/media_audioboo.c' || echo '$(srcdir)/'`media/media_audioboo.c
+
+media/media_audioboo-media_audioboo.obj: media/media_audioboo.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_audioboo_CPPFLAGS) $(CPPFLAGS) $(media_audioboo_CFLAGS) $(CFLAGS) -MT media/media_audioboo-media_audioboo.obj -MD -MP -MF media/$(DEPDIR)/media_audioboo-media_audioboo.Tpo -c -o media/media_audioboo-media_audioboo.obj `if test -f 'media/media_audioboo.c'; then $(CYGPATH_W) 'media/media_audioboo.c'; else $(CYGPATH_W) '$(srcdir)/media/media_audioboo.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_audioboo-media_audioboo.Tpo media/$(DEPDIR)/media_audioboo-media_audioboo.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_audioboo.c' object='media/media_audioboo-media_audioboo.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_audioboo_CPPFLAGS) $(CPPFLAGS) $(media_audioboo_CFLAGS) $(CFLAGS) -c -o media/media_audioboo-media_audioboo.obj `if test -f 'media/media_audioboo.c'; then $(CYGPATH_W) 'media/media_audioboo.c'; else $(CYGPATH_W) '$(srcdir)/media/media_audioboo.c'; fi`
+
+media/media_bikeradar-media_bikeradar.o: media/media_bikeradar.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_bikeradar_CPPFLAGS) $(CPPFLAGS) $(media_bikeradar_CFLAGS) $(CFLAGS) -MT media/media_bikeradar-media_bikeradar.o -MD -MP -MF media/$(DEPDIR)/media_bikeradar-media_bikeradar.Tpo -c -o media/media_bikeradar-media_bikeradar.o `test -f 'media/media_bikeradar.c' || echo '$(srcdir)/'`media/media_bikeradar.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_bikeradar-media_bikeradar.Tpo media/$(DEPDIR)/media_bikeradar-media_bikeradar.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_bikeradar.c' object='media/media_bikeradar-media_bikeradar.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_bikeradar_CPPFLAGS) $(CPPFLAGS) $(media_bikeradar_CFLAGS) $(CFLAGS) -c -o media/media_bikeradar-media_bikeradar.o `test -f 'media/media_bikeradar.c' || echo '$(srcdir)/'`media/media_bikeradar.c
+
+media/media_bikeradar-media_bikeradar.obj: media/media_bikeradar.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_bikeradar_CPPFLAGS) $(CPPFLAGS) $(media_bikeradar_CFLAGS) $(CFLAGS) -MT media/media_bikeradar-media_bikeradar.obj -MD -MP -MF media/$(DEPDIR)/media_bikeradar-media_bikeradar.Tpo -c -o media/media_bikeradar-media_bikeradar.obj `if test -f 'media/media_bikeradar.c'; then $(CYGPATH_W) 'media/media_bikeradar.c'; else $(CYGPATH_W) '$(srcdir)/media/media_bikeradar.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_bikeradar-media_bikeradar.Tpo media/$(DEPDIR)/media_bikeradar-media_bikeradar.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_bikeradar.c' object='media/media_bikeradar-media_bikeradar.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_bikeradar_CPPFLAGS) $(CPPFLAGS) $(media_bikeradar_CFLAGS) $(CFLAGS) -c -o media/media_bikeradar-media_bikeradar.obj `if test -f 'media/media_bikeradar.c'; then $(CYGPATH_W) 'media/media_bikeradar.c'; else $(CYGPATH_W) '$(srcdir)/media/media_bikeradar.c'; fi`
+
+media/media_break-media_break.o: media/media_break.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_break_CPPFLAGS) $(CPPFLAGS) $(media_break_CFLAGS) $(CFLAGS) -MT media/media_break-media_break.o -MD -MP -MF media/$(DEPDIR)/media_break-media_break.Tpo -c -o media/media_break-media_break.o `test -f 'media/media_break.c' || echo '$(srcdir)/'`media/media_break.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_break-media_break.Tpo media/$(DEPDIR)/media_break-media_break.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_break.c' object='media/media_break-media_break.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_break_CPPFLAGS) $(CPPFLAGS) $(media_break_CFLAGS) $(CFLAGS) -c -o media/media_break-media_break.o `test -f 'media/media_break.c' || echo '$(srcdir)/'`media/media_break.c
+
+media/media_break-media_break.obj: media/media_break.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_break_CPPFLAGS) $(CPPFLAGS) $(media_break_CFLAGS) $(CFLAGS) -MT media/media_break-media_break.obj -MD -MP -MF media/$(DEPDIR)/media_break-media_break.Tpo -c -o media/media_break-media_break.obj `if test -f 'media/media_break.c'; then $(CYGPATH_W) 'media/media_break.c'; else $(CYGPATH_W) '$(srcdir)/media/media_break.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_break-media_break.Tpo media/$(DEPDIR)/media_break-media_break.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_break.c' object='media/media_break-media_break.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_break_CPPFLAGS) $(CPPFLAGS) $(media_break_CFLAGS) $(CFLAGS) -c -o media/media_break-media_break.obj `if test -f 'media/media_break.c'; then $(CYGPATH_W) 'media/media_break.c'; else $(CYGPATH_W) '$(srcdir)/media/media_break.c'; fi`
+
+media/media_cbsnews-media_cbsnews.o: media/media_cbsnews.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_cbsnews_CPPFLAGS) $(CPPFLAGS) $(media_cbsnews_CFLAGS) $(CFLAGS) -MT media/media_cbsnews-media_cbsnews.o -MD -MP -MF media/$(DEPDIR)/media_cbsnews-media_cbsnews.Tpo -c -o media/media_cbsnews-media_cbsnews.o `test -f 'media/media_cbsnews.c' || echo '$(srcdir)/'`media/media_cbsnews.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_cbsnews-media_cbsnews.Tpo media/$(DEPDIR)/media_cbsnews-media_cbsnews.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_cbsnews.c' object='media/media_cbsnews-media_cbsnews.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_cbsnews_CPPFLAGS) $(CPPFLAGS) $(media_cbsnews_CFLAGS) $(CFLAGS) -c -o media/media_cbsnews-media_cbsnews.o `test -f 'media/media_cbsnews.c' || echo '$(srcdir)/'`media/media_cbsnews.c
+
+media/media_cbsnews-media_cbsnews.obj: media/media_cbsnews.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_cbsnews_CPPFLAGS) $(CPPFLAGS) $(media_cbsnews_CFLAGS) $(CFLAGS) -MT media/media_cbsnews-media_cbsnews.obj -MD -MP -MF media/$(DEPDIR)/media_cbsnews-media_cbsnews.Tpo -c -o media/media_cbsnews-media_cbsnews.obj `if test -f 'media/media_cbsnews.c'; then $(CYGPATH_W) 'media/media_cbsnews.c'; else $(CYGPATH_W) '$(srcdir)/media/media_cbsnews.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_cbsnews-media_cbsnews.Tpo media/$(DEPDIR)/media_cbsnews-media_cbsnews.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_cbsnews.c' object='media/media_cbsnews-media_cbsnews.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_cbsnews_CPPFLAGS) $(CPPFLAGS) $(media_cbsnews_CFLAGS) $(CFLAGS) -c -o media/media_cbsnews-media_cbsnews.obj `if test -f 'media/media_cbsnews.c'; then $(CYGPATH_W) 'media/media_cbsnews.c'; else $(CYGPATH_W) '$(srcdir)/media/media_cbsnews.c'; fi`
+
+media/media_charlierose-media_charlierose.o: media/media_charlierose.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_charlierose_CPPFLAGS) $(CPPFLAGS) $(media_charlierose_CFLAGS) $(CFLAGS) -MT media/media_charlierose-media_charlierose.o -MD -MP -MF media/$(DEPDIR)/media_charlierose-media_charlierose.Tpo -c -o media/media_charlierose-media_charlierose.o `test -f 'media/media_charlierose.c' || echo '$(srcdir)/'`media/media_charlierose.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_charlierose-media_charlierose.Tpo media/$(DEPDIR)/media_charlierose-media_charlierose.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_charlierose.c' object='media/media_charlierose-media_charlierose.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_charlierose_CPPFLAGS) $(CPPFLAGS) $(media_charlierose_CFLAGS) $(CFLAGS) -c -o media/media_charlierose-media_charlierose.o `test -f 'media/media_charlierose.c' || echo '$(srcdir)/'`media/media_charlierose.c
+
+media/media_charlierose-media_charlierose.obj: media/media_charlierose.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_charlierose_CPPFLAGS) $(CPPFLAGS) $(media_charlierose_CFLAGS) $(CFLAGS) -MT media/media_charlierose-media_charlierose.obj -MD -MP -MF media/$(DEPDIR)/media_charlierose-media_charlierose.Tpo -c -o media/media_charlierose-media_charlierose.obj `if test -f 'media/media_charlierose.c'; then $(CYGPATH_W) 'media/media_charlierose.c'; else $(CYGPATH_W) '$(srcdir)/media/media_charlierose.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_charlierose-media_charlierose.Tpo media/$(DEPDIR)/media_charlierose-media_charlierose.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_charlierose.c' object='media/media_charlierose-media_charlierose.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_charlierose_CPPFLAGS) $(CPPFLAGS) $(media_charlierose_CFLAGS) $(CFLAGS) -c -o media/media_charlierose-media_charlierose.obj `if test -f 'media/media_charlierose.c'; then $(CYGPATH_W) 'media/media_charlierose.c'; else $(CYGPATH_W) '$(srcdir)/media/media_charlierose.c'; fi`
+
+media/media_clipfish-media_clipfish.o: media/media_clipfish.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_clipfish_CPPFLAGS) $(CPPFLAGS) $(media_clipfish_CFLAGS) $(CFLAGS) -MT media/media_clipfish-media_clipfish.o -MD -MP -MF media/$(DEPDIR)/media_clipfish-media_clipfish.Tpo -c -o media/media_clipfish-media_clipfish.o `test -f 'media/media_clipfish.c' || echo '$(srcdir)/'`media/media_clipfish.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_clipfish-media_clipfish.Tpo media/$(DEPDIR)/media_clipfish-media_clipfish.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_clipfish.c' object='media/media_clipfish-media_clipfish.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_clipfish_CPPFLAGS) $(CPPFLAGS) $(media_clipfish_CFLAGS) $(CFLAGS) -c -o media/media_clipfish-media_clipfish.o `test -f 'media/media_clipfish.c' || echo '$(srcdir)/'`media/media_clipfish.c
+
+media/media_clipfish-media_clipfish.obj: media/media_clipfish.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_clipfish_CPPFLAGS) $(CPPFLAGS) $(media_clipfish_CFLAGS) $(CFLAGS) -MT media/media_clipfish-media_clipfish.obj -MD -MP -MF media/$(DEPDIR)/media_clipfish-media_clipfish.Tpo -c -o media/media_clipfish-media_clipfish.obj `if test -f 'media/media_clipfish.c'; then $(CYGPATH_W) 'media/media_clipfish.c'; else $(CYGPATH_W) '$(srcdir)/media/media_clipfish.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_clipfish-media_clipfish.Tpo media/$(DEPDIR)/media_clipfish-media_clipfish.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_clipfish.c' object='media/media_clipfish-media_clipfish.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_clipfish_CPPFLAGS) $(CPPFLAGS) $(media_clipfish_CFLAGS) $(CFLAGS) -c -o media/media_clipfish-media_clipfish.obj `if test -f 'media/media_clipfish.c'; then $(CYGPATH_W) 'media/media_clipfish.c'; else $(CYGPATH_W) '$(srcdir)/media/media_clipfish.c'; fi`
+
+media/media_dailymotion-media_dailymotion.o: media/media_dailymotion.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_dailymotion_CPPFLAGS) $(CPPFLAGS) $(media_dailymotion_CFLAGS) $(CFLAGS) -MT media/media_dailymotion-media_dailymotion.o -MD -MP -MF media/$(DEPDIR)/media_dailymotion-media_dailymotion.Tpo -c -o media/media_dailymotion-media_dailymotion.o `test -f 'media/media_dailymotion.c' || echo '$(srcdir)/'`media/media_dailymotion.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_dailymotion-media_dailymotion.Tpo media/$(DEPDIR)/media_dailymotion-media_dailymotion.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_dailymotion.c' object='media/media_dailymotion-media_dailymotion.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_dailymotion_CPPFLAGS) $(CPPFLAGS) $(media_dailymotion_CFLAGS) $(CFLAGS) -c -o media/media_dailymotion-media_dailymotion.o `test -f 'media/media_dailymotion.c' || echo '$(srcdir)/'`media/media_dailymotion.c
+
+media/media_dailymotion-media_dailymotion.obj: media/media_dailymotion.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_dailymotion_CPPFLAGS) $(CPPFLAGS) $(media_dailymotion_CFLAGS) $(CFLAGS) -MT media/media_dailymotion-media_dailymotion.obj -MD -MP -MF media/$(DEPDIR)/media_dailymotion-media_dailymotion.Tpo -c -o media/media_dailymotion-media_dailymotion.obj `if test -f 'media/media_dailymotion.c'; then $(CYGPATH_W) 'media/media_dailymotion.c'; else $(CYGPATH_W) '$(srcdir)/media/media_dailymotion.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_dailymotion-media_dailymotion.Tpo media/$(DEPDIR)/media_dailymotion-media_dailymotion.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_dailymotion.c' object='media/media_dailymotion-media_dailymotion.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_dailymotion_CPPFLAGS) $(CPPFLAGS) $(media_dailymotion_CFLAGS) $(CFLAGS) -c -o media/media_dailymotion-media_dailymotion.obj `if test -f 'media/media_dailymotion.c'; then $(CYGPATH_W) 'media/media_dailymotion.c'; else $(CYGPATH_W) '$(srcdir)/media/media_dailymotion.c'; fi`
+
+media/media_funnyordie-media_funnyordie.o: media/media_funnyordie.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_funnyordie_CPPFLAGS) $(CPPFLAGS) $(media_funnyordie_CFLAGS) $(CFLAGS) -MT media/media_funnyordie-media_funnyordie.o -MD -MP -MF media/$(DEPDIR)/media_funnyordie-media_funnyordie.Tpo -c -o media/media_funnyordie-media_funnyordie.o `test -f 'media/media_funnyordie.c' || echo '$(srcdir)/'`media/media_funnyordie.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_funnyordie-media_funnyordie.Tpo media/$(DEPDIR)/media_funnyordie-media_funnyordie.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_funnyordie.c' object='media/media_funnyordie-media_funnyordie.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_funnyordie_CPPFLAGS) $(CPPFLAGS) $(media_funnyordie_CFLAGS) $(CFLAGS) -c -o media/media_funnyordie-media_funnyordie.o `test -f 'media/media_funnyordie.c' || echo '$(srcdir)/'`media/media_funnyordie.c
+
+media/media_funnyordie-media_funnyordie.obj: media/media_funnyordie.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_funnyordie_CPPFLAGS) $(CPPFLAGS) $(media_funnyordie_CFLAGS) $(CFLAGS) -MT media/media_funnyordie-media_funnyordie.obj -MD -MP -MF media/$(DEPDIR)/media_funnyordie-media_funnyordie.Tpo -c -o media/media_funnyordie-media_funnyordie.obj `if test -f 'media/media_funnyordie.c'; then $(CYGPATH_W) 'media/media_funnyordie.c'; else $(CYGPATH_W) '$(srcdir)/media/media_funnyordie.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_funnyordie-media_funnyordie.Tpo media/$(DEPDIR)/media_funnyordie-media_funnyordie.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_funnyordie.c' object='media/media_funnyordie-media_funnyordie.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_funnyordie_CPPFLAGS) $(CPPFLAGS) $(media_funnyordie_CFLAGS) $(CFLAGS) -c -o media/media_funnyordie-media_funnyordie.obj `if test -f 'media/media_funnyordie.c'; then $(CYGPATH_W) 'media/media_funnyordie.c'; else $(CYGPATH_W) '$(srcdir)/media/media_funnyordie.c'; fi`
+
+media/media_gaskrank-media_gaskrank.o: media/media_gaskrank.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_gaskrank_CPPFLAGS) $(CPPFLAGS) $(media_gaskrank_CFLAGS) $(CFLAGS) -MT media/media_gaskrank-media_gaskrank.o -MD -MP -MF media/$(DEPDIR)/media_gaskrank-media_gaskrank.Tpo -c -o media/media_gaskrank-media_gaskrank.o `test -f 'media/media_gaskrank.c' || echo '$(srcdir)/'`media/media_gaskrank.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_gaskrank-media_gaskrank.Tpo media/$(DEPDIR)/media_gaskrank-media_gaskrank.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_gaskrank.c' object='media/media_gaskrank-media_gaskrank.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_gaskrank_CPPFLAGS) $(CPPFLAGS) $(media_gaskrank_CFLAGS) $(CFLAGS) -c -o media/media_gaskrank-media_gaskrank.o `test -f 'media/media_gaskrank.c' || echo '$(srcdir)/'`media/media_gaskrank.c
+
+media/media_gaskrank-media_gaskrank.obj: media/media_gaskrank.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_gaskrank_CPPFLAGS) $(CPPFLAGS) $(media_gaskrank_CFLAGS) $(CFLAGS) -MT media/media_gaskrank-media_gaskrank.obj -MD -MP -MF media/$(DEPDIR)/media_gaskrank-media_gaskrank.Tpo -c -o media/media_gaskrank-media_gaskrank.obj `if test -f 'media/media_gaskrank.c'; then $(CYGPATH_W) 'media/media_gaskrank.c'; else $(CYGPATH_W) '$(srcdir)/media/media_gaskrank.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_gaskrank-media_gaskrank.Tpo media/$(DEPDIR)/media_gaskrank-media_gaskrank.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_gaskrank.c' object='media/media_gaskrank-media_gaskrank.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_gaskrank_CPPFLAGS) $(CPPFLAGS) $(media_gaskrank_CFLAGS) $(CFLAGS) -c -o media/media_gaskrank-media_gaskrank.obj `if test -f 'media/media_gaskrank.c'; then $(CYGPATH_W) 'media/media_gaskrank.c'; else $(CYGPATH_W) '$(srcdir)/media/media_gaskrank.c'; fi`
+
+media/media_guardian-media_guardian.o: media/media_guardian.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_guardian_CPPFLAGS) $(CPPFLAGS) $(media_guardian_CFLAGS) $(CFLAGS) -MT media/media_guardian-media_guardian.o -MD -MP -MF media/$(DEPDIR)/media_guardian-media_guardian.Tpo -c -o media/media_guardian-media_guardian.o `test -f 'media/media_guardian.c' || echo '$(srcdir)/'`media/media_guardian.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_guardian-media_guardian.Tpo media/$(DEPDIR)/media_guardian-media_guardian.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_guardian.c' object='media/media_guardian-media_guardian.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_guardian_CPPFLAGS) $(CPPFLAGS) $(media_guardian_CFLAGS) $(CFLAGS) -c -o media/media_guardian-media_guardian.o `test -f 'media/media_guardian.c' || echo '$(srcdir)/'`media/media_guardian.c
+
+media/media_guardian-media_guardian.obj: media/media_guardian.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_guardian_CPPFLAGS) $(CPPFLAGS) $(media_guardian_CFLAGS) $(CFLAGS) -MT media/media_guardian-media_guardian.obj -MD -MP -MF media/$(DEPDIR)/media_guardian-media_guardian.Tpo -c -o media/media_guardian-media_guardian.obj `if test -f 'media/media_guardian.c'; then $(CYGPATH_W) 'media/media_guardian.c'; else $(CYGPATH_W) '$(srcdir)/media/media_guardian.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_guardian-media_guardian.Tpo media/$(DEPDIR)/media_guardian-media_guardian.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_guardian.c' object='media/media_guardian-media_guardian.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_guardian_CPPFLAGS) $(CPPFLAGS) $(media_guardian_CFLAGS) $(CFLAGS) -c -o media/media_guardian-media_guardian.obj `if test -f 'media/media_guardian.c'; then $(CYGPATH_W) 'media/media_guardian.c'; else $(CYGPATH_W) '$(srcdir)/media/media_guardian.c'; fi`
+
+media/media_ina-media_ina.o: media/media_ina.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_ina_CPPFLAGS) $(CPPFLAGS) $(media_ina_CFLAGS) $(CFLAGS) -MT media/media_ina-media_ina.o -MD -MP -MF media/$(DEPDIR)/media_ina-media_ina.Tpo -c -o media/media_ina-media_ina.o `test -f 'media/media_ina.c' || echo '$(srcdir)/'`media/media_ina.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_ina-media_ina.Tpo media/$(DEPDIR)/media_ina-media_ina.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_ina.c' object='media/media_ina-media_ina.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_ina_CPPFLAGS) $(CPPFLAGS) $(media_ina_CFLAGS) $(CFLAGS) -c -o media/media_ina-media_ina.o `test -f 'media/media_ina.c' || echo '$(srcdir)/'`media/media_ina.c
+
+media/media_ina-media_ina.obj: media/media_ina.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_ina_CPPFLAGS) $(CPPFLAGS) $(media_ina_CFLAGS) $(CFLAGS) -MT media/media_ina-media_ina.obj -MD -MP -MF media/$(DEPDIR)/media_ina-media_ina.Tpo -c -o media/media_ina-media_ina.obj `if test -f 'media/media_ina.c'; then $(CYGPATH_W) 'media/media_ina.c'; else $(CYGPATH_W) '$(srcdir)/media/media_ina.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_ina-media_ina.Tpo media/$(DEPDIR)/media_ina-media_ina.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_ina.c' object='media/media_ina-media_ina.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_ina_CPPFLAGS) $(CPPFLAGS) $(media_ina_CFLAGS) $(CFLAGS) -c -o media/media_ina-media_ina.obj `if test -f 'media/media_ina.c'; then $(CYGPATH_W) 'media/media_ina.c'; else $(CYGPATH_W) '$(srcdir)/media/media_ina.c'; fi`
+
+media/media_lego-media_lego.o: media/media_lego.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_lego_CPPFLAGS) $(CPPFLAGS) $(media_lego_CFLAGS) $(CFLAGS) -MT media/media_lego-media_lego.o -MD -MP -MF media/$(DEPDIR)/media_lego-media_lego.Tpo -c -o media/media_lego-media_lego.o `test -f 'media/media_lego.c' || echo '$(srcdir)/'`media/media_lego.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_lego-media_lego.Tpo media/$(DEPDIR)/media_lego-media_lego.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_lego.c' object='media/media_lego-media_lego.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_lego_CPPFLAGS) $(CPPFLAGS) $(media_lego_CFLAGS) $(CFLAGS) -c -o media/media_lego-media_lego.o `test -f 'media/media_lego.c' || echo '$(srcdir)/'`media/media_lego.c
+
+media/media_lego-media_lego.obj: media/media_lego.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_lego_CPPFLAGS) $(CPPFLAGS) $(media_lego_CFLAGS) $(CFLAGS) -MT media/media_lego-media_lego.obj -MD -MP -MF media/$(DEPDIR)/media_lego-media_lego.Tpo -c -o media/media_lego-media_lego.obj `if test -f 'media/media_lego.c'; then $(CYGPATH_W) 'media/media_lego.c'; else $(CYGPATH_W) '$(srcdir)/media/media_lego.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_lego-media_lego.Tpo media/$(DEPDIR)/media_lego-media_lego.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_lego.c' object='media/media_lego-media_lego.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_lego_CPPFLAGS) $(CPPFLAGS) $(media_lego_CFLAGS) $(CFLAGS) -c -o media/media_lego-media_lego.obj `if test -f 'media/media_lego.c'; then $(CYGPATH_W) 'media/media_lego.c'; else $(CYGPATH_W) '$(srcdir)/media/media_lego.c'; fi`
+
+media/media_liveleak-media_liveleak.o: media/media_liveleak.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_liveleak_CPPFLAGS) $(CPPFLAGS) $(media_liveleak_CFLAGS) $(CFLAGS) -MT media/media_liveleak-media_liveleak.o -MD -MP -MF media/$(DEPDIR)/media_liveleak-media_liveleak.Tpo -c -o media/media_liveleak-media_liveleak.o `test -f 'media/media_liveleak.c' || echo '$(srcdir)/'`media/media_liveleak.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_liveleak-media_liveleak.Tpo media/$(DEPDIR)/media_liveleak-media_liveleak.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_liveleak.c' object='media/media_liveleak-media_liveleak.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_liveleak_CPPFLAGS) $(CPPFLAGS) $(media_liveleak_CFLAGS) $(CFLAGS) -c -o media/media_liveleak-media_liveleak.o `test -f 'media/media_liveleak.c' || echo '$(srcdir)/'`media/media_liveleak.c
+
+media/media_liveleak-media_liveleak.obj: media/media_liveleak.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_liveleak_CPPFLAGS) $(CPPFLAGS) $(media_liveleak_CFLAGS) $(CFLAGS) -MT media/media_liveleak-media_liveleak.obj -MD -MP -MF media/$(DEPDIR)/media_liveleak-media_liveleak.Tpo -c -o media/media_liveleak-media_liveleak.obj `if test -f 'media/media_liveleak.c'; then $(CYGPATH_W) 'media/media_liveleak.c'; else $(CYGPATH_W) '$(srcdir)/media/media_liveleak.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_liveleak-media_liveleak.Tpo media/$(DEPDIR)/media_liveleak-media_liveleak.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_liveleak.c' object='media/media_liveleak-media_liveleak.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_liveleak_CPPFLAGS) $(CPPFLAGS) $(media_liveleak_CFLAGS) $(CFLAGS) -c -o media/media_liveleak-media_liveleak.obj `if test -f 'media/media_liveleak.c'; then $(CYGPATH_W) 'media/media_liveleak.c'; else $(CYGPATH_W) '$(srcdir)/media/media_liveleak.c'; fi`
+
+media/media_myspass-media_myspass.o: media/media_myspass.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_myspass_CPPFLAGS) $(CPPFLAGS) $(media_myspass_CFLAGS) $(CFLAGS) -MT media/media_myspass-media_myspass.o -MD -MP -MF media/$(DEPDIR)/media_myspass-media_myspass.Tpo -c -o media/media_myspass-media_myspass.o `test -f 'media/media_myspass.c' || echo '$(srcdir)/'`media/media_myspass.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_myspass-media_myspass.Tpo media/$(DEPDIR)/media_myspass-media_myspass.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_myspass.c' object='media/media_myspass-media_myspass.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_myspass_CPPFLAGS) $(CPPFLAGS) $(media_myspass_CFLAGS) $(CFLAGS) -c -o media/media_myspass-media_myspass.o `test -f 'media/media_myspass.c' || echo '$(srcdir)/'`media/media_myspass.c
+
+media/media_myspass-media_myspass.obj: media/media_myspass.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_myspass_CPPFLAGS) $(CPPFLAGS) $(media_myspass_CFLAGS) $(CFLAGS) -MT media/media_myspass-media_myspass.obj -MD -MP -MF media/$(DEPDIR)/media_myspass-media_myspass.Tpo -c -o media/media_myspass-media_myspass.obj `if test -f 'media/media_myspass.c'; then $(CYGPATH_W) 'media/media_myspass.c'; else $(CYGPATH_W) '$(srcdir)/media/media_myspass.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_myspass-media_myspass.Tpo media/$(DEPDIR)/media_myspass-media_myspass.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_myspass.c' object='media/media_myspass-media_myspass.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_myspass_CPPFLAGS) $(CPPFLAGS) $(media_myspass_CFLAGS) $(CFLAGS) -c -o media/media_myspass-media_myspass.obj `if test -f 'media/media_myspass.c'; then $(CYGPATH_W) 'media/media_myspass.c'; else $(CYGPATH_W) '$(srcdir)/media/media_myspass.c'; fi`
+
+media/media_publicsenat-media_publicsenat.o: media/media_publicsenat.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_publicsenat_CPPFLAGS) $(CPPFLAGS) $(media_publicsenat_CFLAGS) $(CFLAGS) -MT media/media_publicsenat-media_publicsenat.o -MD -MP -MF media/$(DEPDIR)/media_publicsenat-media_publicsenat.Tpo -c -o media/media_publicsenat-media_publicsenat.o `test -f 'media/media_publicsenat.c' || echo '$(srcdir)/'`media/media_publicsenat.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_publicsenat-media_publicsenat.Tpo media/$(DEPDIR)/media_publicsenat-media_publicsenat.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_publicsenat.c' object='media/media_publicsenat-media_publicsenat.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_publicsenat_CPPFLAGS) $(CPPFLAGS) $(media_publicsenat_CFLAGS) $(CFLAGS) -c -o media/media_publicsenat-media_publicsenat.o `test -f 'media/media_publicsenat.c' || echo '$(srcdir)/'`media/media_publicsenat.c
+
+media/media_publicsenat-media_publicsenat.obj: media/media_publicsenat.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_publicsenat_CPPFLAGS) $(CPPFLAGS) $(media_publicsenat_CFLAGS) $(CFLAGS) -MT media/media_publicsenat-media_publicsenat.obj -MD -MP -MF media/$(DEPDIR)/media_publicsenat-media_publicsenat.Tpo -c -o media/media_publicsenat-media_publicsenat.obj `if test -f 'media/media_publicsenat.c'; then $(CYGPATH_W) 'media/media_publicsenat.c'; else $(CYGPATH_W) '$(srcdir)/media/media_publicsenat.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_publicsenat-media_publicsenat.Tpo media/$(DEPDIR)/media_publicsenat-media_publicsenat.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_publicsenat.c' object='media/media_publicsenat-media_publicsenat.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_publicsenat_CPPFLAGS) $(CPPFLAGS) $(media_publicsenat_CFLAGS) $(CFLAGS) -c -o media/media_publicsenat-media_publicsenat.obj `if test -f 'media/media_publicsenat.c'; then $(CYGPATH_W) 'media/media_publicsenat.c'; else $(CYGPATH_W) '$(srcdir)/media/media_publicsenat.c'; fi`
+
+media/media_sapo-media_sapo.o: media/media_sapo.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_sapo_CPPFLAGS) $(CPPFLAGS) $(media_sapo_CFLAGS) $(CFLAGS) -MT media/media_sapo-media_sapo.o -MD -MP -MF media/$(DEPDIR)/media_sapo-media_sapo.Tpo -c -o media/media_sapo-media_sapo.o `test -f 'media/media_sapo.c' || echo '$(srcdir)/'`media/media_sapo.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_sapo-media_sapo.Tpo media/$(DEPDIR)/media_sapo-media_sapo.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_sapo.c' object='media/media_sapo-media_sapo.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_sapo_CPPFLAGS) $(CPPFLAGS) $(media_sapo_CFLAGS) $(CFLAGS) -c -o media/media_sapo-media_sapo.o `test -f 'media/media_sapo.c' || echo '$(srcdir)/'`media/media_sapo.c
+
+media/media_sapo-media_sapo.obj: media/media_sapo.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_sapo_CPPFLAGS) $(CPPFLAGS) $(media_sapo_CFLAGS) $(CFLAGS) -MT media/media_sapo-media_sapo.obj -MD -MP -MF media/$(DEPDIR)/media_sapo-media_sapo.Tpo -c -o media/media_sapo-media_sapo.obj `if test -f 'media/media_sapo.c'; then $(CYGPATH_W) 'media/media_sapo.c'; else $(CYGPATH_W) '$(srcdir)/media/media_sapo.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_sapo-media_sapo.Tpo media/$(DEPDIR)/media_sapo-media_sapo.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_sapo.c' object='media/media_sapo-media_sapo.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_sapo_CPPFLAGS) $(CPPFLAGS) $(media_sapo_CFLAGS) $(CFLAGS) -c -o media/media_sapo-media_sapo.obj `if test -f 'media/media_sapo.c'; then $(CYGPATH_W) 'media/media_sapo.c'; else $(CYGPATH_W) '$(srcdir)/media/media_sapo.c'; fi`
+
+media/media_senat-media_senat.o: media/media_senat.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_senat_CPPFLAGS) $(CPPFLAGS) $(media_senat_CFLAGS) $(CFLAGS) -MT media/media_senat-media_senat.o -MD -MP -MF media/$(DEPDIR)/media_senat-media_senat.Tpo -c -o media/media_senat-media_senat.o `test -f 'media/media_senat.c' || echo '$(srcdir)/'`media/media_senat.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_senat-media_senat.Tpo media/$(DEPDIR)/media_senat-media_senat.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_senat.c' object='media/media_senat-media_senat.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_senat_CPPFLAGS) $(CPPFLAGS) $(media_senat_CFLAGS) $(CFLAGS) -c -o media/media_senat-media_senat.o `test -f 'media/media_senat.c' || echo '$(srcdir)/'`media/media_senat.c
+
+media/media_senat-media_senat.obj: media/media_senat.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_senat_CPPFLAGS) $(CPPFLAGS) $(media_senat_CFLAGS) $(CFLAGS) -MT media/media_senat-media_senat.obj -MD -MP -MF media/$(DEPDIR)/media_senat-media_senat.Tpo -c -o media/media_senat-media_senat.obj `if test -f 'media/media_senat.c'; then $(CYGPATH_W) 'media/media_senat.c'; else $(CYGPATH_W) '$(srcdir)/media/media_senat.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_senat-media_senat.Tpo media/$(DEPDIR)/media_senat-media_senat.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_senat.c' object='media/media_senat-media_senat.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_senat_CPPFLAGS) $(CPPFLAGS) $(media_senat_CFLAGS) $(CFLAGS) -c -o media/media_senat-media_senat.obj `if test -f 'media/media_senat.c'; then $(CYGPATH_W) 'media/media_senat.c'; else $(CYGPATH_W) '$(srcdir)/media/media_senat.c'; fi`
+
+media/media_sevenload-media_sevenload.o: media/media_sevenload.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_sevenload_CPPFLAGS) $(CPPFLAGS) $(media_sevenload_CFLAGS) $(CFLAGS) -MT media/media_sevenload-media_sevenload.o -MD -MP -MF media/$(DEPDIR)/media_sevenload-media_sevenload.Tpo -c -o media/media_sevenload-media_sevenload.o `test -f 'media/media_sevenload.c' || echo '$(srcdir)/'`media/media_sevenload.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_sevenload-media_sevenload.Tpo media/$(DEPDIR)/media_sevenload-media_sevenload.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_sevenload.c' object='media/media_sevenload-media_sevenload.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_sevenload_CPPFLAGS) $(CPPFLAGS) $(media_sevenload_CFLAGS) $(CFLAGS) -c -o media/media_sevenload-media_sevenload.o `test -f 'media/media_sevenload.c' || echo '$(srcdir)/'`media/media_sevenload.c
+
+media/media_sevenload-media_sevenload.obj: media/media_sevenload.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_sevenload_CPPFLAGS) $(CPPFLAGS) $(media_sevenload_CFLAGS) $(CFLAGS) -MT media/media_sevenload-media_sevenload.obj -MD -MP -MF media/$(DEPDIR)/media_sevenload-media_sevenload.Tpo -c -o media/media_sevenload-media_sevenload.obj `if test -f 'media/media_sevenload.c'; then $(CYGPATH_W) 'media/media_sevenload.c'; else $(CYGPATH_W) '$(srcdir)/media/media_sevenload.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_sevenload-media_sevenload.Tpo media/$(DEPDIR)/media_sevenload-media_sevenload.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_sevenload.c' object='media/media_sevenload-media_sevenload.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_sevenload_CPPFLAGS) $(CPPFLAGS) $(media_sevenload_CFLAGS) $(CFLAGS) -c -o media/media_sevenload-media_sevenload.obj `if test -f 'media/media_sevenload.c'; then $(CYGPATH_W) 'media/media_sevenload.c'; else $(CYGPATH_W) '$(srcdir)/media/media_sevenload.c'; fi`
+
+media/media_soundcloud-media_soundcloud.o: media/media_soundcloud.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_soundcloud_CPPFLAGS) $(CPPFLAGS) $(media_soundcloud_CFLAGS) $(CFLAGS) -MT media/media_soundcloud-media_soundcloud.o -MD -MP -MF media/$(DEPDIR)/media_soundcloud-media_soundcloud.Tpo -c -o media/media_soundcloud-media_soundcloud.o `test -f 'media/media_soundcloud.c' || echo '$(srcdir)/'`media/media_soundcloud.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_soundcloud-media_soundcloud.Tpo media/$(DEPDIR)/media_soundcloud-media_soundcloud.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_soundcloud.c' object='media/media_soundcloud-media_soundcloud.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_soundcloud_CPPFLAGS) $(CPPFLAGS) $(media_soundcloud_CFLAGS) $(CFLAGS) -c -o media/media_soundcloud-media_soundcloud.o `test -f 'media/media_soundcloud.c' || echo '$(srcdir)/'`media/media_soundcloud.c
+
+media/media_soundcloud-media_soundcloud.obj: media/media_soundcloud.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_soundcloud_CPPFLAGS) $(CPPFLAGS) $(media_soundcloud_CFLAGS) $(CFLAGS) -MT media/media_soundcloud-media_soundcloud.obj -MD -MP -MF media/$(DEPDIR)/media_soundcloud-media_soundcloud.Tpo -c -o media/media_soundcloud-media_soundcloud.obj `if test -f 'media/media_soundcloud.c'; then $(CYGPATH_W) 'media/media_soundcloud.c'; else $(CYGPATH_W) '$(srcdir)/media/media_soundcloud.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_soundcloud-media_soundcloud.Tpo media/$(DEPDIR)/media_soundcloud-media_soundcloud.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_soundcloud.c' object='media/media_soundcloud-media_soundcloud.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_soundcloud_CPPFLAGS) $(CPPFLAGS) $(media_soundcloud_CFLAGS) $(CFLAGS) -c -o media/media_soundcloud-media_soundcloud.obj `if test -f 'media/media_soundcloud.c'; then $(CYGPATH_W) 'media/media_soundcloud.c'; else $(CYGPATH_W) '$(srcdir)/media/media_soundcloud.c'; fi`
+
+media/media_spiegel-media_spiegel.o: media/media_spiegel.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_spiegel_CPPFLAGS) $(CPPFLAGS) $(media_spiegel_CFLAGS) $(CFLAGS) -MT media/media_spiegel-media_spiegel.o -MD -MP -MF media/$(DEPDIR)/media_spiegel-media_spiegel.Tpo -c -o media/media_spiegel-media_spiegel.o `test -f 'media/media_spiegel.c' || echo '$(srcdir)/'`media/media_spiegel.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_spiegel-media_spiegel.Tpo media/$(DEPDIR)/media_spiegel-media_spiegel.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_spiegel.c' object='media/media_spiegel-media_spiegel.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_spiegel_CPPFLAGS) $(CPPFLAGS) $(media_spiegel_CFLAGS) $(CFLAGS) -c -o media/media_spiegel-media_spiegel.o `test -f 'media/media_spiegel.c' || echo '$(srcdir)/'`media/media_spiegel.c
+
+media/media_spiegel-media_spiegel.obj: media/media_spiegel.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_spiegel_CPPFLAGS) $(CPPFLAGS) $(media_spiegel_CFLAGS) $(CFLAGS) -MT media/media_spiegel-media_spiegel.obj -MD -MP -MF media/$(DEPDIR)/media_spiegel-media_spiegel.Tpo -c -o media/media_spiegel-media_spiegel.obj `if test -f 'media/media_spiegel.c'; then $(CYGPATH_W) 'media/media_spiegel.c'; else $(CYGPATH_W) '$(srcdir)/media/media_spiegel.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_spiegel-media_spiegel.Tpo media/$(DEPDIR)/media_spiegel-media_spiegel.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_spiegel.c' object='media/media_spiegel-media_spiegel.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_spiegel_CPPFLAGS) $(CPPFLAGS) $(media_spiegel_CFLAGS) $(CFLAGS) -c -o media/media_spiegel-media_spiegel.obj `if test -f 'media/media_spiegel.c'; then $(CYGPATH_W) 'media/media_spiegel.c'; else $(CYGPATH_W) '$(srcdir)/media/media_spiegel.c'; fi`
+
+media/media_ted-media_ted.o: media/media_ted.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_ted_CPPFLAGS) $(CPPFLAGS) $(media_ted_CFLAGS) $(CFLAGS) -MT media/media_ted-media_ted.o -MD -MP -MF media/$(DEPDIR)/media_ted-media_ted.Tpo -c -o media/media_ted-media_ted.o `test -f 'media/media_ted.c' || echo '$(srcdir)/'`media/media_ted.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_ted-media_ted.Tpo media/$(DEPDIR)/media_ted-media_ted.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_ted.c' object='media/media_ted-media_ted.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_ted_CPPFLAGS) $(CPPFLAGS) $(media_ted_CFLAGS) $(CFLAGS) -c -o media/media_ted-media_ted.o `test -f 'media/media_ted.c' || echo '$(srcdir)/'`media/media_ted.c
+
+media/media_ted-media_ted.obj: media/media_ted.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_ted_CPPFLAGS) $(CPPFLAGS) $(media_ted_CFLAGS) $(CFLAGS) -MT media/media_ted-media_ted.obj -MD -MP -MF media/$(DEPDIR)/media_ted-media_ted.Tpo -c -o media/media_ted-media_ted.obj `if test -f 'media/media_ted.c'; then $(CYGPATH_W) 'media/media_ted.c'; else $(CYGPATH_W) '$(srcdir)/media/media_ted.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_ted-media_ted.Tpo media/$(DEPDIR)/media_ted-media_ted.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_ted.c' object='media/media_ted-media_ted.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_ted_CPPFLAGS) $(CPPFLAGS) $(media_ted_CFLAGS) $(CFLAGS) -c -o media/media_ted-media_ted.obj `if test -f 'media/media_ted.c'; then $(CYGPATH_W) 'media/media_ted.c'; else $(CYGPATH_W) '$(srcdir)/media/media_ted.c'; fi`
+
+media/media_theonion-media_theonion.o: media/media_theonion.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_theonion_CPPFLAGS) $(CPPFLAGS) $(media_theonion_CFLAGS) $(CFLAGS) -MT media/media_theonion-media_theonion.o -MD -MP -MF media/$(DEPDIR)/media_theonion-media_theonion.Tpo -c -o media/media_theonion-media_theonion.o `test -f 'media/media_theonion.c' || echo '$(srcdir)/'`media/media_theonion.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_theonion-media_theonion.Tpo media/$(DEPDIR)/media_theonion-media_theonion.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_theonion.c' object='media/media_theonion-media_theonion.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_theonion_CPPFLAGS) $(CPPFLAGS) $(media_theonion_CFLAGS) $(CFLAGS) -c -o media/media_theonion-media_theonion.o `test -f 'media/media_theonion.c' || echo '$(srcdir)/'`media/media_theonion.c
+
+media/media_theonion-media_theonion.obj: media/media_theonion.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_theonion_CPPFLAGS) $(CPPFLAGS) $(media_theonion_CFLAGS) $(CFLAGS) -MT media/media_theonion-media_theonion.obj -MD -MP -MF media/$(DEPDIR)/media_theonion-media_theonion.Tpo -c -o media/media_theonion-media_theonion.obj `if test -f 'media/media_theonion.c'; then $(CYGPATH_W) 'media/media_theonion.c'; else $(CYGPATH_W) '$(srcdir)/media/media_theonion.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_theonion-media_theonion.Tpo media/$(DEPDIR)/media_theonion-media_theonion.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_theonion.c' object='media/media_theonion-media_theonion.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_theonion_CPPFLAGS) $(CPPFLAGS) $(media_theonion_CFLAGS) $(CFLAGS) -c -o media/media_theonion-media_theonion.obj `if test -f 'media/media_theonion.c'; then $(CYGPATH_W) 'media/media_theonion.c'; else $(CYGPATH_W) '$(srcdir)/media/media_theonion.c'; fi`
+
+media/media_tvlux-media_tvlux.o: media/media_tvlux.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_tvlux_CPPFLAGS) $(CPPFLAGS) $(media_tvlux_CFLAGS) $(CFLAGS) -MT media/media_tvlux-media_tvlux.o -MD -MP -MF media/$(DEPDIR)/media_tvlux-media_tvlux.Tpo -c -o media/media_tvlux-media_tvlux.o `test -f 'media/media_tvlux.c' || echo '$(srcdir)/'`media/media_tvlux.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_tvlux-media_tvlux.Tpo media/$(DEPDIR)/media_tvlux-media_tvlux.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_tvlux.c' object='media/media_tvlux-media_tvlux.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_tvlux_CPPFLAGS) $(CPPFLAGS) $(media_tvlux_CFLAGS) $(CFLAGS) -c -o media/media_tvlux-media_tvlux.o `test -f 'media/media_tvlux.c' || echo '$(srcdir)/'`media/media_tvlux.c
+
+media/media_tvlux-media_tvlux.obj: media/media_tvlux.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_tvlux_CPPFLAGS) $(CPPFLAGS) $(media_tvlux_CFLAGS) $(CFLAGS) -MT media/media_tvlux-media_tvlux.obj -MD -MP -MF media/$(DEPDIR)/media_tvlux-media_tvlux.Tpo -c -o media/media_tvlux-media_tvlux.obj `if test -f 'media/media_tvlux.c'; then $(CYGPATH_W) 'media/media_tvlux.c'; else $(CYGPATH_W) '$(srcdir)/media/media_tvlux.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_tvlux-media_tvlux.Tpo media/$(DEPDIR)/media_tvlux-media_tvlux.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_tvlux.c' object='media/media_tvlux-media_tvlux.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_tvlux_CPPFLAGS) $(CPPFLAGS) $(media_tvlux_CFLAGS) $(CFLAGS) -c -o media/media_tvlux-media_tvlux.obj `if test -f 'media/media_tvlux.c'; then $(CYGPATH_W) 'media/media_tvlux.c'; else $(CYGPATH_W) '$(srcdir)/media/media_tvlux.c'; fi`
+
+media/media_videa-media_videa.o: media/media_videa.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_videa_CPPFLAGS) $(CPPFLAGS) $(media_videa_CFLAGS) $(CFLAGS) -MT media/media_videa-media_videa.o -MD -MP -MF media/$(DEPDIR)/media_videa-media_videa.Tpo -c -o media/media_videa-media_videa.o `test -f 'media/media_videa.c' || echo '$(srcdir)/'`media/media_videa.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_videa-media_videa.Tpo media/$(DEPDIR)/media_videa-media_videa.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_videa.c' object='media/media_videa-media_videa.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_videa_CPPFLAGS) $(CPPFLAGS) $(media_videa_CFLAGS) $(CFLAGS) -c -o media/media_videa-media_videa.o `test -f 'media/media_videa.c' || echo '$(srcdir)/'`media/media_videa.c
+
+media/media_videa-media_videa.obj: media/media_videa.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_videa_CPPFLAGS) $(CPPFLAGS) $(media_videa_CFLAGS) $(CFLAGS) -MT media/media_videa-media_videa.obj -MD -MP -MF media/$(DEPDIR)/media_videa-media_videa.Tpo -c -o media/media_videa-media_videa.obj `if test -f 'media/media_videa.c'; then $(CYGPATH_W) 'media/media_videa.c'; else $(CYGPATH_W) '$(srcdir)/media/media_videa.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_videa-media_videa.Tpo media/$(DEPDIR)/media_videa-media_videa.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_videa.c' object='media/media_videa-media_videa.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_videa_CPPFLAGS) $(CPPFLAGS) $(media_videa_CFLAGS) $(CFLAGS) -c -o media/media_videa-media_videa.obj `if test -f 'media/media_videa.c'; then $(CYGPATH_W) 'media/media_videa.c'; else $(CYGPATH_W) '$(srcdir)/media/media_videa.c'; fi`
+
+media/media_vimeo-media_vimeo.o: media/media_vimeo.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_vimeo_CPPFLAGS) $(CPPFLAGS) $(media_vimeo_CFLAGS) $(CFLAGS) -MT media/media_vimeo-media_vimeo.o -MD -MP -MF media/$(DEPDIR)/media_vimeo-media_vimeo.Tpo -c -o media/media_vimeo-media_vimeo.o `test -f 'media/media_vimeo.c' || echo '$(srcdir)/'`media/media_vimeo.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_vimeo-media_vimeo.Tpo media/$(DEPDIR)/media_vimeo-media_vimeo.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_vimeo.c' object='media/media_vimeo-media_vimeo.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_vimeo_CPPFLAGS) $(CPPFLAGS) $(media_vimeo_CFLAGS) $(CFLAGS) -c -o media/media_vimeo-media_vimeo.o `test -f 'media/media_vimeo.c' || echo '$(srcdir)/'`media/media_vimeo.c
+
+media/media_vimeo-media_vimeo.obj: media/media_vimeo.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_vimeo_CPPFLAGS) $(CPPFLAGS) $(media_vimeo_CFLAGS) $(CFLAGS) -MT media/media_vimeo-media_vimeo.obj -MD -MP -MF media/$(DEPDIR)/media_vimeo-media_vimeo.Tpo -c -o media/media_vimeo-media_vimeo.obj `if test -f 'media/media_vimeo.c'; then $(CYGPATH_W) 'media/media_vimeo.c'; else $(CYGPATH_W) '$(srcdir)/media/media_vimeo.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_vimeo-media_vimeo.Tpo media/$(DEPDIR)/media_vimeo-media_vimeo.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_vimeo.c' object='media/media_vimeo-media_vimeo.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_vimeo_CPPFLAGS) $(CPPFLAGS) $(media_vimeo_CFLAGS) $(CFLAGS) -c -o media/media_vimeo-media_vimeo.obj `if test -f 'media/media_vimeo.c'; then $(CYGPATH_W) 'media/media_vimeo.c'; else $(CYGPATH_W) '$(srcdir)/media/media_vimeo.c'; fi`
+
+media/media_youtube-media_youtube.o: media/media_youtube.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_youtube_CPPFLAGS) $(CPPFLAGS) $(media_youtube_CFLAGS) $(CFLAGS) -MT media/media_youtube-media_youtube.o -MD -MP -MF media/$(DEPDIR)/media_youtube-media_youtube.Tpo -c -o media/media_youtube-media_youtube.o `test -f 'media/media_youtube.c' || echo '$(srcdir)/'`media/media_youtube.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_youtube-media_youtube.Tpo media/$(DEPDIR)/media_youtube-media_youtube.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_youtube.c' object='media/media_youtube-media_youtube.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_youtube_CPPFLAGS) $(CPPFLAGS) $(media_youtube_CFLAGS) $(CFLAGS) -c -o media/media_youtube-media_youtube.o `test -f 'media/media_youtube.c' || echo '$(srcdir)/'`media/media_youtube.c
+
+media/media_youtube-media_youtube.obj: media/media_youtube.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_youtube_CPPFLAGS) $(CPPFLAGS) $(media_youtube_CFLAGS) $(CFLAGS) -MT media/media_youtube-media_youtube.obj -MD -MP -MF media/$(DEPDIR)/media_youtube-media_youtube.Tpo -c -o media/media_youtube-media_youtube.obj `if test -f 'media/media_youtube.c'; then $(CYGPATH_W) 'media/media_youtube.c'; else $(CYGPATH_W) '$(srcdir)/media/media_youtube.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_youtube-media_youtube.Tpo media/$(DEPDIR)/media_youtube-media_youtube.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_youtube.c' object='media/media_youtube-media_youtube.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_youtube_CPPFLAGS) $(CPPFLAGS) $(media_youtube_CFLAGS) $(CFLAGS) -c -o media/media_youtube-media_youtube.obj `if test -f 'media/media_youtube.c'; then $(CYGPATH_W) 'media/media_youtube.c'; else $(CYGPATH_W) '$(srcdir)/media/media_youtube.c'; fi`
+
+playlist/playlist_soundcloud-playlist_soundcloud.o: playlist/playlist_soundcloud.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(playlist_soundcloud_CPPFLAGS) $(CPPFLAGS) $(playlist_soundcloud_CFLAGS) $(CFLAGS) -MT playlist/playlist_soundcloud-playlist_soundcloud.o -MD -MP -MF playlist/$(DEPDIR)/playlist_soundcloud-playlist_soundcloud.Tpo -c -o playlist/playlist_soundcloud-playlist_soundcloud.o `test -f 'playlist/playlist_soundcloud.c' || echo '$(srcdir)/'`playlist/playlist_soundcloud.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) playlist/$(DEPDIR)/playlist_soundcloud-playlist_soundcloud.Tpo playlist/$(DEPDIR)/playlist_soundcloud-playlist_soundcloud.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='playlist/playlist_soundcloud.c' object='playlist/playlist_soundcloud-playlist_soundcloud.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(playlist_soundcloud_CPPFLAGS) $(CPPFLAGS) $(playlist_soundcloud_CFLAGS) $(CFLAGS) -c -o playlist/playlist_soundcloud-playlist_soundcloud.o `test -f 'playlist/playlist_soundcloud.c' || echo '$(srcdir)/'`playlist/playlist_soundcloud.c
+
+playlist/playlist_soundcloud-playlist_soundcloud.obj: playlist/playlist_soundcloud.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(playlist_soundcloud_CPPFLAGS) $(CPPFLAGS) $(playlist_soundcloud_CFLAGS) $(CFLAGS) -MT playlist/playlist_soundcloud-playlist_soundcloud.obj -MD -MP -MF playlist/$(DEPDIR)/playlist_soundcloud-playlist_soundcloud.Tpo -c -o playlist/playlist_soundcloud-playlist_soundcloud.obj `if test -f 'playlist/playlist_soundcloud.c'; then $(CYGPATH_W) 'playlist/playlist_soundcloud.c'; else $(CYGPATH_W) '$(srcdir)/playlist/playlist_soundcloud.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) playlist/$(DEPDIR)/playlist_soundcloud-playlist_soundcloud.Tpo playlist/$(DEPDIR)/playlist_soundcloud-playlist_soundcloud.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='playlist/playlist_soundcloud.c' object='playlist/playlist_soundcloud-playlist_soundcloud.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(playlist_soundcloud_CPPFLAGS) $(CPPFLAGS) $(playlist_soundcloud_CFLAGS) $(CFLAGS) -c -o playlist/playlist_soundcloud-playlist_soundcloud.obj `if test -f 'playlist/playlist_soundcloud.c'; then $(CYGPATH_W) 'playlist/playlist_soundcloud.c'; else $(CYGPATH_W) '$(srcdir)/playlist/playlist_soundcloud.c'; fi`
+
+playlist/playlist_youtube-playlist_youtube.o: playlist/playlist_youtube.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(playlist_youtube_CPPFLAGS) $(CPPFLAGS) $(playlist_youtube_CFLAGS) $(CFLAGS) -MT playlist/playlist_youtube-playlist_youtube.o -MD -MP -MF playlist/$(DEPDIR)/playlist_youtube-playlist_youtube.Tpo -c -o playlist/playlist_youtube-playlist_youtube.o `test -f 'playlist/playlist_youtube.c' || echo '$(srcdir)/'`playlist/playlist_youtube.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) playlist/$(DEPDIR)/playlist_youtube-playlist_youtube.Tpo playlist/$(DEPDIR)/playlist_youtube-playlist_youtube.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='playlist/playlist_youtube.c' object='playlist/playlist_youtube-playlist_youtube.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(playlist_youtube_CPPFLAGS) $(CPPFLAGS) $(playlist_youtube_CFLAGS) $(CFLAGS) -c -o playlist/playlist_youtube-playlist_youtube.o `test -f 'playlist/playlist_youtube.c' || echo '$(srcdir)/'`playlist/playlist_youtube.c
+
+playlist/playlist_youtube-playlist_youtube.obj: playlist/playlist_youtube.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(playlist_youtube_CPPFLAGS) $(CPPFLAGS) $(playlist_youtube_CFLAGS) $(CFLAGS) -MT playlist/playlist_youtube-playlist_youtube.obj -MD -MP -MF playlist/$(DEPDIR)/playlist_youtube-playlist_youtube.Tpo -c -o playlist/playlist_youtube-playlist_youtube.obj `if test -f 'playlist/playlist_youtube.c'; then $(CYGPATH_W) 'playlist/playlist_youtube.c'; else $(CYGPATH_W) '$(srcdir)/playlist/playlist_youtube.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) playlist/$(DEPDIR)/playlist_youtube-playlist_youtube.Tpo playlist/$(DEPDIR)/playlist_youtube-playlist_youtube.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='playlist/playlist_youtube.c' object='playlist/playlist_youtube-playlist_youtube.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(playlist_youtube_CPPFLAGS) $(CPPFLAGS) $(playlist_youtube_CFLAGS) $(CFLAGS) -c -o playlist/playlist_youtube-playlist_youtube.obj `if test -f 'playlist/playlist_youtube.c'; then $(CYGPATH_W) 'playlist/playlist_youtube.c'; else $(CYGPATH_W) '$(srcdir)/playlist/playlist_youtube.c'; fi`
+
+scan/scan_youtube-scan_youtube.o: scan/scan_youtube.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(scan_youtube_CPPFLAGS) $(CPPFLAGS) $(scan_youtube_CFLAGS) $(CFLAGS) -MT scan/scan_youtube-scan_youtube.o -MD -MP -MF scan/$(DEPDIR)/scan_youtube-scan_youtube.Tpo -c -o scan/scan_youtube-scan_youtube.o `test -f 'scan/scan_youtube.c' || echo '$(srcdir)/'`scan/scan_youtube.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) scan/$(DEPDIR)/scan_youtube-scan_youtube.Tpo scan/$(DEPDIR)/scan_youtube-scan_youtube.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='scan/scan_youtube.c' object='scan/scan_youtube-scan_youtube.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(scan_youtube_CPPFLAGS) $(CPPFLAGS) $(scan_youtube_CFLAGS) $(CFLAGS) -c -o scan/scan_youtube-scan_youtube.o `test -f 'scan/scan_youtube.c' || echo '$(srcdir)/'`scan/scan_youtube.c
+
+scan/scan_youtube-scan_youtube.obj: scan/scan_youtube.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(scan_youtube_CPPFLAGS) $(CPPFLAGS) $(scan_youtube_CFLAGS) $(CFLAGS) -MT scan/scan_youtube-scan_youtube.obj -MD -MP -MF scan/$(DEPDIR)/scan_youtube-scan_youtube.Tpo -c -o scan/scan_youtube-scan_youtube.obj `if test -f 'scan/scan_youtube.c'; then $(CYGPATH_W) 'scan/scan_youtube.c'; else $(CYGPATH_W) '$(srcdir)/scan/scan_youtube.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) scan/$(DEPDIR)/scan_youtube-scan_youtube.Tpo scan/$(DEPDIR)/scan_youtube-scan_youtube.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='scan/scan_youtube.c' object='scan/scan_youtube-scan_youtube.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(scan_youtube_CPPFLAGS) $(CPPFLAGS) $(scan_youtube_CFLAGS) $(CFLAGS) -c -o scan/scan_youtube-scan_youtube.obj `if test -f 'scan/scan_youtube.c'; then $(CYGPATH_W) 'scan/scan_youtube.c'; else $(CYGPATH_W) '$(srcdir)/scan/scan_youtube.c'; fi`
+
+subtitle/subtitle_youtube-subtitle_youtube.o: subtitle/subtitle_youtube.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(subtitle_youtube_CPPFLAGS) $(CPPFLAGS) $(subtitle_youtube_CFLAGS) $(CFLAGS) -MT subtitle/subtitle_youtube-subtitle_youtube.o -MD -MP -MF subtitle/$(DEPDIR)/subtitle_youtube-subtitle_youtube.Tpo -c -o subtitle/subtitle_youtube-subtitle_youtube.o `test -f 'subtitle/subtitle_youtube.c' || echo '$(srcdir)/'`subtitle/subtitle_youtube.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) subtitle/$(DEPDIR)/subtitle_youtube-subtitle_youtube.Tpo subtitle/$(DEPDIR)/subtitle_youtube-subtitle_youtube.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='subtitle/subtitle_youtube.c' object='subtitle/subtitle_youtube-subtitle_youtube.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(subtitle_youtube_CPPFLAGS) $(CPPFLAGS) $(subtitle_youtube_CFLAGS) $(CFLAGS) -c -o subtitle/subtitle_youtube-subtitle_youtube.o `test -f 'subtitle/subtitle_youtube.c' || echo '$(srcdir)/'`subtitle/subtitle_youtube.c
+
+subtitle/subtitle_youtube-subtitle_youtube.obj: subtitle/subtitle_youtube.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(subtitle_youtube_CPPFLAGS) $(CPPFLAGS) $(subtitle_youtube_CFLAGS) $(CFLAGS) -MT subtitle/subtitle_youtube-subtitle_youtube.obj -MD -MP -MF subtitle/$(DEPDIR)/subtitle_youtube-subtitle_youtube.Tpo -c -o subtitle/subtitle_youtube-subtitle_youtube.obj `if test -f 'subtitle/subtitle_youtube.c'; then $(CYGPATH_W) 'subtitle/subtitle_youtube.c'; else $(CYGPATH_W) '$(srcdir)/subtitle/subtitle_youtube.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) subtitle/$(DEPDIR)/subtitle_youtube-subtitle_youtube.Tpo subtitle/$(DEPDIR)/subtitle_youtube-subtitle_youtube.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='subtitle/subtitle_youtube.c' object='subtitle/subtitle_youtube-subtitle_youtube.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(subtitle_youtube_CPPFLAGS) $(CPPFLAGS) $(subtitle_youtube_CFLAGS) $(CFLAGS) -c -o subtitle/subtitle_youtube-subtitle_youtube.obj `if test -f 'subtitle/subtitle_youtube.c'; then $(CYGPATH_W) 'subtitle/subtitle_youtube.c'; else $(CYGPATH_W) '$(srcdir)/subtitle/subtitle_youtube.c'; fi`
+
+mostlyclean-libtool:
+	-rm -f *.lo
+
+clean-libtool:
+	-rm -rf .libs _libs
+
+# This directory's subdirectories are mostly independent; you can cd
+# into them and run `make' without going through this Makefile.
+# To change the values of `make' variables: instead of editing Makefiles,
+# (1) if the variable is set in `config.status', edit `config.status'
+#     (which will cause the Makefiles to be regenerated when you run `make');
+# (2) otherwise, pass the desired values on the `make' command line.
+$(RECURSIVE_TARGETS):
+	@fail= failcom='exit 1'; \
+	for f in x $$MAKEFLAGS; do \
+	  case $$f in \
+	    *=* | --[!k]*);; \
+	    *k*) failcom='fail=yes';; \
+	  esac; \
+	done; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+$(RECURSIVE_CLEAN_TARGETS):
+	@fail= failcom='exit 1'; \
+	for f in x $$MAKEFLAGS; do \
+	  case $$f in \
+	    *=* | --[!k]*);; \
+	    *k*) failcom='fail=yes';; \
+	  esac; \
+	done; \
+	dot_seen=no; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	rev=''; for subdir in $$list; do \
+	  if test "$$subdir" = "."; then :; else \
+	    rev="$$subdir $$rev"; \
+	  fi; \
+	done; \
+	rev="$$rev ."; \
+	target=`echo $@ | sed s/-recursive//`; \
+	for subdir in $$rev; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done && test -z "$$fail"
+tags-recursive:
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  test "$$subdir" = . || ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) tags); \
+	done
+ctags-recursive:
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  test "$$subdir" = . || ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) ctags); \
+	done
+
+ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
+	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '{ files[$$0] = 1; nonempty = 1; } \
+	      END { if (nonempty) { for (i in files) print i; }; }'`; \
+	mkid -fID $$unique
 tags: TAGS
-TAGS:
 
+TAGS: tags-recursive $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) \
+		$(TAGS_FILES) $(LISP)
+	set x; \
+	here=`pwd`; \
+	if ($(ETAGS) --etags-include --version) >/dev/null 2>&1; then \
+	  include_option=--etags-include; \
+	  empty_fix=.; \
+	else \
+	  include_option=--include; \
+	  empty_fix=; \
+	fi; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  if test "$$subdir" = .; then :; else \
+	    test ! -f $$subdir/TAGS || \
+	      set "$$@" "$$include_option=$$here/$$subdir/TAGS"; \
+	  fi; \
+	done; \
+	list='$(SOURCES) $(HEADERS)  $(LISP) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '{ files[$$0] = 1; nonempty = 1; } \
+	      END { if (nonempty) { for (i in files) print i; }; }'`; \
+	shift; \
+	if test -z "$(ETAGS_ARGS)$$*$$unique"; then :; else \
+	  test -n "$$unique" || unique=$$empty_fix; \
+	  if test $$# -gt 0; then \
+	    $(ETAGS) $(ETAGSFLAGS) $(AM_ETAGSFLAGS) $(ETAGS_ARGS) \
+	      "$$@" $$unique; \
+	  else \
+	    $(ETAGS) $(ETAGSFLAGS) $(AM_ETAGSFLAGS) $(ETAGS_ARGS) \
+	      $$unique; \
+	  fi; \
+	fi
 ctags: CTAGS
-CTAGS:
+CTAGS: ctags-recursive $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) \
+		$(TAGS_FILES) $(LISP)
+	list='$(SOURCES) $(HEADERS)  $(LISP) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '{ files[$$0] = 1; nonempty = 1; } \
+	      END { if (nonempty) { for (i in files) print i; }; }'`; \
+	test -z "$(CTAGS_ARGS)$$unique" \
+	  || $(CTAGS) $(CTAGSFLAGS) $(AM_CTAGSFLAGS) $(CTAGS_ARGS) \
+	     $$unique
 
+GTAGS:
+	here=`$(am__cd) $(top_builddir) && pwd` \
+	  && $(am__cd) $(top_srcdir) \
+	  && gtags -i $(GTAGS_ARGS) "$$here"
+
+distclean-tags:
+	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
 
 distdir: $(DISTFILES)
 	@srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*]/\\\\&/g'`; \
@@ -240,19 +1792,45 @@ distdir: $(DISTFILES)
 	    || exit 1; \
 	  fi; \
 	done
+	@list='$(DIST_SUBDIRS)'; for subdir in $$list; do \
+	  if test "$$subdir" = .; then :; else \
+	    $(am__make_dryrun) \
+	      || test -d "$(distdir)/$$subdir" \
+	      || $(MKDIR_P) "$(distdir)/$$subdir" \
+	      || exit 1; \
+	    dir1=$$subdir; dir2="$(distdir)/$$subdir"; \
+	    $(am__relativize); \
+	    new_distdir=$$reldir; \
+	    dir1=$$subdir; dir2="$(top_distdir)"; \
+	    $(am__relativize); \
+	    new_top_distdir=$$reldir; \
+	    echo " (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) top_distdir="$$new_top_distdir" distdir="$$new_distdir" \\"; \
+	    echo "     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)"; \
+	    ($(am__cd) $$subdir && \
+	      $(MAKE) $(AM_MAKEFLAGS) \
+	        top_distdir="$$new_top_distdir" \
+	        distdir="$$new_distdir" \
+		am__remove_distdir=: \
+		am__skip_length_check=: \
+		am__skip_mode_fix=: \
+	        distdir) \
+	      || exit 1; \
+	  fi; \
+	done
 check-am: all-am
-check: check-am
-all-am: Makefile
-installdirs:
-install: install-am
-install-exec: install-exec-am
-install-data: install-data-am
-uninstall: uninstall-am
+check: check-recursive
+all-am: Makefile $(PROGRAMS)
+installdirs: installdirs-recursive
+installdirs-am:
+install: install-recursive
+install-exec: install-exec-recursive
+install-data: install-data-recursive
+uninstall: uninstall-recursive
 
 install-am: all-am
 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
 
-installcheck: installcheck-am
+installcheck: installcheck-recursive
 install-strip:
 	if test -z '$(STRIP)'; then \
 	  $(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
@@ -270,96 +1848,120 @@ clean-generic:
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
 	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
+	-rm -f media/$(DEPDIR)/$(am__dirstamp)
+	-rm -f media/$(am__dirstamp)
+	-rm -f playlist/$(DEPDIR)/$(am__dirstamp)
+	-rm -f playlist/$(am__dirstamp)
+	-rm -f scan/$(DEPDIR)/$(am__dirstamp)
+	-rm -f scan/$(am__dirstamp)
+	-rm -f subtitle/$(DEPDIR)/$(am__dirstamp)
+	-rm -f subtitle/$(am__dirstamp)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
-clean: clean-am
+clean: clean-recursive
 
-clean-am: clean-generic mostlyclean-am
+clean-am: clean-generic clean-libtool clean-local clean-noinstPROGRAMS \
+	mostlyclean-am
 
-distclean: distclean-am
+distclean: distclean-recursive
+	-rm -rf media/$(DEPDIR) playlist/$(DEPDIR) scan/$(DEPDIR) subtitle/$(DEPDIR)
 	-rm -f Makefile
-distclean-am: clean-am distclean-generic
+distclean-am: clean-am distclean-compile distclean-generic \
+	distclean-tags
 
-dvi: dvi-am
+dvi: dvi-recursive
 
 dvi-am:
 
-html: html-am
+html: html-recursive
 
 html-am:
 
-info: info-am
+info: info-recursive
 
 info-am:
 
 install-data-am:
 
-install-dvi: install-dvi-am
+install-dvi: install-dvi-recursive
 
 install-dvi-am:
 
 install-exec-am:
 
-install-html: install-html-am
+install-html: install-html-recursive
 
 install-html-am:
 
-install-info: install-info-am
+install-info: install-info-recursive
 
 install-info-am:
 
 install-man:
 
-install-pdf: install-pdf-am
+install-pdf: install-pdf-recursive
 
 install-pdf-am:
 
-install-ps: install-ps-am
+install-ps: install-ps-recursive
 
 install-ps-am:
 
 installcheck-am:
 
-maintainer-clean: maintainer-clean-am
+maintainer-clean: maintainer-clean-recursive
+	-rm -rf media/$(DEPDIR) playlist/$(DEPDIR) scan/$(DEPDIR) subtitle/$(DEPDIR)
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
-mostlyclean: mostlyclean-am
+mostlyclean: mostlyclean-recursive
 
-mostlyclean-am: mostlyclean-generic
+mostlyclean-am: mostlyclean-compile mostlyclean-generic \
+	mostlyclean-libtool
 
-pdf: pdf-am
+pdf: pdf-recursive
 
 pdf-am:
 
-ps: ps-am
+ps: ps-recursive
 
 ps-am:
 
 uninstall-am:
 
-.MAKE: install-am install-strip
+.MAKE: $(RECURSIVE_CLEAN_TARGETS) $(RECURSIVE_TARGETS) ctags-recursive \
+	install-am install-strip tags-recursive
 
-.PHONY: all all-am check check-am clean clean-generic distclean \
-	distclean-generic distdir dvi dvi-am html html-am info info-am \
-	install install-am install-data install-data-am install-dvi \
-	install-dvi-am install-exec install-exec-am install-html \
-	install-html-am install-info install-info-am install-man \
-	install-pdf install-pdf-am install-ps install-ps-am \
-	install-strip installcheck installcheck-am installdirs \
-	maintainer-clean maintainer-clean-generic mostlyclean \
-	mostlyclean-generic pdf pdf-am ps ps-am uninstall uninstall-am
+.PHONY: $(RECURSIVE_CLEAN_TARGETS) $(RECURSIVE_TARGETS) CTAGS GTAGS \
+	all all-am check check-am clean clean-generic clean-libtool \
+	clean-local clean-noinstPROGRAMS ctags ctags-recursive \
+	distclean distclean-compile distclean-generic \
+	distclean-libtool distclean-tags distdir dvi dvi-am html \
+	html-am info info-am install install-am install-data \
+	install-data-am install-dvi install-dvi-am install-exec \
+	install-exec-am install-html install-html-am install-info \
+	install-info-am install-man install-pdf install-pdf-am \
+	install-ps install-ps-am install-strip installcheck \
+	installcheck-am installdirs installdirs-am maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-compile \
+	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
+	tags tags-recursive uninstall uninstall-am
 
 
 test: all
-	@verbose=; test -n "$$TEST_VERBOSE" && verbose=-v; \
-	ok=1; for t in $(TESTS_T); do \
-		( $(PROVE) $$verbose $(PROVE_OPTS) $(top_srcdir)/tests/$$t \
-		:: $(TESTQUVI_OPTS) ) || ok=; \
+	@ok=1; for t in $(TEST_PROGS); do \
+		LIBQUVI_EXCLUSIVE_SCRIPTS_DIR=1 LIBQUVI_SCRIPTS_DIR=$(top_srcdir)/share/ \
+			gtester $(TEST_OPTS) $(top_builddir)/tests/$$t -o $$t.xml \
+		|| { \
+			echo NOTE: Check $(abs_builddir)/$$t.xml for details; ok=; \
+		} \
 	done; \
 	if test -z "$$ok"; then exit 1; fi
+
+clean-local:
+	@for t in $(TEST_PROGS); do rm -f $$t.xml $$t.html; done
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
