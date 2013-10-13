@@ -1,70 +1,95 @@
-v0.4.19  (2013-10-04) / Toni Gundogdu
+v0.9.20131012
+
+Mohamed El Morabity:
+  - Add support for ina.fr [5cb76af]
+Toni Gundogdu:
+  - FIX: media/clipfish.lua: Raise "no match: media stream URL" [808494b]
+  - FIX: media/funnyordie.lua: Media stream URL pattern [364ad53]
+  - FIX: media/funnyordie.lua: Set "Accept-Encoding" HTTP header [53c0a44]
+  - FIX: media/liveleak.lua: Sanitize input for LuaJSON [0f692c7]
+  - FIX: media/sevenload.lua: JSON extraction pattern [4ac3938]
+  - FIX: media/youtube.lua: Unescape using quvi/util [aedecad]
+  - FIX: quvi/youtube: ident: query: "v=" may not be first param [ffaadfd]
+  - FIX: resolve_redirections.lua: Normalize YouTube input URL [cf39991]
+  - Install with share/README [e8ad881]
+  - media/1tvru.lua: Relicense under AGPLv3+ [970da57]
+    - Remove query_formats function [296a34e]
+    - Rewrite ident function [853993f]
+    - Rewrite parse function [193755f]
+  - media/lego.lua: Relicense under AGPLv3+ [5b3daf1]
+    - Add support for "/videos?video=ID" [8799938]
+    - Remove query_formats function [f617614]
+    - Rewrite ident function [5343385]
+    - Rewrite parse function [317de20]
+  - media/liveleak.lua:
+    - Add support for >1 streams [0a34094]
+    - Parse stream URLs from "config:" [18b6caf]
+    - Sanitize JSON [7c7dcb9]
+  - media/myspass.lua: Relicense under AGPLv3+ [38fd4bf]
+    - Remove query_formats function [2ebdb84]
+    - Rewrite ident function [6e580da]
+    - Rewrite parse function [4d5db98]
+  - playlist/youtube.lua: Use HTTPS if input URL uses it [18068fe]
+  - media/youtube.lua: Use HTTPS if input URL uses it [e6a6587]
+  - quvi/youtube:
+    - normalize: Revise, remove "nocookie" handling [3d1d706]
+    - normalize: Process YouTube URLs only [fe4d72b]
+    - normalize: Reimplement [3fa91eb]
+  - scan/youtube.lua: Return HTTPS media URLs if input URL uses it [33b172f]
+  - subtitle/youtube.lua: Use HTTPS if input URL uses it [c58c7b5]
+
+ 33 files changed, 1184 insertions(+), 424 deletions(-)
+
+
+v0.9.20130903
+
+Bastien Nocera:
+  - media/guardian.lua: Also support "old" domain name [07c0d41]
+Kerrick Staley:
+  - Use subdir-objects Automake option [3df38e0]
+Toni Gundogdu:
+  - AC_PREREQ: Bump to 2.69 [6b349f7]
+  - Do not bundle 'version' file, have install create it [f086380]
+  - FIX: Install cookie.lua to common/quvi/http/ [8c3be23]
+  - FIX: media/dailymotion.lua: sequence pattern (PORTpt4) [bd31628]
+  - FIX: media/funnyordie.lua: Stream URL pattern [41a7516]
+
+ 6 files changed, 35 insertions(+), 28 deletions(-)
+
+
+v0.9.20130805
 
 Toni Gundogdu:
-  - FIX: website/funnyordie.lua: Media stream pattern (PORTpt9) [3160719]
-  - FIX: website/liveleak.lua: media stream URL pattern [bba8e1f]
+  - configure.ac: Require a2x when building from git [1f118a6]
+  - FIX: media/guardian.lua: Multiple patterns [9e18bf6]
+  - FIX: tests: Use quvi_errcode instead of qerr [8113266]
+  - Mark media/break.lua as FIXME [85f885e]
+  - Mark media/charlierose.lua as FIXME [d85d71e]
 
- 2 files changed, 8 insertions(+), 6 deletions(-)
-
-
-v0.4.18  (2013-09-03) / Toni Gundogdu
-
-Tobias Gruetzmacher:
-  - FIX: website/dailymotion.lua: sequence pattern (no match: sequence) [3d71c75]
-Toni Gundogdu:
-  - FIX: website/funnyordie.lua: Media stream URL pattern (PORTpt9) [84c83f7]
-
- 2 files changed, 4 insertions(+), 5 deletions(-)
+ 18 files changed, 80 insertions(+), 91 deletions(-)
 
 
-v0.4.17  (2013-08-04) / Toni Gundogdu
+v0.9.20130619
 
 Toni Gundogdu:
-  - FIX: website/dailymotion.lua: Parse video_url (PORTpt9) [ce1b525]
-  - FIX: website/guardian.lua: Multiple patterns (PORTpt9) [165792e]
-  - Mark website/break.lua as FIXME [dce1940]
-  - Mark website/charlierose.lua as FIXME [827dff0]
+  - FIX: media/break.lua: Break.can_parse_url: path pattern [63d560a]
+  - FIX: media/spiegel.lua: title pattern (BACKPORTpt4) [5e836ec]
+  - media/guardian.lua: Check for expired content (BACKPORTpt4) [a24b7aa]
+  - quvi/util: Add escape_magic function [751bf6d]
+  - Remove media/academicearth.lua [d04e115]
 
- 13 files changed, 83 insertions(+), 66 deletions(-)
-
-
-v0.4.16  (2013-06-18) / Toni Gundogdu
-
-Toni Gundogdu:
-  - BACKPORTpt9: Remove website/academicearth.lua [0c8f7d9]
-  - FIX: BACKPORTpt9: website/break.lua: path pattern [a8fec0f]
-  - FIX: website/myspass.lua:63: bad argument #3 to format [3265307]
-  - FIX: website/spiegel.lua: title pattern [20e95ca]
-  - FIX: website/tagtele.lua: title pattern [a56f48e]
-  - liveleak.lua: Improve support for 3rd party embedded content [efde9c3]
-  - website/guardian.lua: Check for expired content [22ff394]
-  - website/tagtele.lua: Parse thumbnail URL [c7ca1aa]
-
- 17 files changed, 126 insertions(+), 180 deletions(-)
+ 12 files changed, 31 insertions(+), 146 deletions(-)
 
 
-v0.4.15  (2013-05-09) / Toni Gundogdu
+v0.9.20130520
 
-Toni Gundogdu:
-  - FIX: website/101greatgoals.lua: embedded URL patterns [b9daced]
-  - FIX: website/academicearth.lua: Look for YouTube embed URL [cb19406]
-  - FIX: website/bikeradar.lua: Look for embedURL [4fe8db9]
-  - FIX: website/funnyordie.lua: media stream URL pattern [4d0fc7c]
-  - FIX: website/gaskrank.lua: media stream URL pattern [1fbb469]
-  - FIX: website/guardian.lua: all patterns [2e73b5b]
-  - FIX: website/sevenload.lua: all patterns [7ea5976]
-  - FIX: website/spiegel.lua: choose_default [c583258]
-  - FIX: website/ted.lua: Check for extern media [00f4301]
-  - FIX: xhamster.lua: title pattern [ef9a614]
-  - Remove website/yfrog.lua [e667492]
-  - website/arte.lua: Unmark as "FIXME" [494dcde]
-  - website/bikeradar.lua: Unmark as "FIXME" [aa496bf]
-  - website/clipfish.lua: r.categories: Add proto_rtmp [bb40acd]
-  - website/golem.lua: Mark as "FIXME" [8edbe5c]
-  - website/spiegel.lua: Parse thumbnail URL [a345ae6]
-  - website/spiegel.lua: Parse title from page instead [1763969]
+This is the first official release of the 0.9 of libquvi-scripts. The
+typical list of the changes (commit-by-commit), since the 0.4, were
+omitted.
 
- 48 files changed, 365 insertions(+), 501 deletions(-)
+For a detailed list of the changes, see the git commit log. For an
+overview of the changes made in the quvi project 0.9+ series, see:
+  http://quvi.sourceforge.net/doc/other/quvi-prj-ptnine.html (WIP)
 
 
 v0.4.14  (2013-03-19) / Toni Gundogdu
