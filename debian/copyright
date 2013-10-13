@@ -50,8 +50,6 @@ Copyright:
  2011,      Bastien Nocera <hadess@hadess.net>
 License: AGPL-3+
 
-
-
 Files: debian/*
 Copyright:
  2011,      Alejandro Garrido Mota <garridomota@gmail.com>
@@ -730,15 +728,6 @@ License: AGPL-3+
  if any, to sign a "copyright disclaimer" for the program, if necessary.
  For more information on this, and how to apply and follow the GNU AGPL, see
  <http://www.gnu.org/licenses/>.
-
-License: LGPL-2.1+
- This package is free software; you can redistribute it and/or
- modify it under the terms of the GNU Lesser General Public
- License as published by the Free Software Foundation; either
- version 2.1 of the License, or (at your option) any later version.
- .
- On Debian systems, the complete text of the GNU Lesser General Public
- License, version 2.1 can be found in `/usr/share/common-licenses/LGPL-2.1'.
 
 License: GPL-3+
  This program is free software: you can redistribute it and/or modify
