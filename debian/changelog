@@ -5,6 +5,7 @@ libquvi-scripts (0.9.20131012-1) experimental; urgency=low
   * Rename binary package to libquvi-scripts-0.9.
   * debian/watch: No longer follow 0.4.x.
   * debian/control: Update (Build-)Depends.
+  * Rename man pages to avoid conflict with libquvi-scripts v0.4.x.
 
  -- Ansgar Burchardt <ansgar@debian.org>  Sun, 13 Oct 2013 15:26:00 +0200
 
