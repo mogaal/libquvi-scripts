@@ -1,3 +1,13 @@
+libquvi-scripts (0.9.20131012-1) experimental; urgency=low
+
+  * New upstream release.
+  * libquvi-scripts is now licensed under AGPL-3+.
+  * Rename binary package to libquvi-scripts-0.9.
+  * debian/watch: No longer follow 0.4.x.
+  * debian/control: Update (Build-)Depends.
+
+ -- Ansgar Burchardt <ansgar@debian.org>  Sun, 13 Oct 2013 15:26:00 +0200
+
 libquvi-scripts (0.4.19-1) unstable; urgency=low
 
   * New upstream release.
