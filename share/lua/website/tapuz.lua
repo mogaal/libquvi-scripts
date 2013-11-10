@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.19
+-- libquvi-scripts v0.4.20
 -- Copyright (C) 2012  Tzafrir Cohen <tzafrir@cohens.org.il>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.

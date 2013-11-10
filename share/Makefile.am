@@ -15,14 +15,15 @@ DIST_lua=\
  lua/website/101greatgoals.lua \
  lua/website/1tvru.lua \
  lua/website/ardmediathek.lua \
- lua/website/arte.lua \
  lua/website/audioboo.lua \
  lua/website/bbc.lua \
  lua/website/bikeradar.lua \
  lua/website/canalplus.lua \
  lua/website/cbsnews.lua \
  lua/website/clipfish.lua \
+ lua/website/collegehumor.lua \
  lua/website/dailymotion.lua \
+ lua/website/dorkly.lua \
  lua/website/foxnews.lua \
  lua/website/funnyordie.lua \
  lua/website/gaskrank.lua \
@@ -48,7 +49,6 @@ DIST_lua=\
  lua/website/theonion.lua \
  lua/website/videa.lua \
  lua/website/videobash.lua \
- lua/website/vimeo.lua \
  lua/website/wdrmaus.lua \
  lua/website/wimp.lua \
  lua/website/youtube.lua
@@ -73,16 +73,17 @@ endif
 
 if WITH_FIXME
 DIST_lua+=\
+ lua/website/arte.lua \
  lua/website/blip.lua \
  lua/website/bloomberg.lua \
  lua/website/break.lua \
  lua/website/charlierose.lua \
- lua/website/collegehumor.lua \
  lua/website/francetelevisions.lua \
  lua/website/globo.lua \
  lua/website/golem.lua \
  lua/website/mgnetwork.lua \
- lua/website/pluzz.lua
+ lua/website/pluzz.lua \
+ lua/website/vimeo.lua
 if WITH_NSFW
 DIST_lua+=\
  lua/website/fastjizz.lua \
