@@ -1,4 +1,4 @@
--- libquvi-scripts v0.9.20131012
+-- libquvi-scripts v0.9.20131104
 -- Copyright (C) 2013  Toni Gundogdu <legatvs@gmail.com>
 -- Copyright (C) 2012  Ross Burton <ross@burtonini.com>
 --
@@ -69,7 +69,7 @@ end
 
 function Lego.movies_thumb(qargs, p)
   local t = {'thumbNavigation.+', '<img src="(.-)" alt="',qargs.title, '"/>',}
-  qargs.thumb_url = p:match(table.concat(t,'') or '')
+  qargs.thumb_url = p:match(table.concat(t) or '')
 end
 
 function Lego.parse_movies(qargs, p) -- /movies/
@@ -108,7 +108,10 @@ function Lego.parse_videos(qargs, p)  -- /videos?video=ID
   qargs.title = L.find_first_tag(i, 'trackingName')[1]
   qargs.thumb_url = L.find_first_tag(i, 'cover')[1]
 
-  qargs.id = (qargs.input_url:match('video=%{(.-)%}') or ''):lower()
+  local U = require 'socket.url'
+  local q = U.unescape(U.parse(qargs.input_url).query)
+  qargs.id = (q:match('video=%{(.-)%}') or ''):lower()
+
   qargs.streams = Lego.videos_iter_streams(L, i)
 end
 

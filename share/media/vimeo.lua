@@ -1,4 +1,4 @@
--- libquvi-scripts v0.9.20131012
+-- libquvi-scripts v0.9.20131104
 -- Copyright (C) 2010-2013  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -102,7 +102,7 @@ function Vimeo.iter_streams(qargs, page)
 end
 
 function Vimeo.normalize(qargs)
-  qargs_input_url = qargs.input_url:gsub("player.", "")
+  qargs_input_url = qargs.input_url:gsub("player%.", "")
   qargs.input_url = qargs.input_url:gsub("/video/", "/")
 end
 

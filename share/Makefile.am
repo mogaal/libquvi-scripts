@@ -55,6 +55,8 @@ dist_media_DATA=\
   media/guardian.lua\
   media/lego.lua\
   media/liveleak.lua\
+  media/majestyc.lua\
+  media/metacafe.lua\
   media/myspass.lua\
   media/publicsenat.lua\
   media/sapo.lua\
@@ -62,11 +64,14 @@ dist_media_DATA=\
   media/sevenload.lua\
   media/soundcloud.lua\
   media/spiegel.lua\
+  media/tagtele.lua\
+  media/tapuz.lua\
   media/ted.lua\
   media/theonion.lua\
   media/tvlux.lua\
   media/videa.lua\
-  media/vimeo.lua\
+  media/videobash.lua\
+  media/vzaar.lua\
   media/youtube.lua
 
 if WITH_GEOBLOCKED
@@ -80,7 +85,8 @@ endif
 if WITH_FIXME
 dist_media_DATA+=\
   media/break.lua\
-  media/charlierose.lua
+  media/charlierose.lua\
+  media/vimeo.lua
 if WITH_GEOBLOCKED
 endif
 if WITH_NSFW
@@ -114,6 +120,7 @@ dist_playlist_DATA=\
 scandir=$(pkgdatadir)/$(VERSION)/scan
 
 dist_scan_DATA=\
+  scan/vzaar.lua\
   scan/youtube.lua
 
 install-data-hook:

@@ -1,4 +1,4 @@
--- libquvi-scripts v0.9.20131012
+-- libquvi-scripts v0.9.20131104
 -- Copyright (C) 2012-2013  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -75,7 +75,7 @@ function ResolveExceptions.YouTube(qargs, dst)
   -- e.g. http://www.youtube.com/watch?v=LWxTGJ3TK1U#t=2m22s
   --   -> http://www.youtube.com/watch?v=LWxTGJ3TK1U
   --
---  return table.concat({dst, (qargs.input_url:match('(#t=%w+)') or '')}, '')
+--  return table.concat({dst, (qargs.input_url:match('(#t=%w+)') or '')})
 end
 
 -- vim: set ts=2 sw=2 tw=72 expandtab:

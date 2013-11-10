@@ -1,4 +1,4 @@
--- libquvi-scripts v0.9.20131012
+-- libquvi-scripts v0.9.20131104
 -- Copyright (C) 2010-2011,2013  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -50,7 +50,7 @@ function parse(qargs)
                 or error('no match: media ID')
 
   local t = {'http://video.spiegel.de/flash/', qargs.id, '.xml'}
-  local c = quvi.http.fetch(table.concat(t,'')).data
+  local c = quvi.http.fetch(table.concat(t)).data
 
   local P = require 'lxp.lom'
   local x = P.parse(c)

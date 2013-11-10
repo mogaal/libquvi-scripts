@@ -1,4 +1,4 @@
--- libquvi-scripts v0.9.20131012
+-- libquvi-scripts v0.9.20131104
 -- Copyright (C) 2013  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -90,7 +90,7 @@ function SubRip.from_tt(qargs)
       last_start = start
     end
   end
-  qargs.data = table.concat(r, '')
+  qargs.data = table.concat(r)
   return qargs
 end
 

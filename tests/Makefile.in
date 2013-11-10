@@ -51,7 +51,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-noinst_PROGRAMS = $(am__EXEEXT_3)
+noinst_PROGRAMS = $(am__EXEEXT_2)
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
 	$(top_srcdir)/tests/media/101greatgoals.mk \
 	$(top_srcdir)/tests/media/1tvru.mk \
@@ -70,6 +70,8 @@ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
 	$(top_srcdir)/tests/media/ina.mk \
 	$(top_srcdir)/tests/media/lego.mk \
 	$(top_srcdir)/tests/media/liveleak.mk \
+	$(top_srcdir)/tests/media/majestyc.mk \
+	$(top_srcdir)/tests/media/metacafe.mk \
 	$(top_srcdir)/tests/media/myspass.mk \
 	$(top_srcdir)/tests/media/publicsenat.mk \
 	$(top_srcdir)/tests/media/sapo.mk \
@@ -77,22 +79,27 @@ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
 	$(top_srcdir)/tests/media/sevenload.mk \
 	$(top_srcdir)/tests/media/soundcloud.mk \
 	$(top_srcdir)/tests/media/spiegel.mk \
+	$(top_srcdir)/tests/media/tagtele.mk \
+	$(top_srcdir)/tests/media/tapuz.mk \
 	$(top_srcdir)/tests/media/ted.mk \
 	$(top_srcdir)/tests/media/tests.mk \
 	$(top_srcdir)/tests/media/theonion.mk \
 	$(top_srcdir)/tests/media/tvlux.mk \
 	$(top_srcdir)/tests/media/videa.mk \
+	$(top_srcdir)/tests/media/videobash.mk \
 	$(top_srcdir)/tests/media/vimeo.mk \
+	$(top_srcdir)/tests/media/vzaar.mk \
 	$(top_srcdir)/tests/media/youtube.mk \
 	$(top_srcdir)/tests/playlist/soundcloud.mk \
 	$(top_srcdir)/tests/playlist/tests.mk \
 	$(top_srcdir)/tests/playlist/youtube.mk \
 	$(top_srcdir)/tests/scan/tests.mk \
+	$(top_srcdir)/tests/scan/vzaar.mk \
 	$(top_srcdir)/tests/scan/youtube.mk \
 	$(top_srcdir)/tests/subtitle/tests.mk \
 	$(top_srcdir)/tests/subtitle/youtube.mk
-@WITH_FIXME_TRUE@am__append_1 = media_break
-@WITH_FIXME_TRUE@am__append_2 = media_charlierose
+@WITH_FIXME_TRUE@am__append_1 = media_break media_charlierose \
+@WITH_FIXME_TRUE@	media_vimeo
 subdir = tests
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/libtool.m4 \
@@ -105,24 +112,27 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-@WITH_FIXME_TRUE@am__EXEEXT_1 = media_break$(EXEEXT)
-@WITH_FIXME_TRUE@am__EXEEXT_2 = media_charlierose$(EXEEXT)
-am__EXEEXT_3 = playlist_soundcloud$(EXEEXT) playlist_youtube$(EXEEXT) \
+@WITH_FIXME_TRUE@am__EXEEXT_1 = media_break$(EXEEXT) \
+@WITH_FIXME_TRUE@	media_charlierose$(EXEEXT) \
+@WITH_FIXME_TRUE@	media_vimeo$(EXEEXT)
+am__EXEEXT_2 = playlist_soundcloud$(EXEEXT) playlist_youtube$(EXEEXT) \
 	subtitle_youtube$(EXEEXT) media_101greatgoals$(EXEEXT) \
 	media_1tvru$(EXEEXT) media_ardmediathek$(EXEEXT) \
 	media_arte$(EXEEXT) media_audioboo$(EXEEXT) \
-	media_bikeradar$(EXEEXT) $(am__EXEEXT_1) \
-	media_cbsnews$(EXEEXT) $(am__EXEEXT_2) media_clipfish$(EXEEXT) \
-	media_dailymotion$(EXEEXT) media_funnyordie$(EXEEXT) \
-	media_gaskrank$(EXEEXT) media_guardian$(EXEEXT) \
-	media_ina$(EXEEXT) media_lego$(EXEEXT) media_liveleak$(EXEEXT) \
-	media_myspass$(EXEEXT) media_publicsenat$(EXEEXT) \
-	media_sapo$(EXEEXT) media_senat$(EXEEXT) \
-	media_sevenload$(EXEEXT) media_soundcloud$(EXEEXT) \
-	media_spiegel$(EXEEXT) media_ted$(EXEEXT) \
+	media_bikeradar$(EXEEXT) media_cbsnews$(EXEEXT) \
+	media_clipfish$(EXEEXT) media_dailymotion$(EXEEXT) \
+	media_funnyordie$(EXEEXT) media_gaskrank$(EXEEXT) \
+	media_guardian$(EXEEXT) media_ina$(EXEEXT) media_lego$(EXEEXT) \
+	media_liveleak$(EXEEXT) media_majestyc$(EXEEXT) \
+	media_metacafe$(EXEEXT) media_myspass$(EXEEXT) \
+	media_publicsenat$(EXEEXT) media_sapo$(EXEEXT) \
+	media_senat$(EXEEXT) media_sevenload$(EXEEXT) \
+	media_soundcloud$(EXEEXT) media_spiegel$(EXEEXT) \
+	media_tagtele$(EXEEXT) media_tapuz$(EXEEXT) media_ted$(EXEEXT) \
 	media_theonion$(EXEEXT) media_tvlux$(EXEEXT) \
-	media_videa$(EXEEXT) media_vimeo$(EXEEXT) \
-	media_youtube$(EXEEXT) scan_youtube$(EXEEXT)
+	media_videa$(EXEEXT) media_videobash$(EXEEXT) \
+	media_vzaar$(EXEEXT) media_youtube$(EXEEXT) $(am__EXEEXT_1) \
+	scan_vzaar$(EXEEXT) scan_youtube$(EXEEXT)
 PROGRAMS = $(noinst_PROGRAMS)
 am__dirstamp = $(am__leading_dot)dirstamp
 am_media_101greatgoals_OBJECTS =  \
@@ -260,6 +270,22 @@ media_liveleak_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
 	$(media_liveleak_CFLAGS) $(CFLAGS) $(media_liveleak_LDFLAGS) \
 	$(LDFLAGS) -o $@
+am_media_majestyc_OBJECTS =  \
+	media/media_majestyc-media_majestyc.$(OBJEXT)
+media_majestyc_OBJECTS = $(am_media_majestyc_OBJECTS)
+media_majestyc_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_majestyc_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_majestyc_CFLAGS) $(CFLAGS) $(media_majestyc_LDFLAGS) \
+	$(LDFLAGS) -o $@
+am_media_metacafe_OBJECTS =  \
+	media/media_metacafe-media_metacafe.$(OBJEXT)
+media_metacafe_OBJECTS = $(am_media_metacafe_OBJECTS)
+media_metacafe_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_metacafe_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_metacafe_CFLAGS) $(CFLAGS) $(media_metacafe_LDFLAGS) \
+	$(LDFLAGS) -o $@
 am_media_myspass_OBJECTS =  \
 	media/media_myspass-media_myspass.$(OBJEXT)
 media_myspass_OBJECTS = $(am_media_myspass_OBJECTS)
@@ -310,6 +336,19 @@ media_spiegel_DEPENDENCIES = $(am__DEPENDENCIES_2)
 media_spiegel_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_spiegel_CFLAGS) \
 	$(CFLAGS) $(media_spiegel_LDFLAGS) $(LDFLAGS) -o $@
+am_media_tagtele_OBJECTS =  \
+	media/media_tagtele-media_tagtele.$(OBJEXT)
+media_tagtele_OBJECTS = $(am_media_tagtele_OBJECTS)
+media_tagtele_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_tagtele_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_tagtele_CFLAGS) \
+	$(CFLAGS) $(media_tagtele_LDFLAGS) $(LDFLAGS) -o $@
+am_media_tapuz_OBJECTS = media/media_tapuz-media_tapuz.$(OBJEXT)
+media_tapuz_OBJECTS = $(am_media_tapuz_OBJECTS)
+media_tapuz_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_tapuz_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_tapuz_CFLAGS) \
+	$(CFLAGS) $(media_tapuz_LDFLAGS) $(LDFLAGS) -o $@
 am_media_ted_OBJECTS = media/media_ted-media_ted.$(OBJEXT)
 media_ted_OBJECTS = $(am_media_ted_OBJECTS)
 media_ted_DEPENDENCIES = $(am__DEPENDENCIES_2)
@@ -336,12 +375,28 @@ media_videa_DEPENDENCIES = $(am__DEPENDENCIES_2)
 media_videa_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_videa_CFLAGS) \
 	$(CFLAGS) $(media_videa_LDFLAGS) $(LDFLAGS) -o $@
-am_media_vimeo_OBJECTS = media/media_vimeo-media_vimeo.$(OBJEXT)
+am_media_videobash_OBJECTS =  \
+	media/media_videobash-media_videobash.$(OBJEXT)
+media_videobash_OBJECTS = $(am_media_videobash_OBJECTS)
+media_videobash_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_videobash_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(media_videobash_CFLAGS) $(CFLAGS) $(media_videobash_LDFLAGS) \
+	$(LDFLAGS) -o $@
+am__media_vimeo_SOURCES_DIST = media/media_vimeo.c
+@WITH_FIXME_TRUE@am_media_vimeo_OBJECTS =  \
+@WITH_FIXME_TRUE@	media/media_vimeo-media_vimeo.$(OBJEXT)
 media_vimeo_OBJECTS = $(am_media_vimeo_OBJECTS)
-media_vimeo_DEPENDENCIES = $(am__DEPENDENCIES_2)
+@WITH_FIXME_TRUE@media_vimeo_DEPENDENCIES = $(am__DEPENDENCIES_2)
 media_vimeo_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_vimeo_CFLAGS) \
 	$(CFLAGS) $(media_vimeo_LDFLAGS) $(LDFLAGS) -o $@
+am_media_vzaar_OBJECTS = media/media_vzaar-media_vzaar.$(OBJEXT)
+media_vzaar_OBJECTS = $(am_media_vzaar_OBJECTS)
+media_vzaar_DEPENDENCIES = $(am__DEPENDENCIES_2)
+media_vzaar_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(media_vzaar_CFLAGS) \
+	$(CFLAGS) $(media_vzaar_LDFLAGS) $(LDFLAGS) -o $@
 am_media_youtube_OBJECTS =  \
 	media/media_youtube-media_youtube.$(OBJEXT)
 media_youtube_OBJECTS = $(am_media_youtube_OBJECTS)
@@ -365,6 +420,12 @@ playlist_youtube_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
 	$(playlist_youtube_CFLAGS) $(CFLAGS) \
 	$(playlist_youtube_LDFLAGS) $(LDFLAGS) -o $@
+am_scan_vzaar_OBJECTS = scan/scan_vzaar-scan_vzaar.$(OBJEXT)
+scan_vzaar_OBJECTS = $(am_scan_vzaar_OBJECTS)
+scan_vzaar_DEPENDENCIES = $(am__DEPENDENCIES_2)
+scan_vzaar_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(scan_vzaar_CFLAGS) \
+	$(CFLAGS) $(scan_vzaar_LDFLAGS) $(LDFLAGS) -o $@
 am_scan_youtube_OBJECTS = scan/scan_youtube-scan_youtube.$(OBJEXT)
 scan_youtube_OBJECTS = $(am_scan_youtube_OBJECTS)
 scan_youtube_DEPENDENCIES = $(am__DEPENDENCIES_2)
@@ -413,15 +474,19 @@ SOURCES = $(media_101greatgoals_SOURCES) $(media_1tvru_SOURCES) \
 	$(media_dailymotion_SOURCES) $(media_funnyordie_SOURCES) \
 	$(media_gaskrank_SOURCES) $(media_guardian_SOURCES) \
 	$(media_ina_SOURCES) $(media_lego_SOURCES) \
-	$(media_liveleak_SOURCES) $(media_myspass_SOURCES) \
+	$(media_liveleak_SOURCES) $(media_majestyc_SOURCES) \
+	$(media_metacafe_SOURCES) $(media_myspass_SOURCES) \
 	$(media_publicsenat_SOURCES) $(media_sapo_SOURCES) \
 	$(media_senat_SOURCES) $(media_sevenload_SOURCES) \
 	$(media_soundcloud_SOURCES) $(media_spiegel_SOURCES) \
+	$(media_tagtele_SOURCES) $(media_tapuz_SOURCES) \
 	$(media_ted_SOURCES) $(media_theonion_SOURCES) \
 	$(media_tvlux_SOURCES) $(media_videa_SOURCES) \
-	$(media_vimeo_SOURCES) $(media_youtube_SOURCES) \
+	$(media_videobash_SOURCES) $(media_vimeo_SOURCES) \
+	$(media_vzaar_SOURCES) $(media_youtube_SOURCES) \
 	$(playlist_soundcloud_SOURCES) $(playlist_youtube_SOURCES) \
-	$(scan_youtube_SOURCES) $(subtitle_youtube_SOURCES)
+	$(scan_vzaar_SOURCES) $(scan_youtube_SOURCES) \
+	$(subtitle_youtube_SOURCES)
 DIST_SOURCES = $(media_101greatgoals_SOURCES) $(media_1tvru_SOURCES) \
 	$(media_ardmediathek_SOURCES) $(media_arte_SOURCES) \
 	$(media_audioboo_SOURCES) $(media_bikeradar_SOURCES) \
@@ -431,15 +496,18 @@ DIST_SOURCES = $(media_101greatgoals_SOURCES) $(media_1tvru_SOURCES) \
 	$(media_funnyordie_SOURCES) $(media_gaskrank_SOURCES) \
 	$(media_guardian_SOURCES) $(media_ina_SOURCES) \
 	$(media_lego_SOURCES) $(media_liveleak_SOURCES) \
+	$(media_majestyc_SOURCES) $(media_metacafe_SOURCES) \
 	$(media_myspass_SOURCES) $(media_publicsenat_SOURCES) \
 	$(media_sapo_SOURCES) $(media_senat_SOURCES) \
 	$(media_sevenload_SOURCES) $(media_soundcloud_SOURCES) \
-	$(media_spiegel_SOURCES) $(media_ted_SOURCES) \
+	$(media_spiegel_SOURCES) $(media_tagtele_SOURCES) \
+	$(media_tapuz_SOURCES) $(media_ted_SOURCES) \
 	$(media_theonion_SOURCES) $(media_tvlux_SOURCES) \
-	$(media_videa_SOURCES) $(media_vimeo_SOURCES) \
+	$(media_videa_SOURCES) $(media_videobash_SOURCES) \
+	$(am__media_vimeo_SOURCES_DIST) $(media_vzaar_SOURCES) \
 	$(media_youtube_SOURCES) $(playlist_soundcloud_SOURCES) \
-	$(playlist_youtube_SOURCES) $(scan_youtube_SOURCES) \
-	$(subtitle_youtube_SOURCES)
+	$(playlist_youtube_SOURCES) $(scan_vzaar_SOURCES) \
+	$(scan_youtube_SOURCES) $(subtitle_youtube_SOURCES)
 RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
 	html-recursive info-recursive install-data-recursive \
 	install-dvi-recursive install-exec-recursive \
@@ -616,13 +684,15 @@ top_srcdir = @top_srcdir@
 SUBDIRS = lib
 TEST_PROGS = playlist_soundcloud playlist_youtube subtitle_youtube \
 	media_101greatgoals media_1tvru media_ardmediathek media_arte \
-	media_audioboo media_bikeradar $(am__append_1) media_cbsnews \
-	$(am__append_2) media_clipfish media_dailymotion \
-	media_funnyordie media_gaskrank media_guardian media_ina \
-	media_lego media_liveleak media_myspass media_publicsenat \
+	media_audioboo media_bikeradar media_cbsnews media_clipfish \
+	media_dailymotion media_funnyordie media_gaskrank \
+	media_guardian media_ina media_lego media_liveleak \
+	media_majestyc media_metacafe media_myspass media_publicsenat \
 	media_sapo media_senat media_sevenload media_soundcloud \
-	media_spiegel media_ted media_theonion media_tvlux media_videa \
-	media_vimeo media_youtube scan_youtube
+	media_spiegel media_tagtele media_tapuz media_ted \
+	media_theonion media_tvlux media_videa media_videobash \
+	media_vzaar media_youtube $(am__append_1) scan_vzaar \
+	scan_youtube
 TEST_OPTS = -k -m=thorough --verbose #--g-fatal-warnings
 testsuite_cppflags = \
   -I$(top_srcdir)/tests/lib\
@@ -681,21 +751,11 @@ media_bikeradar_CPPFLAGS = $(testsuite_cppflags)
 media_bikeradar_LDFLAGS = $(testsuite_ldflags)
 media_bikeradar_LDADD = $(testsuite_ldadd)
 media_bikeradar_CFLAGS = $(AM_CFLAGS)
-@WITH_FIXME_TRUE@media_break_SOURCES = media/media_break.c
-@WITH_FIXME_TRUE@media_break_CPPFLAGS = $(testsuite_cppflags)
-@WITH_FIXME_TRUE@media_break_LDFLAGS = $(testsuite_ldflags)
-@WITH_FIXME_TRUE@media_break_LDADD = $(testsuite_ldadd)
-@WITH_FIXME_TRUE@media_break_CFLAGS = $(AM_CFLAGS)
 media_cbsnews_SOURCES = media/media_cbsnews.c
 media_cbsnews_CPPFLAGS = $(testsuite_cppflags)
 media_cbsnews_LDFLAGS = $(testsuite_ldflags)
 media_cbsnews_LDADD = $(testsuite_ldadd)
 media_cbsnews_CFLAGS = $(AM_CFLAGS)
-@WITH_FIXME_TRUE@media_charlierose_SOURCES = media/media_charlierose.c
-@WITH_FIXME_TRUE@media_charlierose_CPPFLAGS = $(testsuite_cppflags)
-@WITH_FIXME_TRUE@media_charlierose_LDFLAGS = $(testsuite_ldflags)
-@WITH_FIXME_TRUE@media_charlierose_LDADD = $(testsuite_ldadd)
-@WITH_FIXME_TRUE@media_charlierose_CFLAGS = $(AM_CFLAGS)
 media_clipfish_SOURCES = media/media_clipfish.c
 media_clipfish_CPPFLAGS = $(testsuite_cppflags)
 media_clipfish_LDFLAGS = $(testsuite_ldflags)
@@ -736,6 +796,16 @@ media_liveleak_CPPFLAGS = $(testsuite_cppflags)
 media_liveleak_LDFLAGS = $(testsuite_ldflags)
 media_liveleak_LDADD = $(testsuite_ldadd)
 media_liveleak_CFLAGS = $(AM_CFLAGS)
+media_majestyc_SOURCES = media/media_majestyc.c
+media_majestyc_CPPFLAGS = $(testsuite_cppflags)
+media_majestyc_LDFLAGS = $(testsuite_ldflags)
+media_majestyc_LDADD = $(testsuite_ldadd)
+media_majestyc_CFLAGS = $(AM_CFLAGS)
+media_metacafe_SOURCES = media/media_metacafe.c
+media_metacafe_CPPFLAGS = $(testsuite_cppflags)
+media_metacafe_LDFLAGS = $(testsuite_ldflags)
+media_metacafe_LDADD = $(testsuite_ldadd)
+media_metacafe_CFLAGS = $(AM_CFLAGS)
 media_myspass_SOURCES = media/media_myspass.c
 media_myspass_CPPFLAGS = $(testsuite_cppflags)
 media_myspass_LDFLAGS = $(testsuite_ldflags)
@@ -771,6 +841,16 @@ media_spiegel_CPPFLAGS = $(testsuite_cppflags)
 media_spiegel_LDFLAGS = $(testsuite_ldflags)
 media_spiegel_LDADD = $(testsuite_ldadd)
 media_spiegel_CFLAGS = $(AM_CFLAGS)
+media_tagtele_SOURCES = media/media_tagtele.c
+media_tagtele_CPPFLAGS = $(testsuite_cppflags)
+media_tagtele_LDFLAGS = $(testsuite_ldflags)
+media_tagtele_LDADD = $(testsuite_ldadd)
+media_tagtele_CFLAGS = $(AM_CFLAGS)
+media_tapuz_SOURCES = media/media_tapuz.c
+media_tapuz_CPPFLAGS = $(testsuite_cppflags)
+media_tapuz_LDFLAGS = $(testsuite_ldflags)
+media_tapuz_LDADD = $(testsuite_ldadd)
+media_tapuz_CFLAGS = $(AM_CFLAGS)
 media_ted_SOURCES = media/media_ted.c
 media_ted_CPPFLAGS = $(testsuite_cppflags)
 media_ted_LDFLAGS = $(testsuite_ldflags)
@@ -791,16 +871,41 @@ media_videa_CPPFLAGS = $(testsuite_cppflags)
 media_videa_LDFLAGS = $(testsuite_ldflags)
 media_videa_LDADD = $(testsuite_ldadd)
 media_videa_CFLAGS = $(AM_CFLAGS)
-media_vimeo_SOURCES = media/media_vimeo.c
-media_vimeo_CPPFLAGS = $(testsuite_cppflags)
-media_vimeo_LDFLAGS = $(testsuite_ldflags)
-media_vimeo_LDADD = $(testsuite_ldadd)
-media_vimeo_CFLAGS = $(AM_CFLAGS)
+media_videobash_SOURCES = media/media_videobash.c
+media_videobash_CPPFLAGS = $(testsuite_cppflags)
+media_videobash_LDFLAGS = $(testsuite_ldflags)
+media_videobash_LDADD = $(testsuite_ldadd)
+media_videobash_CFLAGS = $(AM_CFLAGS)
+media_vzaar_SOURCES = media/media_vzaar.c
+media_vzaar_CPPFLAGS = $(testsuite_cppflags)
+media_vzaar_LDFLAGS = $(testsuite_ldflags)
+media_vzaar_LDADD = $(testsuite_ldadd)
+media_vzaar_CFLAGS = $(AM_CFLAGS)
 media_youtube_SOURCES = media/media_youtube.c
 media_youtube_CPPFLAGS = $(testsuite_cppflags)
 media_youtube_LDFLAGS = $(testsuite_ldflags)
 media_youtube_LDADD = $(testsuite_ldadd)
 media_youtube_CFLAGS = $(AM_CFLAGS)
+@WITH_FIXME_TRUE@media_break_SOURCES = media/media_break.c
+@WITH_FIXME_TRUE@media_break_CPPFLAGS = $(testsuite_cppflags)
+@WITH_FIXME_TRUE@media_break_LDFLAGS = $(testsuite_ldflags)
+@WITH_FIXME_TRUE@media_break_LDADD = $(testsuite_ldadd)
+@WITH_FIXME_TRUE@media_break_CFLAGS = $(AM_CFLAGS)
+@WITH_FIXME_TRUE@media_charlierose_SOURCES = media/media_charlierose.c
+@WITH_FIXME_TRUE@media_charlierose_CPPFLAGS = $(testsuite_cppflags)
+@WITH_FIXME_TRUE@media_charlierose_LDFLAGS = $(testsuite_ldflags)
+@WITH_FIXME_TRUE@media_charlierose_LDADD = $(testsuite_ldadd)
+@WITH_FIXME_TRUE@media_charlierose_CFLAGS = $(AM_CFLAGS)
+@WITH_FIXME_TRUE@media_vimeo_SOURCES = media/media_vimeo.c
+@WITH_FIXME_TRUE@media_vimeo_CPPFLAGS = $(testsuite_cppflags)
+@WITH_FIXME_TRUE@media_vimeo_LDFLAGS = $(testsuite_ldflags)
+@WITH_FIXME_TRUE@media_vimeo_LDADD = $(testsuite_ldadd)
+@WITH_FIXME_TRUE@media_vimeo_CFLAGS = $(AM_CFLAGS)
+scan_vzaar_SOURCES = scan/scan_vzaar.c
+scan_vzaar_CPPFLAGS = $(testsuite_cppflags)
+scan_vzaar_LDFLAGS = $(testsuite_ldflags)
+scan_vzaar_LDADD = $(testsuite_ldadd)
+scan_vzaar_CFLAGS = $(AM_CFLAGS)
 scan_youtube_SOURCES = scan/scan_youtube.c
 scan_youtube_CPPFLAGS = $(testsuite_cppflags)
 scan_youtube_LDFLAGS = $(testsuite_ldflags)
@@ -811,7 +916,7 @@ all: all-recursive
 
 .SUFFIXES:
 .SUFFIXES: .c .lo .o .obj
-$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(top_srcdir)/tests/playlist/tests.mk $(top_srcdir)/tests/playlist/soundcloud.mk $(top_srcdir)/tests/playlist/youtube.mk $(top_srcdir)/tests/subtitle/tests.mk $(top_srcdir)/tests/subtitle/youtube.mk $(top_srcdir)/tests/media/tests.mk $(top_srcdir)/tests/media/101greatgoals.mk $(top_srcdir)/tests/media/1tvru.mk $(top_srcdir)/tests/media/ardmediathek.mk $(top_srcdir)/tests/media/arte.mk $(top_srcdir)/tests/media/audioboo.mk $(top_srcdir)/tests/media/bikeradar.mk $(top_srcdir)/tests/media/break.mk $(top_srcdir)/tests/media/cbsnews.mk $(top_srcdir)/tests/media/charlierose.mk $(top_srcdir)/tests/media/clipfish.mk $(top_srcdir)/tests/media/dailymotion.mk $(top_srcdir)/tests/media/funnyordie.mk $(top_srcdir)/tests/media/gaskrank.mk $(top_srcdir)/tests/media/guardian.mk $(top_srcdir)/tests/media/ina.mk $(top_srcdir)/tests/media/lego.mk $(top_srcdir)/tests/media/liveleak.mk $(top_srcdir)/tests/media/myspass.mk $(top_srcdir)/tests/media/publicsenat.mk $(top_srcdir)/tests/media/sapo.mk $(top_srcdir)/tests/media/senat.mk $(top_srcdir)/tests/media/sevenload.mk $(top_srcdir)/tests/media/soundcloud.mk $(top_srcdir)/tests/media/spiegel.mk $(top_srcdir)/tests/media/ted.mk $(top_srcdir)/tests/media/theonion.mk $(top_srcdir)/tests/media/tvlux.mk $(top_srcdir)/tests/media/videa.mk $(top_srcdir)/tests/media/vimeo.mk $(top_srcdir)/tests/media/youtube.mk $(top_srcdir)/tests/scan/tests.mk $(top_srcdir)/tests/scan/youtube.mk $(am__configure_deps)
+$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(top_srcdir)/tests/playlist/tests.mk $(top_srcdir)/tests/playlist/soundcloud.mk $(top_srcdir)/tests/playlist/youtube.mk $(top_srcdir)/tests/subtitle/tests.mk $(top_srcdir)/tests/subtitle/youtube.mk $(top_srcdir)/tests/media/tests.mk $(top_srcdir)/tests/media/101greatgoals.mk $(top_srcdir)/tests/media/1tvru.mk $(top_srcdir)/tests/media/ardmediathek.mk $(top_srcdir)/tests/media/arte.mk $(top_srcdir)/tests/media/audioboo.mk $(top_srcdir)/tests/media/bikeradar.mk $(top_srcdir)/tests/media/cbsnews.mk $(top_srcdir)/tests/media/clipfish.mk $(top_srcdir)/tests/media/dailymotion.mk $(top_srcdir)/tests/media/funnyordie.mk $(top_srcdir)/tests/media/gaskrank.mk $(top_srcdir)/tests/media/guardian.mk $(top_srcdir)/tests/media/ina.mk $(top_srcdir)/tests/media/lego.mk $(top_srcdir)/tests/media/liveleak.mk $(top_srcdir)/tests/media/majestyc.mk $(top_srcdir)/tests/media/metacafe.mk $(top_srcdir)/tests/media/myspass.mk $(top_srcdir)/tests/media/publicsenat.mk $(top_srcdir)/tests/media/sapo.mk $(top_srcdir)/tests/media/senat.mk $(top_srcdir)/tests/media/sevenload.mk $(top_srcdir)/tests/media/soundcloud.mk $(top_srcdir)/tests/media/spiegel.mk $(top_srcdir)/tests/media/tagtele.mk $(top_srcdir)/tests/media/tapuz.mk $(top_srcdir)/tests/media/ted.mk $(top_srcdir)/tests/media/theonion.mk $(top_srcdir)/tests/media/tvlux.mk $(top_srcdir)/tests/media/videa.mk $(top_srcdir)/tests/media/videobash.mk $(top_srcdir)/tests/media/vzaar.mk $(top_srcdir)/tests/media/youtube.mk $(top_srcdir)/tests/media/break.mk $(top_srcdir)/tests/media/charlierose.mk $(top_srcdir)/tests/media/vimeo.mk $(top_srcdir)/tests/scan/tests.mk $(top_srcdir)/tests/scan/vzaar.mk $(top_srcdir)/tests/scan/youtube.mk $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -832,7 +937,7 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)'; \
 	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe);; \
 	esac;
-$(top_srcdir)/tests/playlist/tests.mk $(top_srcdir)/tests/playlist/soundcloud.mk $(top_srcdir)/tests/playlist/youtube.mk $(top_srcdir)/tests/subtitle/tests.mk $(top_srcdir)/tests/subtitle/youtube.mk $(top_srcdir)/tests/media/tests.mk $(top_srcdir)/tests/media/101greatgoals.mk $(top_srcdir)/tests/media/1tvru.mk $(top_srcdir)/tests/media/ardmediathek.mk $(top_srcdir)/tests/media/arte.mk $(top_srcdir)/tests/media/audioboo.mk $(top_srcdir)/tests/media/bikeradar.mk $(top_srcdir)/tests/media/break.mk $(top_srcdir)/tests/media/cbsnews.mk $(top_srcdir)/tests/media/charlierose.mk $(top_srcdir)/tests/media/clipfish.mk $(top_srcdir)/tests/media/dailymotion.mk $(top_srcdir)/tests/media/funnyordie.mk $(top_srcdir)/tests/media/gaskrank.mk $(top_srcdir)/tests/media/guardian.mk $(top_srcdir)/tests/media/ina.mk $(top_srcdir)/tests/media/lego.mk $(top_srcdir)/tests/media/liveleak.mk $(top_srcdir)/tests/media/myspass.mk $(top_srcdir)/tests/media/publicsenat.mk $(top_srcdir)/tests/media/sapo.mk $(top_srcdir)/tests/media/senat.mk $(top_srcdir)/tests/media/sevenload.mk $(top_srcdir)/tests/media/soundcloud.mk $(top_srcdir)/tests/media/spiegel.mk $(top_srcdir)/tests/media/ted.mk $(top_srcdir)/tests/media/theonion.mk $(top_srcdir)/tests/media/tvlux.mk $(top_srcdir)/tests/media/videa.mk $(top_srcdir)/tests/media/vimeo.mk $(top_srcdir)/tests/media/youtube.mk $(top_srcdir)/tests/scan/tests.mk $(top_srcdir)/tests/scan/youtube.mk:
+$(top_srcdir)/tests/playlist/tests.mk $(top_srcdir)/tests/playlist/soundcloud.mk $(top_srcdir)/tests/playlist/youtube.mk $(top_srcdir)/tests/subtitle/tests.mk $(top_srcdir)/tests/subtitle/youtube.mk $(top_srcdir)/tests/media/tests.mk $(top_srcdir)/tests/media/101greatgoals.mk $(top_srcdir)/tests/media/1tvru.mk $(top_srcdir)/tests/media/ardmediathek.mk $(top_srcdir)/tests/media/arte.mk $(top_srcdir)/tests/media/audioboo.mk $(top_srcdir)/tests/media/bikeradar.mk $(top_srcdir)/tests/media/cbsnews.mk $(top_srcdir)/tests/media/clipfish.mk $(top_srcdir)/tests/media/dailymotion.mk $(top_srcdir)/tests/media/funnyordie.mk $(top_srcdir)/tests/media/gaskrank.mk $(top_srcdir)/tests/media/guardian.mk $(top_srcdir)/tests/media/ina.mk $(top_srcdir)/tests/media/lego.mk $(top_srcdir)/tests/media/liveleak.mk $(top_srcdir)/tests/media/majestyc.mk $(top_srcdir)/tests/media/metacafe.mk $(top_srcdir)/tests/media/myspass.mk $(top_srcdir)/tests/media/publicsenat.mk $(top_srcdir)/tests/media/sapo.mk $(top_srcdir)/tests/media/senat.mk $(top_srcdir)/tests/media/sevenload.mk $(top_srcdir)/tests/media/soundcloud.mk $(top_srcdir)/tests/media/spiegel.mk $(top_srcdir)/tests/media/tagtele.mk $(top_srcdir)/tests/media/tapuz.mk $(top_srcdir)/tests/media/ted.mk $(top_srcdir)/tests/media/theonion.mk $(top_srcdir)/tests/media/tvlux.mk $(top_srcdir)/tests/media/videa.mk $(top_srcdir)/tests/media/videobash.mk $(top_srcdir)/tests/media/vzaar.mk $(top_srcdir)/tests/media/youtube.mk $(top_srcdir)/tests/media/break.mk $(top_srcdir)/tests/media/charlierose.mk $(top_srcdir)/tests/media/vimeo.mk $(top_srcdir)/tests/scan/tests.mk $(top_srcdir)/tests/scan/vzaar.mk $(top_srcdir)/tests/scan/youtube.mk:
 
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
@@ -942,6 +1047,16 @@ media/media_liveleak-media_liveleak.$(OBJEXT): media/$(am__dirstamp) \
 media_liveleak$(EXEEXT): $(media_liveleak_OBJECTS) $(media_liveleak_DEPENDENCIES) $(EXTRA_media_liveleak_DEPENDENCIES) 
 	@rm -f media_liveleak$(EXEEXT)
 	$(AM_V_CCLD)$(media_liveleak_LINK) $(media_liveleak_OBJECTS) $(media_liveleak_LDADD) $(LIBS)
+media/media_majestyc-media_majestyc.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_majestyc$(EXEEXT): $(media_majestyc_OBJECTS) $(media_majestyc_DEPENDENCIES) $(EXTRA_media_majestyc_DEPENDENCIES) 
+	@rm -f media_majestyc$(EXEEXT)
+	$(AM_V_CCLD)$(media_majestyc_LINK) $(media_majestyc_OBJECTS) $(media_majestyc_LDADD) $(LIBS)
+media/media_metacafe-media_metacafe.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_metacafe$(EXEEXT): $(media_metacafe_OBJECTS) $(media_metacafe_DEPENDENCIES) $(EXTRA_media_metacafe_DEPENDENCIES) 
+	@rm -f media_metacafe$(EXEEXT)
+	$(AM_V_CCLD)$(media_metacafe_LINK) $(media_metacafe_OBJECTS) $(media_metacafe_LDADD) $(LIBS)
 media/media_myspass-media_myspass.$(OBJEXT): media/$(am__dirstamp) \
 	media/$(DEPDIR)/$(am__dirstamp)
 media_myspass$(EXEEXT): $(media_myspass_OBJECTS) $(media_myspass_DEPENDENCIES) $(EXTRA_media_myspass_DEPENDENCIES) 
@@ -977,6 +1092,16 @@ media/media_spiegel-media_spiegel.$(OBJEXT): media/$(am__dirstamp) \
 media_spiegel$(EXEEXT): $(media_spiegel_OBJECTS) $(media_spiegel_DEPENDENCIES) $(EXTRA_media_spiegel_DEPENDENCIES) 
 	@rm -f media_spiegel$(EXEEXT)
 	$(AM_V_CCLD)$(media_spiegel_LINK) $(media_spiegel_OBJECTS) $(media_spiegel_LDADD) $(LIBS)
+media/media_tagtele-media_tagtele.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_tagtele$(EXEEXT): $(media_tagtele_OBJECTS) $(media_tagtele_DEPENDENCIES) $(EXTRA_media_tagtele_DEPENDENCIES) 
+	@rm -f media_tagtele$(EXEEXT)
+	$(AM_V_CCLD)$(media_tagtele_LINK) $(media_tagtele_OBJECTS) $(media_tagtele_LDADD) $(LIBS)
+media/media_tapuz-media_tapuz.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_tapuz$(EXEEXT): $(media_tapuz_OBJECTS) $(media_tapuz_DEPENDENCIES) $(EXTRA_media_tapuz_DEPENDENCIES) 
+	@rm -f media_tapuz$(EXEEXT)
+	$(AM_V_CCLD)$(media_tapuz_LINK) $(media_tapuz_OBJECTS) $(media_tapuz_LDADD) $(LIBS)
 media/media_ted-media_ted.$(OBJEXT): media/$(am__dirstamp) \
 	media/$(DEPDIR)/$(am__dirstamp)
 media_ted$(EXEEXT): $(media_ted_OBJECTS) $(media_ted_DEPENDENCIES) $(EXTRA_media_ted_DEPENDENCIES) 
@@ -997,11 +1122,21 @@ media/media_videa-media_videa.$(OBJEXT): media/$(am__dirstamp) \
 media_videa$(EXEEXT): $(media_videa_OBJECTS) $(media_videa_DEPENDENCIES) $(EXTRA_media_videa_DEPENDENCIES) 
 	@rm -f media_videa$(EXEEXT)
 	$(AM_V_CCLD)$(media_videa_LINK) $(media_videa_OBJECTS) $(media_videa_LDADD) $(LIBS)
+media/media_videobash-media_videobash.$(OBJEXT):  \
+	media/$(am__dirstamp) media/$(DEPDIR)/$(am__dirstamp)
+media_videobash$(EXEEXT): $(media_videobash_OBJECTS) $(media_videobash_DEPENDENCIES) $(EXTRA_media_videobash_DEPENDENCIES) 
+	@rm -f media_videobash$(EXEEXT)
+	$(AM_V_CCLD)$(media_videobash_LINK) $(media_videobash_OBJECTS) $(media_videobash_LDADD) $(LIBS)
 media/media_vimeo-media_vimeo.$(OBJEXT): media/$(am__dirstamp) \
 	media/$(DEPDIR)/$(am__dirstamp)
 media_vimeo$(EXEEXT): $(media_vimeo_OBJECTS) $(media_vimeo_DEPENDENCIES) $(EXTRA_media_vimeo_DEPENDENCIES) 
 	@rm -f media_vimeo$(EXEEXT)
 	$(AM_V_CCLD)$(media_vimeo_LINK) $(media_vimeo_OBJECTS) $(media_vimeo_LDADD) $(LIBS)
+media/media_vzaar-media_vzaar.$(OBJEXT): media/$(am__dirstamp) \
+	media/$(DEPDIR)/$(am__dirstamp)
+media_vzaar$(EXEEXT): $(media_vzaar_OBJECTS) $(media_vzaar_DEPENDENCIES) $(EXTRA_media_vzaar_DEPENDENCIES) 
+	@rm -f media_vzaar$(EXEEXT)
+	$(AM_V_CCLD)$(media_vzaar_LINK) $(media_vzaar_OBJECTS) $(media_vzaar_LDADD) $(LIBS)
 media/media_youtube-media_youtube.$(OBJEXT): media/$(am__dirstamp) \
 	media/$(DEPDIR)/$(am__dirstamp)
 media_youtube$(EXEEXT): $(media_youtube_OBJECTS) $(media_youtube_DEPENDENCIES) $(EXTRA_media_youtube_DEPENDENCIES) 
@@ -1029,6 +1164,11 @@ scan/$(am__dirstamp):
 scan/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) scan/$(DEPDIR)
 	@: > scan/$(DEPDIR)/$(am__dirstamp)
+scan/scan_vzaar-scan_vzaar.$(OBJEXT): scan/$(am__dirstamp) \
+	scan/$(DEPDIR)/$(am__dirstamp)
+scan_vzaar$(EXEEXT): $(scan_vzaar_OBJECTS) $(scan_vzaar_DEPENDENCIES) $(EXTRA_scan_vzaar_DEPENDENCIES) 
+	@rm -f scan_vzaar$(EXEEXT)
+	$(AM_V_CCLD)$(scan_vzaar_LINK) $(scan_vzaar_OBJECTS) $(scan_vzaar_LDADD) $(LIBS)
 scan/scan_youtube-scan_youtube.$(OBJEXT): scan/$(am__dirstamp) \
 	scan/$(DEPDIR)/$(am__dirstamp)
 scan_youtube$(EXEEXT): $(scan_youtube_OBJECTS) $(scan_youtube_DEPENDENCIES) $(EXTRA_scan_youtube_DEPENDENCIES) 
@@ -1065,6 +1205,8 @@ mostlyclean-compile:
 	-rm -f media/media_ina-media_ina.$(OBJEXT)
 	-rm -f media/media_lego-media_lego.$(OBJEXT)
 	-rm -f media/media_liveleak-media_liveleak.$(OBJEXT)
+	-rm -f media/media_majestyc-media_majestyc.$(OBJEXT)
+	-rm -f media/media_metacafe-media_metacafe.$(OBJEXT)
 	-rm -f media/media_myspass-media_myspass.$(OBJEXT)
 	-rm -f media/media_publicsenat-media_publicsenat.$(OBJEXT)
 	-rm -f media/media_sapo-media_sapo.$(OBJEXT)
@@ -1072,14 +1214,19 @@ mostlyclean-compile:
 	-rm -f media/media_sevenload-media_sevenload.$(OBJEXT)
 	-rm -f media/media_soundcloud-media_soundcloud.$(OBJEXT)
 	-rm -f media/media_spiegel-media_spiegel.$(OBJEXT)
+	-rm -f media/media_tagtele-media_tagtele.$(OBJEXT)
+	-rm -f media/media_tapuz-media_tapuz.$(OBJEXT)
 	-rm -f media/media_ted-media_ted.$(OBJEXT)
 	-rm -f media/media_theonion-media_theonion.$(OBJEXT)
 	-rm -f media/media_tvlux-media_tvlux.$(OBJEXT)
 	-rm -f media/media_videa-media_videa.$(OBJEXT)
+	-rm -f media/media_videobash-media_videobash.$(OBJEXT)
 	-rm -f media/media_vimeo-media_vimeo.$(OBJEXT)
+	-rm -f media/media_vzaar-media_vzaar.$(OBJEXT)
 	-rm -f media/media_youtube-media_youtube.$(OBJEXT)
 	-rm -f playlist/playlist_soundcloud-playlist_soundcloud.$(OBJEXT)
 	-rm -f playlist/playlist_youtube-playlist_youtube.$(OBJEXT)
+	-rm -f scan/scan_vzaar-scan_vzaar.$(OBJEXT)
 	-rm -f scan/scan_youtube-scan_youtube.$(OBJEXT)
 	-rm -f subtitle/subtitle_youtube-subtitle_youtube.$(OBJEXT)
 
@@ -1103,6 +1250,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_ina-media_ina.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_lego-media_lego.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_liveleak-media_liveleak.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_majestyc-media_majestyc.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_metacafe-media_metacafe.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_myspass-media_myspass.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_publicsenat-media_publicsenat.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_sapo-media_sapo.Po@am__quote@
@@ -1110,14 +1259,19 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_sevenload-media_sevenload.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_soundcloud-media_soundcloud.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_spiegel-media_spiegel.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_tagtele-media_tagtele.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_tapuz-media_tapuz.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_ted-media_ted.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_theonion-media_theonion.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_tvlux-media_tvlux.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_videa-media_videa.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_videobash-media_videobash.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_vimeo-media_vimeo.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_vzaar-media_vzaar.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@media/$(DEPDIR)/media_youtube-media_youtube.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@playlist/$(DEPDIR)/playlist_soundcloud-playlist_soundcloud.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@playlist/$(DEPDIR)/playlist_youtube-playlist_youtube.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@scan/$(DEPDIR)/scan_vzaar-scan_vzaar.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@scan/$(DEPDIR)/scan_youtube-scan_youtube.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@subtitle/$(DEPDIR)/subtitle_youtube-subtitle_youtube.Po@am__quote@
 
@@ -1383,6 +1537,34 @@ media/media_liveleak-media_liveleak.obj: media/media_liveleak.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_liveleak_CPPFLAGS) $(CPPFLAGS) $(media_liveleak_CFLAGS) $(CFLAGS) -c -o media/media_liveleak-media_liveleak.obj `if test -f 'media/media_liveleak.c'; then $(CYGPATH_W) 'media/media_liveleak.c'; else $(CYGPATH_W) '$(srcdir)/media/media_liveleak.c'; fi`
 
+media/media_majestyc-media_majestyc.o: media/media_majestyc.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_majestyc_CPPFLAGS) $(CPPFLAGS) $(media_majestyc_CFLAGS) $(CFLAGS) -MT media/media_majestyc-media_majestyc.o -MD -MP -MF media/$(DEPDIR)/media_majestyc-media_majestyc.Tpo -c -o media/media_majestyc-media_majestyc.o `test -f 'media/media_majestyc.c' || echo '$(srcdir)/'`media/media_majestyc.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_majestyc-media_majestyc.Tpo media/$(DEPDIR)/media_majestyc-media_majestyc.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_majestyc.c' object='media/media_majestyc-media_majestyc.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_majestyc_CPPFLAGS) $(CPPFLAGS) $(media_majestyc_CFLAGS) $(CFLAGS) -c -o media/media_majestyc-media_majestyc.o `test -f 'media/media_majestyc.c' || echo '$(srcdir)/'`media/media_majestyc.c
+
+media/media_majestyc-media_majestyc.obj: media/media_majestyc.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_majestyc_CPPFLAGS) $(CPPFLAGS) $(media_majestyc_CFLAGS) $(CFLAGS) -MT media/media_majestyc-media_majestyc.obj -MD -MP -MF media/$(DEPDIR)/media_majestyc-media_majestyc.Tpo -c -o media/media_majestyc-media_majestyc.obj `if test -f 'media/media_majestyc.c'; then $(CYGPATH_W) 'media/media_majestyc.c'; else $(CYGPATH_W) '$(srcdir)/media/media_majestyc.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_majestyc-media_majestyc.Tpo media/$(DEPDIR)/media_majestyc-media_majestyc.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_majestyc.c' object='media/media_majestyc-media_majestyc.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_majestyc_CPPFLAGS) $(CPPFLAGS) $(media_majestyc_CFLAGS) $(CFLAGS) -c -o media/media_majestyc-media_majestyc.obj `if test -f 'media/media_majestyc.c'; then $(CYGPATH_W) 'media/media_majestyc.c'; else $(CYGPATH_W) '$(srcdir)/media/media_majestyc.c'; fi`
+
+media/media_metacafe-media_metacafe.o: media/media_metacafe.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_metacafe_CPPFLAGS) $(CPPFLAGS) $(media_metacafe_CFLAGS) $(CFLAGS) -MT media/media_metacafe-media_metacafe.o -MD -MP -MF media/$(DEPDIR)/media_metacafe-media_metacafe.Tpo -c -o media/media_metacafe-media_metacafe.o `test -f 'media/media_metacafe.c' || echo '$(srcdir)/'`media/media_metacafe.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_metacafe-media_metacafe.Tpo media/$(DEPDIR)/media_metacafe-media_metacafe.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_metacafe.c' object='media/media_metacafe-media_metacafe.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_metacafe_CPPFLAGS) $(CPPFLAGS) $(media_metacafe_CFLAGS) $(CFLAGS) -c -o media/media_metacafe-media_metacafe.o `test -f 'media/media_metacafe.c' || echo '$(srcdir)/'`media/media_metacafe.c
+
+media/media_metacafe-media_metacafe.obj: media/media_metacafe.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_metacafe_CPPFLAGS) $(CPPFLAGS) $(media_metacafe_CFLAGS) $(CFLAGS) -MT media/media_metacafe-media_metacafe.obj -MD -MP -MF media/$(DEPDIR)/media_metacafe-media_metacafe.Tpo -c -o media/media_metacafe-media_metacafe.obj `if test -f 'media/media_metacafe.c'; then $(CYGPATH_W) 'media/media_metacafe.c'; else $(CYGPATH_W) '$(srcdir)/media/media_metacafe.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_metacafe-media_metacafe.Tpo media/$(DEPDIR)/media_metacafe-media_metacafe.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_metacafe.c' object='media/media_metacafe-media_metacafe.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_metacafe_CPPFLAGS) $(CPPFLAGS) $(media_metacafe_CFLAGS) $(CFLAGS) -c -o media/media_metacafe-media_metacafe.obj `if test -f 'media/media_metacafe.c'; then $(CYGPATH_W) 'media/media_metacafe.c'; else $(CYGPATH_W) '$(srcdir)/media/media_metacafe.c'; fi`
+
 media/media_myspass-media_myspass.o: media/media_myspass.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_myspass_CPPFLAGS) $(CPPFLAGS) $(media_myspass_CFLAGS) $(CFLAGS) -MT media/media_myspass-media_myspass.o -MD -MP -MF media/$(DEPDIR)/media_myspass-media_myspass.Tpo -c -o media/media_myspass-media_myspass.o `test -f 'media/media_myspass.c' || echo '$(srcdir)/'`media/media_myspass.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_myspass-media_myspass.Tpo media/$(DEPDIR)/media_myspass-media_myspass.Po
@@ -1481,6 +1663,34 @@ media/media_spiegel-media_spiegel.obj: media/media_spiegel.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_spiegel_CPPFLAGS) $(CPPFLAGS) $(media_spiegel_CFLAGS) $(CFLAGS) -c -o media/media_spiegel-media_spiegel.obj `if test -f 'media/media_spiegel.c'; then $(CYGPATH_W) 'media/media_spiegel.c'; else $(CYGPATH_W) '$(srcdir)/media/media_spiegel.c'; fi`
 
+media/media_tagtele-media_tagtele.o: media/media_tagtele.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_tagtele_CPPFLAGS) $(CPPFLAGS) $(media_tagtele_CFLAGS) $(CFLAGS) -MT media/media_tagtele-media_tagtele.o -MD -MP -MF media/$(DEPDIR)/media_tagtele-media_tagtele.Tpo -c -o media/media_tagtele-media_tagtele.o `test -f 'media/media_tagtele.c' || echo '$(srcdir)/'`media/media_tagtele.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_tagtele-media_tagtele.Tpo media/$(DEPDIR)/media_tagtele-media_tagtele.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_tagtele.c' object='media/media_tagtele-media_tagtele.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_tagtele_CPPFLAGS) $(CPPFLAGS) $(media_tagtele_CFLAGS) $(CFLAGS) -c -o media/media_tagtele-media_tagtele.o `test -f 'media/media_tagtele.c' || echo '$(srcdir)/'`media/media_tagtele.c
+
+media/media_tagtele-media_tagtele.obj: media/media_tagtele.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_tagtele_CPPFLAGS) $(CPPFLAGS) $(media_tagtele_CFLAGS) $(CFLAGS) -MT media/media_tagtele-media_tagtele.obj -MD -MP -MF media/$(DEPDIR)/media_tagtele-media_tagtele.Tpo -c -o media/media_tagtele-media_tagtele.obj `if test -f 'media/media_tagtele.c'; then $(CYGPATH_W) 'media/media_tagtele.c'; else $(CYGPATH_W) '$(srcdir)/media/media_tagtele.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_tagtele-media_tagtele.Tpo media/$(DEPDIR)/media_tagtele-media_tagtele.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_tagtele.c' object='media/media_tagtele-media_tagtele.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_tagtele_CPPFLAGS) $(CPPFLAGS) $(media_tagtele_CFLAGS) $(CFLAGS) -c -o media/media_tagtele-media_tagtele.obj `if test -f 'media/media_tagtele.c'; then $(CYGPATH_W) 'media/media_tagtele.c'; else $(CYGPATH_W) '$(srcdir)/media/media_tagtele.c'; fi`
+
+media/media_tapuz-media_tapuz.o: media/media_tapuz.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_tapuz_CPPFLAGS) $(CPPFLAGS) $(media_tapuz_CFLAGS) $(CFLAGS) -MT media/media_tapuz-media_tapuz.o -MD -MP -MF media/$(DEPDIR)/media_tapuz-media_tapuz.Tpo -c -o media/media_tapuz-media_tapuz.o `test -f 'media/media_tapuz.c' || echo '$(srcdir)/'`media/media_tapuz.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_tapuz-media_tapuz.Tpo media/$(DEPDIR)/media_tapuz-media_tapuz.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_tapuz.c' object='media/media_tapuz-media_tapuz.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_tapuz_CPPFLAGS) $(CPPFLAGS) $(media_tapuz_CFLAGS) $(CFLAGS) -c -o media/media_tapuz-media_tapuz.o `test -f 'media/media_tapuz.c' || echo '$(srcdir)/'`media/media_tapuz.c
+
+media/media_tapuz-media_tapuz.obj: media/media_tapuz.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_tapuz_CPPFLAGS) $(CPPFLAGS) $(media_tapuz_CFLAGS) $(CFLAGS) -MT media/media_tapuz-media_tapuz.obj -MD -MP -MF media/$(DEPDIR)/media_tapuz-media_tapuz.Tpo -c -o media/media_tapuz-media_tapuz.obj `if test -f 'media/media_tapuz.c'; then $(CYGPATH_W) 'media/media_tapuz.c'; else $(CYGPATH_W) '$(srcdir)/media/media_tapuz.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_tapuz-media_tapuz.Tpo media/$(DEPDIR)/media_tapuz-media_tapuz.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_tapuz.c' object='media/media_tapuz-media_tapuz.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_tapuz_CPPFLAGS) $(CPPFLAGS) $(media_tapuz_CFLAGS) $(CFLAGS) -c -o media/media_tapuz-media_tapuz.obj `if test -f 'media/media_tapuz.c'; then $(CYGPATH_W) 'media/media_tapuz.c'; else $(CYGPATH_W) '$(srcdir)/media/media_tapuz.c'; fi`
+
 media/media_ted-media_ted.o: media/media_ted.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_ted_CPPFLAGS) $(CPPFLAGS) $(media_ted_CFLAGS) $(CFLAGS) -MT media/media_ted-media_ted.o -MD -MP -MF media/$(DEPDIR)/media_ted-media_ted.Tpo -c -o media/media_ted-media_ted.o `test -f 'media/media_ted.c' || echo '$(srcdir)/'`media/media_ted.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_ted-media_ted.Tpo media/$(DEPDIR)/media_ted-media_ted.Po
@@ -1537,6 +1747,20 @@ media/media_videa-media_videa.obj: media/media_videa.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_videa_CPPFLAGS) $(CPPFLAGS) $(media_videa_CFLAGS) $(CFLAGS) -c -o media/media_videa-media_videa.obj `if test -f 'media/media_videa.c'; then $(CYGPATH_W) 'media/media_videa.c'; else $(CYGPATH_W) '$(srcdir)/media/media_videa.c'; fi`
 
+media/media_videobash-media_videobash.o: media/media_videobash.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_videobash_CPPFLAGS) $(CPPFLAGS) $(media_videobash_CFLAGS) $(CFLAGS) -MT media/media_videobash-media_videobash.o -MD -MP -MF media/$(DEPDIR)/media_videobash-media_videobash.Tpo -c -o media/media_videobash-media_videobash.o `test -f 'media/media_videobash.c' || echo '$(srcdir)/'`media/media_videobash.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_videobash-media_videobash.Tpo media/$(DEPDIR)/media_videobash-media_videobash.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_videobash.c' object='media/media_videobash-media_videobash.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_videobash_CPPFLAGS) $(CPPFLAGS) $(media_videobash_CFLAGS) $(CFLAGS) -c -o media/media_videobash-media_videobash.o `test -f 'media/media_videobash.c' || echo '$(srcdir)/'`media/media_videobash.c
+
+media/media_videobash-media_videobash.obj: media/media_videobash.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_videobash_CPPFLAGS) $(CPPFLAGS) $(media_videobash_CFLAGS) $(CFLAGS) -MT media/media_videobash-media_videobash.obj -MD -MP -MF media/$(DEPDIR)/media_videobash-media_videobash.Tpo -c -o media/media_videobash-media_videobash.obj `if test -f 'media/media_videobash.c'; then $(CYGPATH_W) 'media/media_videobash.c'; else $(CYGPATH_W) '$(srcdir)/media/media_videobash.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_videobash-media_videobash.Tpo media/$(DEPDIR)/media_videobash-media_videobash.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_videobash.c' object='media/media_videobash-media_videobash.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_videobash_CPPFLAGS) $(CPPFLAGS) $(media_videobash_CFLAGS) $(CFLAGS) -c -o media/media_videobash-media_videobash.obj `if test -f 'media/media_videobash.c'; then $(CYGPATH_W) 'media/media_videobash.c'; else $(CYGPATH_W) '$(srcdir)/media/media_videobash.c'; fi`
+
 media/media_vimeo-media_vimeo.o: media/media_vimeo.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_vimeo_CPPFLAGS) $(CPPFLAGS) $(media_vimeo_CFLAGS) $(CFLAGS) -MT media/media_vimeo-media_vimeo.o -MD -MP -MF media/$(DEPDIR)/media_vimeo-media_vimeo.Tpo -c -o media/media_vimeo-media_vimeo.o `test -f 'media/media_vimeo.c' || echo '$(srcdir)/'`media/media_vimeo.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_vimeo-media_vimeo.Tpo media/$(DEPDIR)/media_vimeo-media_vimeo.Po
@@ -1550,6 +1774,20 @@ media/media_vimeo-media_vimeo.obj: media/media_vimeo.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_vimeo.c' object='media/media_vimeo-media_vimeo.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_vimeo_CPPFLAGS) $(CPPFLAGS) $(media_vimeo_CFLAGS) $(CFLAGS) -c -o media/media_vimeo-media_vimeo.obj `if test -f 'media/media_vimeo.c'; then $(CYGPATH_W) 'media/media_vimeo.c'; else $(CYGPATH_W) '$(srcdir)/media/media_vimeo.c'; fi`
+
+media/media_vzaar-media_vzaar.o: media/media_vzaar.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_vzaar_CPPFLAGS) $(CPPFLAGS) $(media_vzaar_CFLAGS) $(CFLAGS) -MT media/media_vzaar-media_vzaar.o -MD -MP -MF media/$(DEPDIR)/media_vzaar-media_vzaar.Tpo -c -o media/media_vzaar-media_vzaar.o `test -f 'media/media_vzaar.c' || echo '$(srcdir)/'`media/media_vzaar.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_vzaar-media_vzaar.Tpo media/$(DEPDIR)/media_vzaar-media_vzaar.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_vzaar.c' object='media/media_vzaar-media_vzaar.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_vzaar_CPPFLAGS) $(CPPFLAGS) $(media_vzaar_CFLAGS) $(CFLAGS) -c -o media/media_vzaar-media_vzaar.o `test -f 'media/media_vzaar.c' || echo '$(srcdir)/'`media/media_vzaar.c
+
+media/media_vzaar-media_vzaar.obj: media/media_vzaar.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_vzaar_CPPFLAGS) $(CPPFLAGS) $(media_vzaar_CFLAGS) $(CFLAGS) -MT media/media_vzaar-media_vzaar.obj -MD -MP -MF media/$(DEPDIR)/media_vzaar-media_vzaar.Tpo -c -o media/media_vzaar-media_vzaar.obj `if test -f 'media/media_vzaar.c'; then $(CYGPATH_W) 'media/media_vzaar.c'; else $(CYGPATH_W) '$(srcdir)/media/media_vzaar.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) media/$(DEPDIR)/media_vzaar-media_vzaar.Tpo media/$(DEPDIR)/media_vzaar-media_vzaar.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='media/media_vzaar.c' object='media/media_vzaar-media_vzaar.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_vzaar_CPPFLAGS) $(CPPFLAGS) $(media_vzaar_CFLAGS) $(CFLAGS) -c -o media/media_vzaar-media_vzaar.obj `if test -f 'media/media_vzaar.c'; then $(CYGPATH_W) 'media/media_vzaar.c'; else $(CYGPATH_W) '$(srcdir)/media/media_vzaar.c'; fi`
 
 media/media_youtube-media_youtube.o: media/media_youtube.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(media_youtube_CPPFLAGS) $(CPPFLAGS) $(media_youtube_CFLAGS) $(CFLAGS) -MT media/media_youtube-media_youtube.o -MD -MP -MF media/$(DEPDIR)/media_youtube-media_youtube.Tpo -c -o media/media_youtube-media_youtube.o `test -f 'media/media_youtube.c' || echo '$(srcdir)/'`media/media_youtube.c
@@ -1592,6 +1830,20 @@ playlist/playlist_youtube-playlist_youtube.obj: playlist/playlist_youtube.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='playlist/playlist_youtube.c' object='playlist/playlist_youtube-playlist_youtube.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(playlist_youtube_CPPFLAGS) $(CPPFLAGS) $(playlist_youtube_CFLAGS) $(CFLAGS) -c -o playlist/playlist_youtube-playlist_youtube.obj `if test -f 'playlist/playlist_youtube.c'; then $(CYGPATH_W) 'playlist/playlist_youtube.c'; else $(CYGPATH_W) '$(srcdir)/playlist/playlist_youtube.c'; fi`
+
+scan/scan_vzaar-scan_vzaar.o: scan/scan_vzaar.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(scan_vzaar_CPPFLAGS) $(CPPFLAGS) $(scan_vzaar_CFLAGS) $(CFLAGS) -MT scan/scan_vzaar-scan_vzaar.o -MD -MP -MF scan/$(DEPDIR)/scan_vzaar-scan_vzaar.Tpo -c -o scan/scan_vzaar-scan_vzaar.o `test -f 'scan/scan_vzaar.c' || echo '$(srcdir)/'`scan/scan_vzaar.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) scan/$(DEPDIR)/scan_vzaar-scan_vzaar.Tpo scan/$(DEPDIR)/scan_vzaar-scan_vzaar.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='scan/scan_vzaar.c' object='scan/scan_vzaar-scan_vzaar.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(scan_vzaar_CPPFLAGS) $(CPPFLAGS) $(scan_vzaar_CFLAGS) $(CFLAGS) -c -o scan/scan_vzaar-scan_vzaar.o `test -f 'scan/scan_vzaar.c' || echo '$(srcdir)/'`scan/scan_vzaar.c
+
+scan/scan_vzaar-scan_vzaar.obj: scan/scan_vzaar.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(scan_vzaar_CPPFLAGS) $(CPPFLAGS) $(scan_vzaar_CFLAGS) $(CFLAGS) -MT scan/scan_vzaar-scan_vzaar.obj -MD -MP -MF scan/$(DEPDIR)/scan_vzaar-scan_vzaar.Tpo -c -o scan/scan_vzaar-scan_vzaar.obj `if test -f 'scan/scan_vzaar.c'; then $(CYGPATH_W) 'scan/scan_vzaar.c'; else $(CYGPATH_W) '$(srcdir)/scan/scan_vzaar.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) scan/$(DEPDIR)/scan_vzaar-scan_vzaar.Tpo scan/$(DEPDIR)/scan_vzaar-scan_vzaar.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='scan/scan_vzaar.c' object='scan/scan_vzaar-scan_vzaar.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(scan_vzaar_CPPFLAGS) $(CPPFLAGS) $(scan_vzaar_CFLAGS) $(CFLAGS) -c -o scan/scan_vzaar-scan_vzaar.obj `if test -f 'scan/scan_vzaar.c'; then $(CYGPATH_W) 'scan/scan_vzaar.c'; else $(CYGPATH_W) '$(srcdir)/scan/scan_vzaar.c'; fi`
 
 scan/scan_youtube-scan_youtube.o: scan/scan_youtube.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(scan_youtube_CPPFLAGS) $(CPPFLAGS) $(scan_youtube_CFLAGS) $(CFLAGS) -MT scan/scan_youtube-scan_youtube.o -MD -MP -MF scan/$(DEPDIR)/scan_youtube-scan_youtube.Tpo -c -o scan/scan_youtube-scan_youtube.o `test -f 'scan/scan_youtube.c' || echo '$(srcdir)/'`scan/scan_youtube.c

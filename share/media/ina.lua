@@ -1,4 +1,4 @@
--- libquvi-scripts v0.9.20131012
+-- libquvi-scripts v0.9.20131104
 -- Copyright (C) 2013  Mohamed El Morabity <melmorabity@fedoraproject.org>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
