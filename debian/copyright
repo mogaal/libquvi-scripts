@@ -21,7 +21,14 @@ Copyright:
  2013,      Thomas Weißschuh <thomas@t-8ch.de>
 License: AGPL-3+
 
-Files: share/media/arte.lua share/media/publicsenat.lua share/media/senat.lua
+Files: share/media/arte.lua
+Copyright:
+ 2013,      Mohamed El Morabity <melmorabity@fedoraproject.org>
+ 2012-2013, Toni Gundogdu <legatvs@gmail.com>
+ 2010-2012, Raphaël Droz <raphael.droz+floss@gmail.com>
+License: AGPL-3+
+
+Files: share/media/publicsenat.lua share/media/senat.lua
 Copyright:
  2012-2013, Toni Gundogdu <legatvs@gmail.com>
  2010-2012, Raphaël Droz <raphael.droz+floss@gmail.com>
@@ -44,10 +51,34 @@ Copyright:
  2012,      Guido Leisker <guido@guido-leisker.de>
 License: AGPL-3+
 
+Files: share/media/metacafe.lua
+Copyright:
+ 2013,      Toni Gundogdu <legatvs@gmail.com>
+ 2011,      Lionel Elie Mamane <lionel@mamane.lu>
+License: AGPL-3+
+
 Files: share/media/soundcloud.lua share/media/ted.lua share/media/videa.lua
 Copyright:
  2012-2013, Toni Gundogdu <legatvs@gmail.com>
  2011,      Bastien Nocera <hadess@hadess.net>
+License: AGPL-3+
+
+Files: share/media/tagtele.lua
+Copyright:
+ 2012-2013, Toni Gundogdu <legatvs@gmail.com>
+ 2010,      Paul Kocialkowski <contact@paulk.fr>
+License: AGPL-3+
+
+Files: share/media/tapuz.lua
+Copyright:
+ 2013,      Toni Gundogdu <legatvs@gmail.com>
+ 2012,      Tzafrir Cohen <tzafrir@cohens.org.il>
+License: AGPL-3+
+
+Files: share/media/videobash.lua
+Copyright:
+ 2012,      Toni Gundogdu <legatvs@gmail.com>
+ 2011,      Thomas Preud'homme <robotux@celest.fr>
 License: AGPL-3+
 
 Files: debian/*
