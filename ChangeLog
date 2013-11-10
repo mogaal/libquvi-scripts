@@ -1,3 +1,166 @@
+commit 1724343
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    Bump version to 0.4.20
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+m4/version.m4
+
+commit bd9cf10
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    Update NEWS for v0.4.20
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+NEWS
+
+commit a823ef0
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    website/arte.lua: Mark as FIXME
+    
+    This has been addressed in the 0.9 series and awaits to be backported.
+    
+    See also:
+      * http://thread.gmane.org/gmane.comp.web.flash.quvi/356
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+tests/t/expire.t
+
+commit a2bf70a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    tests: default: tcmag.json: Update with thumbnail URL
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/nsfw/tcmag.json
+
+commit e90c00d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    FIX: website/tcmag.lua: Media stream URL pattern
+    
+    Other notable changes:
+    * Try to determine self-hosted/affiliate content from the stream URL
+    * Parse thumbnail URL
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/tcmag.lua
+
+commit ed756ef
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    FIX: website/redtube.lua: media stream URL pattern
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/redtube.lua
+
+commit a2279ff
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    website/vimeo.lua: Mark as FIXME
+    
+    Notes:
+    * http://thread.gmane.org/gmane.comp.web.flash.quvi/358
+    * Affects: {0.4, 0.9}
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+tests/data/format/default/fixme/vimeo.json
+tests/data/format/default/vimeo.json
+tests/t/redirect.t
+
+commit 7adda0d
+Merge: 99a4fc6 c41cb3f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-03
+
+    Merge branch 'tg/maint-0.4__add_website/dorkly.lua' into maint-0.4
+
+commit 99a4fc6
+Merge: 092c59b e412bee
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-03
+
+    Merge branch 'tg/maint-0.4__fix_website/collegehumor.lua' into maint-0.4
+
+commit c41cb3f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-03
+
+    tests: resolve.t: Re-enable test for website/dorkly.lua
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/resolve/redirect_url_dorkly.json
+tests/t/redirect.t
+
+commit 003ffe4
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-03
+
+    tests: Add default/dorkly.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/dorkly.json
+
+commit 6528f5d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-03
+
+    Add website/dorkly.lua for dorkly.com
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/dorkly.lua
+
+commit e412bee
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-03
+
+    tests: default/collegehumor: Reinstate and update
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/collegehumor.json
+tests/data/format/default/fixme/collegehumor.json
+
+commit 168d954
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-03
+
+    FIX: website/collegehumor.lua
+    
+    Notable changes:
+    * Remove support for dorkly.com which appears to use now different system
+    * Try to determine embedded (affiliate) content from the page HTML
+    * Parse media properties from the media/video page HTML
+    * Have query_formats return "default" only
+    * Update U.handles patterns
+    * Parse duration property
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/collegehumor.lua
+
 commit 092c59b
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2013-10-04
