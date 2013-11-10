@@ -1,3 +1,599 @@
+commit dcebfb6
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    Update NEWS for v0.9.20131104
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+NEWS
+
+commit c5e7cc8
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    media/vimeo.lua: Mark as FIXME
+    
+    Notes:
+    * http://thread.gmane.org/gmane.comp.web.flash.quvi/358
+    * Affects: {0.4, 0.9}
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+tests/media/tests.mk
+
+commit 81f000a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-29
+
+    tests: media_liveleak: Replace URL for embedded youtube content
+    
+    The previously used video was removed from the liveleak website.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/media/media_liveleak.c
+
+commit ab8c084
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-29
+
+    media/lego.lua: Update ID pattern
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/lego.lua
+
+commit 269a541
+Merge: e29211f 92702c1
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-24
+
+    Merge branch 'tg/next__media_port_videobash.lua' into next
+
+commit e29211f
+Merge: efbc2d4 d017782
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-24
+
+    Merge branch 'tg/next__media_port_tagtele.lua' into next
+
+commit efbc2d4
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-24
+
+    FIX: media/vimeo.lua: Vimeo.normalize: Escape pattern
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/vimeo.lua
+
+commit 92702c1
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-23
+
+    tests: Add a test for media/videobash.lua
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/media/media_videobash.c
+tests/media/tests.mk
+tests/media/videobash.mk
+
+commit d017782
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-23
+
+    tests: Add a test for media/tagtele.lua
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/media/media_tagtele.c
+tests/media/tagtele.mk
+tests/media/tests.mk
+
+commit cc40857
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-23
+
+    media/tagtele.lua: Rewrite parse function
+    
+    Rewrite the `parse' function for the libquvi 0.9+ series.
+    * Remove now obsolete code (e.g. self.host_id)
+    * Use LuaJSON to parse the media stream URL
+    * Parse all available media streams
+    * Apply 2-space indentation
+    * Update vim modeline
+    
+    Notable changes:
+    * Skip: playlist fetch: the page HTML contains the stream URL data
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/tagtele.lua
+
+commit 6e73a9a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-23
+
+    media/tagtele.lua: Remove query_formats function
+    
+    Remove the now obsolete `query_formats' function which is no longer
+    supported by libquvi 0.9+.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/tagtele.lua
+
+commit 60da497
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-23
+
+    media/tagtele.lua: Rewrite ident function
+    
+    Rewrite the `ident' function for the libquvi 0.9+ series.
+    * Implement `Tagtele.can_parse_url' function
+    * Remove any now obsolete code
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/tagtele.lua
+
+commit af8dcb3
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-23
+
+    media/tagtele.lua: Relicense under AGPLv3+
+    
+    See also:
+    * http://article.gmane.org/gmane.comp.web.flash.quvi/340
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/tagtele.lua
+
+commit b712d04
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-23
+
+    media/videobash.lua: Rewrite parse function
+    
+    Rewrite the `parse' function for the libquvi 0.9+ series.
+    * Remove now obsolete code (e.g. self.host_id)
+    * Apply 2-space indentation
+    * Update vim modeline
+    * Parse `duration_ms'
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/videobash.lua
+
+commit b1b1d5f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-23
+
+    media/videobash.lua: Remove query_formats function
+    
+    Remove the now obsolete `query_formats' function which is no longer
+    supported by libquvi 0.9+.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/videobash.lua
+
+commit fa6ef82
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-23
+
+    media/videobash.lua: Rewrite ident function
+    
+    Rewrite the `ident' function for the libquvi 0.9+ series.
+    * Implement `Videobash.can_parse_url' function
+    * Remove any now obsolete code
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/videobash.lua
+
+commit 5a1a49b
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-23
+
+    media/videobash.lua: Relicense under AGPLv3+
+    
+    See also:
+    * http://article.gmane.org/gmane.comp.web.flash.quvi/336
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/videobash.lua
+
+commit 6adcc15
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-23
+
+    Move website/videobash.lua to media/
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/videobash.lua
+share/media/videobash.lua
+
+commit 118a92e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-23
+
+    Move website/tagtele.lua to media/
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/tagtele.lua
+share/media/tagtele.lua
+
+commit a8b20df
+Merge: a8958f6 52a702f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-20
+
+    Merge branch 'tg/next__media_port_metacafe.lua' into next
+
+commit 52a702f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-20
+
+    tests: Add test for media/metacafe.lua
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/media/media_metacafe.c
+tests/media/metacafe.mk
+tests/media/tests.mk
+
+commit b13ee5f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-20
+
+    media/metacafe.lua: Rewrite parse function
+    
+    Rewrite the `parse' function for the libquvi 0.9+ series.
+    * Rewrite `Metacafe.redirectp' as `Metacafe.is_affiliate'
+    * Remove now obsolete code (e.g. self.host_id)
+    * Use LuaJSON to parse the media stream URL
+    * Parse all available media streams
+    * Apply 2-space indentation
+    * Parse duration (ms)
+    * Update vim modeline
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/metacafe.lua
+
+commit e0731b8
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-20
+
+    media/metacafe.lua: Remove query_formats function
+    
+    Remove the now obsolete `query_formats' function which is no longer
+    supported by libquvi 0.9+.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/metacafe.lua
+
+commit 3231cbf
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-20
+
+    media/metacafe.lua: Rewrite ident function
+    
+    Rewrite the `ident' function for the libquvi 0.9+ series.
+    * Implement `Metacafe.can_parse_url' function
+    * Remove any now obsolete code
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/metacafe.lua
+
+commit 0593317
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-20
+
+    media/metacafe.lua: Relicense under AGPLv3+
+    
+    See also:
+    * http://article.gmane.org/gmane.comp.web.flash.quvi/334
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/metacafe.lua
+
+commit 47d3d3d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-20
+
+    Move website/metacafe.lua to media/
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/metacafe.lua
+share/media/metacafe.lua
+
+commit a8958f6
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-20
+
+    media/arte.lua: Arte.to_id: Return ID in lowercase
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/arte.lua
+
+commit cf65853
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-20
+
+    media/arte.lua: Use the 'a?b:c' -idiom
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/arte.lua
+
+commit 485ce77
+Author: Mohamed El Morabity <melmorabity@fedoraproject.org>
+Date:   2013-10-20
+
+    Fix support for arte.tv
+    
+    * Videos are now hosted on arte.tv/guide; for new videos, there's a
+      redirection from videos.arte.tv to arte.tv/guide
+    
+    * For a given video, all stream datas are now provided by a JSON file
+      instead of a XML file as before
+    
+    * In this JSON data file, an ID (versionProg) describes the language of
+      each available stream:
+    
+        versionProg == 1 -> default language version, matching the video URL
+                            language
+    
+        versionProg == 2 -> alternate language version
+    
+        versionProg == 3 -> original version with default language subtitles
+    
+        versionProg == 8 -> default language version with subtitle for
+                            hard-of-hearing
+    
+    * I took the liberty of adding the stream protocol to the generated
+      stream ID, to distinguish same-quality videos (some videos are
+      available through HTTP, in addition of RTMP, for some MD/LD videos,
+      probably for mobile phones
+    
+    * The tests were updated to reflect these changes
+    
+    Signed-off-by: Mohamed El Morabity <melmorabity@fedoraproject.org>
+    Reviewed-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/arte.lua
+tests/media/media_arte.c
+
+commit 1cc2080
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-16
+
+    cleanup: table.concat: Do not call with an empty sep value
+    
+    As this is not required, nor a required arg.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/common/quvi/hex.lua
+share/media/ardmediathek.lua
+share/media/clipfish.lua
+share/media/lego.lua
+share/media/myspass.lua
+share/media/sapo.lua
+share/media/spiegel.lua
+share/media/tvlux.lua
+share/media/videa.lua
+share/media/youtube.lua
+share/playlist/youtube.lua
+share/scan/youtube.lua
+share/subtitle/export/subrip.lua
+share/subtitle/youtube.lua
+share/util/resolve_redirections.lua
+
+commit 7e09489
+Merge: 19e0093 b5f92db
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-15
+
+    Merge branch 'tg/next__add_support__media/majestyc.lua' into next
+
+commit 19e0093
+Merge: 182bfa8 d79f9a2
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-15
+
+    Merge branch 'tg/next__add_support__{media/scan}/vzaar.lua' into next
+
+commit 182bfa8
+Merge: bf18023 32a5bb9
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-15
+
+    Merge branch 'tg/next__media_port_tapuz.lua' into next
+
+commit d79f9a2
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-15
+
+    tests: Add a test for scan/vzaar.lua
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/scan/scan_vzaar.c
+tests/scan/tests.mk
+tests/scan/vzaar.mk
+
+commit 2d8bfc3
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-15
+
+    scan: Add support for embedded vzaar.com media URLs
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/scan/vzaar.lua
+
+commit e160ebe
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-15
+
+    tests: Add a test for media/vzaar.lua
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/media/media_vzaar.c
+tests/media/tests.mk
+tests/media/vzaar.mk
+
+commit 343db67
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-15
+
+    media: Add support for vzaar.com
+    
+    See also:
+    * https://www.mail-archive.com/quvi-devel@lists.sourceforge.net/msg00346.html
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/media/vzaar.lua
+
+commit b5f92db
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-14
+
+    tests: Add a test for media/majestyc.lua
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/media/majestyc.mk
+tests/media/media_majestyc.c
+tests/media/tests.mk
+
+commit 47a1639
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-14
+
+    media: Add support for tube.majestyc.net
+    
+    See also:
+    * https://www.mail-archive.com/quvi-devel@lists.sourceforge.net/msg00347.html
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/media/majestyc.lua
+
+commit 32a5bb9
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-14
+
+    tests: Add a test for media/tapuz.lua
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/media/media_tapuz.c
+tests/media/tapuz.mk
+tests/media/tests.mk
+
+commit 5f5bb57
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-14
+
+    media/tapuz.lua: Rewrite parse function
+    
+    Rewrite the `parse' function for the libquvi 0.9+ series.
+    * Use LuaExpat to parse the media {title,stream,thumb} properties
+    * Remove now obsolete code (e.g. self.host_id)
+    * Apply 2-space indentation
+    * Update vim modeline
+    * Parse duration (ms)
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/tapuz.lua
+
+commit 2f9cb5f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-14
+
+    media/tapuz.lua: Remove query_formats function
+    
+    Remove the now obsolete `query_formats' function which is no longer
+    supported by libquvi 0.9+.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/tapuz.lua
+
+commit b44e053
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-14
+
+    media/tapuz.lua: Rewrite ident function
+    
+    Rewrite the `ident' function for the libquvi 0.9+ series.
+    * Implement `Tapuz.can_parse_url' function
+    * Remove any now obsolete code
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/tapuz.lua
+
+commit 22c0ba7
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-14
+
+    media/tapuz.lua: Relicense under AGPLv3+
+    
+    See also:
+    * http://article.gmane.org/gmane.comp.web.flash.quvi/335
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/tapuz.lua
+
+commit f80a844
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-14
+
+    Move website/tapuz.lua to media/
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/tapuz.lua
+share/media/tapuz.lua
+
+commit bf18023
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-10-14
+
+    media/liveleak.lua: Ignore fac3book iframe src values
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/liveleak.lua
+
 commit 95bfe8e
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2013-10-12

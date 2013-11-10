@@ -1,4 +1,4 @@
--- libquvi-scripts v0.9.20131012
+-- libquvi-scripts v0.9.20131104
 -- Copyright (C) 2010-2013  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -41,7 +41,7 @@ function parse(qargs)
   qargs.duration_ms = T.timecode_str_to_s(d) * 1000
 
   local t = {'http://videos.sapo.pt/oembed?url=', qargs.input_url}
-  local d = quvi.http.fetch(table.concat(t,'')).data
+  local d = quvi.http.fetch(table.concat(t)).data
 
   local J = require 'json'
   local j = J.decode(d)

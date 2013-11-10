@@ -1,4 +1,4 @@
--- libquvi-scripts v0.9.20131012
+-- libquvi-scripts v0.9.20131104
 -- Copyright (C) 2012,2013  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -32,10 +32,10 @@ function parse(qargs)
 
   for _,h in pairs(hosts) do
     for _,p in pairs(paths) do
-      local r = table.concat({h,p}, '')
+      local r = table.concat({h,p})
       for v in qargs.content:gmatch(r) do
         if #v ==11 then
-          local u = table.concat({scheme, '://youtube.com/watch?v=', v}, '')
+          local u = table.concat({scheme, '://youtube.com/watch?v=', v})
           Y.append_if_unique(qargs, u)
         end
       end

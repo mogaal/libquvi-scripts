@@ -1,4 +1,4 @@
--- libquvi-scripts v0.9.20131012
+-- libquvi-scripts v0.9.20131104
 -- Copyright (C) 2010-2013  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -40,7 +40,7 @@ function parse(qargs)
 
   if not d then  -- Try the first iframe
     qargs.goto_url = p:match('<iframe.-src="(.-)"') or ''
-    if #qargs.goto_url >0 then
+    if #qargs.goto_url >0 and not qargs.goto_url:match('facebook') then
       return qargs
     else
       error('no match: setup')

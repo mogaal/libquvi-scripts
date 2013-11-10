@@ -1,4 +1,4 @@
--- libquvi-scripts v0.9.20131012
+-- libquvi-scripts v0.9.20131104
 -- Copyright (C) 2012-2013  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -89,7 +89,7 @@ function YouTube.config_url(qargs, U, start_index, max_results)
     qargs.id, '?v=2', '&start-index=', start_index,
     '&max-results=', max_results, '&strict=true'
   }
-  return table.concat(t,'')
+  return table.concat(t)
 end
 
 function YouTube.entry_avail(x)

@@ -58,7 +58,8 @@ host_triplet = @host@
 
 @WITH_FIXME_TRUE@am__append_2 = \
 @WITH_FIXME_TRUE@  media/break.lua\
-@WITH_FIXME_TRUE@  media/charlierose.lua
+@WITH_FIXME_TRUE@  media/charlierose.lua\
+@WITH_FIXME_TRUE@  media/vimeo.lua
 
 subdir = share
 DIST_COMMON = README $(am__dist_media_DATA_DIST) $(dist_common_DATA) \
@@ -127,12 +128,14 @@ am__dist_media_DATA_DIST = media/101greatgoals.lua media/1tvru.lua \
 	media/cbsnews.lua media/clipfish.lua media/dailymotion.lua \
 	media/funnyordie.lua media/ina.lua media/gaskrank.lua \
 	media/guardian.lua media/lego.lua media/liveleak.lua \
-	media/myspass.lua media/publicsenat.lua media/sapo.lua \
-	media/senat.lua media/sevenload.lua media/soundcloud.lua \
-	media/spiegel.lua media/ted.lua media/theonion.lua \
-	media/tvlux.lua media/videa.lua media/vimeo.lua \
-	media/youtube.lua media/arte.lua media/break.lua \
-	media/charlierose.lua
+	media/majestyc.lua media/metacafe.lua media/myspass.lua \
+	media/publicsenat.lua media/sapo.lua media/senat.lua \
+	media/sevenload.lua media/soundcloud.lua media/spiegel.lua \
+	media/tagtele.lua media/tapuz.lua media/ted.lua \
+	media/theonion.lua media/tvlux.lua media/videa.lua \
+	media/videobash.lua media/vzaar.lua media/youtube.lua \
+	media/arte.lua media/break.lua media/charlierose.lua \
+	media/vimeo.lua
 DATA = $(dist_common_DATA) $(dist_common_http_DATA) $(dist_media_DATA) \
 	$(dist_playlist_DATA) $(dist_root_DATA) $(dist_scan_DATA) \
 	$(dist_subtitle_DATA) $(dist_subtitleexport_DATA) \
@@ -305,11 +308,13 @@ dist_media_DATA = media/101greatgoals.lua media/1tvru.lua \
 	media/cbsnews.lua media/clipfish.lua media/dailymotion.lua \
 	media/funnyordie.lua media/ina.lua media/gaskrank.lua \
 	media/guardian.lua media/lego.lua media/liveleak.lua \
-	media/myspass.lua media/publicsenat.lua media/sapo.lua \
-	media/senat.lua media/sevenload.lua media/soundcloud.lua \
-	media/spiegel.lua media/ted.lua media/theonion.lua \
-	media/tvlux.lua media/videa.lua media/vimeo.lua \
-	media/youtube.lua $(am__append_1) $(am__append_2)
+	media/majestyc.lua media/metacafe.lua media/myspass.lua \
+	media/publicsenat.lua media/sapo.lua media/senat.lua \
+	media/sevenload.lua media/soundcloud.lua media/spiegel.lua \
+	media/tagtele.lua media/tapuz.lua media/ted.lua \
+	media/theonion.lua media/tvlux.lua media/videa.lua \
+	media/videobash.lua media/vzaar.lua media/youtube.lua \
+	$(am__append_1) $(am__append_2)
 
 # Subtitle property scripts.
 subtitleexportdir = $(pkgdatadir)/$(VERSION)/subtitle/export
@@ -333,6 +338,7 @@ dist_playlist_DATA = \
 # Scan embedded media URL scripts.
 scandir = $(pkgdatadir)/$(VERSION)/scan
 dist_scan_DATA = \
+  scan/vzaar.lua\
   scan/youtube.lua
 
 all: all-am

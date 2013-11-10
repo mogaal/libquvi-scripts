@@ -1,4 +1,4 @@
--- libquvi-scripts v0.9.20131012
+-- libquvi-scripts v0.9.20131104
 -- Copyright (C) 2013  Toni Gundogdu <legatvs@gmail.com>
 -- Copyright (C) 2012  Guido Leisker <guido@guido-leisker.de>
 --
@@ -40,7 +40,7 @@ function parse(qargs)
     '/getvideometadataxml.php?id=', qargs.id
   }
 
-  local c = quvi.http.fetch(table.concat(t,'')).data
+  local c = quvi.http.fetch(table.concat(t)).data
   local P = require 'lxp.lom'
 
   local L = require 'quvi/lxph'
