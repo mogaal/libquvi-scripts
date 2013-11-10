@@ -33,8 +33,13 @@ Files: share/lua/website/videobash.lua
 Copyright: 2011, Thomas Preud'homme <robotux@celest.fr>
 License: LGPL-2.1+
 
+Files: share/lua/website/collegehumor.lua
+Copyright:
+ 2012-2013, Toni Gundogdu <legatvs@gmail.com>
+ 2010-2011, Lionel Elie Mamane <lionel@mamane.lu>
+License: LGPL-2.1+
+
 Files: share/lua/website/foxnews.lua
-       share/lua/website/collegehumor.lua
        share/lua/website/metacafe.lua
 Copyright: 2011 Lionel Elie Mamane <lionel@mamane.lu>
 License: LGPL-2.1+
