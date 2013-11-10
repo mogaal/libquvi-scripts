@@ -1,3 +1,10 @@
+libquvi-scripts (0.4.20-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/copyright: Update for new upstream release.
+
+ -- Ansgar Burchardt <ansgar@debian.org>  Sun, 10 Nov 2013 13:09:22 +0100
+
 libquvi-scripts (0.4.19-1) unstable; urgency=low
 
   * New upstream release.
