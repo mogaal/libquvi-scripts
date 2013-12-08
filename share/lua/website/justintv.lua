@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.20
+-- libquvi-scripts v0.4.21
 -- Copyright (C) 2012  quvi project <http://quvi.sourceforge.net/>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
