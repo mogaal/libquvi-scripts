@@ -13,7 +13,8 @@ Files: share/lua/website/ard.lua
 Copyright: 2013, Thomas Weißschuh
 License: LGPL-2.1+
 
-Files: share/lua/website/tagtele.lua
+Files: share/lua/website/canalplus.lua
+       share/lua/website/tagtele.lua
        share/lua/website/keezmovies.lua
        share/lua/website/xhamster.lua
        share/lua/website/pornhub.lua
@@ -47,7 +48,9 @@ License: LGPL-2.1+
 Files: share/lua/website/arte.lua
        share/lua/website/publicsenat.lua
        share/lua/website/senat.lua
-Copyright: 2011-2012, Raphaël Droz <raphael.droz+floss@gmail.com>
+Copyright:
+ 2013,      Toni Gundogdu <legatvs@gmail.com>
+ 2011-2012, Raphaël Droz <raphael.droz+floss@gmail.com>
 License: LGPL-2.1+
 
 Files: share/lua/website/tvrain.lua
