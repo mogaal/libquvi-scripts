@@ -1,5 +1,6 @@
 -- libquvi-scripts v0.9.20131130
--- Copyright (C) 2011,2013  Toni Gundogdu <legatvs@gmail.com>
+-- Copyright (C) 2012,2013  Toni Gundogdu <legatvs@gmail.com>
+-- Copyright (C) 2010-2011  Lionel Elie Mamane <lionel@mamane.lu>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
 --
@@ -18,29 +19,40 @@
 -- <http://www.gnu.org/licenses/>.
 --
 
-local TVLux = {} -- Utility functions unique to to this script.
+local CollegeHumor = {} -- Utility functions unique to this script
 
 -- Identify the media script.
 function ident(qargs)
   return {
-    can_parse_url = TVLux.can_parse_url(qargs),
-    domains = table.concat({'tvlux.be'}, ',')
+    can_parse_url = CollegeHumor.can_parse_url(qargs),
+    domains = table.concat({'collegehumor.com'}, ',')
   }
 end
 
 -- Parse the media properties.
 function parse(qargs)
-  local C = require 'quvi/const'
-  local o = { [C.qoo_fetch_from_charset] = 'iso-8859-1' }
-  local p = quvi.http.fetch(qargs.input_url, o).data
+  local p = quvi.http.fetch(qargs.input_url).data
 
-  qargs.id = qargs.input_url:match('/video/.-(%d+)%.html$') or ''
+  local u = p:match('source type=.- src="(.-)"')
+              or error('no match: media stream URL')
 
-  qargs.title = p:match('<title>(.-)%s+%-%s+TV') or ''
+  if u:match('%.%w+$') then -- Stream URL ends to a file extension?
+    local S = require 'quvi/stream'
+    qargs.streams = {S.stream_new(u)}
+  else
+    qargs.goto_url = u -- Affiliate content.
+    return qargs       -- Pass the new page URL back to the library.
+  end
+
+  qargs.duration_ms =
+    tonumber(p:match('"video:duration" content="(%d+)"') or 0) *1000
 
   qargs.thumb_url = p:match('"og:image" content="(.-)"') or ''
 
-  qargs.streams = TVLux.iter_streams(p)
+  qargs.title = p:match('"og:title" content="(.-)"') or ''
+
+  qargs.id = qargs.input_url:match('/video/(%d+)/')
+                or qargs.input_url:match('/embed/(%d+)/') or ''
 
   return qargs
 end
@@ -49,35 +61,18 @@ end
 -- Utility functions
 --
 
-function TVLux.can_parse_url(qargs)
+function CollegeHumor.can_parse_url(qargs)
   local U = require 'socket.url'
   local t = U.parse(qargs.input_url)
   if t and t.scheme and t.scheme:lower():match('^http$')
-       and t.host   and t.host:lower():match('^www%.tvlux%.be$')
-       and t.path   and t.path:lower():match('^/video/.-_%d+%.html$')
+       and t.host   and t.host:lower():match('collegehumor%.com$')
+       and t.path   and (t.path:lower():match('^/video/%d+/')
+                          or t.path:lower():match('^/embed/%d+/'))
   then
     return true
   else
     return false
   end
-end
-
-function TVLux.iter_streams(p)
-  local d = p:match('setup%((.-)%)') or error('no match: setup')
-
-  local J = require 'json'
-  local j = J.decode(d)
-
-  local u = {'http://www.tvlux.be'}
-  table.insert(u, j['file'] or error('no match: media stream URL path'))
-
-  local S = require 'quvi/stream'
-  local s = S.stream_new(table.concat(u))
-
-  s.video.height = tonumber(j['height'] or 0)
-  s.video.width = tonumber(j['width'] or 0)
-
-  return {s}
 end
 
 -- vim: set ts=2 sw=2 tw=72 expandtab:

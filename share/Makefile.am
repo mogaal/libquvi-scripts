@@ -46,9 +46,12 @@ dist_media_DATA=\
   media/ardmediathek.lua\
   media/audioboo.lua\
   media/bikeradar.lua\
+  media/canalplus.lua\
   media/cbsnews.lua\
   media/clipfish.lua\
+  media/collegehumor.lua\
   media/dailymotion.lua\
+  media/dorkly.lua\
   media/funnyordie.lua\
   media/ina.lua\
   media/gaskrank.lua\
@@ -71,6 +74,7 @@ dist_media_DATA=\
   media/tvlux.lua\
   media/videa.lua\
   media/videobash.lua\
+  media/vimeo.lua\
   media/vzaar.lua\
   media/youtube.lua
 
@@ -85,8 +89,7 @@ endif
 if WITH_FIXME
 dist_media_DATA+=\
   media/break.lua\
-  media/charlierose.lua\
-  media/vimeo.lua
+  media/charlierose.lua
 if WITH_GEOBLOCKED
 endif
 if WITH_NSFW

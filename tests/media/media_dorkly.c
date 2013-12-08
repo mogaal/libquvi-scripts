@@ -1,5 +1,5 @@
 /* libquvi-scripts
- * Copyright (C) 2012  Toni Gundogdu <legatvs@gmail.com>
+ * Copyright (C) 2013  Toni Gundogdu <legatvs@gmail.com>
  *
  * This file is part of libquvi-scripts <http://quvi.sourceforge.net>.
  *
@@ -26,38 +26,53 @@
 
 #include "tests.h"
 
-static const gchar URL[] =
-  "http://vimeo.com/43530099";
+static const gchar *URLs[] =
+{
+  /* self-hosted */
+  "http://www.dorkly.com/video/48596/ice-world-problems",
+  /* affiliate content */
+  "http://www.dorkly.com/embed/55518/the-most-heartwarming-game-of-grand-theft-auto-online-ever",
+  NULL
+};
 
-static const gchar TITLE[] =
-  "Rosetta";
+static const gchar *TITLEs[] =
+{
+  "Ice World Problems",
+  "Rescuing the cutest kid in the world in a helicopter. GTA V Online",
+  NULL
+};
 
-static const gchar ID[] =
-  "43530099";
+static const gchar *IDs[] =
+{
+  "48596",
+  "StBcHc-MlCQ",
+  NULL
+};
 
-static void test_media_vimeo()
+static void test_media_dorkly()
 {
   struct qm_test_exact_s e;
   struct qm_test_opts_s o;
+  gint i;
 
-  memset(&e, 0, sizeof(e));
-  memset(&o, 0, sizeof(o));
+  for (i=0; URLs[i] != NULL; ++i)
+    {
+      memset(&e, 0, sizeof(e));
+      memset(&o, 0, sizeof(o));
 
-  e.title = TITLE;
-  e.id = ID;
+      e.title = TITLEs[i];
+      e.id = IDs[i];
 
-  o.s_len_gt0.stream.container = TRUE;
-  o.gt0.stream.video.height = TRUE;
-  o.gt0.stream.video.width = TRUE;
-  o.gt0.duration_ms = TRUE;
+      o.gt0.duration_ms = TRUE;
 
-  qm_test(__func__, URL, &e, &o);
+      qm_test(__func__, URLs[i], &e, &o);
+    }
 }
 
 gint main(gint argc, gchar **argv)
 {
   g_test_init(&argc, &argv, NULL);
-  g_test_add_func("/media/vimeo", test_media_vimeo);
+  g_test_add_func("/media/dorkly", test_media_dorkly);
   return (g_test_run());
 }
 

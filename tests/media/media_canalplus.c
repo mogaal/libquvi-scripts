@@ -1,5 +1,6 @@
 /* libquvi-scripts
- * Copyright (C) 2012  Toni Gundogdu <legatvs@gmail.com>
+ * Copyright (C) 2013  Mohamed El Morabity <melmorabity@fedoraproject.org>
+ * Copyright (C) 2013  Toni Gundogdu <legatvs@gmail.com>
  *
  * This file is part of libquvi-scripts <http://quvi.sourceforge.net>.
  *
@@ -26,38 +27,52 @@
 
 #include "tests.h"
 
-static const gchar URL[] =
-  "http://vimeo.com/43530099";
+static const gchar *URLs[] =
+{
+  "http://www.canalplus.fr/c-sport/c-football/c-football-coupe-du-monde-2014/pid3610-c-videos-cdm-2014.html?vid=973283",
+  "http://www.d8.tv/c-divertissement/d8-palmashow/pid5036-vbb-saison-2.html?vid=776533",
+  "http://www.d17.tv/docs-mags/pid6273-musique.html?vid=933914",
+  NULL
+};
 
-static const gchar TITLE[] =
-  "Rosetta";
+static const gchar *TITLEs[] =
+{
+  "Coupe du Monde 2014",
+  "Very Bad Blagues - Saison 2",
+  "Pink Floyd : Behind «the wall»",
+  NULL
+};
 
-static const gchar ID[] =
-  "43530099";
+static const gchar *IDs[] =
+{
+  "973283",
+  "776533",
+  "933914",
+  NULL
+};
 
-static void test_media_vimeo()
+static void test_media_canalplus()
 {
   struct qm_test_exact_s e;
   struct qm_test_opts_s o;
+  gint i;
 
-  memset(&e, 0, sizeof(e));
-  memset(&o, 0, sizeof(o));
+  for (i=0; URLs[i] != NULL; ++i)
+    {
+      memset(&e, 0, sizeof(e));
+      memset(&o, 0, sizeof(o));
 
-  e.title = TITLE;
-  e.id = ID;
+      e.title = TITLEs[i];
+      e.id = IDs[i];
 
-  o.s_len_gt0.stream.container = TRUE;
-  o.gt0.stream.video.height = TRUE;
-  o.gt0.stream.video.width = TRUE;
-  o.gt0.duration_ms = TRUE;
-
-  qm_test(__func__, URL, &e, &o);
+      qm_test(__func__, URLs[i], &e, &o);
+    }
 }
 
 gint main(gint argc, gchar **argv)
 {
   g_test_init(&argc, &argv, NULL);
-  g_test_add_func("/media/vimeo", test_media_vimeo);
+  g_test_add_func("/media/canalplus", test_media_canalplus);
   return (g_test_run());
 }
 
