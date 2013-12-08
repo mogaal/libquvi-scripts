@@ -1,3 +1,332 @@
+commit a5f5e79
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-30
+
+    Update NEWS for v0.9.20131130
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+NEWS
+
+commit b1fcbf6
+Merge: 4b83fb6 c250923
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-30
+
+    Merge branch 'tg/next__fix_media/vimeo' into next
+
+commit c250923
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-30
+
+    tests: media_vimeo: Run additional checks
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/media/media_vimeo.c
+
+commit af18183
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-30
+
+    tests: media/vimeo: Re-enable
+
+tests/media/tests.mk
+
+commit 25ec596
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-30
+
+    FIX: media/vimeo: Reimpl. support
+    
+      - Use HTTPS if the input URL was given using it [1]
+      - Improve stream identification (incl. bitrate)
+      - Parse media properties using LuaJSON
+      - Parse data from a new location
+      - Update all relevant patterns
+    
+    Notes:
+    [1]: media streams are still provided over HTTP
+    [2]: http://thread.gmane.org/gmane.comp.web.flash.quvi/358
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/media/vimeo.lua
+
+commit 4b83fb6
+Merge: b8dd6b8 eb4bb86
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-26
+
+    Merge branch 'tg/next__fix_media/publicsenat' into next
+
+commit b8dd6b8
+Merge: 53510ef 2d3dafd
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-26
+
+    Merge branch 'tg/next__101gg_fixes' into next
+
+commit 2d3dafd
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-26
+
+    tests: media_101greatgoals: Update test URL
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/media/media_101greatgoals.c
+
+commit d74e442
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-26
+
+    FIX: media/101greatgoals: redirect: Add URL scheme
+    
+    Make sure the redirection URL has a scheme.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/101greatgoals.lua
+
+commit eb4bb86
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-26
+
+    FIX: media/publicsenat: Reimpl. support
+    
+    Notable changes:
+      - Fetch and parse media properties from an emission URL
+      - Use LuaJSON to parse the properties ({stream,thumb} URL)
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/publicsenat.lua
+
+commit 53510ef
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-23
+
+    tests: media_spiegel: Update test URL
+    
+    The old one no longer has thumbnail available.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/media/media_spiegel.c
+
+commit e2d357e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-23
+
+    tests: media_cbsnews: Update URLs
+    
+    Other:
+      - Do not test the resolution properties (no longer returned)
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/media/media_cbsnews.c
+
+commit 6a265a9
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-23
+
+    FIX: media/cbsnews.lua: Adapt to website changes
+    
+    Adapt to the recently updated website design.
+      - Parse all media properties from video page HTML
+      - Use LuaJSON to  parse the media properties
+    
+    Notable changes:
+      - Media streams may now contain {HTTP,RTMP,M3U8} URLs [1]
+      - Presume the "best" quality to be the "desktop" stream
+      - Switch to support the new video URI paths
+    
+    Notes:
+    [1]: None of which are currently identified in any other way than
+         setting the "container" property which is simply parsed from the
+         URI file extension (e.g. "m3u8" or "mp4"), quvi-get(1) cannot
+         currently handle the m3u8/hls (or rtmp for that matter)
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/cbsnews.lua
+
+commit 69f0560
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-23
+
+    tests: media_canalplus: Update test URLs
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/media/media_canalplus.c
+
+commit 041e33b
+Author: Mohamed El Morabity <melmorabity@fedoraproject.org>
+Date:   2013-11-11
+
+    media/canalplus.lua: Relicense under AGPLv3+
+    
+    Notable differences to the 0.4 script:
+      - Supports also d8.tv and d17.tv which share the same video database
+      - Uses the JSON interface provided by Canal+
+    
+    Differences (:editor:) to the original patch[1]:
+      - Concatenate strings using a table, or "the Lua way"[2]
+      - Remove the old script from the repo
+      test:
+      - Update expected media {title,ID} for the first test URL
+      - Rename test function to `test_media_canalplus'
+    
+    Links:
+    [1]: http://thread.gmane.org/gmane.comp.web.flash.quvi/364
+    [2]: http://www.luafaq.org/#T1.9
+    
+    Signed-off-by: Mohamed El Morabity <melmorabity@fedoraproject.org>
+    Edited-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/canalplus.lua
+share/media/canalplus.lua
+tests/media/canalplus.mk
+tests/media/media_canalplus.c
+tests/media/tests.mk
+
+commit 307f169
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-12
+
+    share/README: Add an URL to "Lua Unofficial FAQ (uFAQ)"
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/README
+
+commit 50d93ce
+Merge: 7f1adf2 d9e47cc
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-10
+
+    Merge branch 'tg/next__media_port_dorkly.lua' into next
+
+commit 7f1adf2
+Merge: dcebfb6 2331b6e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-10
+
+    Merge branch 'tg/next__media_port_collegehumor.lua' into next
+
+commit d9e47cc
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-10
+
+    tests: Add a test for media/dorkly.lua
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/media/dorkly.mk
+tests/media/media_dorkly.c
+tests/media/tests.mk
+
+commit 5304e1b
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-10
+
+    Port website/dorkly.lua from the 0.4 series
+    
+    Notable changes:
+    * Use LuaExpat for parsing the media properties
+    * Apply 2-space indentation
+    * Relicense under AGPLv3+
+    * Update vim modeline
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/media/dorkly.lua
+
+commit 2331b6e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-10
+
+    tests: Add a test for media/collegehumor.lua
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/media/collegehumor.mk
+tests/media/media_collegehumor.c
+tests/media/tests.mk
+
+commit c8e7924
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-10
+
+    media/collegehumor.lua: Rewrite parse function
+    
+    Rewrite the `parse' function for the libquvi 0.9+ series.
+    * Remove now obsolete code (e.g. self.host_id)
+    * Apply 2-space indentation
+    * Update vim modeline
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/collegehumor.lua
+
+commit a0a0bb9
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-10
+
+    media/collegehumor.lua: Remove query_formats function
+    
+    Remove the now obsolete `query_formats' function which is no longer
+    supported by libquvi 0.9+.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/collegehumor.lua
+
+commit b121ade
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-10
+
+    media/collegehumor.lua: Rewrite ident function
+    
+    Rewrite the `ident' function for the libquvi 0.9+ series.
+    * Implement `CollegeHumor.can_parse_url' function
+    * Remove any now obsolete code
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/collegehumor.lua
+
+commit 3639d54
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-10
+
+    media/collegehumor.lua: Relicense under AGPLv3+
+    
+    See also:
+    * http://article.gmane.org/gmane.comp.web.flash.quvi/334
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/media/collegehumor.lua
+
+commit 458f484
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-10
+
+    Move website/collegehumor.lua to media/
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/collegehumor.lua
+share/media/collegehumor.lua
+
 commit dcebfb6
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2013-11-04

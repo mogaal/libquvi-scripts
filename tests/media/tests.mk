@@ -4,9 +4,12 @@ include $(top_srcdir)/tests/media/ardmediathek.mk
 include $(top_srcdir)/tests/media/arte.mk
 include $(top_srcdir)/tests/media/audioboo.mk
 include $(top_srcdir)/tests/media/bikeradar.mk
+include $(top_srcdir)/tests/media/canalplus.mk
 include $(top_srcdir)/tests/media/cbsnews.mk
 include $(top_srcdir)/tests/media/clipfish.mk
+include $(top_srcdir)/tests/media/collegehumor.mk
 include $(top_srcdir)/tests/media/dailymotion.mk
+include $(top_srcdir)/tests/media/dorkly.mk
 include $(top_srcdir)/tests/media/funnyordie.mk
 include $(top_srcdir)/tests/media/gaskrank.mk
 include $(top_srcdir)/tests/media/guardian.mk
@@ -29,11 +32,11 @@ include $(top_srcdir)/tests/media/theonion.mk
 include $(top_srcdir)/tests/media/tvlux.mk
 include $(top_srcdir)/tests/media/videa.mk
 include $(top_srcdir)/tests/media/videobash.mk
+include $(top_srcdir)/tests/media/vimeo.mk
 include $(top_srcdir)/tests/media/vzaar.mk
 include $(top_srcdir)/tests/media/youtube.mk
 
 if WITH_FIXME
 include $(top_srcdir)/tests/media/break.mk
 include $(top_srcdir)/tests/media/charlierose.mk
-include $(top_srcdir)/tests/media/vimeo.mk
 endif

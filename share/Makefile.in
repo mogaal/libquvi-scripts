@@ -58,8 +58,7 @@ host_triplet = @host@
 
 @WITH_FIXME_TRUE@am__append_2 = \
 @WITH_FIXME_TRUE@  media/break.lua\
-@WITH_FIXME_TRUE@  media/charlierose.lua\
-@WITH_FIXME_TRUE@  media/vimeo.lua
+@WITH_FIXME_TRUE@  media/charlierose.lua
 
 subdir = share
 DIST_COMMON = README $(am__dist_media_DATA_DIST) $(dist_common_DATA) \
@@ -125,7 +124,8 @@ am__installdirs = "$(DESTDIR)$(commondir)" \
 	"$(DESTDIR)$(subtitleexportdir)" "$(DESTDIR)$(utildir)"
 am__dist_media_DATA_DIST = media/101greatgoals.lua media/1tvru.lua \
 	media/ardmediathek.lua media/audioboo.lua media/bikeradar.lua \
-	media/cbsnews.lua media/clipfish.lua media/dailymotion.lua \
+	media/canalplus.lua media/cbsnews.lua media/clipfish.lua \
+	media/collegehumor.lua media/dailymotion.lua media/dorkly.lua \
 	media/funnyordie.lua media/ina.lua media/gaskrank.lua \
 	media/guardian.lua media/lego.lua media/liveleak.lua \
 	media/majestyc.lua media/metacafe.lua media/myspass.lua \
@@ -133,9 +133,9 @@ am__dist_media_DATA_DIST = media/101greatgoals.lua media/1tvru.lua \
 	media/sevenload.lua media/soundcloud.lua media/spiegel.lua \
 	media/tagtele.lua media/tapuz.lua media/ted.lua \
 	media/theonion.lua media/tvlux.lua media/videa.lua \
-	media/videobash.lua media/vzaar.lua media/youtube.lua \
-	media/arte.lua media/break.lua media/charlierose.lua \
-	media/vimeo.lua
+	media/videobash.lua media/vimeo.lua media/vzaar.lua \
+	media/youtube.lua media/arte.lua media/break.lua \
+	media/charlierose.lua
 DATA = $(dist_common_DATA) $(dist_common_http_DATA) $(dist_media_DATA) \
 	$(dist_playlist_DATA) $(dist_root_DATA) $(dist_scan_DATA) \
 	$(dist_subtitle_DATA) $(dist_subtitleexport_DATA) \
@@ -305,7 +305,8 @@ dist_util_DATA = \
 mediadir = $(pkgdatadir)/$(VERSION)/media
 dist_media_DATA = media/101greatgoals.lua media/1tvru.lua \
 	media/ardmediathek.lua media/audioboo.lua media/bikeradar.lua \
-	media/cbsnews.lua media/clipfish.lua media/dailymotion.lua \
+	media/canalplus.lua media/cbsnews.lua media/clipfish.lua \
+	media/collegehumor.lua media/dailymotion.lua media/dorkly.lua \
 	media/funnyordie.lua media/ina.lua media/gaskrank.lua \
 	media/guardian.lua media/lego.lua media/liveleak.lua \
 	media/majestyc.lua media/metacafe.lua media/myspass.lua \
@@ -313,8 +314,8 @@ dist_media_DATA = media/101greatgoals.lua media/1tvru.lua \
 	media/sevenload.lua media/soundcloud.lua media/spiegel.lua \
 	media/tagtele.lua media/tapuz.lua media/ted.lua \
 	media/theonion.lua media/tvlux.lua media/videa.lua \
-	media/videobash.lua media/vzaar.lua media/youtube.lua \
-	$(am__append_1) $(am__append_2)
+	media/videobash.lua media/vimeo.lua media/vzaar.lua \
+	media/youtube.lua $(am__append_1) $(am__append_2)
 
 # Subtitle property scripts.
 subtitleexportdir = $(pkgdatadir)/$(VERSION)/subtitle/export
