@@ -35,11 +35,11 @@ my $ua = new LWP::UserAgent;
 $ua->env_proxy;
 
 my %h = (
-  "http://videos.arte.tv" => sub {
+  "http://www.arte.tv/guide/fr/plus7.json" => sub {
     my ($p) = @_;
-    my $q = qr|<h2><a href="/(\w\w)/videos/(.*?)"|;
+    my $q = qr|"url":"(.*?)"|;
     my @l;
-    push @l, "http://videos.arte.tv/$1/videos/$2"  while $p =~ /$q/g;
+    push @l, "http://www.arte.tv$1"  while $p =~ /$q/g;
     my $n = ceil(scalar @l/2);
     $l[$n];
   },

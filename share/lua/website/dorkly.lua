@@ -1,6 +1,6 @@
 
 -- libquvi-scripts v0.4.21
--- Copyright (C) 2010-2012  Toni Gundogdu <legatvs@gmail.com>
+-- Copyright (C) 2013  Toni Gundogdu <legatvs@gmail.com>
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
 --
@@ -20,24 +20,23 @@
 -- 02110-1301  USA
 --
 
-local LiveLeak = {} -- Utility functions specific to this script
+local Dorkly = {} -- Utility functions unique to this script
 
 -- Identify the script.
 function ident(self)
     package.path = self.script_dir .. '/?.lua'
     local C      = require 'quvi/const'
     local r      = {}
-    r.domain     = "liveleak%.com"
+    r.domain     = "dorkly%.com"
     r.formats    = "default"
     r.categories = C.proto_http
     local U      = require 'quvi/util'
-    LiveLeak.normalize(self)
-    r.handles    = U.handles(self.page_url,
-                    {r.domain}, {"view"}, {"i=[%w_]+"})
+    r.handles    = U.handles(self.page_url, {r.domain},
+                    {"/video/%d+/", "/embed/%d+/"})
     return r
 end
 
--- Query available formats.
+-- Query formats.
 function query_formats(self)
     self.formats = 'default'
     return self
@@ -45,25 +44,28 @@ end
 
 -- Parse media URL.
 function parse(self)
-    self.host_id = "liveleak"
+    self.host_id  = "dorkly"
 
-    LiveLeak.normalize(self)
-    local p = quvi.fetch(self.page_url)
+    self.id = self.page_url:match('/video/(%d+)/')
+                  or self.page_url:match('/embed/(%d+)/')
+                      or error('no match: media ID')
 
-    self.title = p:match("<title>LiveLeak.com%s+%-%s+(.-)</")
-                  or error("no match: media title")
-
-    self.id = self.page_url:match('view%?i=([%w_]+)')
-                or error("no match: media ID")
-
-    local u = p:match('file: "(.-)"')
-    if not u then -- Try the first iframe.
-        self.redirect_url = p:match('<iframe.-src="(.-)"')
-                                or error("no match: file or iframe")
-    else
-        local U = require 'quvi/util'
-        self.url = {U.unescape(u)}
+    if Dorkly.is_affiliate(self) then
+      return self
     end
+
+    local t = {'http://www.dorkly.com/moogaloop/video/', self.id}
+    local x = quvi.fetch(table.concat(t), {fetch_type='config'})
+
+    local U = require 'quvi/util'
+
+    self.duration = tonumber(U.xml_get(x, 'duration', false))
+
+    self.thumbnail_url = U.xml_get(x, 'thumbnail', true)
+
+    self.title = U.xml_get(x, 'caption', true)
+
+    self.url = { U.xml_get(x, 'file', true) }
 
     return self
 end
@@ -72,20 +74,17 @@ end
 -- Utility functions
 --
 
-function LiveLeak.normalize(self)
-    if not self.page_url then return self.page_url end
-
-    local U = require 'quvi/url'
-    local t = U.parse(self.page_url)
-
-    if not t.path then return self.page_url end
-
-    local i = t.path:match('/e/([_%w]+)')
-    if i then
-        t.query = 'i=' .. i
-        t.path = '/view'
-        self.page_url = U.build(t)
+function Dorkly.is_affiliate(self)
+    if not self.page_url:match('/embed/') then
+        return false
     end
+    local p = quvi.fetch(self.page_url)
+    local u = p:match('iframe.-src="(.-)"') or error('no match: iframe: src')
+    if not u:match('^http%:') then    -- If the URL scheme is malformed...
+        u = table.concat({'http:',u}) -- ... Try to fix it.
+    end
+    self.redirect_url = u
+    return true
 end
 
 -- vim: set ts=4 sw=4 tw=72 expandtab:

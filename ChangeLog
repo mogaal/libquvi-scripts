@@ -1,3 +1,654 @@
+commit 6bb3332
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-30
+
+    Bump version to 0.4.21
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+m4/version.m4
+
+commit 5947c85
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-30
+
+    Update NEWS for v0.4.21
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+NEWS
+
+commit 8e61bdf
+Merge: 4bb9d8d 6e29748
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-30
+
+    Merge branch 'tg/maint__fix_website/vimeo' into maint-0.4
+
+commit 6e29748
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-30
+
+    tests: redirect.t: vimeo: Re-enable
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/t/redirect.t
+
+commit 672e7e3
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-30
+
+    tests: default: vimeo: Re-enable and update
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/fixme/vimeo.json
+tests/data/format/default/vimeo.json
+
+commit ac21fa0
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-30
+
+    FIX: website/vimeo: Reimpl. support
+    
+      - Improve stream identification (incl. height, bitrate)
+      - Use HTTPS if then input URL was given using it [1]
+      - Use "best" quality stream for "default" stream
+      - Parse data from a new location
+      - Update all relevant patterns
+      - Remove code bloat
+    
+    This fixes the reported issue [2] affecting the 0.4 series.
+    
+    Notes:
+    [1]: media streams are still provided over HTTP
+    [2]: http://thread.gmane.org/gmane.comp.web.flash.quvi/358
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/vimeo.lua
+
+commit 4bb9d8d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-30
+
+    website/arte: Modify to use quvi/util:json_get
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/arte.lua
+
+commit 43d2654
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-30
+
+    quvi/util: Add json_get function
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/quvi/util.lua
+
+commit 3b24a5a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-28
+
+    tests: default: ted: Update
+
+tests/data/format/default/ignore/length_bytes/ted.json
+tests/data/format/default/ted.json
+
+commit 61084d7
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-28
+
+    tests: default: redtube: Update
+
+tests/data/format/default/nsfw/redtube.json
+
+commit 1dcd95b
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-28
+
+    tests: default: youtube: Update
+
+tests/data/format/default/youtube.json
+
+commit fef4f84
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-28
+
+    tests: default: spankwire: Update
+
+tests/data/format/default/nsfw/spankwire.json
+
+commit a3e6fb3
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-28
+
+    Mark website/imdb as "FIXME"
+
+share/Makefile.am
+tests/data/format/default/fixme/imdb.json
+tests/data/format/default/imdb.json
+
+commit 547ba93
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-28
+
+    Mark website/wdrmaus as "FIXME"
+
+share/Makefile.am
+tests/data/format/default/fixme/wdrmaus_es.json
+tests/data/format/default/fixme/wdrmaus_kbbs.json
+tests/data/format/default/fixme/wdrmaus_sg.json
+tests/data/format/default/wdrmaus_es.json
+tests/data/format/default/wdrmaus_kbbs.json
+tests/data/format/default/wdrmaus_sg.json
+
+commit f50dc23
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-28
+
+    Mark website/justintv as "FIXME"
+
+share/Makefile.am
+tests/data/format/default/fixme/justintv.json
+tests/data/format/default/justintv.json
+
+commit 177a71d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-28
+
+    website/imdb: Pair string.match calls with error calls
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/imdb.lua
+
+commit 6dd0013
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-28
+
+    FIX: website/beeg: title pattern
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/beeg.lua
+
+commit cf3210c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-28
+
+    FIX: website/senat: Reimpl. support
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/senat.lua
+
+commit 33745ae
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-28
+
+    FIX: website/spankwire: Reimpl. support
+    
+      - Update {title,id,stream} patterns
+      - Iterate available streams
+      - Parse thumbnail URL
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/spankwire.lua
+
+commit bb42602
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-28
+
+    Unmark website/arte as "FIXME"
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+
+commit 25e5915
+Merge: 246e59c 95f6ce0
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-28
+
+    Merge branch 'tg/maint__fix_website/arte' into maint-0.4
+
+commit 95f6ce0
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-28
+
+    tests: expire.t: Re-enable, update arte URL and pattern
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/t/expire.t
+
+commit 7084f63
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-28
+
+    FIX: website/arte: Reimpl. support
+    
+    This is a backport of the 0.9+ script [485ce77c4638].
+    
+      - ident: Revise, and add "http" to "categories"
+      - Parse media properties from a new location
+      - Parse "duration" media property
+    
+    See the commit 485ce77c4638 for additional notes.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/arte.lua
+
+commit 246e59c
+Merge: 0411af9 3547e06
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-27
+
+    Merge branch 'tg/maint__fix_website/publicsenat' into maint-0.4
+
+commit 3547e06
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-27
+
+    tests: default: publicsenat: Update, and remove "idE" testcase
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/publicsenat-2.json
+tests/data/format/default/publicsenat.json
+
+commit e33d3f9
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-27
+
+    FIX: website/publicsenat: Reimpl. support
+    
+    This is a rough backport of the eb4bb860cc481 written for the
+    0.9 series.
+    
+    Notable changes:
+      - Fetch and parse the media properties from an "emission URL" HTML
+      - Remove support for the "idE" URLs (no apparent reason to keep)
+      - `ident': Update URL path pattern
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/publicsenat.lua
+
+commit 0411af9
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-27
+
+    tests: redirect.t: Disable tcmag/vimeo test
+    
+    website/vimeo has been marked as "FIXME".
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/t/redirect.t
+
+commit b58985a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-27
+
+    tests: resolve: liveleak: Update
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/resolve/redirect_url_liveleak.json
+
+commit 59fd648
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-27
+
+    tests: resolve: bikeradar: Update
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/resolve/redirect_url_bikeradar.json
+
+commit 3dbc725
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-27
+
+    tests: resolve: dorkly: Update
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/resolve/redirect_url_dorkly.json
+
+commit 35dcd5d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-27
+
+    tests: resolve: ted: Update
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/resolve/redirect_url_ted.json
+
+commit 5e96c65
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-27
+
+    tests: resolve: 101gg: Update link properties
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/resolve/redirect_url_101greatgoals.json
+
+commit 707959e
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-27
+
+    tests: redirect: 101greatgoals: Add an additional test
+    
+    With embedded content missing the protocol scheme from the URL.
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/resolve/redirect_url_101greatgoals-1.json
+tests/t/redirect.t
+
+commit d1313ea
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-27
+
+    FIX: website/101greatgoals: redirect: Add URL scheme
+    
+    Make sure the redirection URL has a scheme.
+    
+    See also:
+      - commit d74e442e61b740a
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/101greatgoals.lua
+
+commit 5847c14
+Merge: 7a73f10 a54c00a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-27
+
+    Merge branch 'tg/maint__fix_website/cbsnews' into maint-0.4
+
+commit a54c00a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-27
+
+    tests: default/cbsnews: Update
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/cbsnews.json
+
+commit cda2d12
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-27
+
+    FIX: website/cbsnews: Adapt to website changes
+    
+    This is a rough backport of the similar changes [6a265a9998] made to the
+    0.9 series. Unlike the 0.9 script however, this one will return only one
+    stream.
+    
+    - Rewrite `ident' function
+      - Script now returns HTTP/RTMP media streams
+      - Script now returns only one stream
+      - Add support for new input URL paths
+    
+    - Simplify `query_formats' function
+      - Script now returns only one stream
+    
+    - Rewrite `parse' function
+      - Simplify stream parsing: only one stream ("desktop") is now returned
+      - Parse the media properties from the video page HTML
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/cbsnews.lua
+
+commit 7a73f10
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-24
+
+    tests: Add tests for {canalplus,d17,d8}
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/canalplus.json
+tests/data/format/default/d17.json
+tests/data/format/default/d8.json
+
+commit b454f8d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-24
+
+    website/dorkly.lua: Use quvi/util:xml_get
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/dorkly.lua
+
+commit a505772
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-24
+
+    website/canalplus.lua: Add support for {d8,d17}
+    
+    This is a rough backport of the changes made to the 0.9 series with the
+    following differences:
+    
+      - Try to determine the {media,channel} ID from the input URL
+    
+        - Allows skipping the retrieval of the input URL, saving some KiB
+    
+        - libquvi (0.4) parses automatically "charset" from the input URL HTML
+    
+          - This would lead into encoding issues (mangled media title) later
+            when the REST response was parsed
+    
+      - Use quvi/util:xml_get since LuaExpat cannot be used
+    
+    Notable changes:
+    
+      - ident function:
+        - Remove the hardcoded URI paths (no longer needed)
+        - Add "HTTP" to the protocol categories
+    
+      - {query_formats, parse} functions:
+        - For lack of a better solution: the "best" is now the "default" stream
+        - Redirecting to a youtube resource was not implemented
+        - Try to trim and cleanup the old code where possible
+    
+    Links:
+    [1]: http://thread.gmane.org/gmane.comp.web.flash.quvi/364
+          (the patch for the 0.9 series)
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/canalplus.lua
+
+commit e24824c
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-24
+
+    quvi/util: Add xml_get
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/quvi/util.lua
+
+commit 1724343
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    Bump version to 0.4.20
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+m4/version.m4
+
+commit bd9cf10
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    Update NEWS for v0.4.20
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+NEWS
+
+commit a823ef0
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    website/arte.lua: Mark as FIXME
+    
+    This has been addressed in the 0.9 series and awaits to be backported.
+    
+    See also:
+      * http://thread.gmane.org/gmane.comp.web.flash.quvi/356
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+tests/t/expire.t
+
+commit a2bf70a
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    tests: default: tcmag.json: Update with thumbnail URL
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/nsfw/tcmag.json
+
+commit e90c00d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    FIX: website/tcmag.lua: Media stream URL pattern
+    
+    Other notable changes:
+    * Try to determine self-hosted/affiliate content from the stream URL
+    * Parse thumbnail URL
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/tcmag.lua
+
+commit ed756ef
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    FIX: website/redtube.lua: media stream URL pattern
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/lua/website/redtube.lua
+
+commit a2279ff
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-04
+
+    website/vimeo.lua: Mark as FIXME
+    
+    Notes:
+    * http://thread.gmane.org/gmane.comp.web.flash.quvi/358
+    * Affects: {0.4, 0.9}
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+tests/data/format/default/fixme/vimeo.json
+tests/data/format/default/vimeo.json
+tests/t/redirect.t
+
+commit 7adda0d
+Merge: 99a4fc6 c41cb3f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-03
+
+    Merge branch 'tg/maint-0.4__add_website/dorkly.lua' into maint-0.4
+
+commit 99a4fc6
+Merge: 092c59b e412bee
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-03
+
+    Merge branch 'tg/maint-0.4__fix_website/collegehumor.lua' into maint-0.4
+
+commit c41cb3f
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-03
+
+    tests: resolve.t: Re-enable test for website/dorkly.lua
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/resolve/redirect_url_dorkly.json
+tests/t/redirect.t
+
+commit 003ffe4
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-03
+
+    tests: Add default/dorkly.json
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/dorkly.json
+
+commit 6528f5d
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-03
+
+    Add website/dorkly.lua for dorkly.com
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/dorkly.lua
+
+commit e412bee
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-03
+
+    tests: default/collegehumor: Reinstate and update
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+tests/data/format/default/collegehumor.json
+tests/data/format/default/fixme/collegehumor.json
+
+commit 168d954
+Author: Toni Gundogdu <legatvs@gmail.com>
+Date:   2013-11-03
+
+    FIX: website/collegehumor.lua
+    
+    Notable changes:
+    * Remove support for dorkly.com which appears to use now different system
+    * Try to determine embedded (affiliate) content from the page HTML
+    * Parse media properties from the media/video page HTML
+    * Have query_formats return "default" only
+    * Update U.handles patterns
+    * Parse duration property
+    
+    Signed-off-by: Toni Gundogdu <legatvs@gmail.com>
+
+share/Makefile.am
+share/lua/website/collegehumor.lua
+
 commit 092c59b
 Author: Toni Gundogdu <legatvs@gmail.com>
 Date:   2013-10-04

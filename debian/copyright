@@ -13,7 +13,8 @@ Files: share/lua/website/ard.lua
 Copyright: 2013, Thomas Weißschuh
 License: LGPL-2.1+
 
-Files: share/lua/website/tagtele.lua
+Files: share/lua/website/canalplus.lua
+       share/lua/website/tagtele.lua
        share/lua/website/keezmovies.lua
        share/lua/website/xhamster.lua
        share/lua/website/pornhub.lua
@@ -33,8 +34,13 @@ Files: share/lua/website/videobash.lua
 Copyright: 2011, Thomas Preud'homme <robotux@celest.fr>
 License: LGPL-2.1+
 
+Files: share/lua/website/collegehumor.lua
+Copyright:
+ 2012-2013, Toni Gundogdu <legatvs@gmail.com>
+ 2010-2011, Lionel Elie Mamane <lionel@mamane.lu>
+License: LGPL-2.1+
+
 Files: share/lua/website/foxnews.lua
-       share/lua/website/collegehumor.lua
        share/lua/website/metacafe.lua
 Copyright: 2011 Lionel Elie Mamane <lionel@mamane.lu>
 License: LGPL-2.1+
@@ -42,7 +48,9 @@ License: LGPL-2.1+
 Files: share/lua/website/arte.lua
        share/lua/website/publicsenat.lua
        share/lua/website/senat.lua
-Copyright: 2011-2012, Raphaël Droz <raphael.droz+floss@gmail.com>
+Copyright:
+ 2013,      Toni Gundogdu <legatvs@gmail.com>
+ 2011-2012, Raphaël Droz <raphael.droz+floss@gmail.com>
 License: LGPL-2.1+
 
 Files: share/lua/website/tvrain.lua

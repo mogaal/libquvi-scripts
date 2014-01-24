@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.19
+-- libquvi-scripts v0.4.21
 -- Copyright (C) 2012  quvi project
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -58,7 +58,7 @@ function parse(self)
     self.thumbnail_url =
         p:match('<img src=%"(.-)%" .- id=%"vidImgPoster%"') or ''
 
-    self.url = {p:match('(http://videos.mp4.redtubefiles.com/.-)\'')
+    self.url = {p:match("src='(.-)' type='video/")
                   or error("no match: media stream URL")}
 
     return self

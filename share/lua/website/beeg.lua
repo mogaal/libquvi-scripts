@@ -1,5 +1,5 @@
 
--- libquvi-scripts v0.4.19
+-- libquvi-scripts v0.4.21
 -- Copyright (C) 2012-2013  quvi project
 --
 -- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
@@ -48,7 +48,7 @@ function parse(self)
 
     local p = quvi.fetch(self.page_url)
 
-    self.title = p:match('<meta name="description" content="(.-)%.')
+    self.title = p:match('<title>(.-)%s+%-%s+beeg')
                   or error("no match: media title")
 
     self.url = {p:match("'file': '(http://.-)'")
