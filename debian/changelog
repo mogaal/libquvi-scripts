@@ -1,3 +1,10 @@
+libquvi-scripts (0.9.20131130-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload with maintainer permission.
+  * Upload to unstable.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Thu, 18 Feb 2016 16:56:28 +0100
+
 libquvi-scripts (0.9.20131130-1) experimental; urgency=low
 
   * New upstream release.
