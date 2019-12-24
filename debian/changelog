@@ -10,6 +10,7 @@ libquvi-scripts (0.9.20131130-2) UNRELEASED; urgency=medium
   * debian/copyright: use spaces rather than tabs to start continuation
     lines.
   * Set upstream metadata fields: Bug-Submit (from ./configure).
+  * Drop unnecessary dependency on dh-autoreconf.
 
  -- Ansgar Burchardt <ansgar@debian.org>  Mon, 18 Jul 2016 21:29:34 +0200
 
