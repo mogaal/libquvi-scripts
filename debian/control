@@ -1,6 +1,6 @@
 Source: libquvi-scripts
 Section: libs
-Priority: extra
+Priority: optional
 Maintainer: Alejandro Garrido Mota <garridomota@gmail.com>
 Build-Depends: debhelper (>= 10~), dh-autoreconf, asciidoc, pkg-config
 Standards-Version: 3.9.4
