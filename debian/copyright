@@ -1,4 +1,4 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Contact: Toni Gundogdu <legatvs@gmail.com>
 Source: http://quvi.sourceforge.net 
 Upstream-Name: libquvi-scripts
@@ -104,14 +104,14 @@ License: AGPL-3+
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU Affero General Public License for more details.
  .
-		     GNU AFFERO GENERAL PUBLIC LICENSE
-			Version 3, 19 November 2007
+ 		     GNU AFFERO GENERAL PUBLIC LICENSE
+ 			Version 3, 19 November 2007
  .
   Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
   Everyone is permitted to copy and distribute verbatim copies
   of this license document, but changing it is not allowed.
  .
-			     Preamble
+ 			     Preamble
  .
    The GNU Affero General Public License is a free, copyleft license for
  software and other kinds of works, specifically designed to ensure
@@ -162,7 +162,7 @@ License: AGPL-3+
    The precise terms and conditions for copying, distribution and
  modification follow.
  .
-			TERMS AND CONDITIONS
+ 			TERMS AND CONDITIONS
  .
    0. Definitions.
  .
@@ -722,9 +722,9 @@ License: AGPL-3+
  Program, unless a warranty or assumption of liability accompanies a
  copy of the Program in return for a fee.
  .
-		      END OF TERMS AND CONDITIONS
+ 		      END OF TERMS AND CONDITIONS
  .
-	     How to Apply These Terms to Your New Programs
+ 	     How to Apply These Terms to Your New Programs
  .
    If you develop a new program, and you want it to be of the greatest
  possible use to the public, the best way to achieve this is to make it
