@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Alejandro Garrido Mota <garridomota@gmail.com>
 Build-Depends: debhelper (>= 10~), asciidoc, pkg-config
 Standards-Version: 3.9.4
-Vcs-Git: git://github.com/mogaal/libquvi-scripts.git
+Vcs-Git: https://github.com/mogaal/libquvi-scripts.git
 Vcs-Browser: https://github.com/mogaal/libquvi-scripts
 Homepage: http://quvi.sourceforge.net
 
